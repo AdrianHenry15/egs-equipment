@@ -2,7 +2,7 @@ import Image from "next/image"
 import React from "react"
 import { FaRegCopyright } from "react-icons/fa6"
 
-import Logo from "@/public/logos/eckert-trans.png"
+import Logo from "@/public/logos/placeholder.webp"
 
 const LogoCard = () => {
   return (

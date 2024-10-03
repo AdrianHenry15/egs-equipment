@@ -2,16 +2,7 @@ import { NavMenuType } from "./types"
 
 export type NavMenuItems = "Home" | "About" | "Contact" | "Products" | "Parts"
 
-export enum AltNavMenuItems {
-  CONTACT_US = "Contact Us",
-  ESTIMATE = "Get Your Free Estimate",
-}
-
-export type NavMenuLinks =
-  | "/"
-  | "/exterior-cleaning"
-  | "/holiday-lighting"
-  | "/commercial-services"
+export type NavMenuLinks = "/" | "/about" | "/contact" | "/products" | "/parts"
 
 export enum AltNavMenuLinks {
   CONTACT_US = "/contact-us",
@@ -20,38 +11,20 @@ export enum AltNavMenuLinks {
 
 export const NavMenu: NavMenuType[] = [
   {
-    title: NavMenuItems.HOME,
-    link: NavMenuLinks.HOME,
+    title: "Home",
+    link: "/",
   },
   {
-    title: NavMenuItems.EXTERIOR_CLEANING,
-    link: NavMenuLinks.EXTERIOR_CLEANING,
+    title: "About",
+    link: "/about",
   },
   {
-    title: NavMenuItems.HOLIDAY_LIGHTING,
-    link: NavMenuLinks.HOLIDAY_LIGHTING,
+    title: "Contact",
+    link: "/contact",
   },
   {
-    title: NavMenuItems.COMMERCIAL_SERVICES,
-    link: NavMenuLinks.COMMERCIAL_SERVICES,
-  },
-  // {
-  //     title: NavMenuItems.FAQS,
-  //     link: NavMenuLinks.FAQS,
-  // },
-  // {
-  //     title: NavMenuItems.ABOUT_US,
-  //     link: NavMenuLinks.ABOUT_US,
-  // },
-]
-export const AltNavMenu: NavMenuType[] = [
-  {
-    title: AltNavMenuItems.CONTACT_US,
-    link: AltNavMenuLinks.CONTACT_US,
-  },
-  {
-    title: AltNavMenuItems.ESTIMATE,
-    link: AltNavMenuLinks.ESTIMATE,
+    title: "Products",
+    link: "/products",
   },
 ]
 
