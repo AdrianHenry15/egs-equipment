@@ -1,4 +1,4 @@
-export async function getGoogleReviews(placeId: string, apiKey: string): Promise<any> {
+export async function getGoogleReviews(placeId: string, apiKey: string): Promise<string> {
     try {
         const response = await fetch(
             `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`

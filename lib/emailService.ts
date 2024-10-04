@@ -10,9 +10,8 @@ const sendEmail = (
     serviceId: string,
     templateId: string,
     templateParams: TemplateParams,
-    publicKey: string,
-    privateKey: string
-): Promise<{ success: boolean; response?: EmailJSResponseStatus; error?: any }> => {
+    publicKey: string
+): Promise<{ success: boolean; response?: EmailJSResponseStatus; error?: string }> => {
     return emailjs.send(serviceId, templateId, templateParams, publicKey).then(
         (response) => {
             toast.success("Your estimate has been submitted successfully!");
