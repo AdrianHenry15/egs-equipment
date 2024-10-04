@@ -16,7 +16,7 @@ interface ISplashProps {
     link_title_1: string;
     link_title_2: string;
 }
-
+// TODO:Use Square Website Home page as reference for this Splash page
 const Splash = (props: ISplashProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
