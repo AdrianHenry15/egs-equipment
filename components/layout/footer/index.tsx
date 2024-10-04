@@ -13,7 +13,7 @@ import LogoCard from "./logo-card";
 const Footer = () => {
     return (
         // FULL CONTAINER
-        <footer className="w-full bg-black text-white flex flex-col justify-center px-4">
+        <footer className="w-full bg-zinc-800 text-white flex flex-col justify-center px-4">
             {/* FOOTER MENU */}
             <div className="flex flex-col self-center w-full md:flex-row md:py-2">
                 <LogoCard />

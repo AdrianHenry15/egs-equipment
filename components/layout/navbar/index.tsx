@@ -18,21 +18,14 @@ export default function Navbar() {
     return (
         <nav
             id="nav-bar"
-            className={`bg-white text-sm font-semibold flex w-full sticky top-0 z-50 shadow-md pb-14 lg:pb-0`}
+            className={`bg-white text-sm font-semibold flex w-full sticky top-0 z-50 shadow-md lg:pb-0`}
         >
             {/* MOBILE CONTAINER */}
-            <div className="absolute self-center right-0 top-12 lg:top-0 lg:hidden">
+            <div className="absolute self-center right-0 top-4 lg:top-0 lg:hidden">
                 <MobileHeader />
             </div>
             {/* TITLE & LINKS  */}
             <div className="flex w-full mt-2 items-center justify-center py-4">
-                <Link
-                    className="absolute bg-white px-6 py-2 rounded-full self-center flex items-center underline underline-offset-2 text-blue-500 top-24 lg:top-0 lg:left-4 lg:hidden"
-                    href="tel:7048423535"
-                >
-                    <FaPhone className="mr-2" />
-                    <span>704-842-3535</span>
-                </Link>
                 <div className="flex items-center">
                     <Link href="/" className="lg:mr-10">
                         {/* TODO: LOGO */}
@@ -42,7 +35,7 @@ export default function Navbar() {
                     <ul className="hidden text-gray-600 items-center lg:flex">
                         {NavMenu.map((item: NavMenuType) => (
                             <li
-                                className={`mx-2 transition-all duration-300 ease-in-out hover:text-blue-700 hover:underline ${
+                                className={`mx-2 transition-all duration-300 ease-in-out hover:text-emerald-700 hover:underline ${
                                     pathname === item.link ? "underline" : ""
                                 }`}
                                 key={item.title}
