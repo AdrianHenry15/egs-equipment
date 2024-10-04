@@ -4,8 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
-import { FaPhone } from "react-icons/fa6";
-
 import Logo from "@/public/logos/placeholder.webp";
 
 import MobileHeader from "./MobileMenu";
