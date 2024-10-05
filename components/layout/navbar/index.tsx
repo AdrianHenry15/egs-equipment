@@ -33,7 +33,7 @@ export default function Navbar() {
                     <ul className="hidden text-gray-600 items-center lg:flex">
                         {NavMenu.map((item: NavMenuType) => (
                             <li
-                                className={`mx-2 transition-all duration-300 ease-in-out hover:text-emerald-700 hover:underline ${
+                                className={`mx-2 transition-all duration-300 ease-in-out hover:text-green-600 hover:underline ${
                                     pathname === item.link ? "underline" : ""
                                 }`}
                                 key={item.title}

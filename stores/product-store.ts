@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
+
 import { ProductType } from "@/lib/types";
 
 interface ProductState {
@@ -14,13 +15,19 @@ export const useProductStore = create<ProductState>((set) => ({
     isLoading: false,
     error: null,
     fetchProducts: async () => {
-        set({ isLoading: true });
+        set({ isLoading: true, error: null });
         try {
-            const response = await axios.get("/api/products");
+            const response = await axios.get<ProductType[]>("/api/products");
             set({ products: response.data, isLoading: false });
-        } catch (error) {
-            set({ error: "Failed to fetch products", isLoading: false });
-            console.error(error);
+        } catch (error: unknown) {
+            if (axios.isAxiosError(error) && error.response) {
+                set({
+                    error: error.response.data.message || "Failed to fetch products",
+                    isLoading: false,
+                });
+            } else {
+                set({ error: "An unknown error occurred", isLoading: false });
+            }
         }
     },
 }));

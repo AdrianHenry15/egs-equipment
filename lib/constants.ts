@@ -1,6 +1,6 @@
 import { NavMenuType } from "./types";
 
-export type Category = "";
+export type Category = "Synthetic" | "Natural" | "Aerators" | "Debris Blowers";
 
 export type NavMenuItems = "Home" | "About" | "Contact" | "Products" | "Parts";
 

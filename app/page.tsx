@@ -1,5 +1,6 @@
 import Splash from "@/components/splash";
 import FieldPic from "@/public/machine-2.jpg";
+import ProductRow from "../components/products/product-row";
 
 export default function Home() {
     return (
@@ -12,6 +13,7 @@ export default function Home() {
                 img={FieldPic}
                 title="Eckert Equipment"
             />
+            <ProductRow category="Synthetic" />
         </div>
     );
 }
