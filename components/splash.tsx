@@ -56,7 +56,7 @@ const Splash = (props: ISplashProps) => {
                 {/* TEXT CONTAINER */}
                 <div className="flex flex-col w-full top-[30%] p-4 md:absolute md:p-8">
                     <span>
-                        <Image src={Logo} alt="logo" className="w-24 py-2" />
+                        <Image src={Logo} alt="logo" className="w-24 py-2 " />
                     </span>
                     <h1 className="text-white text-3x1 md:text-5xl">{props.title}</h1>
                     <div className="my-4">

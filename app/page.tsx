@@ -1,5 +1,5 @@
 import Splash from "@/components/splash";
-import FieldPic from "@/public/baseball-field.jpg";
+import FieldPic from "@/public/machine-2.jpg";
 
 export default function Home() {
     return (

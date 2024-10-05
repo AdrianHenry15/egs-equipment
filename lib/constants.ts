@@ -1,6 +1,6 @@
 import { NavMenuType } from "./types";
 
-export type Collection = "";
+export type Category = "";
 
 export type NavMenuItems = "Home" | "About" | "Contact" | "Products" | "Parts";
 

@@ -9,5 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsPage() {
-    return <div className="flex flex-col justify-between relative w-full">Products Page</div>;
+    return (
+        <div className="flex flex-col justify-center items-center h-screen relative w-full">
+            Products Page
+        </div>
+    );
 }

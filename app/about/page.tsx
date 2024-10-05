@@ -9,5 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-    return <div className="flex flex-col justify-between relative w-full">About Page</div>;
+    return (
+        <div className="flex flex-col justify-center items-center h-screen relative w-full">
+            About Page
+        </div>
+    );
 }

@@ -10,21 +10,6 @@ import MobileHeader from "./MobileMenu";
 import { NavMenu } from "../../../lib/constants";
 import { NavMenuType } from "../../../lib/types";
 
-// TODO: Navbar item dropdown
-// Products
-// ├── Grass Type
-// │   ├── Synthetic Grass
-// │   └── Natural Grass
-// ├── Brand
-// │   ├── Toro
-// │   ├── John Deere
-// │   ├── Husqvarna
-// │   └── Exmark
-// └── Terrain Type
-//     ├── Sports Fields
-//     ├── Golf Courses
-//     └── Municipal Areas
-
 export default function Navbar() {
     const pathname = usePathname();
 
