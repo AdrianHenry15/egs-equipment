@@ -37,7 +37,7 @@ const ProductItem = (props: ProductItemProps) => {
             href={`/products/${product.id}`}
             className="relative items-center my-24 justify-center flex flex-col px-12 flex-shrink-0 w-[400px] h-[280px] rounded-md border-white"
         >
-            <div className="flex w-[300px] h-[170px] relative">
+            <div className="flex w-[300px] min-h-[170px] relative">
                 <Image
                     className="object-cover opacity-75  flex rounded-md hover:scale-105 transition-transform duration-300 ease-in-out"
                     width={400}
