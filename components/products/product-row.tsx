@@ -28,7 +28,7 @@ const ProductRow = (props: IProductRowProps) => {
         >
             <Link
                 href={`/products/${CategoryName}`}
-                className="text-4xl mb-24 z-50 font-semibold cursor-pointer text-white absolute mt-6 ml-6"
+                className="text-4xl mb-24 z-10 font-semibold cursor-pointer text-white absolute mt-6 ml-6"
             >
                 {category ?? "All Products"}
             </Link>

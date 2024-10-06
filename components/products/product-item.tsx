@@ -39,7 +39,7 @@ const ProductItem = (props: ProductItemProps) => {
         >
             <div className="flex w-[300px] min-h-[170px] relative">
                 <Image
-                    className="object-cover opacity-75  flex rounded-md hover:scale-105 transition-transform duration-300 ease-in-out"
+                    className="object-cover opacity-75 flex rounded-md hover:scale-105 transition-transform duration-300 ease-in-out w-full h-full"
                     width={400}
                     height={400}
                     src={product.image}
@@ -48,7 +48,7 @@ const ProductItem = (props: ProductItemProps) => {
                 <Image
                     src={getProductBrandImage(product.equipment_details.brand)}
                     alt="brand-logo"
-                    className="flex absolute left-0 bottom-0 w-24 text-zinc-400 font-semibold mr-2 ml-1"
+                    className="flex absolute left-2 bottom-2 w-16 sm:w-24"
                 />
             </div>
             {/* PRODUCT TAB */}
