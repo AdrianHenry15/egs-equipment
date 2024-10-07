@@ -1,10 +1,10 @@
 import { NavMenuType } from "./types";
 
-export type Category = "Synthetic" | "Natural" | "Aerators" | "Debris Blowers";
-
+// String Unions
+export type Category = "Synthetic" | "Natural" | "Aerator" | "Debris Blower";
 export type NavMenuItems = "Home" | "About" | "Contact" | "Products" | "Parts";
-
 export type NavMenuLinks = "/" | "/about" | "/contact" | "/products" | "/parts";
+export type EquipmentBrand = "" | "SISIS" | "Syn-Pro" | "Buffalo Turbine" | "Dennis" | "Eastman";
 
 export enum AltNavMenuLinks {
     CONTACT_US = "/contact-us",

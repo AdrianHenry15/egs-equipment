@@ -14,6 +14,9 @@ export default function Home() {
                 title="Eckert Equipment"
             />
             <ProductRow category="Synthetic" />
+            <ProductRow category="Natural" />
+            <ProductRow category="Aerator" />
+            <ProductRow category="Debris Blower" />
         </div>
     );
 }
