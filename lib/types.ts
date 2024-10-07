@@ -1,12 +1,10 @@
 import { StaticImageData } from "next/image";
-import { Category } from "./constants";
+import { Category, EquipmentBrand } from "./constants";
 
 export type NavMenuType = {
     title: string;
     link: string;
 };
-
-export type EquipmentBrand = "" | "SISIS" | "Syn-Pro" | "Buffalo Turbine" | "Dennis";
 
 export type ProductType = {
     id: string;
