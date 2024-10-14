@@ -1,17 +1,17 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Synthetic | Eckert Equipment",
-    description: "Performance Meets Perfection",
+    title: "Finance Options | Eckert Equipment",
+    description: "Our finance options",
     icons: {
         icon: "/logos/placeholder.webp",
     },
 };
 
-export default function SyntheticProductPage() {
+export default function FinanceOptionsPage() {
     return (
         <div className="flex flex-col justify-center items-center h-screen relative w-full">
-            Synthetic Product Page
+            Finance Options Page
         </div>
     );
 }

@@ -3,15 +3,69 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useState } from "react";
 
 import Logo from "@/public/logos/placeholder.webp";
 
-import MobileHeader from "./MobileMenu";
+import MobileHeader from "./mobile-menu";
 import { NavMenu } from "../../../lib/constants";
-import { NavMenuType } from "../../../lib/types";
+import { BiChevronDown } from "react-icons/bi";
+import ProductsMenu from "./products-menu";
 
+// TODO: Update navbar to Home, Products [Natural Grass, Synthetic Turf, All Purpose], Parts & Service, About, Finance Options]
 export default function Navbar() {
+    // Constants
     const pathname = usePathname();
+
+    // State
+    const [productsMenuOpen, setProductsMenuOpen] = useState(false);
+
+    // Render
+    const renderNavMenu = () => {
+        return NavMenu.map((item) => {
+            if (item.title === "Products") {
+                return (
+                    <div className="relative cursor-pointer" key={item.title}>
+                        <span
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setProductsMenuOpen(!productsMenuOpen);
+                            }}
+                        >
+                            <li
+                                className={` flex items-center mx-2 transition-all duration-300 ease-in-out hover:text-green-600 hover:underline ${
+                                    pathname === item.link ? "underline" : ""
+                                }`}
+                            >
+                                {item.title}
+                                <BiChevronDown size={20} />
+                            </li>
+                        </span>
+                        {productsMenuOpen && (
+                            <ProductsMenu setProductsMenuOpen={() => setProductsMenuOpen(false)} />
+                        )}
+                    </div>
+                );
+            } else {
+                return (
+                    <Link
+                        onClick={() => setProductsMenuOpen(false)}
+                        key={item.title}
+                        href={item.link}
+                        className="mr-2"
+                    >
+                        <li
+                            className={` flex items-center mx-2 transition-all duration-300 ease-in-out hover:text-green-600 hover:underline ${
+                                pathname === item.link ? "underline" : ""
+                            }`}
+                        >
+                            {item.title}
+                        </li>
+                    </Link>
+                );
+            }
+        });
+    };
 
     return (
         <nav
@@ -31,7 +85,7 @@ export default function Navbar() {
                     </Link>
                     {/* LINKS  */}
                     <ul className="hidden text-gray-600 items-center lg:flex">
-                        {NavMenu.map((item: NavMenuType) => (
+                        {/* {NavMenu.map((item: NavMenuType) => (
                             <li
                                 className={`mx-2 transition-all duration-300 ease-in-out hover:text-green-600 hover:underline ${
                                     pathname === item.link ? "underline" : ""
@@ -42,7 +96,8 @@ export default function Navbar() {
                                     {item.title}
                                 </Link>
                             </li>
-                        ))}
+                        ))} */}
+                        {renderNavMenu()}
                     </ul>
                 </div>
                 {/* NAV BUTTONS */}
