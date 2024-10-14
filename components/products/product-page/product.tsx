@@ -4,7 +4,12 @@ import Image from "next/image";
 import React from "react";
 
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import { Products } from "@/lib/products";
+import {
+    SyntheticProducts,
+    NaturalProducts,
+    AeratorProducts,
+    DebrisBlowerProducts,
+} from "@/lib/products";
 
 interface IProductProps {
     productId: string;
@@ -14,7 +19,14 @@ const Product = (props: IProductProps) => {
     // Props
     const { productId } = props;
 
-    const product = Products.find((p) => p.id === productId);
+    const AllProducts = [
+        ...SyntheticProducts,
+        ...NaturalProducts,
+        ...AeratorProducts,
+        ...DebrisBlowerProducts,
+    ];
+
+    const product = AllProducts.find((p) => p.id === productId);
 
     if (!product) return <p>Product not found.</p>;
 
