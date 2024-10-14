@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import ProductItem from "./product-item";
-import { ProductType } from "@/lib/types";
+import { EquipmentBrand, ProductType } from "@/lib/types";
 import { Category } from "@/lib/types";
 import {
     AeratorProducts,
@@ -15,11 +15,13 @@ import {
 
 interface IProductRowProps {
     category: Category;
+    title?: string;
+    brand?: EquipmentBrand; // Optional brand prop
     className?: string;
 }
 
 const ProductRow = (props: IProductRowProps) => {
-    const { category, className } = props;
+    const { category, brand, className, title } = props;
 
     // Variants for animation
     const itemVariants = {
@@ -27,20 +29,33 @@ const ProductRow = (props: IProductRowProps) => {
         visible: { opacity: 1, x: 0 },
     };
 
-    // This function selects the appropriate products array based on the category
+    // This function selects the appropriate products array based on the category and optional brand
     const getProductsByCategory = (): ProductType[] => {
+        let products: ProductType[] = [];
+
         switch (category) {
             case "Aerator":
-                return AeratorProducts;
+                products = AeratorProducts;
+                break;
             case "Debris Blower":
-                return DebrisBlowerProducts;
+                products = DebrisBlowerProducts;
+                break;
             case "Natural":
-                return NaturalProducts;
+                products = NaturalProducts;
+                break;
             case "Synthetic":
-                return SyntheticProducts;
+                products = SyntheticProducts;
+                break;
             default:
                 return []; // Return an empty array if no matching category
         }
+
+        // Filter by brand if provided
+        if (brand) {
+            products = products.filter((product) => product.equipment_details.brand === brand);
+        }
+
+        return products;
     };
 
     const products = getProductsByCategory();
@@ -55,7 +70,7 @@ const ProductRow = (props: IProductRowProps) => {
                 href={`/products/${categoryName}`}
                 className="text-4xl mb-24 z-50 cursor-pointer text-white absolute mt-6 ml-6"
             >
-                {category ?? "All Products"}
+                {brand ? title : category}
             </Link>
 
             {/* Products carousel */}
