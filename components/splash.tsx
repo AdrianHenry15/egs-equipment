@@ -44,8 +44,8 @@ const Splash = (props: ISplashProps) => {
 
     return (
         <div ref={containerRef} className="fade-in w-full text-white bg-black md:h-[750px]">
-            <div className="w-full h-full">
-                <div className="absolute w-full h-full bg-gradient-to-r from-black hidden md:flex"></div>
+            <div className="w-full h-full relative">
+                <div className="absolute w-full h-full bg-gradient-to-r from-zinc-900 hidden md:flex"></div>
                 <span>
                     <Image
                         className="w-full h-full object-cover object-top"
@@ -54,7 +54,7 @@ const Splash = (props: ISplashProps) => {
                     />
                 </span>
                 {/* TEXT CONTAINER */}
-                <div className="flex flex-col w-full top-[30%] p-4 md:absolute md:p-8">
+                <div className="flex flex-col w-full top-[30%] z-10 p-4 md:absolute md:p-8">
                     <span className="hidden md:flex">
                         <Image src={Logo} alt="logo" className="w-24 py-2" />
                     </span>

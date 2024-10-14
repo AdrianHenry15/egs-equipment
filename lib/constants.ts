@@ -1,15 +1,30 @@
-import { NavMenuType } from "./types";
+// TODO: Update navbar to Home, Products [Natural Grass, Synthetic Turf, All Purpose], Parts & Service, About, Finance Options]
 
-// String Unions
-export type Category = "Synthetic" | "Natural" | "Aerator" | "Debris Blower";
-export type NavMenuItems = "Home" | "About" | "Contact" | "Products" | "Parts";
-export type NavMenuLinks = "/" | "/about" | "/contact" | "/products" | "/parts";
-export type EquipmentBrand = "" | "SISIS" | "Syn-Pro" | "Buffalo Turbine" | "Dennis" | "Eastman";
+import { NavMenuType } from "./types";
 
 export enum AltNavMenuLinks {
     CONTACT_US = "/contact-us",
     ESTIMATE = "/estimate",
 }
+
+export const ProductsMenuItems: NavMenuType[] = [
+    {
+        title: "All Products",
+        link: "/products",
+    },
+    {
+        title: "Natural Grass",
+        link: "/products/natural-grass",
+    },
+    {
+        title: "Synthetic Turf",
+        link: "/products/synthetic-turf",
+    },
+    {
+        title: "All Purpose",
+        link: "/products/all-purpose",
+    },
+];
 
 export const NavMenu: NavMenuType[] = [
     {
@@ -17,15 +32,19 @@ export const NavMenu: NavMenuType[] = [
         link: "/",
     },
     {
+        title: "Products",
+        link: "",
+    },
+    {
+        title: "Parts & Services",
+        link: "/parts-services",
+    },
+    {
         title: "About",
         link: "/about",
     },
     {
-        title: "Products",
-        link: "/products",
-    },
-    {
-        title: "Contact",
-        link: "/contact",
+        title: "Finance Options",
+        link: "/finance-options",
     },
 ];

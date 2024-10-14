@@ -1,17 +1,17 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact Us | Eckert Equipment",
-    description: "Get our attention",
+    title: "Parts & Services | Eckert Equipment",
+    description: "All of our parts and services on one page",
     icons: {
         icon: "/logos/placeholder.webp",
     },
 };
 
-export default function ContactPage() {
+export default function PartsServicesPage() {
     return (
         <div className="flex flex-col justify-center items-center h-screen relative w-full">
-            Contact Page
+            Parts & Services Page
         </div>
     );
 }

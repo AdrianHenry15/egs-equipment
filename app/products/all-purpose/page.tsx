@@ -1,17 +1,17 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Natural | Eckert Equipment",
-    description: "Nurture Nature, One Lawn at a Time!",
+    title: "All Purpose | Eckert Equipment",
+    description: "For everything you need for freshness",
     icons: {
         icon: "/logos/placeholder.webp",
     },
 };
 
-export default function NaturalProductPage() {
+export default function AllPurposeProductPage() {
     return (
         <div className="flex flex-col justify-center items-center h-screen relative w-full">
-            Natural Product Page
+            All Purpose Product Page
         </div>
     );
 }
