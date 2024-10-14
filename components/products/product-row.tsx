@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import ProductItem from "./product-item";
 import { ProductType } from "@/lib/types";
-import { Category } from "@/lib/constants";
+import { Category } from "@/lib/types";
 import {
     AeratorProducts,
     DebrisBlowerProducts,
