@@ -72,7 +72,7 @@ const SearchBar: React.FC = () => {
     };
 
     return (
-        <div className="relative w-full my-4">
+        <div className="relative my-4 w-[300px] md:w-[400px]">
             <input
                 type="text"
                 placeholder="Search products..."

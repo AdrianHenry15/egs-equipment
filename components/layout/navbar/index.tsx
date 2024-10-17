@@ -9,8 +9,9 @@ import Logo from "@/public/logos/placeholder.webp";
 
 import MobileHeader from "./mobile-menu";
 import { NavMenu } from "../../../lib/constants";
-import { BiChevronDown } from "react-icons/bi";
+import { BiChevronDown, BiSearch } from "react-icons/bi";
 import ProductsMenu from "./products-menu";
+import SearchBar from "@/components/search-bar";
 
 // TODO: Update navbar to Home, Products [Natural Grass, Synthetic Turf, All Purpose], Parts & Service, About, Finance Options]
 export default function Navbar() {
@@ -19,6 +20,7 @@ export default function Navbar() {
 
     // State
     const [productsMenuOpen, setProductsMenuOpen] = useState(false);
+    const [mobileSearch, setMobileSearch] = useState(false);
 
     // Render
     const renderNavMenu = () => {
@@ -72,6 +74,18 @@ export default function Navbar() {
             id="nav-bar"
             className={`bg-white text-sm font-semibold flex w-full sticky top-0 z-50 shadow-md lg:pb-0`}
         >
+            {mobileSearch && (
+                <div className="absolute flex justify-center items-center self-center w-full h-full ml-4 lg:hidden">
+                    <SearchBar />
+                </div>
+            )}
+            <div className="flex relative justify-center items-center self-center lg:hidden">
+                <BiSearch
+                    onClick={() => setMobileSearch(!mobileSearch)}
+                    className="text-black cursor-pointer absolute ml-14"
+                    size={25}
+                />
+            </div>
             {/* MOBILE CONTAINER */}
             <div className="absolute self-center right-0 top-4 lg:top-0 lg:hidden">
                 <MobileHeader />
@@ -84,23 +98,12 @@ export default function Navbar() {
                         <Image className="" src={Logo} alt="logo" width={35} />
                     </Link>
                     {/* LINKS  */}
-                    <ul className="hidden text-gray-600 items-center lg:flex">
-                        {/* {NavMenu.map((item: NavMenuType) => (
-                            <li
-                                className={`mx-2 transition-all duration-300 ease-in-out hover:text-green-600 hover:underline ${
-                                    pathname === item.link ? "underline" : ""
-                                }`}
-                                key={item.title}
-                            >
-                                <Link href={item.link} className="">
-                                    {item.title}
-                                </Link>
-                            </li>
-                        ))} */}
-                        {renderNavMenu()}
-                    </ul>
+                    <ul className="hidden text-gray-600 items-center lg:flex">{renderNavMenu()}</ul>
                 </div>
                 {/* NAV BUTTONS */}
+            </div>
+            <div className="hidden lg:flex">
+                <SearchBar />
             </div>
         </nav>
     );
