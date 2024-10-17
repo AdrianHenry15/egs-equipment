@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { Controller, FieldErrors } from "react-hook-form";
 
@@ -10,10 +11,17 @@ interface IInputProps {
     errors?: FieldErrors;
     errorRequiredText?: string;
     errorPatternText?: string;
-    onChange?: (value: string) => void;
 }
 
-const Input = ({ inputName, control, errors, errorRequiredText, errorPatternText, placeholder, defaultValue, onChange }: IInputProps) => {
+const Input = ({
+    inputName,
+    control,
+    errors,
+    errorRequiredText,
+    errorPatternText,
+    placeholder,
+    defaultValue,
+}: IInputProps) => {
     const InputClass = "border-2 border-gray-400 my-2 p-2 rounded-sm w-full shadow-md";
 
     return (
@@ -23,7 +31,12 @@ const Input = ({ inputName, control, errors, errorRequiredText, errorPatternText
             defaultValue={defaultValue}
             render={({ field }) => (
                 <div>
-                    <input {...field} className={InputClass} type="text" placeholder={placeholder} />
+                    <input
+                        {...field}
+                        className={InputClass}
+                        type="text"
+                        placeholder={placeholder}
+                    />
                     {errors && errors[inputName] && errors[inputName]?.type === "required" && (
                         <p className="text-sm text-red-600 ml-4">{errorRequiredText}</p>
                     )}

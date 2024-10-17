@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { Controller } from "react-hook-form";
 
@@ -16,7 +17,11 @@ const Textarea = ({ inputName, control, placeholder }: IInputProps) => {
             defaultValue={""}
             render={({ field }) => (
                 <div>
-                    <textarea className="border-2 border-gray-400 my-2 p-2 w-full h-40" placeholder={placeholder} {...field} />
+                    <textarea
+                        className="border-2 border-gray-400 my-2 p-2 w-full h-40"
+                        placeholder={placeholder}
+                        {...field}
+                    />
                 </div>
             )}
         ></Controller>

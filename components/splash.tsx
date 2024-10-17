@@ -55,7 +55,7 @@ const Splash = (props: ISplashProps) => {
                     <Image
                         src={Logo}
                         alt="logo"
-                        className="w-10 absolute z-10 flex left-2 bottom-2 md:hidden"
+                        className="w-10 absolute z-10 flex left-2 bottom-24 md:hidden"
                     />
                 </span>
                 {/* TEXT CONTAINER */}

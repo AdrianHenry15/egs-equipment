@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React from "react";
@@ -12,7 +13,14 @@ interface IDropdownProps {
     errorText: string;
 }
 
-const Dropdown = ({ inputName, inputLabel, options, errorText, control, errors }: IDropdownProps) => {
+const Dropdown = ({
+    inputName,
+    inputLabel,
+    options,
+    errorText,
+    control,
+    errors,
+}: IDropdownProps) => {
     const InputClass = "border-2 border-gray-400 my-2 p-2 rounded-sm w-full shadow-md";
 
     return (
@@ -32,7 +40,9 @@ const Dropdown = ({ inputName, inputLabel, options, errorText, control, errors }
                     </select>
                 )}
             />
-            {errors[inputName] && errors[inputName]?.type === "required" && <p className="text-sm text-red-600 ml-4">{errorText}</p>}
+            {errors[inputName] && errors[inputName]?.type === "required" && (
+                <p className="text-sm text-red-600 ml-4">{errorText}</p>
+            )}
         </div>
     );
 };
