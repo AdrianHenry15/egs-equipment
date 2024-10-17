@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PartsServicesPage() {
     return (
-        <div className="flex flex-col justify-center items-center  relative w-full">
+        <div className="flex flex-col justify-center items-center relative w-full">
             <ContactForm />
         </div>
     );
