@@ -63,18 +63,18 @@ const ProductRow = (props: IProductRowProps) => {
 
     return (
         <div
-            className={`${className} w-full bg-zinc-600 text-white relative border-y border-white shadow-lg overflow-x-hidden`}
+            className={`${className} w-full text-white relative border-y border-white shadow-lg overflow-hidden bg-white`}
         >
             {/* Category name as a link */}
             <Link
                 href={`/products/${categoryName}`}
-                className="text-4xl mb-24 z-50 cursor-pointer text-white absolute mt-6 ml-6"
+                className="text-4xl mb-24 z-50 cursor-pointer text-black absolute mt-12 ml-6"
             >
                 {brand ? title : category}
             </Link>
 
             {/* Products carousel */}
-            <div className="flex items-center overflow-x-auto overflow-y-hidden h-[29rem] space-x-6 px-6">
+            <div className="flex items-center overflow-x-hidden overflow-y-hidden h-[29rem] space-x-6 px-6">
                 {products.map((product: ProductType) => (
                     <motion.div
                         key={product.id}
