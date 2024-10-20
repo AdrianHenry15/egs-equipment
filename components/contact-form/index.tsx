@@ -110,7 +110,7 @@ const ContactForm = () => {
             <div className="flex flex-col w-11/12 bg-zinc-100 p-6 rounded-2xl shadow-white shadow-lg border-2 md:w-[650px]">
                 {/* LOGO */}
                 <div className="flex justify-center my-10">
-                    <Image loading="eager" width={150} src={Logo} alt="Brite Logo" />
+                    <Image loading="eager" width={150} src={Logo} alt="logo-icon" />
                 </div>
                 {/* FORM */}
                 <form className="self-center w-full md:w-2/3" onSubmit={handleSubmit(onSubmit)}>
