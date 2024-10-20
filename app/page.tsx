@@ -13,10 +13,28 @@ export default function Home() {
                 img={FieldPic}
                 title="Eckert Equipment"
             />
-            <ProductRow category="Synthetic" />
-            <ProductRow category="Natural" />
-            <ProductRow category="Aerator" />
-            <ProductRow category="Debris Blower" />
+            <ProductRow
+                brandLogos={["Syn-Pro"]}
+                className="pt-24"
+                title="Precision tools for perfect Synthetic Turf"
+                category="Synthetic"
+            />
+            <ProductRow
+                brandLogos={["SISIS", "Dennis", "Eastman"]}
+                title="Expert equipment for thriving Natural Grass."
+                category="Natural"
+            />
+            <ProductRow
+                brandLogos={["SISIS"]}
+                title="Aerators that breathe life into your lawn."
+                category="Aerator"
+            />
+            <ProductRow
+                className="pb-48"
+                brandLogos={["Buffalo Turbine"]}
+                title="Debris blowers that clear the way for a pristine landscape."
+                category="Debris Blower"
+            />
         </div>
     );
 }

@@ -23,7 +23,13 @@ export default function SyntheticProductPage() {
                 img={SplashPic}
                 title="Synthetic Turf Equipment"
             />
-            <ProductRow category="Synthetic" brand="Syn-Pro" title="Synthetic Turf By Syn-Pro" />
+            <ProductRow
+                className="pb-48"
+                brandLogos={["Syn-Pro"]}
+                category="Synthetic"
+                brandFilter="Syn-Pro"
+                title="Synthetic Turf Equipment By Syn-Pro"
+            />
         </div>
     );
 }

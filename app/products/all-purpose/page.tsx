@@ -24,10 +24,17 @@ export default function AllPurposeProductPage() {
                 title="All Purpose Equipment"
             />
             {/* All Purpose */}
-            <ProductRow category="Aerator" brand="SISIS" title="Aerators By SISIS" />
             <ProductRow
+                brandLogos={["SISIS"]}
+                category="Aerator"
+                brandFilter="SISIS"
+                title="Aerators By SISIS"
+            />
+            <ProductRow
+                className="pb-48"
+                brandLogos={["Buffalo Turbine"]}
                 category="Debris Blower"
-                brand="Buffalo Turbine"
+                brandFilter="Buffalo Turbine"
                 title="Debris Blowers By Buffalo Turbine"
             />
         </div>

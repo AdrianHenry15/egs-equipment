@@ -23,10 +23,27 @@ export default function ProductsPage() {
                 img={SplashPic}
                 title="All Products"
             />
-            <ProductRow category="Natural" />
-            <ProductRow category="Synthetic" />
-            <ProductRow category="Aerator" />
-            <ProductRow category="Debris Blower" />
+            <ProductRow
+                brandLogos={["Syn-Pro"]}
+                title="Engineered for Excellence – The Perfect Turf, Every Time."
+                category="Synthetic"
+            />
+            <ProductRow
+                brandLogos={["SISIS", "Dennis", "Eastman"]}
+                title="Naturally Strong, Perfectly Green – Equipment Built for Your Turf."
+                category="Natural"
+            />
+            <ProductRow
+                title="Revitalize Your Turf – Aerators for Healthier, Greener Lawns."
+                brandLogos={["SISIS"]}
+                category="Aerator"
+            />
+            <ProductRow
+                className="pb-48"
+                title="Clear the Way – Power-Packed Debris Blowers for a Pristine Lawn."
+                brandLogos={["Buffalo Turbine"]}
+                category="Debris Blower"
+            />
         </div>
     );
 }

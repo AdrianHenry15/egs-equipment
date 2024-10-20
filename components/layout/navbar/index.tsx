@@ -72,7 +72,7 @@ export default function Navbar() {
     return (
         <nav
             id="nav-bar"
-            className={`bg-white text-sm font-semibold flex w-full sticky top-0 z-[100] shadow-md lg:pb-0`}
+            className={`bg-white/90 text-sm font-semibold flex w-full sticky top-0 z-[101] shadow-md lg:pb-0`}
         >
             {mobileSearch && (
                 <div className="absolute flex justify-center items-center self-center w-full h-full ml-4 lg:hidden">

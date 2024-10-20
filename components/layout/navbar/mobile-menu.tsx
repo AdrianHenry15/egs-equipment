@@ -81,7 +81,7 @@ export default function MobileMenu() {
                 <Bars3Icon className="h-6 text-black" />
             </button>
             <Transition show={isOpen}>
-                <Dialog onClose={closeMobileMenu} className="relative z-50">
+                <Dialog onClose={closeMobileMenu} className="relative z-[9050]">
                     <TransitionChild
                         as={Fragment}
                         enter="transition-all ease-in-out duration-100"

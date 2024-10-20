@@ -23,8 +23,19 @@ export default function NaturalGrassProductPage() {
                 img={SplashPic}
                 title="Natural Grass Equipment"
             />
-            <ProductRow category="Natural" brand="Dennis" title="Natural By Dennis" />
-            <ProductRow category="Natural" brand="SISIS" title="Natural By SISIS" />
+            <ProductRow
+                brandLogos={["Dennis"]}
+                category="Natural"
+                brandFilter="Dennis"
+                title="Natural Grass Equipment By Dennis"
+            />
+            <ProductRow
+                className="pb-48"
+                brandLogos={["SISIS"]}
+                category="Natural"
+                brandFilter="SISIS"
+                title="Natural Grass Equipment By SISIS"
+            />
         </div>
     );
 }
