@@ -83,12 +83,11 @@ const ContactForm = () => {
         lastName: getValues("lastName"),
         phone: getValues("phone"),
         email: getValues("email"),
-        plan: getValues("plan"),
         comment: getValues("comment"),
     };
 
     return (
-        <section className="flex flex-col items-center py-20 shadow-inner relative w-full md:px-4">
+        <section className="flex flex-col bg-white items-center py-20 shadow-inner relative w-full md:px-4">
             {isOpen && (
                 <ConfirmationModal
                     loading={loading}
@@ -104,11 +103,11 @@ const ContactForm = () => {
                 />
             )}
             {loading ? <Loader /> : null}
-            <h1 className="text-3xl text-white mb-10 font-light animate-bounce">{`${
+            <h1 className="text-3xl text-black mb-10 font-light animate-bounce">{`${
                 pathname === "/contact-us" ? "Contact Us" : "Get Your Free Estimate!"
             }`}</h1>
             {/* FORM CONTAINER */}
-            <div className="flex flex-col w-11/12 bg-black p-6 rounded-2xl shadow-white shadow-lg border-2 md:w-[650px]">
+            <div className="flex flex-col w-11/12 bg-zinc-100 p-6 rounded-2xl shadow-white shadow-lg border-2 md:w-[650px]">
                 {/* LOGO */}
                 <div className="flex justify-center my-10">
                     <Image loading="eager" width={150} src={Logo} alt="Brite Logo" />
