@@ -2,7 +2,7 @@ import ContactForm from "@/components/contact-form";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Parts & Services | Eckert Equipment",
+    title: "Parts & Services | EGS Equipment",
     description: "All of our parts and services on one page",
     icons: {
         icon: "/logos/placeholder.webp",

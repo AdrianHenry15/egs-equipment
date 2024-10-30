@@ -35,14 +35,23 @@ export const NavMenu: NavMenuType[] = [
         title: "Products",
         link: "",
     },
+    // Parts Order Form
     {
-        title: "Parts & Services",
-        link: "/parts-services",
+        title: "Parts Form",
+        link: "/parts-form",
     },
-    {
-        title: "About",
-        link: "/about",
-    },
+    // {
+    //     title: "Contact",
+    //     link: "/contact-us",
+    // },
+    // {
+    //     title: "Parts & Services",
+    //     link: "/parts-services",
+    // },
+    // {
+    //     title: "About",
+    //     link: "/about",
+    // },
     {
         title: "Finance Options",
         link: "/finance-options",

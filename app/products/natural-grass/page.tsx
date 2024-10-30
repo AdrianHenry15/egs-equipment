@@ -5,7 +5,7 @@ import Splash from "@/components/splash";
 import SplashPic from "@/public/landscape.jpg";
 
 export const metadata: Metadata = {
-    title: "Natural Grass | Eckert Equipment",
+    title: "Natural Grass | EGS Equipment",
     description: "Nurture Nature, One Lawn at a Time!",
     icons: {
         icon: "/logos/placeholder.webp",

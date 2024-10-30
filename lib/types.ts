@@ -2,9 +2,9 @@ import { StaticImageData } from "next/image";
 
 // String Unions
 export type Category = "Synthetic" | "Natural" | "Aerator" | "Debris Blower";
-export type NavMenuItems = "Home" | "Products" | "Parts & Services" | "About" | "Finance Options";
+export type NavMenuItems = "Home" | "Products" | "Parts Form" | "About" | "Finance Options";
 export type ProductNavItems = "All Products" | "Natural Grass" | "Synthetic Turf" | "All Purpose";
-export type NavMenuLinks = "" | "/" | "/parts-services" | "/about" | "/finance-options";
+export type NavMenuLinks = "" | "/" | "/parts-form" | "/about" | "/finance-options";
 export type ProductNavLinks =
     | "/products"
     | "/products/natural-grass"

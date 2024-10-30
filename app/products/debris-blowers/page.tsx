@@ -6,7 +6,7 @@ import SplashPic from "@/public/baseball-field.jpg";
 import ProductRow from "@/components/products/product-row";
 
 export const metadata: Metadata = {
-    title: "Debris Blowers | Eckert Equipment",
+    title: "Debris Blowers | EGS Equipment",
     description: "Clear The Clutter, Unleash The Clean",
     icons: {
         icon: "/logos/placeholder.webp",

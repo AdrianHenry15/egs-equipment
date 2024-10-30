@@ -5,7 +5,7 @@ import SplashPic from "@/public/field-lines.jpg";
 import ProductRow from "@/components/products/product-row";
 
 export const metadata: Metadata = {
-    title: "Synthetic Turf | Eckert Equipment",
+    title: "Synthetic Turf | EGS Equipment",
     description: "Performance Meets Perfection",
     icons: {
         icon: "/logos/placeholder.webp",

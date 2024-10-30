@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
-import Logo from "@/public/logos/eckert-trans.png";
+import Logo from "@/public/logos/EGS1.png";
 import Button from "../button";
 import Textarea from "./textarea";
 import Input from "./input";
@@ -162,9 +162,7 @@ const ContactForm = () => {
                         <Button
                             onClick={() => setInputClicked(true)}
                             submit
-                            name={`${
-                                pathname === "/contact-us" ? "Contact Us" : "Get Your Free Estimate"
-                            }`}
+                            name="Submit Request"
                             className="w-full justify-center"
                         ></Button>
                     </div>

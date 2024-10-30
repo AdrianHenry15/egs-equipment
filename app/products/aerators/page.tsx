@@ -6,7 +6,7 @@ import Splash from "@/components/splash";
 import ProductRow from "@/components/products/product-row";
 
 export const metadata: Metadata = {
-    title: "Aerators | Eckert Equipment",
+    title: "Aerators | EGS Equipment",
     description: "Breathe Life Into Your Lawn",
     icons: {
         icon: "/logos/placeholder.webp",

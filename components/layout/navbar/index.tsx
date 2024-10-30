@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useState } from "react";
 
-import Logo from "@/public/logos/placeholder.webp";
+import Logo from "@/public/logos/EGS1.png";
 
 import MobileHeader from "./mobile-menu";
 import { NavMenu } from "../../../lib/constants";
@@ -35,7 +35,7 @@ export default function Navbar() {
                             }}
                         >
                             <li
-                                className={` flex items-center mx-2 transition-all duration-300 ease-in-out hover:text-green-600 hover:underline ${
+                                className={` flex items-center mx-2 transition-all duration-300 ease-in-out hover:text-green-700 hover:underline ${
                                     pathname === item.link ? "underline" : ""
                                 }`}
                             >
@@ -57,7 +57,7 @@ export default function Navbar() {
                         className="mr-2"
                     >
                         <li
-                            className={` flex items-center mx-2 transition-all duration-300 ease-in-out hover:text-green-600 hover:underline ${
+                            className={` flex items-center mx-2 transition-all duration-300 ease-in-out hover:text-green-700 hover:underline ${
                                 pathname === item.link ? "underline" : ""
                             }`}
                         >
@@ -95,7 +95,7 @@ export default function Navbar() {
                 <div className="flex items-center">
                     <Link href="/" className="lg:mr-10">
                         {/* TODO: LOGO */}
-                        <Image className="" src={Logo} alt="logo" width={35} />
+                        <Image className="w-[199px]" src={Logo} alt="logo" />
                     </Link>
                     {/* LINKS  */}
                     <ul className="hidden text-gray-600 items-center lg:flex">{renderNavMenu()}</ul>

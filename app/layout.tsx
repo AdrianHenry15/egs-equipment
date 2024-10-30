@@ -20,10 +20,14 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-    title: "Home | Eckert Equipment",
+    title: "Home | EGS Equipment",
     description: "Flawless Greens, Expert Care",
     icons: {
-        icon: "/logos/placeholder.webp",
+        // icon: {
+        //     url: "/logos/EGS1.png",
+        //     type: "image/png",
+        //     sizes: "128x128",
+        // },
     },
 };
 

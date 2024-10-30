@@ -5,7 +5,7 @@ import SplashPic from "@/public/orange-tractor.jpg";
 import ProductRow from "@/components/products/product-row";
 
 export const metadata: Metadata = {
-    title: "Products | Eckert Equipment",
+    title: "Products | EGS Equipment",
     description: "All of our products on one page",
     icons: {
         icon: "/logos/placeholder.webp",

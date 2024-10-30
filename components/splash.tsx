@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Image from "next/image";
-
-import Logo from "@/public/logos/placeholder.webp";
-
+import { motion } from "framer-motion";
 import Link from "next/link";
+
+import Logo from "@/public/logos/EGS1.png";
+
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface ISplashProps {
@@ -18,32 +19,21 @@ interface ISplashProps {
 }
 // TODO:Use Square Website Home page as reference for this Splash page
 const Splash = (props: ISplashProps) => {
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const options = {
-            threshold: 0.1, // Adjust the threshold as needed (percentage of element visibility)
-        };
-
-        const callback: IntersectionObserverCallback = (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    containerRef.current?.classList.add("show");
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(callback, options);
-
-        if (containerRef.current) {
-            observer.observe(containerRef.current);
-        }
-
-        return () => observer.disconnect(); // Cleanup observer on component unmount
-    }, []);
+    // Variants for animation
+    const itemVariants = {
+        hidden: { opacity: 0, x: 100 },
+        visible: { opacity: 1, x: 0 },
+    };
 
     return (
-        <div ref={containerRef} className="fade-in w-full text-white bg-black md:h-[750px]">
+        <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.01 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="w-full text-white bg-black md:h-[750px]"
+        >
             <div className="w-full h-full relative">
                 <div className="absolute w-full h-full bg-gradient-to-r from-zinc-900 hidden md:flex"></div>
                 <span>
@@ -53,15 +43,16 @@ const Splash = (props: ISplashProps) => {
                         alt={props.title}
                     />
                     <Image
+                        width={200}
                         src={Logo}
                         alt="logo"
-                        className="w-10 absolute z-10 flex left-2 bottom-24 md:hidden"
+                        className="absolute z-10 flex left-2 bottom-24 md:hidden"
                     />
                 </span>
                 {/* TEXT CONTAINER */}
                 <div className="flex flex-col w-full top-[30%] z-10 p-4 md:absolute md:p-8">
                     <span className="hidden md:flex">
-                        <Image src={Logo} alt="logo" className="w-24 py-2" />
+                        <Image src={Logo} alt="logo" className="w-48 py-2" />
                     </span>
                     <h1 className="text-white text-3x1 hidden md:flex md:text-5xl">
                         {props.title}
@@ -82,7 +73,7 @@ const Splash = (props: ISplashProps) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

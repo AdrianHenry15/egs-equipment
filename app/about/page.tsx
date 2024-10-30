@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About | Eckert Equipment",
+    title: "About | EGS Equipment",
     description: "Learn about how we started",
     icons: {
         icon: "/logos/placeholder.webp",

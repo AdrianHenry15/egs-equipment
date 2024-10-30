@@ -35,11 +35,11 @@ const ProductItem = (props: ProductItemProps) => {
     return (
         <Link
             href={`/products/${product.id}`}
-            className="relative items-center justify-center flex flex-col px-12 flex-shrink-0 w-[400px] h-[280px] rounded-md border-white"
+            className="relative items-center justify-center flex flex-col px-12 flex-shrink-0 w-[400px] h-[280px] rounded-md border-white "
         >
-            <div className="flex w-[300px] min-h-[170px] relative">
+            <div className="flex w-[300px] min-h-[170px] relative hover:scale-105 transition-transform duration-300 ease-in-out">
                 <Image
-                    className="object-cover opacity-75 flex rounded-md hover:scale-105 transition-transform duration-300 ease-in-out w-full h-full"
+                    className="object-cover opacity-75 flex rounded-md w-full h-full"
                     width={400}
                     height={400}
                     src={product.image}
@@ -53,7 +53,7 @@ const ProductItem = (props: ProductItemProps) => {
             </div>
             {/* PRODUCT TAB */}
             <div className="flex flex-col bottom-0 items-start p-1 text-xs w-full rounded-full whitespace-nowrap">
-                <p className="flex text-white font-semibold mr-2 ml-1">{product.name}</p>
+                <p className="flex text-black font-semibold mr-2 ml-1">{product.name}</p>
                 <p className="flex text-zinc-400 font-semibold mr-2 ml-1">{product.description}</p>
             </div>
         </Link>
