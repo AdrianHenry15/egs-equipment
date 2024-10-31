@@ -11,13 +11,13 @@ import PitchmarkLogo from "@/public/logos/pitchmark-logo.png";
 
 const PoweredBy = () => {
     return (
-        <section className="flex flex-col justify-center items-center bg-white px-6 py-20 lg:px-10 lg:py-48">
+        <section className="flex flex-col justify-center w-full items-center bg-white px-6 py-20 lg:px-10 lg:py-48">
             <h2 className="text-black text-3xl lg:text-5xl font-bold pb-6 lg:pb-10 text-center">
                 EGS Equipment is Powered By:
             </h2>
-            <div className="flex flex-wrap items-center justify-center gap-8">
+            <div className="flex flex-wrap items-center w-full justify-center gap-8">
                 {/* Howardson Companies */}
-                <div className="flex flex-col items-center mb-6 w-full lg:w-auto p-4 lg:p-16">
+                <div className="flex flex-col items-center mb-6 w-full p-4 lg:p-16">
                     <Image
                         src={HowardsonLogo}
                         alt="Howardson - Leader in Turf Care Equipment"
@@ -29,19 +29,19 @@ const PoweredBy = () => {
                         <Image
                             src={DennisLogo}
                             alt="Dennis - Precision Turf Mowers"
-                            width={75}
+                            width={125}
                             // height={40}
                         />
                         <Image
                             src={SISISLogo}
                             alt="SISIS - Turf Maintenance Tools"
-                            width={75}
+                            width={125}
                             // height={40}
                         />
                         <Image
                             src={SynProLogo}
                             alt="Syn-Pro - Synthetic Turf Equipment"
-                            width={75}
+                            width={125}
                             // height={40}
                         />
                     </div>
