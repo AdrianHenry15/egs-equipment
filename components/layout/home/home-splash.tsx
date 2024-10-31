@@ -27,14 +27,14 @@ const HomeSplash = () => {
                             <div className="hidden absolute w-full bg-gradient-to-r from-black h-screen z-30 md:flex"></div>
                             <div className="flex justify-center relative items-center self-center w-full md:h-full">
                                 <Image
-                                    className="object-cover w-full h-[200px] md:w-full md:h-full"
+                                    className="object-cover w-full h-[500px] md:w-full md:h-full"
                                     src={img}
                                     alt="splash-img"
                                 />
                                 <Image
                                     src={Logo}
                                     alt="logo"
-                                    className="left-0 bottom-0 w-[100px] absolute md:hidden"
+                                    className="left-3 bottom-2 w-[30%] absolute md:hidden"
                                 />
                             </div>
 
@@ -46,7 +46,7 @@ const HomeSplash = () => {
                                         className="w-48 py-2 hidden md:flex"
                                     />
                                 </span>
-                                <h1 className="text-white text-[30px] md:text-5xl">
+                                <h1 className="text-white font-extrabold text-[30px] md:text-5xl">
                                     EGS Equipment
                                 </h1>
                             </div>

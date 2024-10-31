@@ -7,25 +7,66 @@ import DennisLogo from "@/public/logos/dennis.webp";
 import SISISLogo from "@/public/logos/sisis.webp";
 import SynProLogo from "@/public/logos/synpro.webp";
 import HarodLogo from "@/public/logos/harod-sport-logo.png";
+import PitchmarkLogo from "@/public/logos/pitchmark-logo.png";
 
 const PoweredBy = () => {
     return (
-        <div className="flex flex-col justify-center items-center bg-white px-10 py-48">
-            <h5 className="text-black text-5xl font-bold pb-10">EGS Equipment is Powered By:</h5>
-            <div className="flex flex-col items-center justify-center lg:flex-row">
+        <section className="flex flex-col justify-center items-center bg-white px-6 py-20 lg:px-10 lg:py-48">
+            <h2 className="text-black text-3xl lg:text-5xl font-bold pb-6 lg:pb-10 text-center">
+                EGS Equipment is Powered By:
+            </h2>
+            <div className="flex flex-wrap items-center justify-center gap-8">
                 {/* Howardson Companies */}
-                <div className="flex flex-col items-center justify-center w-full my-10">
-                    <Image src={HowardsonLogo} className="w-1/2" alt="howardson-logo" />
-                    {/* Dennis, SISIS, Syn-Pro */}
-                    <div className="flex items-center justify-between w-full">
-                        <Image src={DennisLogo} alt="dennis-logo" className="w-24" />
-                        <Image src={SISISLogo} alt="sisis-logo" className="w-24" />
-                        <Image src={SynProLogo} alt="synpro-logo" className="w-24" />
+                <div className="flex flex-col items-center mb-6 w-full lg:w-auto p-4 lg:p-16">
+                    <Image
+                        src={HowardsonLogo}
+                        alt="Howardson - Leader in Turf Care Equipment"
+                        priority
+                        width={400}
+                        height={75}
+                    />
+                    <div className="flex justify-around w-full gap-6 mt-6">
+                        <Image
+                            src={DennisLogo}
+                            alt="Dennis - Precision Turf Mowers"
+                            width={75}
+                            // height={40}
+                        />
+                        <Image
+                            src={SISISLogo}
+                            alt="SISIS - Turf Maintenance Tools"
+                            width={75}
+                            // height={40}
+                        />
+                        <Image
+                            src={SynProLogo}
+                            alt="Syn-Pro - Synthetic Turf Equipment"
+                            width={75}
+                            // height={40}
+                        />
                     </div>
                 </div>
-                <Image src={HarodLogo} alt="harod-logo" className="w-1/3" />
+                {/* Other Logos */}
+                <div className="flex items-center w-full justify-around">
+                    <div className="flex flex-col items-center lg:items-start w-full lg:w-auto p-10 lg:p-16">
+                        <Image
+                            src={HarodLogo}
+                            alt="Harod Sport - Premium Sports Equipment"
+                            width={150}
+                            height={75}
+                        />
+                    </div>
+                    <div className="flex flex-col items-center lg:items-start w-full lg:w-auto p-10 lg:p-16">
+                        <Image
+                            src={PitchmarkLogo}
+                            alt="Pitchmark - Field Marking Solutions"
+                            width={150}
+                            height={75}
+                        />
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 
