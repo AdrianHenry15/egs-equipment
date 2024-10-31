@@ -9,14 +9,14 @@ import { motion } from "framer-motion";
 import {
     AeratorProducts,
     DebrisBlowerProducts,
-    NaturalProducts,
-    SyntheticProducts,
+    GolfSportsTurfProducts,
+    SyntheticTurfProducts,
 } from "@/lib/products";
 import { ProductType } from "@/lib/types";
 
 const products = [
-    ...SyntheticProducts,
-    ...NaturalProducts,
+    ...SyntheticTurfProducts,
+    ...GolfSportsTurfProducts,
     ...AeratorProducts,
     ...DebrisBlowerProducts,
 ];

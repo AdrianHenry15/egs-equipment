@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 
 // String Unions
-export type Category = "Golf & Sports Turf" | "Synthetic Turf" | "All Purpose" | "All Products";
+export type MainCategory = "Golf & Sports Turf" | "Synthetic Turf" | "All Purpose" | "All Products";
 
 // Navigation
 export type NavMenuItems = "Home" | "Products" | "Parts Form" | "About" | "Finance Options";
@@ -41,7 +41,13 @@ export type SyntheticTurfItems =
     | "Hand Tools";
 
 // Brands
-export type EquipmentBrand = "" | HowardsonsBrand | "Harod Sports" | "Pitchmark Line Markers";
+export type EquipmentBrand =
+    | ""
+    | HowardsonsBrand
+    | "Harod Sports"
+    | "Pitchmark Line Markers"
+    | "Buffalo Turbine"
+    | "Eastman";
 export type HowardsonsBrand = "Dennis" | "SISIS" | "Syn-Pro";
 
 // Clients
@@ -53,6 +59,7 @@ export type Clients =
     | "Inter&Co Stadium"
     | "Cracker Jack Stadium";
 
+export type Category = MainCategory | GolfSportsTurfItems | MowersItems | SyntheticTurfItems;
 export type NavMenuType = {
     title: NavMenuItems | ProductNavItems | GolfSportsTurfItems | SyntheticTurfItems | MowersItems;
     link: NavMenuLinks | ProductNavLinks;
@@ -62,18 +69,18 @@ export type ProductType = {
     id: string;
     name: string;
     description: string;
-    category: Category;
+    mainCategory: MainCategory;
+    subCategory: Category;
+    brand: EquipmentBrand;
     image: string | StaticImageData;
     equipment_details: EquipmentType;
+    usedBy?: Clients;
     popular?: boolean;
-    price?: number;
-    quantity?: number;
 };
 
 export type EquipmentType = {
     specs_description: string;
     features: string[];
-    brand: EquipmentBrand;
     specifications: {
         code: string;
         working_width: string;

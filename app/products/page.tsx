@@ -2,7 +2,8 @@ import { Metadata } from "next";
 
 import Splash from "@/components/splash";
 import SplashPic from "@/public/orange-tractor.jpg";
-import ProductRow from "@/components/products/product-row";
+import ProductList from "@/components/layout/products-page/product-list";
+import FilterSidebar from "@/components/layout/products-page/filter-sidebar";
 
 export const metadata: Metadata = {
     title: "Products | EGS Equipment",
@@ -23,27 +24,10 @@ export default function ProductsPage() {
                 img={SplashPic}
                 title="All Products"
             />
-            <ProductRow
-                brandLogos={["Syn-Pro"]}
-                title="Engineered for Excellence – The Perfect Turf, Every Time."
-                category="Synthetic"
-            />
-            <ProductRow
-                brandLogos={["SISIS", "Dennis", "Eastman"]}
-                title="Naturally Strong, Perfectly Green – Equipment Built for Your Turf."
-                category="Natural"
-            />
-            <ProductRow
-                title="Revitalize Your Turf – Aerators for Healthier, Greener Lawns."
-                brandLogos={["SISIS"]}
-                category="Aerator"
-            />
-            <ProductRow
-                className="pb-48"
-                title="Clear the Way – Power-Packed Debris Blowers for a Pristine Lawn."
-                brandLogos={["Buffalo Turbine"]}
-                category="Debris Blower"
-            />
+            <div className="flex bg-white">
+                <FilterSidebar />
+                <ProductList />
+            </div>
         </div>
     );
 }

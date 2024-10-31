@@ -2,13 +2,13 @@ import { NextResponse } from "next/server";
 import {
     AeratorProducts,
     DebrisBlowerProducts,
-    NaturalProducts,
-    SyntheticProducts,
+    GolfSportsTurfProducts,
+    SyntheticTurfProducts,
 } from "@/lib/products";
 
 const Products = [
-    ...SyntheticProducts,
-    ...NaturalProducts,
+    ...SyntheticTurfProducts,
+    ...GolfSportsTurfProducts,
     ...AeratorProducts,
     ...DebrisBlowerProducts,
 ];

@@ -24,17 +24,18 @@ import CycloneSquaredImg from "@/public/products/debris-blowers/cyclone-squared.
 import CycloneMegaImg from "@/public/products/debris-blowers/cyclone-mega.webp";
 import CyclonePTOImg from "@/public/products/debris-blowers/cyclone-pto.webp";
 
-export const SyntheticProducts: ProductType[] = [
+export const GolfSportsTurfProducts: ProductType[] = [
     {
         id: "syn-1",
         name: "Brush Pro",
         description: "Add Description Here",
-        category: "Synthetic",
+        mainCategory: "All Purpose",
+        subCategory: "Rotary Mowers",
         image: BrushProImg,
+        brand: "Syn-Pro",
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Syn-Pro",
             specifications: {
                 model: "",
                 code: "",
@@ -51,12 +52,13 @@ export const SyntheticProducts: ProductType[] = [
         id: "syn-2",
         name: "SVR 1500 Deep Cleaner",
         description: "Add Description Here",
-        category: "Synthetic",
+        mainCategory: "All Purpose",
+        subCategory: "Rotary Mowers",
         image: SVRImg,
+        brand: "Syn-Pro",
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Syn-Pro",
             specifications: {
                 model: "",
                 code: "",
@@ -73,34 +75,13 @@ export const SyntheticProducts: ProductType[] = [
         id: "syn-3",
         name: "SSS1000",
         description: "Add Description Here",
-        category: "Synthetic",
+        mainCategory: "All Purpose",
+        subCategory: "Rotary Mowers",
         image: SSS1000Img,
+        brand: "Syn-Pro",
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Syn-Pro",
-            specifications: {
-                model: "",
-                code: "",
-                action: "",
-                working_width: "",
-                working_depth: "",
-                tractor_power_requirement: "",
-                inclusions: "",
-            },
-            video: "",
-        },
-    },
-    {
-        id: "syn-3",
-        name: "OSCA 3",
-        description: "Add Description Here",
-        category: "Synthetic",
-        image: OSCA3Img,
-        equipment_details: {
-            specs_description: "Add Specs Description",
-            features: [],
-            brand: "Syn-Pro",
             specifications: {
                 model: "",
                 code: "",
@@ -115,14 +96,15 @@ export const SyntheticProducts: ProductType[] = [
     },
     {
         id: "syn-4",
-        name: "Varibrush",
+        name: "OSCA 3",
         description: "Add Description Here",
-        category: "Synthetic",
-        image: VaribrushImg,
+        mainCategory: "All Purpose",
+        subCategory: "Rotary Mowers",
+        image: OSCA3Img,
+        brand: "Syn-Pro",
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Syn-Pro",
             specifications: {
                 model: "",
                 code: "",
@@ -137,14 +119,38 @@ export const SyntheticProducts: ProductType[] = [
     },
     {
         id: "syn-5",
-        name: "Triangular Brush",
+        name: "Varibrush",
         description: "Add Description Here",
-        category: "Synthetic",
-        image: TriangularBrushImg,
+        mainCategory: "All Purpose",
+        subCategory: "Hand Tools",
+        image: VaribrushImg,
+        brand: "Syn-Pro",
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Syn-Pro",
+            specifications: {
+                model: "",
+                code: "",
+                action: "",
+                working_width: "",
+                working_depth: "",
+                tractor_power_requirement: "",
+                inclusions: "",
+            },
+            video: "",
+        },
+    },
+    {
+        id: "syn-6",
+        name: "Triangular Brush",
+        description: "Add Description Here",
+        mainCategory: "Golf & Sports Turf",
+        subCategory: "Golf & Sports Turf",
+        image: TriangularBrushImg,
+        brand: "Syn-Pro",
+        equipment_details: {
+            specs_description: "Add Specs Description",
+            features: [],
             specifications: {
                 model: "",
                 code: "",
@@ -159,17 +165,19 @@ export const SyntheticProducts: ProductType[] = [
     },
 ];
 
-export const NaturalProducts: ProductType[] = [
+export const SyntheticTurfProducts: ProductType[] = [
     {
         id: "nat-1",
         name: "G660, G760, G860",
         description: "Add Description Here",
-        category: "Natural",
+
+        mainCategory: "Synthetic Turf",
+        subCategory: "All Purpose",
         image: GImg,
+        brand: "Dennis",
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Dennis",
             specifications: {
                 model: "",
                 code: "",
@@ -186,12 +194,13 @@ export const NaturalProducts: ProductType[] = [
         id: "nat-2",
         name: "ES860",
         description: "Add Description Here",
-        category: "Natural",
+        mainCategory: "Golf & Sports Turf",
+        subCategory: "Golf & Sports Turf",
         image: ES860Img,
+        brand: "Dennis",
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Dennis",
             specifications: {
                 model: "",
                 code: "",
@@ -208,12 +217,13 @@ export const NaturalProducts: ProductType[] = [
         id: "nat-3",
         name: "RotoRake 600HD",
         description: "Add Description Here",
-        category: "Natural",
+        brand: "Harod Sports",
+        mainCategory: "Synthetic Turf",
+        subCategory: "Sweepers",
         image: RotoRakeImg,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "SISIS",
             specifications: {
                 model: "",
                 code: "",
@@ -230,12 +240,13 @@ export const NaturalProducts: ProductType[] = [
         id: "nat-4",
         name: "Auto RotoRake MK5",
         description: "Add Description Here",
-        category: "Natural",
+        brand: "Harod Sports",
+        mainCategory: "Synthetic Turf",
+        subCategory: "Reel Mowers",
         image: AutoRotoRakeImg,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "SISIS",
             specifications: {
                 model: "",
                 code: "",
@@ -252,12 +263,13 @@ export const NaturalProducts: ProductType[] = [
         id: "nat-5",
         name: "Veemo MK2",
         description: "Add Description Here",
-        category: "Natural",
+        brand: "SISIS",
+        mainCategory: "All Purpose",
+        subCategory: "Seeders",
         image: VeemoImg,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "SISIS",
             specifications: {
                 model: "",
                 code: "",
@@ -274,12 +286,13 @@ export const NaturalProducts: ProductType[] = [
         id: "nat-6",
         name: "Hover Mower",
         description: "Add Description Here",
-        category: "Natural",
+        mainCategory: "Golf & Sports Turf",
+        subCategory: "Mowers",
+        brand: "Eastman",
         image: HoverMowerImg,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Eastman",
             specifications: {
                 model: "",
                 code: "",
@@ -294,17 +307,19 @@ export const NaturalProducts: ProductType[] = [
     },
 ];
 
+// Aerators
 export const AeratorProducts: ProductType[] = [
     {
         id: "aer-1",
-        name: "Javelin Aer-Aid 1500",
+        name: "Dart",
         description: "Add Description Here",
-        category: "Aerator",
-        image: JavelinImg,
+        mainCategory: "Synthetic Turf",
+        subCategory: "Synthetic Turf",
+        brand: "SISIS",
+        image: DartImg,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "SISIS",
             specifications: {
                 model: "",
                 code: "",
@@ -319,14 +334,15 @@ export const AeratorProducts: ProductType[] = [
     },
     {
         id: "aer-2",
-        name: "Dart",
+        name: "Javelin Aer-Aid 1500",
         description: "Add Description Here",
-        category: "Aerator",
-        image: DartImg,
+        mainCategory: "Synthetic Turf",
+        subCategory: "Synthetic Turf",
+        brand: "SISIS",
+        image: JavelinImg,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "SISIS",
             specifications: {
                 model: "",
                 code: "",
@@ -341,17 +357,19 @@ export const AeratorProducts: ProductType[] = [
     },
 ];
 
+// Debris Blowers
 export const DebrisBlowerProducts: ProductType[] = [
     {
-        id: "deb-1",
+        id: "db-1",
         name: "Cyclone 8000",
         description: "Add Description Here",
-        category: "Debris Blower",
+        mainCategory: "All Purpose",
+        subCategory: "All Purpose",
+        brand: "Buffalo Turbine",
         image: Cyclone8000Img,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Buffalo Turbine",
             specifications: {
                 model: "",
                 code: "",
@@ -365,15 +383,16 @@ export const DebrisBlowerProducts: ProductType[] = [
         },
     },
     {
-        id: "deb-2",
+        id: "db-2",
         name: "Cyclone KB4",
         description: "Add Description Here",
-        category: "Debris Blower",
+        mainCategory: "All Purpose",
+        subCategory: "All Purpose",
+        brand: "Buffalo Turbine",
         image: CycloneKB4Img,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Buffalo Turbine",
             specifications: {
                 model: "",
                 code: "",
@@ -387,15 +406,16 @@ export const DebrisBlowerProducts: ProductType[] = [
         },
     },
     {
-        id: "deb-3",
+        id: "db-3",
         name: "Cyclone Squared",
         description: "Add Description Here",
-        category: "Debris Blower",
+        mainCategory: "All Purpose",
+        subCategory: "All Purpose",
+        brand: "Buffalo Turbine",
         image: CycloneSquaredImg,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Buffalo Turbine",
             specifications: {
                 model: "",
                 code: "",
@@ -409,15 +429,16 @@ export const DebrisBlowerProducts: ProductType[] = [
         },
     },
     {
-        id: "deb-4",
+        id: "db-4",
         name: "Cyclone Mega",
         description: "Add Description Here",
-        category: "Debris Blower",
+        mainCategory: "All Purpose",
+        subCategory: "All Purpose",
+        brand: "Buffalo Turbine",
         image: CycloneMegaImg,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Buffalo Turbine",
             specifications: {
                 model: "",
                 code: "",
@@ -431,15 +452,16 @@ export const DebrisBlowerProducts: ProductType[] = [
         },
     },
     {
-        id: "deb-5",
+        id: "db-5",
         name: "Cyclone PTO",
         description: "Add Description Here",
-        category: "Debris Blower",
+        mainCategory: "All Purpose",
+        subCategory: "All Purpose",
+        brand: "Buffalo Turbine",
         image: CyclonePTOImg,
         equipment_details: {
             specs_description: "Add Specs Description",
             features: [],
-            brand: "Buffalo Turbine",
             specifications: {
                 model: "",
                 code: "",
