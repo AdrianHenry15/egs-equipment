@@ -34,16 +34,16 @@ const HomeSplash = () => {
                                 <Image
                                     src={Logo}
                                     alt="logo"
-                                    className="left-0 bottom-0 w-[50px] absolute md:hidden"
+                                    className="left-0 bottom-0 w-[100px] absolute md:hidden"
                                 />
                             </div>
 
-                            <div className="w-full z-50 top-[45%] p-4 left-10 md:absolute md:top-[35%] md:p-8">
+                            <div className="w-full z-50 top-[45%] p-4 left-10 hidden flex-col md:flex md:absolute md:top-[35%] md:p-8">
                                 <span>
                                     <Image
                                         src={Logo}
                                         alt="logo"
-                                        className="w-24 py-2 hidden md:flex"
+                                        className="w-48 py-2 hidden md:flex"
                                     />
                                 </span>
                                 <h1 className="text-white text-[30px] md:text-5xl">

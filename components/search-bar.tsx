@@ -4,6 +4,8 @@ import React, { useState, useMemo } from "react";
 import Fuse from "fuse.js";
 import { AiOutlineSearch } from "react-icons/ai";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
 import {
     AeratorProducts,
     DebrisBlowerProducts,
@@ -31,6 +33,12 @@ const SearchBar: React.FC = () => {
     const [selectedIndex, setSelectedIndex] = useState(-1); // Track the selected index
 
     const fuse = useMemo(() => new Fuse(products, fuseOptions), []);
+
+    // Variants for animation
+    const itemVariants = {
+        hidden: { opacity: 0, x: 100 },
+        visible: { opacity: 1, x: 0 },
+    };
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         const searchTerm = e.target.value;
@@ -72,7 +80,14 @@ const SearchBar: React.FC = () => {
     };
 
     return (
-        <div className="relative my-4 w-[300px] md:w-[400px]">
+        <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.01 }} // Trigger when 10% of the component is visible
+            transition={{ duration: 0.2, delay: 0.1 }} // Adjust delay for staggered effect
+            className="relative my-4 w-[300px] md:w-[400px]"
+        >
             <input
                 type="text"
                 placeholder="Search products..."
@@ -103,7 +118,7 @@ const SearchBar: React.FC = () => {
                     ))}
                 </div>
             )}
-        </div>
+        </motion.div>
     );
 };
 

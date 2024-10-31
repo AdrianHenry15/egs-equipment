@@ -93,7 +93,7 @@ export default function Navbar() {
             {/* TITLE & LINKS  */}
             <div className="flex w-full mt-2 items-center justify-center py-4">
                 <div className="flex items-center">
-                    <Link href="/" className="lg:mr-10">
+                    <Link href="/" className="pl-10 lg:pl-0 lg:mr-10">
                         {/* TODO: LOGO */}
                         <Image className="w-[199px]" src={Logo} alt="logo" />
                     </Link>
