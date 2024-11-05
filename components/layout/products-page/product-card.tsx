@@ -9,7 +9,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
     return (
-        <div className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition-shadow p-4">
+        <div className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition-shadow max-h-[350px] p-4">
             <Image
                 width={1000}
                 height={1000}

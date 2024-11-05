@@ -1,5 +1,3 @@
-// src/store/useProductStore.ts
-
 import { create } from "zustand";
 import {
     ProductType,
@@ -27,9 +25,9 @@ interface ProductState {
     selectedMainCategory: MainCategory | null;
     selectedSubCategory: GolfSportsTurfItems | MowersItems | SyntheticTurfItems | null;
     selectedBrand: EquipmentBrand | null;
+    selectedClient: Clients | null;
 
     // Actions
-    // fetchProducts: () => void;
     filterByMainCategory: (category: MainCategory) => void;
     filterBySubCategory: (
         subCategory: GolfSportsTurfItems | MowersItems | SyntheticTurfItems
@@ -39,14 +37,19 @@ interface ProductState {
     resetFilters: () => void;
 }
 
-export const useProductStore = create<ProductState>((set) => ({
+export const useProductStore = create<ProductState>((set, get) => ({
     products: [
         ...GolfSportsTurfProducts,
         ...SyntheticTurfProducts,
         ...AeratorProducts,
         ...DebrisBlowerProducts,
     ],
-    filteredProducts: [],
+    filteredProducts: [
+        ...GolfSportsTurfProducts,
+        ...SyntheticTurfProducts,
+        ...AeratorProducts,
+        ...DebrisBlowerProducts,
+    ],
     isLoading: false,
     error: null,
 
@@ -55,50 +58,50 @@ export const useProductStore = create<ProductState>((set) => ({
     selectedBrand: null,
     selectedClient: null,
 
-    // fetchProducts: async () => {
-    //     set({ isLoading: true, error: null });
-    //     try {
-    //         const response = await axios.get<ProductType[]>("/api/products");
-    //         set({ products: response.data, filteredProducts: response.data, isLoading: false });
-    //         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    //     } catch (error: unknown) {
-    //         set({ error: "Failed to fetch products", isLoading: false });
-    //     }
-    // },
+    filterByMainCategory: (category) => {
+        set({ selectedMainCategory: category, selectedSubCategory: null });
+        applyFilters();
+    },
 
-    filterByMainCategory: (category) =>
-        set((state) => ({
-            selectedMainCategory: category,
-            selectedSubCategory: null,
-            filteredProducts: state.products.filter((product) => product.mainCategory === category),
-        })),
+    filterBySubCategory: (subCategory) => {
+        set({ selectedSubCategory: subCategory });
+        applyFilters();
+    },
 
-    filterBySubCategory: (subCategory) =>
-        set((state) => ({
-            selectedSubCategory: subCategory,
-            filteredProducts: state.products.filter(
-                (product) => product.subCategory === subCategory
-            ),
-        })),
+    filterByBrand: (brand) => {
+        set({ selectedBrand: brand });
+        applyFilters();
+    },
 
-    filterByBrand: (brand) =>
-        set((state) => ({
-            selectedBrand: brand,
-            filteredProducts: state.products.filter((product) => product.brand === brand),
-        })),
+    filterByClient: (client) => {
+        set({ selectedClient: client });
+        applyFilters();
+    },
 
-    filterByClient: (client) =>
-        set((state) => ({
-            selectedClient: client,
-            filteredProducts: state.products.filter((product) => product.usedBy === client),
-        })),
-
-    resetFilters: () =>
-        set((state) => ({
+    resetFilters: () => {
+        set({
             selectedMainCategory: null,
             selectedSubCategory: null,
             selectedBrand: null,
             selectedClient: null,
-            filteredProducts: state.products,
-        })),
+            filteredProducts: get().products,
+        });
+    },
 }));
+
+// Helper function to apply filters based on active states
+const applyFilters = () => {
+    const { products, selectedMainCategory, selectedSubCategory, selectedBrand, selectedClient } =
+        useProductStore.getState();
+
+    const filtered = products.filter((product) => {
+        return (
+            (!selectedMainCategory || product.mainCategory === selectedMainCategory) &&
+            (!selectedSubCategory || product.subCategory === selectedSubCategory) &&
+            (!selectedBrand || product.brand === selectedBrand) &&
+            (!selectedClient || product.usedBy === selectedClient)
+        );
+    });
+
+    useProductStore.setState({ filteredProducts: filtered });
+};

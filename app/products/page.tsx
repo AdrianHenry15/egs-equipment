@@ -4,6 +4,7 @@ import Splash from "@/components/splash";
 import SplashPic from "@/public/orange-tractor.jpg";
 import ProductList from "@/components/layout/products-page/product-list";
 import FilterSidebar from "@/components/layout/products-page/filter-sidebar";
+import MobileSidebarFilter from "@/components/layout/products-page/mobile-sidebar-filter";
 
 export const metadata: Metadata = {
     title: "Products | EGS Equipment",
@@ -22,9 +23,10 @@ export default function ProductsPage() {
                 link2="/parts-services"
                 link_title_2="Parts & Services"
                 img={SplashPic}
-                title="All Products"
+                title="Products"
             />
             <div className="flex bg-white">
+                <MobileSidebarFilter />
                 <FilterSidebar />
                 <ProductList />
             </div>

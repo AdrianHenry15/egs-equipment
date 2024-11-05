@@ -63,7 +63,6 @@ export default function FilterSidebar() {
         filterByMainCategory,
         filterBySubCategory,
         filterByBrand,
-        filterByClient,
         resetFilters,
         selectedMainCategory,
         selectedSubCategory,
@@ -87,7 +86,7 @@ export default function FilterSidebar() {
             {options.map((option) => (
                 <button
                     key={option}
-                    onClick={() => onClick(option)}
+                    onClick={() => onClick(selectedOption === option ? "" : option)}
                     className={`block text-sm text-left px-2 py-1 my-1 rounded ${
                         selectedOption === option ? "text-blue-500" : " text-gray-400"
                     }`}
@@ -101,7 +100,7 @@ export default function FilterSidebar() {
     );
 
     return (
-        <aside className="w-64 p-4 border-r border-gray-200 bg-white">
+        <aside className="w-64 p-4 border-r border-gray-200 bg-white hidden flex-col lg:flex">
             <h2 className="text-xl font-semibold mb-4 text-black">Filters</h2>
 
             {renderFilterSection(

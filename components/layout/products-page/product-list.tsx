@@ -5,7 +5,7 @@ import SkeletonLoader from "./skeleton-loader";
 import ProductCard from "./product-card";
 
 export default function ProductList() {
-    const { products, isLoading, error } = useProductStore();
+    const { filteredProducts, isLoading, error } = useProductStore();
 
     if (isLoading) {
         return (
@@ -23,8 +23,10 @@ export default function ProductList() {
 
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-            {products.length > 0 ? (
-                products.map((product) => <ProductCard key={product.id} product={product} />)
+            {filteredProducts.length > 0 ? (
+                filteredProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                ))
             ) : (
                 <p className="col-span-full text-center text-gray-500">No products found.</p>
             )}
