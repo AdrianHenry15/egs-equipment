@@ -9,7 +9,7 @@ import {
     NaturalProducts,
     AeratorProducts,
     DebrisBlowerProducts,
-} from "@/lib/products";
+} from "@/lib/products/product-list";
 
 interface IProductProps {
     productId: string;

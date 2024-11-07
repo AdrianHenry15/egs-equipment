@@ -17,7 +17,7 @@ import {
     DebrisBlowerProducts,
     NaturalProducts,
     SyntheticProducts,
-} from "@/lib/products";
+} from "@/lib/products/product-list";
 
 // Import Swiper React components and styles
 import { Swiper, SwiperSlide } from "swiper/react";

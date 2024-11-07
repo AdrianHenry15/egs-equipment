@@ -35,7 +35,7 @@ export default function Navbar() {
                             }}
                         >
                             <li
-                                className={` flex items-center mx-2 transition-all duration-300 ease-in-out hover:text-green-700 hover:underline ${
+                                className={`whitespace-nowrap flex items-center mx-2 transition-all duration-300 ease-in-out hover:text-green-700 hover:underline ${
                                     pathname === item.link ? "underline" : ""
                                 }`}
                             >

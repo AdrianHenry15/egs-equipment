@@ -20,6 +20,7 @@ export type ProductNavLinks =
 export type GolfSportsTurfItems =
     | "Aerators"
     | "Verticutters"
+    | "Scarifier"
     | "Sweepers"
     | "Rollers/Brush"
     | "Top Dressers/Spreaders"
@@ -28,6 +29,7 @@ export type GolfSportsTurfItems =
     | "Implement Frames"
     | "Hand Tools"
     | "Goals"
+    | "Debris Blower"
     | "Mowers";
 export type MowersItems = "Reel Mowers" | "Rotary Mowers" | "Hover Mowers";
 export type SyntheticTurfItems =
@@ -74,21 +76,48 @@ export type ProductType = {
     brand: EquipmentBrand;
     image: string | StaticImageData;
     equipment_details: EquipmentType;
+    manuel?: string;
     usedBy?: Clients;
     popular?: boolean;
+};
+
+export type Dimensions = {
+    width: string;
+    length: string;
+    altLength?: string;
+    weight: string;
+    altWeight?: string;
+    height: string;
+};
+
+export type ProductSpecificationsType = {
+    cutting_width?: string;
+    brushes?: string;
+    recommended_tractor?: string;
+    number_of_brushes?: string;
+    oscillating_brush?: string;
+    rear_brush?: string;
+    cylinder?: string;
+    height_of_cut?: string;
+    cutter_performance?: string;
+    dimensions?: string | Dimensions;
+    engine_petrol?: string;
+    drive_system?: string;
+    final_drive?: string;
+    model?: string;
+    code?: string;
+    action?: string;
+    working_width?: string;
+    working_depth?: string;
+    tractor_power_requirement?: string;
+    engine?: string;
+    inclusions?: string | string[];
+    exclusions?: string;
 };
 
 export type EquipmentType = {
     specs_description: string;
     features: string[];
-    specifications: {
-        code: string;
-        working_width: string;
-        model?: string;
-        action?: string;
-        working_depth?: string;
-        tractor_power_requirement?: string;
-        inclusions?: string;
-    };
+    specifications: ProductSpecificationsType | ProductSpecificationsType[];
     video?: string;
 };

@@ -11,7 +11,7 @@ import {
     DebrisBlowerProducts,
     GolfSportsTurfProducts,
     SyntheticTurfProducts,
-} from "@/lib/products";
+} from "@/lib/products/product-list";
 import { ProductType } from "@/lib/types";
 
 const products = [
@@ -86,7 +86,7 @@ const SearchBar: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.01 }} // Trigger when 10% of the component is visible
             transition={{ duration: 0.2, delay: 0.1 }} // Adjust delay for staggered effect
-            className="relative my-4 w-[300px] md:w-[400px]"
+            className="relative my-4 flex-1 w-[300px] md:w-[400px]"
         >
             <input
                 type="text"
@@ -94,7 +94,7 @@ const SearchBar: React.FC = () => {
                 value={query}
                 onChange={handleSearch}
                 onKeyDown={handleKeyDown} // Add key down event
-                className="w-[90%] text-black p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+                className="w-[90%] text-black p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-green-700"
             />
             <AiOutlineSearch className="absolute left-4 top-4 text-gray-500" />
 

@@ -13,7 +13,7 @@ import {
     DebrisBlowerProducts,
     GolfSportsTurfProducts,
     SyntheticTurfProducts,
-} from "@/lib/products";
+} from "@/lib/products/product-list";
 
 interface ProductState {
     products: ProductType[];
