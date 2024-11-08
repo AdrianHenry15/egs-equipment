@@ -303,7 +303,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         mainCategory: "Synthetic Turf",
         subCategory: "Sweepers",
         brand: "Syn-Pro",
-        image: TowedBrushImg,
+        image: LitaminaImg,
         equipment_details: {
             specs_description: ProductSpecDescriptions.litamina,
             features: ProductFeatures.litamina,

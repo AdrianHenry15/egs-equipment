@@ -15,8 +15,8 @@ import { Category } from "@/lib/types";
 import {
     AeratorProducts,
     DebrisBlowerProducts,
-    NaturalProducts,
-    SyntheticProducts,
+    GolfSportsTurfProducts,
+    SyntheticTurfProducts,
 } from "@/lib/products/product-list";
 
 // Import Swiper React components and styles
@@ -48,17 +48,17 @@ const ProductRow = (props: IProductRowProps) => {
         let products: ProductType[] = [];
 
         switch (category) {
-            case "Aerator":
+            case "Aerators":
                 products = AeratorProducts;
                 break;
             case "Debris Blower":
                 products = DebrisBlowerProducts;
                 break;
-            case "Natural":
-                products = NaturalProducts;
+            case "Golf & Sports Turf":
+                products = GolfSportsTurfProducts;
                 break;
-            case "Synthetic":
-                products = SyntheticProducts;
+            case "Synthetic Turf":
+                products = SyntheticTurfProducts;
                 break;
             default:
                 return []; // Return an empty array if no matching category
@@ -66,9 +66,7 @@ const ProductRow = (props: IProductRowProps) => {
 
         // Filter by brand if provided
         if (brandFilter) {
-            products = products.filter(
-                (product) => product.equipment_details.brand === brandFilter
-            );
+            products = products.filter((product) => product.brand === brandFilter);
         }
 
         return products;

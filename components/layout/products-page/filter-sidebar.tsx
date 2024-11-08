@@ -7,6 +7,7 @@ import {
     MowersItems,
     SyntheticTurfItems,
 } from "@/lib/types";
+import { motion } from "framer-motion";
 import { useProductStore } from "@/stores/product-store";
 
 // Define filter options
@@ -71,7 +72,13 @@ export default function FilterSidebar() {
         selectedOption: string | null,
         onClick: (option: string) => void
     ) => (
-        <section aria-labelledby={title.toLowerCase().replace(" ", "-")}>
+        <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            aria-labelledby={title.toLowerCase().replace(" ", "-")}
+            transition={{ duration: 0.5 }} // Adjust animation duration as needed
+        >
             <h3
                 id={title.toLowerCase().replace(" ", "-")}
                 className="text-lg text-black font-medium mt-4"
@@ -82,8 +89,8 @@ export default function FilterSidebar() {
                 <button
                     key={option}
                     onClick={() => onClick(selectedOption === option ? "" : option)}
-                    className={`block text-sm text-left px-2 py-1 my-1 rounded ${
-                        selectedOption === option ? "text-blue-500" : " text-gray-400"
+                    className={`block text-sm text-left px-2 py-1 my-1 rounded bg-gray-200 ${
+                        selectedOption === option ? "text-white bg-green-600" : " text-gray-400"
                     }`}
                     aria-pressed={selectedOption === option}
                     aria-label={`Filter by ${option}`}
@@ -91,7 +98,7 @@ export default function FilterSidebar() {
                     {option}
                 </button>
             ))}
-        </section>
+        </motion.section>
     );
 
     return (
@@ -124,10 +131,6 @@ export default function FilterSidebar() {
             {renderFilterSection("Brand", Filters.EquipmentBrand, selectedBrand, (brand) =>
                 filterByBrand(brand as EquipmentBrand)
             )}
-
-            {/* {renderFilterSection("Client", Filters.Clients, selectedClient, (client) =>
-                filterByClient(client as Clients)
-            )} */}
 
             <button
                 onClick={resetFilters}

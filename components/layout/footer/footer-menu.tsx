@@ -1,39 +1,32 @@
-"use client"
+"use client";
 
-import React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { NavMenu } from "../../../lib/constants"
+import { NavMenu } from "../../../lib/constants";
 
 const FooterMenu = () => {
-  const pathname = usePathname()
-  return (
-    <nav className="text-gray-400 text-sm flex-1 md:text-left">
-      <h5 className="font-light text-2xl tracking-wider text-white">Company</h5>
-      <ul className="text-xs">
-        {NavMenu.map((item) => {
-          return (
-            <li
-              key={item.title}
-              className={`${pathname === item.link ? "underline" : ""} my-4`}>
-              <Link href={item.link}>{item.title}</Link>
-            </li>
-          )
-        })}
-        {/* {AltNavMenu.map((item) => {
+    const pathname = usePathname();
+    return (
+        <nav className="text-gray-400 text-sm flex-1 md:text-left">
+            <h5 className="font-light text-2xl tracking-wider text-white">Company</h5>
+            <ul className="text-xs">
+                {NavMenu.map((item) => {
                     return (
                         <li
-                            className={`${pathname === item.link ? "underline" : ""} my-4`}
                             key={item.title}
+                            className={`${pathname === item.link ? "underline" : ""} my-4`}
                         >
-                            <Link href={item.link}>{item.title}</Link>
+                            <Link href={item.title === "Products" ? "/products" : item.link}>
+                                {item.title}
+                            </Link>
                         </li>
                     );
-                })} */}
-      </ul>
-    </nav>
-  )
-}
+                })}
+            </ul>
+        </nav>
+    );
+};
 
-export default FooterMenu
+export default FooterMenu;

@@ -25,24 +25,13 @@ const PoweredBy = () => {
                         width={400}
                         height={75}
                     />
-                    <div className="flex justify-around w-full gap-6 mt-6">
-                        <Image
-                            src={DennisLogo}
-                            alt="Dennis - Precision Turf Mowers"
-                            width={125}
-                            // height={40}
-                        />
-                        <Image
-                            src={SISISLogo}
-                            alt="SISIS - Turf Maintenance Tools"
-                            width={125}
-                            // height={40}
-                        />
+                    <div className="flex justify-around items-center w-full gap-6 mt-6">
+                        <Image src={DennisLogo} alt="Dennis - Precision Turf Mowers" width={125} />
+                        <Image src={SISISLogo} alt="SISIS - Turf Maintenance Tools" width={125} />
                         <Image
                             src={SynProLogo}
                             alt="Syn-Pro - Synthetic Turf Equipment"
                             width={125}
-                            // height={40}
                         />
                     </div>
                 </div>
