@@ -46,7 +46,7 @@ const ProductItem = (props: ProductItemProps) => {
                     alt={product.name}
                 />
                 <Image
-                    src={getProductBrandImage(product.equipment_details.brand)}
+                    src={getProductBrandImage(product.brand)}
                     alt="brand-logo"
                     className="flex absolute left-2 bottom-2 w-16 sm:w-24"
                 />

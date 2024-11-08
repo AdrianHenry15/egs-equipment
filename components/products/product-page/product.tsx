@@ -5,8 +5,8 @@ import React from "react";
 
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import {
-    SyntheticProducts,
-    NaturalProducts,
+    GolfSportsTurfProducts,
+    SyntheticTurfProducts,
     AeratorProducts,
     DebrisBlowerProducts,
 } from "@/lib/products/product-list";
@@ -20,8 +20,8 @@ const Product = (props: IProductProps) => {
     const { productId } = props;
 
     const AllProducts = [
-        ...SyntheticProducts,
-        ...NaturalProducts,
+        ...SyntheticTurfProducts,
+        ...GolfSportsTurfProducts,
         ...AeratorProducts,
         ...DebrisBlowerProducts,
     ];

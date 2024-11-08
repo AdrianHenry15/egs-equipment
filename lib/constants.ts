@@ -43,10 +43,6 @@ export const ProductsMenuItems: NavMenuType[] = [
         title: "All Purpose",
         link: "/products",
     },
-    {
-        title: "All Products",
-        link: "/products",
-    },
 ];
 
 export const GolfSportsTurfItems: NavMenuType[] = [

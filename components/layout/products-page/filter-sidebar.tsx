@@ -10,13 +10,8 @@ import {
 import { useProductStore } from "@/stores/product-store";
 
 // Define filter options
-const filters = {
-    MainCategory: [
-        "Golf & Sports Turf",
-        "Synthetic Turf",
-        "All Purpose",
-        "All Products",
-    ] as MainCategory[],
+export const Filters = {
+    MainCategory: ["Golf & Sports Turf", "Synthetic Turf", "All Purpose"] as MainCategory[],
     GolfSportsTurfItems: [
         "Aerators",
         "Verticutters",
@@ -100,12 +95,12 @@ export default function FilterSidebar() {
     );
 
     return (
-        <aside className="w-64 p-4 border-r border-gray-200 bg-white hidden flex-col lg:flex">
+        <aside className="min-w-64 p-4 border-r border-gray-200 bg-white hidden flex-col lg:flex">
             <h2 className="text-xl font-semibold mb-4 text-black">Filters</h2>
 
             {renderFilterSection(
                 "Categories",
-                filters.MainCategory,
+                Filters.MainCategory,
                 selectedMainCategory,
                 (category) => filterByMainCategory(category as MainCategory)
             )}
@@ -113,7 +108,7 @@ export default function FilterSidebar() {
             {selectedMainCategory === "Golf & Sports Turf" &&
                 renderFilterSection(
                     "Golf & Sports Turf Items",
-                    filters.GolfSportsTurfItems,
+                    Filters.GolfSportsTurfItems,
                     selectedSubCategory,
                     (subCategory) => filterBySubCategory(subCategory as GolfSportsTurfItems)
                 )}
@@ -121,16 +116,16 @@ export default function FilterSidebar() {
             {selectedMainCategory === "Synthetic Turf" &&
                 renderFilterSection(
                     "Synthetic Turf Items",
-                    filters.SyntheticTurfItems,
+                    Filters.SyntheticTurfItems,
                     selectedSubCategory,
                     (subCategory) => filterBySubCategory(subCategory as SyntheticTurfItems)
                 )}
 
-            {renderFilterSection("Brand", filters.EquipmentBrand, selectedBrand, (brand) =>
+            {renderFilterSection("Brand", Filters.EquipmentBrand, selectedBrand, (brand) =>
                 filterByBrand(brand as EquipmentBrand)
             )}
 
-            {/* {renderFilterSection("Client", filters.Clients, selectedClient, (client) =>
+            {/* {renderFilterSection("Client", Filters.Clients, selectedClient, (client) =>
                 filterByClient(client as Clients)
             )} */}
 

@@ -1,17 +1,13 @@
 "use client";
 
 import { Dialog, Transition, DialogPanel, TransitionChild } from "@headlessui/react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-
-import { NavMenu } from "../../../lib/constants";
-import { FaPhone } from "react-icons/fa6";
-import Button from "@/components/button";
-import { BiChevronDown } from "react-icons/bi";
-import ProductsMenu from "../navbar/products-menu";
 import { AiFillFilter } from "react-icons/ai";
+import { useProductStore } from "@/stores/product-store";
+import { EquipmentBrand, GolfSportsTurfItems, MainCategory, SyntheticTurfItems } from "@/lib/types";
+import { Filters } from "./filter-sidebar";
 
 export default function MobileSidebarFilter() {
     // Constants
@@ -21,59 +17,52 @@ export default function MobileSidebarFilter() {
     const [isOpen, setIsOpen] = useState(false);
     const openMobileMenu = () => setIsOpen(true);
     const closeMobileMenu = () => setIsOpen(false);
-    const [productsMenuOpen, setProductsMenuOpen] = useState(false);
 
+    const {
+        filterByMainCategory,
+        filterBySubCategory,
+        filterByBrand,
+        resetFilters,
+        selectedMainCategory,
+        selectedSubCategory,
+        selectedBrand,
+    } = useProductStore();
     useEffect(() => {
         closeMobileMenu();
     }, [pathname]);
 
-    // Renders
-    const renderNavMenu = () => {
-        return NavMenu.map((item) => {
-            if (item.title === "Products") {
-                return (
-                    <div key={item.title} className="relative cursor-pointer">
-                        <span
-                            key={item.title}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                setProductsMenuOpen(!productsMenuOpen);
-                            }}
-                            className={`${
-                                pathname === item.link ? "underline" : ""
-                            } flex items-center hover:text-neutral-500 ease-in-out duration-300`}
-                        >
-                            <li className={`py-4 text-xl text-black transition-colors`}>
-                                {item.title}
-                            </li>
-                            <BiChevronDown className="text-black" size={20} />
-                        </span>
-                        {productsMenuOpen && (
-                            <ProductsMenu setProductsMenuOpen={() => setProductsMenuOpen(false)} />
-                        )}
-                    </div>
-                );
-            } else {
-                return (
-                    <Link
-                        key={item.title}
-                        href={item.link}
-                        onClick={closeMobileMenu}
-                        className={`${pathname === item.link ? "underline" : ""}`}
-                    >
-                        <li
-                            className={`py-4 text-xl text-black transition-colors hover:text-neutral-500`}
-                        >
-                            {item.title}
-                        </li>
-                    </Link>
-                );
-            }
-        });
-    };
+    // Define a helper to render each filter section
+    const renderFilterSection = (
+        title: string,
+        options: string[],
+        selectedOption: string | null,
+        onClick: (option: string) => void
+    ) => (
+        <section aria-labelledby={title.toLowerCase().replace(" ", "-")}>
+            <h3
+                id={title.toLowerCase().replace(" ", "-")}
+                className="text-lg text-black font-medium mt-4"
+            >
+                {title}
+            </h3>
+            {options.map((option) => (
+                <button
+                    key={option}
+                    onClick={() => onClick(selectedOption === option ? "" : option)}
+                    className={`block text-sm text-left px-2 py-1 my-1 rounded ${
+                        selectedOption === option ? "text-blue-500" : " text-gray-400"
+                    }`}
+                    aria-pressed={selectedOption === option}
+                    aria-label={`Filter by ${option}`}
+                >
+                    {option}
+                </button>
+            ))}
+        </section>
+    );
 
     return (
-        <div className="relative">
+        <div className="relative flex lg:hidden">
             <button
                 onClick={openMobileMenu}
                 aria-label="Open mobile menu"
@@ -86,25 +75,25 @@ export default function MobileSidebarFilter() {
                     <TransitionChild
                         as={Fragment}
                         enter="transition-all ease-in-out duration-100"
-                        enterFrom="-translate-x-[100%]"
-                        enterTo="translate-x-[0%] sm:translate-x-[-45%] md:translate-x-[-60%]"
+                        enterFrom="-translate-x-full"
+                        enterTo="translate-x-0"
                         leave="transition-all ease-in-out duration-100"
                         leaveFrom="translate-x-0"
-                        leaveTo="-translate-x-[100%]"
+                        leaveTo="-translate-x-full"
                     >
                         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
                     </TransitionChild>
                     <TransitionChild
                         as={Fragment}
                         enter="transition-all ease-in-out duration-100"
-                        enterFrom="-translate-x-[100%]"
-                        enterTo="translate-x-[0%] sm:translate-x-[45%] md:translate-x-[60%]"
+                        enterFrom="-translate-x-full"
+                        enterTo="translate-x-0"
                         leave="transition-all ease-in-out duration-100"
                         leaveFrom="translate-x-0"
-                        leaveTo="-translate-x-[100%]"
+                        leaveTo="-translate-x-full"
                     >
-                        <DialogPanel className="fixed bottom-0 right-0 top-0 flex h-full flex-col bg-white pb-6 w-full sm:w-[375px]">
-                            <div className="p-4">
+                        <DialogPanel className="fixed bottom-0 left-0 top-0 flex h-full flex-col bg-white pb-6 w-full sm:w-[375px]">
+                            <aside className="p-4">
                                 <div className="flex items-center justify-between">
                                     <button
                                         className="flex h-11 w-11 items-center justify-center rounded-md text-black transition-colors"
@@ -115,42 +104,52 @@ export default function MobileSidebarFilter() {
                                     </button>
                                 </div>
 
-                                <ul className="flex w-full flex-col h-full">{renderNavMenu()}</ul>
-                            </div>
-                            {/* NAV BUTTONS */}
-                            <ul className="bottom-0 fixed flex flex-col self-start w-full">
-                                {/* Phone */}
-                                <Link
-                                    onClick={closeMobileMenu}
-                                    className="w-full px-10 flex justify-start"
-                                    href="tel:7048423535"
+                                <h2 className="text-xl font-semibold mb-4 text-black">Filters</h2>
+
+                                {renderFilterSection(
+                                    "Categories",
+                                    Filters.MainCategory,
+                                    selectedMainCategory,
+                                    (category) => filterByMainCategory(category as MainCategory)
+                                )}
+
+                                {selectedMainCategory === "Golf & Sports Turf" &&
+                                    renderFilterSection(
+                                        "Golf & Sports Turf Items",
+                                        Filters.GolfSportsTurfItems,
+                                        selectedSubCategory,
+                                        (subCategory) =>
+                                            filterBySubCategory(subCategory as GolfSportsTurfItems)
+                                    )}
+
+                                {selectedMainCategory === "Synthetic Turf" &&
+                                    renderFilterSection(
+                                        "Synthetic Turf Items",
+                                        Filters.SyntheticTurfItems,
+                                        selectedSubCategory,
+                                        (subCategory) =>
+                                            filterBySubCategory(subCategory as SyntheticTurfItems)
+                                    )}
+
+                                {renderFilterSection(
+                                    "Brand",
+                                    Filters.EquipmentBrand,
+                                    selectedBrand,
+                                    (brand) => filterByBrand(brand as EquipmentBrand)
+                                )}
+
+                                {/* {renderFilterSection("Client", Filters.Clients, selectedClient, (client) =>
+    filterByClient(client as Clients)
+)} */}
+
+                                <button
+                                    onClick={resetFilters}
+                                    className="mt-4 w-full bg-red-500 text-white font-semibold py-2 rounded"
+                                    aria-label="Reset all filters"
                                 >
-                                    <Button
-                                        leftChildren
-                                        roundedFull
-                                        className="mb-4 w-full py-4 flex justify-center sm:w-[300px]"
-                                        name="704-842-3535"
-                                        altColor
-                                    >
-                                        <FaPhone className="mr-2" />
-                                    </Button>
-                                </Link>
-                                {/* Email */}
-                                <Link
-                                    onClick={closeMobileMenu}
-                                    className="w-full px-10 flex justify-start"
-                                    href="email:frank.eckert@eckertgolf.com"
-                                >
-                                    <Button
-                                        leftChildren
-                                        roundedFull
-                                        className="mb-4 w-full py-4 flex justify-center sm:w-[300px]"
-                                        name="frank.eckert@eckertgolf.com"
-                                    >
-                                        <FaPhone className="mr-2" />
-                                    </Button>
-                                </Link>
-                            </ul>
+                                    Reset Filters
+                                </button>
+                            </aside>
                         </DialogPanel>
                     </TransitionChild>
                 </Dialog>
