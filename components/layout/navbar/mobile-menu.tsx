@@ -11,7 +11,7 @@ import { NavMenu } from "../../../lib/constants";
 import { FaPhone } from "react-icons/fa6";
 import Button from "@/components/button";
 import { BiChevronDown } from "react-icons/bi";
-import ProductsMenu from "./products-menu";
+import ProductsMenu from "./products-nav-menu";
 
 export default function MobileMenu() {
     // Constants

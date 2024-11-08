@@ -3,17 +3,27 @@ import { motion } from "framer-motion";
 import { ProductsMenuItems } from "@/lib/constants";
 import Link from "next/link";
 import { BiChevronRight } from "react-icons/bi";
+import { useProductStore } from "@/stores/product-store";
+import { MainCategory } from "@/lib/types";
 
-interface IProductsMenuProps {
+interface IProductsNavMenuProps {
     setProductsMenuOpen: () => void;
 }
 
-const ProductsMenu = (props: IProductsMenuProps) => {
+const ProductsNavMenu = (props: IProductsNavMenuProps) => {
     // Props
     const { setProductsMenuOpen } = props;
     const menuVariants = {
         hidden: { opacity: 0, y: -10 },
         visible: { opacity: 1, y: 0 },
+    };
+
+    // store
+    const { filterByMainCategory } = useProductStore();
+
+    const onProductsNevMenuClick = (title: MainCategory) => {
+        setProductsMenuOpen();
+        filterByMainCategory(title);
     };
 
     return (
@@ -29,7 +39,7 @@ const ProductsMenu = (props: IProductsMenuProps) => {
                 {ProductsMenuItems.map((item) => {
                     return (
                         <Link
-                            onClick={setProductsMenuOpen}
+                            onClick={() => onProductsNevMenuClick(item.title as MainCategory)}
                             href={item.link}
                             key={item.title}
                             className="px-4 py-2 hover:bg-gray-100 flex justify-between items-center"
@@ -44,4 +54,4 @@ const ProductsMenu = (props: IProductsMenuProps) => {
     );
 };
 
-export default ProductsMenu;
+export default ProductsNavMenu;

@@ -10,8 +10,8 @@ import Logo from "@/public/logos/EGS1.png";
 import MobileHeader from "./mobile-menu";
 import { NavMenu } from "../../../lib/constants";
 import { BiChevronDown, BiSearch } from "react-icons/bi";
-import ProductsMenu from "./products-menu";
 import SearchBar from "@/components/search-bar";
+import ProductsNavMenu from "./products-nav-menu";
 
 // TODO: Update navbar to Home, Products [Natural Grass, Synthetic Turf, All Purpose], Parts & Service, About, Finance Options]
 export default function Navbar() {
@@ -44,7 +44,9 @@ export default function Navbar() {
                             </li>
                         </span>
                         {productsMenuOpen && (
-                            <ProductsMenu setProductsMenuOpen={() => setProductsMenuOpen(false)} />
+                            <ProductsNavMenu
+                                setProductsMenuOpen={() => setProductsMenuOpen(false)}
+                            />
                         )}
                     </div>
                 );

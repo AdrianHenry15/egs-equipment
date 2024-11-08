@@ -1,3 +1,4 @@
+import ContactForm from "@/components/contact-form";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,5 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-    return <div className="flex flex-col justify-between relative w-full">Contact Page</div>;
+    return (
+        <div className="flex flex-col justify-center items-center relative w-full">
+            <ContactForm />
+        </div>
+    );
 }

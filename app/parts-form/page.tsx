@@ -1,4 +1,4 @@
-import ContactForm from "@/components/contact-form";
+import PartsForm from "@/components/parts-form/parts-form";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PartsServicesPage() {
     return (
         <div className="flex flex-col justify-center items-center relative w-full">
-            <ContactForm />
+            <PartsForm />
         </div>
     );
 }
