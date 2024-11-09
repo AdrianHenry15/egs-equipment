@@ -5,7 +5,11 @@ export type MainCategory = "Golf & Sports Turf" | "Synthetic Turf" | "All Purpos
 
 // Navigation
 export type NavMenuItems = "Home" | "Products" | "Parts Form" | "About" | "Finance Options";
-export type ProductNavItems = "Golf & Sports Turf" | "Synthetic Turf" | "All Purpose";
+export type ProductNavItems =
+    | "All Products"
+    | "Golf & Sports Turf"
+    | "Synthetic Turf"
+    | "All Purpose";
 export type NavMenuLinks = "" | "/" | "/parts-form" | "/about" | "/finance-options";
 export type ProductNavLinks =
     | "/products"
@@ -114,6 +118,6 @@ export type ProductSpecificationsType = {
 export type EquipmentType = {
     specs_description: string;
     features: string[];
-    specifications: ProductSpecificationsType | ProductSpecificationsType[];
+    specifications: ProductSpecificationsType;
     video?: string;
 };

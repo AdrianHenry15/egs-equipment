@@ -21,9 +21,9 @@ const ProductsNavMenu = (props: IProductsNavMenuProps) => {
     // store
     const { filterByMainCategory } = useProductStore();
 
-    const onProductsNevMenuClick = (title: MainCategory) => {
+    const onProductsNavMenuClick = (title: MainCategory) => {
         setProductsMenuOpen();
-        filterByMainCategory(title);
+        filterByMainCategory(title === "All Products" ? ("" as MainCategory) : title);
     };
 
     return (
@@ -39,7 +39,7 @@ const ProductsNavMenu = (props: IProductsNavMenuProps) => {
                 {ProductsMenuItems.map((item) => {
                     return (
                         <Link
-                            onClick={() => onProductsNevMenuClick(item.title as MainCategory)}
+                            onClick={() => onProductsNavMenuClick(item.title as MainCategory)}
                             href={item.link}
                             key={item.title}
                             className="px-4 py-2 hover:bg-gray-100 flex justify-between items-center"

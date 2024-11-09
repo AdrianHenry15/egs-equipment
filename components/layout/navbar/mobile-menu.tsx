@@ -11,7 +11,7 @@ import { NavMenu } from "../../../lib/constants";
 import { FaPhone } from "react-icons/fa6";
 import Button from "@/components/button";
 import { BiChevronDown } from "react-icons/bi";
-import ProductsMenu from "./products-nav-menu";
+import ProductsNavMenu from "./products-nav-menu";
 
 export default function MobileMenu() {
     // Constants
@@ -49,7 +49,9 @@ export default function MobileMenu() {
                             <BiChevronDown className="text-black" size={20} />
                         </span>
                         {productsMenuOpen && (
-                            <ProductsMenu setProductsMenuOpen={() => setProductsMenuOpen(false)} />
+                            <ProductsNavMenu
+                                setProductsMenuOpen={() => setProductsMenuOpen(false)}
+                            />
                         )}
                     </div>
                 );

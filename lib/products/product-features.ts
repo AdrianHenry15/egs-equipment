@@ -32,7 +32,7 @@ export const ProductFeatures = {
         `Lift over framework for rotproof lightweight grassbox reduces storage space and makes transport on trailers easy`,
         `Low vibration handlebars`,
         `Easy start reliable and powerful engine`,
-        `Quality steel geared differential in oil bath for easy manoeuvrability without scuffing`,
+        `Quality steel geared differential in oil bath for easy maneuverability without scuffing`,
         `Long Life drive system with quality components for reliable operation`,
         `Excellent sight lines of front roller from operators position`,
         `Cast 3 section aluminum ribbed rear roller for positive traction in all conditions`,

@@ -4,6 +4,7 @@ import { ProductType } from "@/lib/types";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { getProductBrandImage } from "@/lib/products/helpers/get-product-brand-image";
 
 interface ProductCardProps {
     product: ProductType;
@@ -41,7 +42,12 @@ export default function ProductCard({ product }: ProductCardProps) {
                 <div className="p-4">
                     <h3 className="text-lg text-black font-semibold mb-2">{truncatedName}</h3>
                     <p className="text-sm text-gray-600 mb-4">{truncatedDescription}</p>
-                    <p className="text-xs text-black">Brand: {product.brand}</p>
+                    <Image
+                        width={product.brand === "Dennis" ? 80 : 60}
+                        className={`${product.brand === "Dennis" ? "h-8" : "h-6"}`}
+                        alt={product.name}
+                        src={getProductBrandImage(product.brand)}
+                    />
                 </div>
             </Link>
         </motion.div>
