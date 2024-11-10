@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Dialog, Transition, DialogPanel, TransitionChild } from "@headlessui/react";
 import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
@@ -27,6 +28,7 @@ export default function MobileSidebarFilter() {
         selectedSubCategory,
         selectedBrand,
     } = useProductStore();
+
     useEffect(() => {
         closeMobileMenu();
     }, [pathname]);
@@ -36,29 +38,43 @@ export default function MobileSidebarFilter() {
         title: string,
         options: string[],
         selectedOption: string | null,
-        onClick: (option: string) => void
+        onChange: (option: string) => void
     ) => (
-        <section aria-labelledby={title.toLowerCase().replace(" ", "-")}>
+        <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            aria-labelledby={title.toLowerCase().replace(" ", "-")}
+            transition={{ duration: 0.5 }}
+        >
             <h3
                 id={title.toLowerCase().replace(" ", "-")}
-                className="text-lg text-black font-medium mt-4"
+                className="text-sm font-semibold text-black mt-4"
             >
                 {title}
             </h3>
-            {options.map((option) => (
-                <button
-                    key={option}
-                    onClick={() => onClick(selectedOption === option ? "" : option)}
-                    className={`block text-sm text-left px-2 py-1 my-1 rounded ${
-                        selectedOption === option ? "text-blue-500" : " text-gray-400"
-                    }`}
-                    aria-pressed={selectedOption === option}
+            {options.map((option, index) => (
+                <div
+                    key={index}
+                    className="flex items-center cursor-pointer my-2"
+                    onClick={() => onChange(option)}
                     aria-label={`Filter by ${option}`}
                 >
-                    {option}
-                </button>
+                    <span
+                        className={`w-4 h-4 mr-2 rounded-full border-[1px] border-black flex items-center justify-center ${
+                            selectedOption === option ? "bg-blue-700" : "bg-white"
+                        }`}
+                    >
+                        {selectedOption === option && (
+                            <span className="w-2 h-2 rounded-full bg-white" />
+                        )}
+                    </span>
+                    <label className="block text-sm text-left text-black cursor-pointer">
+                        {option}
+                    </label>
+                </div>
             ))}
-        </section>
+        </motion.section>
     );
 
     return (
@@ -137,10 +153,6 @@ export default function MobileSidebarFilter() {
                                     selectedBrand,
                                     (brand) => filterByBrand(brand as EquipmentBrand)
                                 )}
-
-                                {/* {renderFilterSection("Client", Filters.Clients, selectedClient, (client) =>
-    filterByClient(client as Clients)
-)} */}
 
                                 <button
                                     onClick={resetFilters}

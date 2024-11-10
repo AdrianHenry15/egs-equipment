@@ -60,22 +60,60 @@ export const useProductStore = create<ProductState>((set, get) => ({
 
     filterByMainCategory: (category) => {
         set({ selectedMainCategory: category, selectedSubCategory: null });
-        applyFilters();
+        set((state) => ({
+            filteredProducts: state.products.filter(
+                (product) =>
+                    (!category || product.mainCategory === category) &&
+                    (!state.selectedSubCategory ||
+                        product.subCategory === state.selectedSubCategory) &&
+                    (!state.selectedBrand || product.brand === state.selectedBrand) &&
+                    (!state.selectedClient || product.usedBy === state.selectedClient)
+            ),
+        }));
     },
 
     filterBySubCategory: (subCategory) => {
         set({ selectedSubCategory: subCategory });
-        applyFilters();
+        set((state) => ({
+            filteredProducts: state.products.filter(
+                (product) =>
+                    (!state.selectedMainCategory ||
+                        product.mainCategory === state.selectedMainCategory) &&
+                    (!subCategory || product.subCategory === subCategory) &&
+                    (!state.selectedBrand || product.brand === state.selectedBrand) &&
+                    (!state.selectedClient || product.usedBy === state.selectedClient)
+            ),
+        }));
     },
 
     filterByBrand: (brand) => {
         set({ selectedBrand: brand });
-        applyFilters();
+        set((state) => ({
+            filteredProducts: state.products.filter(
+                (product) =>
+                    (!state.selectedMainCategory ||
+                        product.mainCategory === state.selectedMainCategory) &&
+                    (!state.selectedSubCategory ||
+                        product.subCategory === state.selectedSubCategory) &&
+                    (!brand || product.brand === brand) &&
+                    (!state.selectedClient || product.usedBy === state.selectedClient)
+            ),
+        }));
     },
 
     filterByClient: (client) => {
         set({ selectedClient: client });
-        applyFilters();
+        set((state) => ({
+            filteredProducts: state.products.filter(
+                (product) =>
+                    (!state.selectedMainCategory ||
+                        product.mainCategory === state.selectedMainCategory) &&
+                    (!state.selectedSubCategory ||
+                        product.subCategory === state.selectedSubCategory) &&
+                    (!state.selectedBrand || product.brand === state.selectedBrand) &&
+                    (!client || product.usedBy === client)
+            ),
+        }));
     },
 
     resetFilters: () => {
@@ -88,20 +126,3 @@ export const useProductStore = create<ProductState>((set, get) => ({
         });
     },
 }));
-
-// Helper function to apply filters based on active states
-const applyFilters = () => {
-    const { products, selectedMainCategory, selectedSubCategory, selectedBrand, selectedClient } =
-        useProductStore.getState();
-
-    const filtered = products.filter((product) => {
-        return (
-            (!selectedMainCategory || product.mainCategory === selectedMainCategory) &&
-            (!selectedSubCategory || product.subCategory === selectedSubCategory) &&
-            (!selectedBrand || product.brand === selectedBrand) &&
-            (!selectedClient || product.usedBy === selectedClient)
-        );
-    });
-
-    useProductStore.setState({ filteredProducts: filtered });
-};

@@ -25,7 +25,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
     return (
         <motion.div
-            className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition-shadow max-h-[350px] p-4 overflow-hidden"
+            className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition-shadow max-h-[425px] p-4 overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -50,6 +50,13 @@ export default function ProductCard({ product }: ProductCardProps) {
                     />
                 </div>
             </Link>
+
+            {/* <Link
+                className="hover:scale-105 duration-300 ease-in-out transition-transform flex items-center self-center z-50 justify-center text-white bg-green-500 py-4 w-full"
+                href={"/contact"}
+            >
+                <span>get a ote</span>
+            </Link> */}
         </motion.div>
     );
 }

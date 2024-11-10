@@ -70,7 +70,7 @@ export default function FilterSidebar() {
         title: string,
         options: string[],
         selectedOption: string | null,
-        onClick: (option: string) => void
+        onChange: (option: string) => void
     ) => (
         <motion.section
             initial={{ opacity: 0 }}
@@ -81,22 +81,28 @@ export default function FilterSidebar() {
         >
             <h3
                 id={title.toLowerCase().replace(" ", "-")}
-                className="text-lg text-black font-medium mt-4"
+                className="text-sm font-semibold text-black mt-4"
             >
                 {title}
             </h3>
-            {options.map((option) => (
-                <button
-                    key={option}
-                    onClick={() => onClick(selectedOption === option ? "" : option)}
-                    className={`block text-sm text-left px-2 py-1 my-1 rounded bg-gray-200 ${
-                        selectedOption === option ? "text-white bg-green-600" : " text-gray-400"
-                    }`}
-                    aria-pressed={selectedOption === option}
-                    aria-label={`Filter by ${option}`}
-                >
-                    {option}
-                </button>
+            {options.map((option, index) => (
+                <div className="flex items-center justify-start w-full m-2" key={index}>
+                    <input
+                        className="w-4 mr-2"
+                        type="radio"
+                        name={title}
+                        value={option}
+                        checked={selectedOption === option}
+                        onChange={() => onChange(option)}
+                        aria-label={`Filter by ${option}`}
+                    />
+                    <label
+                        htmlFor={option}
+                        className={`block text-sm text-left text-black rounded`}
+                    >
+                        {option}
+                    </label>
+                </div>
             ))}
         </motion.section>
     );
