@@ -1,3 +1,4 @@
+import About from "@/components/layout/about";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <div className="flex flex-col justify-center items-center h-screen relative w-full">
-            About Page
+        <div className="flex w-full relative bg-white justify-center items-center">
+            <About />
         </div>
     );
 }

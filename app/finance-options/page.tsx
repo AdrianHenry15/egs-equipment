@@ -1,3 +1,4 @@
+import FinanceOptions from "@/components/layout/finance-options";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,8 +13,8 @@ export const metadata: Metadata = {
 //
 export default function FinanceOptionsPage() {
     return (
-        <div className="flex flex-col justify-center items-center h-screen relative w-full">
-            Finance Options Page
+        <div className="flex w-full relative bg-white justify-center items-center">
+            <FinanceOptions />
         </div>
     );
 }
