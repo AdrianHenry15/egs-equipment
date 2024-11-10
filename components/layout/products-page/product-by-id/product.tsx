@@ -3,14 +3,12 @@
 import Image from "next/image";
 import React from "react";
 
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import {
     GolfSportsTurfProducts,
     SyntheticTurfProducts,
     AeratorProducts,
     DebrisBlowerProducts,
 } from "@/lib/products/product-list";
-import { ProductSpecificationsType } from "@/lib/types";
 
 interface IProductProps {
     productId: string;
