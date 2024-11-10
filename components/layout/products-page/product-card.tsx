@@ -12,7 +12,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
     const MAX_NAME_LENGTH = 15;
-    const MAX_DESCRIPTION_LENGTH = 30; // Adjust this value as needed
+    const MAX_DESCRIPTION_LENGTH = 50; // Adjust this value as needed
 
     const truncatedName =
         product.name.length > MAX_NAME_LENGTH
@@ -25,7 +25,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
     return (
         <motion.div
-            className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition-shadow max-h-[425px] p-4 overflow-hidden"
+            className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition-shadow  p-4 overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -43,7 +43,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                     <h3 className="text-lg text-black font-semibold mb-2">{truncatedName}</h3>
                     <p className="text-sm text-gray-600 mb-4">{truncatedDescription}</p>
                     <Image
-                        width={product.brand === "Dennis" ? 80 : 60}
+                        width={product.brand === "Dennis" || product.brand === "Eastman" ? 100 : 60}
                         className={`${product.brand === "Dennis" ? "h-8" : "h-6"}`}
                         alt={product.name}
                         src={getProductBrandImage(product.brand)}
@@ -51,12 +51,12 @@ export default function ProductCard({ product }: ProductCardProps) {
                 </div>
             </Link>
 
-            {/* <Link
-                className="hover:scale-105 duration-300 ease-in-out transition-transform flex items-center self-center z-50 justify-center text-white bg-green-500 py-4 w-full"
+            <Link
+                className="hover:scale-105 duration-300 ease-in-out transition-transform flex items-center self-center z-50 justify-center text-white bg-green-700 py-1 w-full"
                 href={"/contact"}
             >
-                <span>get a ote</span>
-            </Link> */}
+                <span>Request A Quote</span>
+            </Link>
         </motion.div>
     );
 }

@@ -42,7 +42,6 @@ const ContactForm = () => {
             phone: "",
             email: "",
             comment: "",
-            plan: "",
         },
     });
 

@@ -1,4 +1,4 @@
-import PartsForm from "@/components/parts-form/parts-form";
+import PartsForm from "@/components/forms/parts-form";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
