@@ -1,90 +1,103 @@
-export const ProductSpecifications = {
+import { ProductSpecificationsType } from "../types";
+
+type Products = {
+    [key: string]: ProductSpecificationsType;
+};
+
+export const ProductSpecifications: Products = {
     javelin: {
         model: "Javelin Aer-Aid 1500",
         code: "FS1066",
         action: "Vertical Air Injection",
-        working_width: `1500mm(60")`,
-        working_depth: `127mm(5")`,
-        tractor_power_requirement: "30hp minimum",
+
+        cutting: {
+            working_width: `1500mm(60")`,
+            working_depth: `127mm(5")`,
+        },
+        engine: {
+            tractor_power_requirement: "30hp minimum",
+        },
         inclusions: "Includes set of 10 air/non-air tines",
     },
     dart: {
         model: "Dart",
         code: "FS1231",
         action: "Vertical",
-        working_width: `400mm(16")`,
-        working_depth: `100mm(4")`,
-        engine: "Honda GX160",
+        cutting: {
+            working_width: `400mm(16")`,
+            working_depth: `100mm(4")`,
+        },
+        engine: {
+            engine: "Honda GX160",
+        },
         exclusions: "Power unit excludes tines",
     },
-    g660: {
+    gseries: {
         model: "G-660",
-        cutting_width: `660mm(26")`,
-        cylinder: `6 or 8 bladed heavy duty spiral`,
-        height_of_cut: `8-56mm`,
-        cutter_performance: `95 cuts/m(88cuts/yd)`,
-        dimensions: `1250x875x1020mm`,
+        dimensions: {
+            width: "1250",
+            length: "875",
+            height: "1020mm",
+        },
+        cutting: {
+            cutting_width: `660mm(26")`,
+            height_of_cut: `8-56mm`,
+            cutter_performance: `95 cuts/m(88cuts/yd)`,
+            cylinder: `6 or 8 bladed heavy duty spiral`,
+        },
         weight: `148kg`,
-        engine_petrol: `Honda 5.5hp`,
-        drive_system: `Brake band for roller and dog drive to disengage cutter for transport`,
-        final_drive: `Poly "V" high performance belts under constant tension`,
-    },
-    g760: {
-        model: "G-760",
-        cutting_width: `760mm(30")`,
-        cylinder: `6 or 8 bladed heavy duty spiral`,
-        height_of_cut: `8-56mm`,
-        cutter_performance: `95 cuts/m(88cuts/yd)`,
-        dimensions: `1250x975x1020mm`,
-        weight: `156kg`,
-        engine_petrol: `Honda 5.5hp`,
-        drive_system: `Brake band for roller and dog drive to disengage cutter for transport`,
-        final_drive: `Poly "V" high performance belts under constant tension`,
-    },
-    g860: {
-        model: "G-860",
-        cutting_width: `860mm(30")`,
-        cylinder: `6 or 8 bladed heavy duty spiral`,
-        height_of_cut: `8-56mm`,
-        cutter_performance: `95 cuts/m(88cuts/yd)`,
-        dimensions: `1250x1075x1020mm`,
-        weight: `166kg`,
-        engine_petrol: `Honda 6.5hp`,
+        engine: {
+            engine_petrol: `Honda 5.5hp`,
+        },
         drive_system: `Brake band for roller and dog drive to disengage cutter for transport`,
         final_drive: `Poly "V" high performance belts under constant tension`,
     },
     es860: {
         code: `D150`,
-        cutting_width: `860mm (34")`,
-        height_of_cut: `9mm - 56mm`,
+        cutting: {
+            cutting_width: `860mm (34")`,
+            height_of_cut: `9mm - 56mm`,
+        },
         power_source_output: `48v battery system`,
         dimensions: {
             width: "1110mm",
             length: "1860mm (with grassbox)",
             altLength: "1340mm (without grassbox)",
             height: "1100mm",
-            weight: "235kg (with cutting cassette)",
-            altWeight: "195kg (without cassette)",
         },
+        weight: "235kg (with cutting cassette)",
+        altWeight: "195kg (without cassette)",
     },
     rotorake_600_hd: {
         model: "Rotorake 600HD",
         code: "FS1246",
-        width: "600mm(24)",
-        engine: "Honda GX390",
+        dimensions: {
+            width: "600mm(24)",
+        },
+        engine: {
+            engine: "Honda GX390",
+        },
         depth: "30mm (with option to go deeper)",
     },
     auto_rotorake_mk5: {
         model: `Auto Rotorake Mk5`,
         code: `FS1052`,
-        width: `500mm (20")`,
-        engine: `GX160 Honda Engine`,
+        dimensions: {
+            width: `500mm (20")`,
+        },
+        engine: {
+            engine: `GX160 Honda Engine`,
+        },
     },
     veemo_mk2: {
         model: "Veemo Mk2",
         code: "FS1014",
-        width: `2000mm (80")`,
-        tractor_power_requirement: `30hp minimum`,
+        dimensions: {
+            width: `2000mm (80")`,
+        },
+        engine: {
+            tractor_power_requirement: `30hp minimum`,
+        },
         inclusions: [
             "Includes 2mm tungssten tipped 'hook' blades reel",
             "Integral heavy duty Oil cooler",
@@ -92,8 +105,12 @@ export const ProductSpecifications = {
     },
     hover_mower: {
         model: "Hover Mower",
-        engine: "Honda 5.5hp GCV160A-N7AI, 4 cycle",
-        cutting_width: "19 inches",
+        engine: {
+            engine: "Honda 5.5hp GCV160A-N7AI, 4 cycle",
+        },
+        cutting: {
+            cutting_width: "19 inches",
+        },
         inclusions: [
             "Deck high density polyethylene, UV, checmical resistant",
             "Impeller High impact plastic alloy, machined aluminum hub",
@@ -102,48 +119,76 @@ export const ProductSpecifications = {
     brush_pro: {
         model: "Brush Pro",
         code: "FS1235Y",
-        oscillating_brush: `1500mm (1.5m/60)`,
-        rear_brush: `3000mm (3m/120)`,
-        engine: "Honda GXV390",
+        brushes: {
+            oscillating_brush: `1500mm (1.5m/60)`,
+            rear_brush: `3000mm (3m/120)`,
+        },
+        engine: {
+            engine: "Honda GXV390",
+        },
     },
     svr_1500_deep_cleaner: {
         model: "SVR 1500 Deep Cleaner",
         code: `FS1286`,
-        tractor_power_requirement: `Minimum 20hp`,
-        working_width: `1500mm (1.5m/60)`,
+        engine: {
+            tractor_power_requirement: `Minimum 20hp`,
+        },
+        cutting: {
+            working_width: `1500mm (1.5m/60)`,
+        },
     },
+
     sss1000: {
         model: "SSS1000",
-        width: "1500mm",
-        length: "870mm",
-        height: "390mm",
+        dimensions: {
+            width: "1500mm",
+            length: "870mm",
+            height: "390mm",
+        },
         weight: "112kg",
-        working_width: "1000mm",
+        cutting: {
+            working_width: "1000mm",
+        },
     },
     osca_3: {
         model: "OSCA 3",
-        width: "2044mm",
-        length: "512mm",
-        height: "867mm",
+        dimensions: {
+            width: "2044mm",
+            length: "512mm",
+            height: "867mm",
+        },
         weight: "150kg",
-        working_width: "1833mm",
-        number_of_brushes: "6",
-        brushes: "F33772 or SP24004",
+        cutting: {
+            working_width: "1833mm",
+        },
+        brushes: {
+            brushes: "F33772 or SP24004",
+            number_of_brushes: "6",
+        },
+
         recommended_tractor: "16hp 540rpm",
     },
     varibrush: {
         model: "Varibrush",
-        width: "1924mm",
-        length: "2370mm",
-        height: "850mm",
-        number_of_brush_sections: "14",
+        dimensions: {
+            width: "1924mm",
+            length: "2370mm",
+            height: "850mm",
+        },
+        brushes: {
+            number_of_brushes: "14",
+        },
         weight: "125kg",
-        working_width: "1924mm",
+        cutting: {
+            working_width: "1924mm",
+        },
     },
     triangular_brush: {
         model: "Triangular Brush",
         code: "FS1265Y",
-        working_width: "1800mm (1.8m/72)",
+        cutting: {
+            working_width: "1800mm (1.8m/72)",
+        },
     },
     powaspred: {
         model: "Powaspred",
@@ -153,40 +198,58 @@ export const ProductSpecifications = {
     },
     tractor_brush_combinations: {
         model: "Tractor Brush Combinations",
-        working_width: `1800mm (1.8m/72")`,
-        tractor_power_requirement: "15hp minimum",
+        cutting: {
+            working_width: `1800mm (1.8m/72")`,
+        },
+        engine: {
+            tractor_power_requirement: "15hp minimum",
+        },
     },
     tractor_rake_and_brush_combinations: {
         model: "Tractor Rake and Brush Combinations",
-        working_width: `1800mm (1.8m/72")`,
-        tractor_power_requirement: "15hp minimum",
+        cutting: {
+            working_width: `1800mm (1.8m/72")`,
+        },
+        engine: {
+            tractor_power_requirement: "15hp minimum",
+        },
     },
     towed_brush_combination: {
         model: "Towed Brush Combination",
-        working_width: `1800mm (1.8m/72")`,
-        power_unit_requirement: "15hp minimum",
+        cutting: {
+            working_width: `1800mm (1.8m/72")`,
+        },
+        engine: {
+            power_unit_requirement: "15hp minimum",
+        },
     },
     litamina: {
         model: "Litamina 1200",
         code: "FS1072Y",
-        working_width: `1200mm (1.2m/48)`,
-        minimum_tractor_required: "25hp minimum",
+        cutting: {
+            working_width: `1200mm (1.2m/48)`,
+        },
+        minimum_tractor_requirement: "25hp minimum",
     },
     cyclone_8000: {
         model: `Cyclone 8000`,
-        length: `95"`,
-        height: `37"`,
-        width: `44"`,
+        dimensions: {
+            length: `95"`,
+            height: `37"`,
+            width: `44"`,
+            tire_size: `18.5 x 8.50-8 turf tires`,
+        },
         weight: `360 lbs.`,
-        tire_size: `18.5 x 8.50-8 turf tires`,
     },
     cyclone_kb4: {
         model: `Cyclone KB4`,
-        length: `102"`,
-        height: `38.5"`,
-        width: `48"`,
+        dimensions: {
+            length: `102"`,
+            height: `38.5"`,
+            width: `48"`,
+            tire_size: `18.5 x 8.50-8 turf tires`,
+        },
         weight: `470 lbs.`,
-        tire_size: `18.5 x 8.50-8 turf tires`,
     },
     cyclone_squared: {
         model: `Cyclone Squared`,

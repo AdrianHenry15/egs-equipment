@@ -46,11 +46,7 @@ export const GolfSportsTurfProducts: ProductType[] = [
         equipment_details: {
             specs_description: ProductSpecDescriptions.gseries,
             features: ProductFeatures.gseries,
-            specifications: [
-                ProductSpecifications.g660,
-                ProductSpecifications.g760,
-                ProductSpecifications.g860,
-            ],
+            specifications: ProductSpecifications.gseries,
             video: "",
         },
     },
