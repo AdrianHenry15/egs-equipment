@@ -119,7 +119,7 @@ const Product = (props: IProductProps) => {
                     <div className="flex items-center text-sm">
                         <h5 className="text-black">Working Width:</h5>
                         <p className="text-gray-500 ml-1">
-                            {product.equipment_details.specifications.working_width}
+                            {product.equipment_details.specifications.cutting?.working_width}
                         </p>
                     </div>
                 </div>
