@@ -20,7 +20,7 @@ export default function ProductsPage() {
             <Splash
                 link1="/contact"
                 link_title_1="Contact Us"
-                link2="/parts-services"
+                link2="/parts-form"
                 link_title_2="Parts & Services"
                 img={SplashPic}
                 title="Products"
