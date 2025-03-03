@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-import { AiFillFacebook } from "react-icons/ai";
+import { AiFillFacebook, AiOutlineInstagram } from "react-icons/ai";
 
 const SocialsCard = () => {
     return (
@@ -10,22 +10,22 @@ const SocialsCard = () => {
             <div className="flex justify-evenly items-center w-full">
                 <Link
                     className="hover:scale-125 transition-all duration-300 ease-in-out"
-                    // target="_blank"
-                    // href="https://www.facebook.com/britelightingllc"
+                    target="_blank"
                     href={"https://www.facebook.com/EGSturf/"}
                 >
                     <AiFillFacebook size={25} />
                 </Link>
-                {/* <Link
-                    // target="_blank"
-                    // href="https://www.instagram.com/britelightingllc/"
-                    href={""}
+                <Link
+                    target="_blank"
+                    href={
+                        "https://www.instagram.com/egsturf?igsh=MWhubzJoaGZiaWsybA%3D%3D&utm_source=qr"
+                    }
                 >
                     <AiOutlineInstagram
                         className="hover:scale-125 transition-all duration-300 ease-in-out"
                         size={25}
                     />
-                </Link> */}
+                </Link>
             </div>
         </div>
     );
