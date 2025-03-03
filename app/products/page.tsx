@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 import Splash from "@/components/splash";
-import SplashPic from "@/public/orange-tractor.jpg";
+import SplashPic from "@/public/splash/splash-usa-baseball.png";
 import ProductList from "@/components/layout/products-page/product-list";
 import FilterSidebar from "@/components/layout/products-page/filter-sidebar";
 import MobileSidebarFilter from "@/components/layout/products-page/mobile-sidebar-filter";

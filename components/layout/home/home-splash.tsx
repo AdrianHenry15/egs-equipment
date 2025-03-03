@@ -27,7 +27,7 @@ const HomeSplash = () => {
                             <div className="hidden absolute w-full bg-gradient-to-r from-black h-screen z-30 md:flex"></div>
                             <div className="flex justify-center relative items-center self-center w-full md:h-full">
                                 <Image
-                                    className="object-cover w-full h-[500px] md:w-full md:h-full"
+                                    className={` object-cover object-bottom w-full h-[500px] md:w-full md:h-full`}
                                     src={img}
                                     alt="splash-img"
                                 />

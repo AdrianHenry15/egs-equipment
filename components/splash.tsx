@@ -38,7 +38,7 @@ const Splash = (props: ISplashProps) => {
                 <div className="absolute w-full h-full bg-gradient-to-r from-zinc-900 hidden md:flex"></div>
                 <span>
                     <Image
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-cover object-bottom"
                         src={props.img}
                         alt={props.title}
                     />
