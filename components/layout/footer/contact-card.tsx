@@ -9,7 +9,9 @@ const ContactCard = () => {
                     Contact Us
                 </Link>
                 <div className="w-full">
-                    <address className="text-gray-400 pb-4">Insert Address Here</address>
+                    <address className="text-gray-400 pb-4">
+                        5415 Lake Howell Road #190 Winter Park, FL 32792
+                    </address>
                     <div className="flex flex-col text-gray-400">
                         <span className="pb-4">
                             <label className="text-white">Office: </label>

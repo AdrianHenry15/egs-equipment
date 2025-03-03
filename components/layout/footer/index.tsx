@@ -6,7 +6,7 @@ import Link from "next/link";
 import { MdCopyright } from "react-icons/md";
 
 import ContactCard from "./contact-card";
-import SocialsCard from "./socials-card";
+// import SocialsCard from "./socials-card";
 import FooterMenu from "./footer-menu";
 import LogoCard from "./logo-card";
 
@@ -23,7 +23,7 @@ const Footer = () => {
                 </div>
             </div>
             {/* SOCIALS  */}
-            <SocialsCard />
+            {/* <SocialsCard /> */}
             {/* CREATED BY */}
             <div className="flex flex-col items-center justify-center text-center self-center w-full border-t-[1px] py-14 text-xs border-zinc-900">
                 <div className="flex flex-col items-center">
