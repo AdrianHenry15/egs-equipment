@@ -26,9 +26,10 @@ const itemVariants = {
 
 const PoweredBy = () => {
     return (
-        <section className="flex flex-col justify-center items-center bg-white px-6 py-20 lg:px-10 lg:py-48">
+        <section className="flex flex-col items-center bg-white px-4 py-16 sm:py-20 md:py-24 lg:py-32 w-full">
+            {/* Title */}
             <motion.h2
-                className="text-black text-3xl lg:text-5xl font-bold pb-6 lg:pb-10 text-center"
+                className="text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center pb-8"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -36,37 +37,34 @@ const PoweredBy = () => {
                 EGS Equipment is Powered By:
             </motion.h2>
 
+            {/* Logos Container */}
             <motion.div
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full justify-center"
+                className="flex flex-col items-center w-full gap-12"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
             >
                 {/* Howardson Companies */}
-                <motion.div
-                    className="flex flex-col items-center p-4 lg:p-10"
-                    variants={itemVariants}
-                >
-                    <motion.div whileHover={{ scale: 1.1 }}>
+                <motion.div className="flex flex-col items-center gap-6" variants={itemVariants}>
+                    <motion.div whileHover={{ scale: 1.05 }}>
                         <Image
                             src={HowardsonLogo}
                             alt="Howardson - Leader in Turf Care Equipment"
-                            priority
-                            width={350} // Optimized size
-                            height={65}
+                            width={300}
+                            height={55}
                             quality={85}
                             placeholder="blur"
                         />
                     </motion.div>
-                    <div className="flex justify-center items-center gap-6 mt-6">
+                    <div className="flex flex-wrap justify-center gap-6">
                         {[DennisLogo, SISISLogo, SynProLogo].map((logo, index) => (
                             <motion.div
                                 key={index}
-                                whileHover={{ scale: 1.1 }}
+                                whileHover={{ scale: 1.05 }}
                                 variants={itemVariants}
+                                className="w-16 md:w-20"
                             >
                                 <Image
-                                    className="w-[60px] md:w-auto" // Slightly reduced size
                                     src={logo}
                                     alt={`Brand Logo ${index + 1}`}
                                     width={80}
@@ -81,21 +79,28 @@ const PoweredBy = () => {
                 </motion.div>
 
                 {/* Other Logos */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-items-center">
+                <motion.div
+                    className="flex flex-wrap justify-center gap-6"
+                    variants={containerVariants}
+                >
                     {[HarodLogo, BuffaloLogo, PitchmarkLogo].map((logo, index) => (
-                        <motion.div key={index} whileHover={{ scale: 1.1 }} variants={itemVariants}>
+                        <motion.div
+                            key={index}
+                            whileHover={{ scale: 1.05 }}
+                            variants={itemVariants}
+                        >
                             <Image
                                 src={logo}
                                 alt={`Brand Logo ${index + 4}`}
-                                width={130} // Slightly reduced width for optimization
-                                height={65}
+                                width={120}
+                                height={60}
                                 quality={85}
                                 placeholder="blur"
                                 loading="lazy"
                             />
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </motion.div>
         </section>
     );
