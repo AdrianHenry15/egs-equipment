@@ -81,13 +81,15 @@ export default function Navbar() {
                     <SearchBar />
                 </div>
             )}
-            <div className="flex relative justify-center items-center self-center lg:hidden">
-                <BiSearch
-                    onClick={() => setMobileSearch(!mobileSearch)}
-                    className="text-black cursor-pointer absolute ml-14"
-                    size={25}
-                />
-            </div>
+            {!mobileSearch && (
+                <div className="flex relative justify-center items-center self-center lg:hidden">
+                    <BiSearch
+                        onClick={() => setMobileSearch(!mobileSearch)}
+                        className="text-black cursor-pointer absolute ml-14"
+                        size={25}
+                    />
+                </div>
+            )}
             {/* MOBILE CONTAINER */}
             <div className="absolute self-center right-0 top-4 lg:top-0 lg:hidden">
                 <MobileHeader />

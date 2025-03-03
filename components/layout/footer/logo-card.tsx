@@ -13,7 +13,7 @@ const LogoCard = () => {
                 </span>
                 <span className="flex items-center text-xs text-zinc-500">
                     <FaRegCopyright className="mx-2" />
-                    2000 EGS Equipment
+                    2025 EGS Equipment
                 </span>
             </div>
         </span>

@@ -1,13 +1,21 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-import backgroundImg from "@/public/logos/canon-logo.png"; // New background image for financial theme
+import { motion } from "framer-motion";
+import backgroundImg from "@/public/logos/canon-logo.png";
 import PromoRow from "@/components/promo-row";
 
 const FinanceOptions: React.FC = () => {
     return (
-        <div className="min-h-screen bg-black w-full">
+        <motion.div
+            className="min-h-screen bg-black w-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+        >
             {/* Jumbotron Header */}
-            <div className="relative w-full h-96 md:h-[500px] bg-black overflow-hidden rounded-lg shadow-md">
+            <div className="relative w-full h-96 md:h-[500px] bg-black overflow-hidden rounded-lg shadow-lg">
                 <Image
                     src={backgroundImg}
                     alt="Canon Financial Solutions"
@@ -15,24 +23,41 @@ const FinanceOptions: React.FC = () => {
                     objectFit="contain"
                     objectPosition="center"
                     priority
-                    className="opacity-80"
+                    className="opacity-90"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center text-center text-white">
-                    <h1 className="text-3xl md:text-5xl font-bold">Canon Financial Solutions</h1>
-                    <p className="mt-2 text-lg md:text-xl max-w-2xl">
+                <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white">
+                    <motion.h1
+                        className="text-3xl md:text-5xl font-extrabold"
+                        initial={{ y: -20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                    >
+                        Canon Financial Solutions
+                    </motion.h1>
+                    <motion.p
+                        className="mt-2 text-lg md:text-xl max-w-2xl"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                    >
                         Empowering businesses with flexible financial solutions to achieve their
                         growth goals.
-                    </p>
+                    </motion.p>
                 </div>
             </div>
 
-            <div className="flex w-full flex-col bg-white">
+            <motion.div
+                className="flex w-full flex-col bg-white"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+            >
                 <h5 className="text-4xl font-semibold flex w-full items-center text-center justify-center p-10 text-black">
                     Financial Options with Canon
                 </h5>
                 <hr className="border-black mx-10" />
 
-                {/* Promo Rows */}
+                {/* Promo Rows with Motion Effects */}
                 <PromoRow
                     title="Flexible Leasing Options"
                     description="Canon Financial offers a range of leasing solutions that allow you to manage your cash flow while accessing the latest equipment and technology. Whether you're looking for short-term or long-term leases, we provide customizable plans that align with your business needs."
@@ -46,8 +71,8 @@ const FinanceOptions: React.FC = () => {
                     title="Specialized Business Solutions"
                     description="From startups to established corporations, Canon Financial crafts solutions tailored to your industry and budget. We work closely with you to understand your business objectives, ensuring you have the financial support to stay competitive in today’s marketplace."
                 />
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 

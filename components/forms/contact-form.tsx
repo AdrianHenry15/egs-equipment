@@ -4,7 +4,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { usePathname } from "next/navigation";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
@@ -17,9 +16,6 @@ import SuccessModal from "../modals/success-modal";
 import { Loader } from "../loader";
 
 const ContactForm = () => {
-    // SWITCH BETWEEN CONTACT AND ESTIMATE FORM | BOTH FORMS DO THE SAME THING FOR NOW
-    const pathname = usePathname();
-
     const [inputClicked, setInputClicked] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [estimateSuccess, setEstimateSuccess] = useState(false);
@@ -102,9 +98,6 @@ const ContactForm = () => {
                 />
             )}
             {loading ? <Loader /> : null}
-            <h1 className="text-3xl text-black mb-10 font-light animate-bounce">{`${
-                pathname === "/contact-us" ? "Contact Us" : "Get Your Free Estimate!"
-            }`}</h1>
             {/* FORM CONTAINER */}
             <div className="flex flex-col w-11/12 bg-zinc-100 p-6 rounded-2xl shadow-white shadow-lg border-2 md:w-[650px]">
                 {/* LOGO */}

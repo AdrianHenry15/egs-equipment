@@ -8,6 +8,7 @@ import SISISLogo from "@/public/logos/sisis.webp";
 import SynProLogo from "@/public/logos/synpro.webp";
 import HarodLogo from "@/public/logos/harod-sport-logo.png";
 import PitchmarkLogo from "@/public/logos/pitchmark-logo.png";
+import BuffaloLogo from "@/public/logos/buffalo-turbine.webp";
 
 const PoweredBy = () => {
     return (
@@ -52,6 +53,9 @@ const PoweredBy = () => {
                             width={150}
                             height={75}
                         />
+                    </div>
+                    <div className="flex flex-col items-center lg:items-start w-full lg:w-auto p-10 lg:p-16">
+                        <Image src={BuffaloLogo} alt="buffalo-turbine" width={150} height={75} />
                     </div>
                     <div className="flex flex-col items-center lg:items-start w-full lg:w-auto p-10 lg:p-16">
                         <Image

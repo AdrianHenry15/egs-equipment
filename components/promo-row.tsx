@@ -1,6 +1,5 @@
-import Image from "next/image";
 import React from "react";
-import Logo from "@/public/logos/EGS1.png";
+import { motion } from "framer-motion";
 
 interface IPromoRowProps {
     title: string;
@@ -10,40 +9,27 @@ interface IPromoRowProps {
 
 const PromoRow: React.FC<IPromoRowProps> = ({ title, description, dark }) => {
     return (
-        <section
-            className={`${
-                dark ? "bg-black text-white" : ""
-            } flex flex-col items-center w-full px-6 py-16 md:px-8 md:py-20`}
+        <motion.section
+            className={`relative flex flex-col items-center w-full px-6 py-14 md:px-10 md:py-20 rounded-lg shadow-lg transition-all ${
+                dark ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
+            }`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
         >
             {/* Title */}
-            <h5
-                className={`${
-                    dark ? "text-white" : "text-gray-800"
-                } text-2xl md:text-4xl text-center font-semibold mb-4`}
-            >
-                {title}
-            </h5>
+            <h5 className="text-3xl md:text-4xl font-bold text-center">{title}</h5>
+            <div className="w-14 h-1 bg-green-500 mt-4 mb-6"></div>
 
             {/* Description */}
-            <p
-                className={`${
-                    dark ? "text-white" : "text-gray-800"
-                } text-base md:text-lg text-center text-gray-700 max-w-2xl leading-relaxed`}
-            >
-                {description}
+            <p className="text-lg md:text-xl text-center leading-relaxed max-w-3xl">
+                {description.split("\n\n").map((paragraph, index) => (
+                    <span key={index} className="block mt-4">
+                        {paragraph}
+                    </span>
+                ))}
             </p>
-
-            {/* Logo */}
-            <div className="mt-8 md:mt-10">
-                <Image
-                    src={Logo}
-                    alt="Eckert Golf Sales Logo"
-                    width={80}
-                    height={80}
-                    className=""
-                />
-            </div>
-        </section>
+        </motion.section>
     );
 };
 
