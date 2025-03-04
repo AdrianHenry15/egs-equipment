@@ -1,5 +1,5 @@
 import SISISLogo from "@/public/logos/sisis.webp";
-import BuffaloTurbineLogo from "@/public/logos/buffalo-turbine.webp";
+import BuffaloTurbineLogo from "@/public/logos/buffalo-turbine.jpg";
 import DennisLogo from "@/public/logos/dennis.webp";
 import SynProLogo from "@/public/logos/synpro.webp";
 import EGSLogo from "@/public/logos/EGS1.png";

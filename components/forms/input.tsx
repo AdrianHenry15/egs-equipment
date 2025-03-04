@@ -22,7 +22,7 @@ const Input = ({
     placeholder,
     defaultValue,
 }: IInputProps) => {
-    const InputClass = "border-2 border-gray-400 my-2 p-2 rounded-sm w-full shadow-md";
+    const InputClass = "border-2 text-black border-gray-400 my-2 p-2 rounded-sm w-full shadow-md";
 
     return (
         <Controller

@@ -11,7 +11,7 @@ import SISISLogo from "@/public/logos/sisis.webp";
 import SynProLogo from "@/public/logos/synpro.webp";
 import HarodLogo from "@/public/logos/harod-sport-logo.png";
 import PitchmarkLogo from "@/public/logos/pitchmark-logo.png";
-import BuffaloLogo from "@/public/logos/buffalo-turbine.webp";
+import BuffaloLogo from "@/public/logos/buffalo-turbine.jpg";
 
 // Animation Variants
 const containerVariants = {

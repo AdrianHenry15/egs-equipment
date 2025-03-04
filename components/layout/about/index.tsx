@@ -50,7 +50,7 @@ const About: React.FC = () => {
                         className="mt-3 text-lg md:text-xl max-w-2xl leading-relaxed"
                         variants={fadeIn}
                     >
-                        Serving turf and landscaping needs across the United States for over 20
+                        Serving turf and landscaping needs across the United States for over 25
                         years with quality machinery and expertise.
                     </motion.p>
                 </div>

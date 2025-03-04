@@ -42,6 +42,7 @@ export const Filters = {
         "SISIS",
         "Syn-Pro",
         "Harod Sports",
+        "Buffalo Turbine",
         "Pitchmark Line Markers",
     ] as EquipmentBrand[],
     Clients: [

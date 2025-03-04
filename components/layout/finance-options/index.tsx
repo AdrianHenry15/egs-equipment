@@ -32,7 +32,7 @@ const FinanceOptions: React.FC = () => {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
-                        Canon Financial Solutions
+                        Canon Financial Services
                     </motion.h1>
                     <motion.p
                         className="mt-2 text-lg md:text-xl max-w-2xl"

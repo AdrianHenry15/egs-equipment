@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 // Images
 import SynProLogo from "@/public/logos/synpro.webp";
-import BuffaloTurbineLogo from "@/public/logos/buffalo-turbine.webp";
+import BuffaloTurbineLogo from "@/public/logos/buffalo-turbine.jpg";
 import DennisLogo from "@/public/logos/dennis.webp";
 import SISISLogo from "@/public/logos/sisis.webp";
 

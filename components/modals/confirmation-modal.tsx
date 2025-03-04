@@ -1,4 +1,4 @@
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
 import { Fragment } from "react";
 
 interface IConfirmationModalProps {
@@ -12,7 +12,7 @@ const ConfirmationModal = (props: IConfirmationModalProps) => {
     return (
         <Transition appear show={props.isOpen} as={Fragment}>
             <Dialog as="div" className="relative z-10" onClose={props.closeModal}>
-                <Transition.Child
+                <TransitionChild
                     as={Fragment}
                     enter="ease-out duration-300"
                     enterFrom="opacity-0"
@@ -22,11 +22,11 @@ const ConfirmationModal = (props: IConfirmationModalProps) => {
                     leaveTo="opacity-0"
                 >
                     <div className="fixed inset-0 bg-black/25" />
-                </Transition.Child>
+                </TransitionChild>
 
                 <div className="fixed inset-0 overflow-y-auto">
                     <div className="flex min-h-full items-center justify-center p-4 text-center">
-                        <Transition.Child
+                        <TransitionChild
                             as={Fragment}
                             enter="ease-out duration-300"
                             enterFrom="opacity-0 scale-95"
@@ -35,13 +35,17 @@ const ConfirmationModal = (props: IConfirmationModalProps) => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-center align-middle shadow-xl transition-all">
-                                <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900 border-b-[1px] pb-2">
-                                    Confirm Your Estimate Request
-                                </Dialog.Title>
+                            <DialogPanel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-center align-middle shadow-xl transition-all">
+                                <DialogTitle
+                                    as="h3"
+                                    className="text-lg font-medium leading-6 text-gray-900 border-b-[1px] pb-2"
+                                >
+                                    Confirm Your Request
+                                </DialogTitle>
                                 <div className="my-4">
                                     <p className="text-sm text-gray-500">
-                                        Confirm your Estimate Request and someone from our team will be in touch with you about your project
+                                        Confirm your Request and someone from our team will be in
+                                        touch with you as soon as possible
                                     </p>
                                 </div>
 
@@ -51,7 +55,7 @@ const ConfirmationModal = (props: IConfirmationModalProps) => {
                                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 mr-4 mt-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                         onClick={props.confirmEstimate}
                                     >
-                                        {props.loading ? "Checking Out..." : "Get Your Free Estimate"}
+                                        {props.loading ? "Confirming..." : "Get Your Free Request"}
                                     </button>
                                     <button
                                         type="button"
@@ -61,8 +65,8 @@ const ConfirmationModal = (props: IConfirmationModalProps) => {
                                         Cancel
                                     </button>
                                 </div>
-                            </Dialog.Panel>
-                        </Transition.Child>
+                            </DialogPanel>
+                        </TransitionChild>
                     </div>
                 </div>
             </Dialog>
