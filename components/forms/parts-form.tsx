@@ -20,7 +20,6 @@ const PartsForm = () => {
     // SWITCH BETWEEN CONTACT AND ESTIMATE FORM | BOTH FORMS DO THE SAME THING FOR NOW
     const pathname = usePathname();
 
-    const [inputClicked, setInputClicked] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [estimateSuccess, setEstimateSuccess] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -45,6 +44,8 @@ const PartsForm = () => {
             serialNumber: "",
             partsNumbers: "",
             comment: "",
+            companyName: "",
+            shippingAddress: "",
         },
     });
 
@@ -89,6 +90,8 @@ const PartsForm = () => {
         serialNumber: getValues("serialNumber"),
         partsNumbers: getValues("partsNumbers"),
         comment: getValues("comment"),
+        companyName: getValues("companyName"),
+        shippingAddress: getValues("shippingAddress"),
     };
 
     return (
@@ -156,6 +159,26 @@ const PartsForm = () => {
                         errorRequiredText={"Email is Required."}
                         errorPatternText={"Email is not valid."}
                     />
+                    {/* COMPANY NAME */}
+                    <Input
+                        inputName={"companyName"}
+                        inputLabel={"Company Name"}
+                        placeholder={"Company Name*"}
+                        control={control}
+                        errors={errors}
+                        errorRequiredText={"Company Name is Required."}
+                        errorPatternText={"Company Name is not valid."}
+                    />
+                    {/* Shipping Address */}
+                    <Input
+                        inputName={"shippingAddress"}
+                        inputLabel={"Shipping Address"}
+                        placeholder={"Shipping Address*"}
+                        control={control}
+                        errors={errors}
+                        errorRequiredText={"Shipping Address is Required."}
+                        errorPatternText={"Shipping Address is not valid."}
+                    />
                     <hr className="border-black my-4" />
                     <h5 className="text-md text-black font-semibold">Machine Info</h5>
                     {/* Machine */}
@@ -187,13 +210,8 @@ const PartsForm = () => {
                         placeholder={"Comments/Extra Details"}
                         control={control}
                     />
-                    <div className={`${inputClicked ? "" : "animate-pulse"} my-10`}>
-                        <Button
-                            onClick={() => setInputClicked(true)}
-                            submit
-                            name="Submit Request"
-                            className="w-full justify-center"
-                        ></Button>
+                    <div className={`my-10`}>
+                        <Button submit name="Submit Request" className="w-full justify-center" />
                     </div>
                 </form>
             </div>
