@@ -6,7 +6,6 @@ import { Suspense } from "react";
 import { Loader } from "@/components/loader";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-import ContactBar from "@/components/layout/contact-bar";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -22,13 +21,6 @@ const geistMono = localFont({
 export const metadata: Metadata = {
     title: "Home | EGS Equipment",
     description: "Flawless Greens, Expert Care",
-    icons: {
-        // icon: {
-        //     url: "/logos/EGS1.png",
-        //     type: "image/png",
-        //     sizes: "128x128",
-        // },
-    },
 };
 
 export default function RootLayout({
@@ -41,7 +33,7 @@ export default function RootLayout({
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                 <Toaster />
                 <Navbar />
-                <ContactBar />
+                {/* <ContactBar /> */}
                 <Suspense fallback={<Loader />}>{children}</Suspense>
                 <Footer />
             </body>

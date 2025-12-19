@@ -1,10 +1,7 @@
-import { ProductSpecificationsType } from "../types";
+import { ProductSpecificationsType } from "../types/product";
+import { ProductKey } from "./product-keys";
 
-type Products = {
-    [key: string]: ProductSpecificationsType;
-};
-
-export const ProductSpecifications: Products = {
+export const ProductSpecifications: Record<ProductKey, ProductSpecificationsType> = {
     javelin: {
         model: "Javelin Aer-Aid 1500",
         code: "FS1066",

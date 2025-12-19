@@ -1,4 +1,6 @@
-export const ProductSpecDescriptions = {
+import { ProductKey } from "./product-keys";
+
+export const ProductSpecDescriptions: Record<ProductKey, string> = {
     javelin: `The Javelin Aer-Aid machine is a specially designed tractor mounted vertical action aerator for use on both fine and outfield turf.
             The machine can be used all year round due to the large selection of tines helping to break up compaction allowing water, 
             air and nutrients to penetrate the root zone.

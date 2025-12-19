@@ -1,4 +1,6 @@
-export const ProductFeatures = {
+import { ProductKey } from "./product-keys";
+
+export const ProductFeatures: Record<ProductKey, string[]> = {
     javelin: [
         `Minimal Surface Disturbance Depth is infinitely variable to a maximum of 127mm (5ins).`,
         `Quick, single-lever depth setting for easy adjustment.`,
@@ -181,4 +183,5 @@ export const ProductFeatures = {
     cyclone_squared: [],
     cyclone_mega: [],
     cyclone_pto: [],
+    triangular_brush: [],
 };

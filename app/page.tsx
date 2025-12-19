@@ -1,5 +1,5 @@
-import HomeSplash from "@/components/layout/home/home-splash";
-import PoweredBy from "@/components/layout/home/powered-by";
+import HomeSplash from "@/app/components/home-splash";
+import PoweredBy from "@/app/components/powered-by";
 
 export default function Home() {
     return (

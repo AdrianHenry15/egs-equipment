@@ -6,20 +6,10 @@ import { AiOutlineSearch } from "react-icons/ai";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import {
-    AeratorProducts,
-    DebrisBlowerProducts,
-    GolfSportsTurfProducts,
-    SyntheticTurfProducts,
-} from "@/lib/products/product-list";
 import { ProductType } from "@/lib/types";
+import { allProducts } from "@/lib/products/list/product-list";
 
-const products = [
-    ...SyntheticTurfProducts,
-    ...GolfSportsTurfProducts,
-    ...AeratorProducts,
-    ...DebrisBlowerProducts,
-];
+const products = allProducts;
 
 const fuseOptions = {
     includeScore: true,

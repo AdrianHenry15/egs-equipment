@@ -48,14 +48,18 @@ export type SyntheticTurfItems =
     | "Hand Tools";
 
 // Brands
-export type EquipmentBrand =
-    | ""
-    | HowardsonsBrand
-    | "Harod Sports"
-    | "Pitchmark Line Markers"
-    | "Buffalo Turbine"
-    | "Eastman";
-export type HowardsonsBrand = "Dennis" | "SISIS" | "Syn-Pro";
+// export type HowardsonsBrand = "Dennis" | "SISIS" | "Syn-Pro";
+export enum EquipmentBrand {
+    NONE = "",
+    HOWARDSONS = "Howardsons",
+    HARROD_SPORTS = "Harrod Sports",
+    PITCHMARK = "Pitchmark",
+    BUFFALO_TURBINE = "Buffalo Turbine",
+    EASTMAN = "Eastman",
+    DENNIS = "Dennis",
+    SISIS = "SISIS",
+    SYNPRO = "Syn-Pro",
+}
 
 // Clients
 export type Clients =

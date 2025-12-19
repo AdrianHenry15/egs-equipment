@@ -1,13 +1,13 @@
 "use client";
 
+import { AeratorProducts } from "@/lib/products/list/aerators";
+import { DebrisBlowerProducts } from "@/lib/products/list/debris-blowers";
+import { GolfSportsTurfProducts } from "@/lib/products/list/golf-sports-turf";
+import { SyntheticTurfProducts } from "@/lib/products/list/synthetic-turf";
+import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-import {
-    GolfSportsTurfProducts,
-    SyntheticTurfProducts,
-    AeratorProducts,
-    DebrisBlowerProducts,
-} from "@/lib/products/product-list";
 
 interface IProductProps {
     productId: string;
@@ -227,6 +227,12 @@ const Product = ({ productId }: IProductProps) => {
     return (
         <div className="flex flex-col w-full border border-gray-200 bg-gray-100 rounded-lg">
             <div className="p-6 flex flex-col xl:flex-row gap-8">
+                <Link href={"/products"}>
+                    <ChevronLeftIcon
+                        className="w-10 transition-all ease-in-out duration-300 rounded-full p-2 hover:bg-black/25 hover:scale-110 "
+                        color="black"
+                    />
+                </Link>
                 {/* Product Image */}
                 <div className="flex flex-col items-center xl:w-1/2">
                     <Image
