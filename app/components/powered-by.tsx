@@ -10,8 +10,8 @@ import SynProLogo from "@/public/logos/synpro.webp";
 import HarrodLogo from "@/public/logos/harrod-sport-logo.png";
 import PitchmarkLogo from "@/public/logos/pitchmark-logo.png";
 import BuffaloLogo from "@/public/logos/buffalo-turbine.jpg";
-import { EquipmentBrand } from "@/lib/types";
 import Link from "next/link";
+import { EquipmentBrand } from "@/lib/types/brands";
 
 interface ILogos {
     src: StaticImageData;

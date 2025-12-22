@@ -1,21 +1,17 @@
 import { StaticImageData } from "next/image";
 import { EquipmentBrand } from "./brands";
-import { MainCategory, SubCategory } from "./categories";
 import { Clients } from "./clients";
+import { Tag, MainCategory } from "./categories";
 
 export type ProductType = {
     id: string;
     name: string;
     description: string;
-
     mainCategory: MainCategory;
-    subCategory: SubCategory;
+    tags: Tag[];
     brand: EquipmentBrand;
-
     image: string | StaticImageData;
-
-    equipment_details: EquipmentDetails;
-
+    details: Details;
     manual?: string;
     usedBy?: Clients;
     popular?: boolean;
@@ -78,9 +74,10 @@ export type ProductSpecificationsType = {
     final_drive?: string;
 };
 
-export type EquipmentDetails = {
+export type Details = {
     specs_description: string;
     features: string[];
     specifications: ProductSpecificationsType;
+    quality?: "1" | "2" | "3" | "4" | "5";
     video?: string;
 };

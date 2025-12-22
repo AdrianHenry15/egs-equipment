@@ -1,11 +1,17 @@
-import { AeratorProducts } from "./aerators";
+import { AeratorProducts } from "./natural-turf/aerators";
 import { DebrisBlowerProducts } from "./debris-blowers";
-import { GolfSportsTurfProducts } from "./golf-sports-turf";
+import { MowerProducts } from "./natural-turf/mowers";
+import { ScarifierProducts } from "./natural-turf/scarifiers";
 import { SyntheticTurfProducts } from "./synthetic-turf";
 
 export const allProducts = [
-    ...GolfSportsTurfProducts,
+    ...ScarifierProducts,
+    ...MowerProducts,
     ...SyntheticTurfProducts,
     ...DebrisBlowerProducts,
     ...AeratorProducts,
 ];
+
+export function getAllProducts() {
+    return [...allProducts];
+}

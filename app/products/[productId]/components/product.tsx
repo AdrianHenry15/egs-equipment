@@ -1,9 +1,9 @@
 "use client";
 
-import { AeratorProducts } from "@/lib/products/list/aerators";
+import { AeratorProducts } from "@/lib/products/list/natural-turf/aerators";
 import { DebrisBlowerProducts } from "@/lib/products/list/debris-blowers";
 import { GolfSportsTurfProducts } from "@/lib/products/list/golf-sports-turf";
-import { SyntheticTurfProducts } from "@/lib/products/list/synthetic-turf";
+import { SyntheticTurfProducts } from "@/lib/products/list/synthetic-turf/synthetic-turf";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";

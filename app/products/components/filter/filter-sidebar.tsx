@@ -11,7 +11,7 @@ export default function FilterSidebar() {
     const { updateUrl } = useProductFilters();
 
     const selectedMainCategory = params.get("category");
-    const selectedSubCategory = params.get("subcategory");
+    const selectedTag = params.get("tag");
     const selectedBrand = params.get("brand");
 
     return (
@@ -21,43 +21,79 @@ export default function FilterSidebar() {
                 <h2 className="text-xl font-semibold text-black">Filters</h2>
             </div>
 
+            {/* MAIN CATEGORY FILTER */}
             <FilterGroup
-                title="Categories"
-                options={Filters.MainCategory}
+                title="Category"
+                options={Filters.mainCategory}
                 selectedOption={selectedMainCategory}
-                onChange={(category) => updateUrl({ category, subcategory: null })}
+                onChange={(category) => updateUrl({ category, tag: null })}
             />
 
-            {selectedMainCategory === "Golf & Sports Turf" && (
+            {/* CONDITIONAL TAG GROUPS BASED ON CATEGORY */}
+
+            {selectedMainCategory === "Sport" && (
                 <FilterGroup
-                    title="Golf & Sports Turf Items"
-                    options={Filters.GolfSportsTurfItems}
-                    selectedOption={selectedSubCategory}
-                    onChange={(subcategory) => updateUrl({ subcategory })}
+                    title="Sport Type"
+                    options={Filters.sportTags}
+                    selectedOption={selectedTag}
+                    onChange={(tag) => updateUrl({ tag })}
+                />
+            )}
+
+            {selectedMainCategory === "Natural Turf" && (
+                <FilterGroup
+                    title="Turf Tags"
+                    options={Filters.turfTags}
+                    selectedOption={selectedTag}
+                    onChange={(tag) => updateUrl({ tag })}
                 />
             )}
 
             {selectedMainCategory === "Synthetic Turf" && (
                 <FilterGroup
-                    title="Synthetic Turf Items"
-                    options={Filters.SyntheticTurfItems}
-                    selectedOption={selectedSubCategory}
-                    onChange={(subcategory) => updateUrl({ subcategory })}
+                    title="Synthetic Turf Tags"
+                    options={Filters.turfTags} // same domain for now
+                    selectedOption={selectedTag}
+                    onChange={(tag) => updateUrl({ tag })}
                 />
             )}
 
+            {selectedMainCategory === "Line Marker" && (
+                <FilterGroup
+                    title="Line Marker"
+                    options={Filters.lineMarkerTags}
+                    selectedOption={selectedTag}
+                    onChange={(tag) => updateUrl({ tag })}
+                />
+            )}
+
+            {selectedMainCategory === "Goal" && (
+                <FilterGroup
+                    title="Goal Type"
+                    options={Filters.goalSubtype}
+                    selectedOption={selectedTag}
+                    onChange={(tag) => updateUrl({ tag })}
+                />
+            )}
+
+            {selectedMainCategory === "Debris Blower" && (
+                <p className="text-sm text-gray-500 mt-2">No additional filters available.</p>
+            )}
+
+            {/* BRAND FILTER */}
             <FilterGroup
                 title="Brand"
-                options={Filters.EquipmentBrand}
+                options={Filters.ageGroup}
                 selectedOption={selectedBrand}
                 onChange={(brand) => updateUrl({ brand })}
             />
 
+            {/* RESET FILTERS */}
             <button
                 onClick={() =>
                     updateUrl({
                         category: null,
-                        subcategory: null,
+                        tag: null,
                         brand: null,
                     })
                 }

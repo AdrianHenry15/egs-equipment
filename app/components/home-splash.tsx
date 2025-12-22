@@ -14,7 +14,7 @@ const HomeSplash = () => {
                 alt="Eckert Equipment"
                 fill
                 priority
-                className="object-cover object-bottom"
+                className="object-cover object-bottom xl:object-center"
             />
 
             {/* Overlay */}

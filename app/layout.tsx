@@ -6,6 +6,10 @@ import { Suspense } from "react";
 import { Loader } from "@/components/loader";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import { ClerkProvider } from "@clerk/nextjs";
+import { SanityLive } from "@/sanity/lib/live";
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity/visual-editing";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -23,20 +27,24 @@ export const metadata: Metadata = {
     description: "Flawless Greens, Expert Care",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <Toaster />
-                <Navbar />
-                {/* <ContactBar /> */}
-                <Suspense fallback={<Loader />}>{children}</Suspense>
-                <Footer />
-            </body>
-        </html>
+        <ClerkProvider>
+            <html lang="en">
+                <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+                    <Toaster />
+                    <Navbar />
+                    {/* <ContactBar /> */}
+                    <Suspense fallback={<Loader />}>{children}</Suspense>
+                    <SanityLive />
+                    {(await draftMode()).isEnabled && <VisualEditing />}
+                    <Footer />
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }
