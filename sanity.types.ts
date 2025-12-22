@@ -13,6 +13,180 @@
  */
 
 // Source: schema.json
+export type CuttingSpecifications = {
+    _type: "cuttingSpecifications";
+    cutting_width?: string;
+    height_of_cut?: string;
+    working_width?: string;
+    working_depth?: string;
+    cutter_performance?: string;
+    cylinder?: string;
+};
+
+export type BrushSpecifications = {
+    _type: "brushSpecifications";
+    brushes?: string;
+    number_of_brushes?: string;
+    oscillating_brush?: string;
+    rear_brush?: string;
+};
+
+export type EngineSpecifications = {
+    _type: "engineSpecifications";
+    engine?: string;
+    engine_petrol?: string;
+    tractor_power_requirement?: string;
+    power_unit_requirement?: string;
+};
+
+export type Dimensions = {
+    _type: "dimensions";
+    width?: string;
+    altWidth?: string;
+    length?: string;
+    altLength?: string;
+    height?: string;
+    altHeight?: string;
+    tire_size?: string;
+};
+
+export type ProductSpecifications = {
+    _type: "productSpecifications";
+    specs_description?: string;
+    features?: Array<string>;
+    specifications?: ProductSpecifications;
+    quality?: "1" | "2" | "3" | "4" | "5";
+    video?: string;
+};
+
+export type Details = {
+    _type: "details";
+    specs_description?: string;
+    features?: Array<string>;
+    specifications?: ProductSpecifications;
+    quality?: "1" | "2" | "3" | "4" | "5";
+    video?: string;
+};
+
+export type UserSaves = {
+    _id: string;
+    _type: "userSaves";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    clerkId?: string;
+    product?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "products";
+    };
+    createdAt?: string;
+};
+
+export type Products = {
+    _id: string;
+    _type: "products";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    name?: string;
+    slug?: Slug;
+    description?: string;
+    mainCategory?:
+        | "Sport"
+        | "Synthetic Turf"
+        | "Natural Turf"
+        | "Line Marker"
+        | "Hand Tool"
+        | "Goal"
+        | "Debris Blower";
+    tags?: Array<string>;
+    brand?:
+        | "Howardsons"
+        | "Harrod Sports"
+        | "Pitchmark"
+        | "Buffalo Turbine"
+        | "Eastman"
+        | "Dennis"
+        | "SISIS"
+        | "Syn-Pro";
+    image?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+    };
+    details?: Details;
+    manual?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        };
+        media?: unknown;
+        _type: "file";
+    };
+    usedBy?:
+        | "Golf"
+        | "Soccer"
+        | "American Football"
+        | "Baseball"
+        | "Lacrosse"
+        | "Sports Turf"
+        | "Synthetic Turf";
+    popular?: boolean;
+};
+
+export type SanityImageCrop = {
+    _type: "sanity.imageCrop";
+    top?: number;
+    bottom?: number;
+    left?: number;
+    right?: number;
+};
+
+export type SanityImageHotspot = {
+    _type: "sanity.imageHotspot";
+    x?: number;
+    y?: number;
+    height?: number;
+    width?: number;
+};
+
+export type Slug = {
+    _type: "slug";
+    current?: string;
+    source?: string;
+};
+
+export type Users = {
+    _id: string;
+    _type: "users";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    clerkId?: string;
+    email?: string;
+    name?: string;
+    role?: "customer" | "admin";
+    saves?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "products";
+    }>;
+    dateJoined?: string;
+};
+
 export type SanityImagePaletteSwatch = {
     _type: "sanity.imagePaletteSwatch";
     background?: string;
@@ -48,22 +222,6 @@ export type SanityImageMetadata = {
     blurHash?: string;
     hasAlpha?: boolean;
     isOpaque?: boolean;
-};
-
-export type SanityImageHotspot = {
-    _type: "sanity.imageHotspot";
-    x?: number;
-    y?: number;
-    height?: number;
-    width?: number;
-};
-
-export type SanityImageCrop = {
-    _type: "sanity.imageCrop";
-    top?: number;
-    bottom?: number;
-    left?: number;
-    right?: number;
 };
 
 export type SanityFileAsset = {
@@ -125,22 +283,25 @@ export type Geopoint = {
     alt?: number;
 };
 
-export type Slug = {
-    _type: "slug";
-    current?: string;
-    source?: string;
-};
-
 export type AllSanitySchemaTypes =
+    | CuttingSpecifications
+    | BrushSpecifications
+    | EngineSpecifications
+    | Dimensions
+    | ProductSpecifications
+    | Details
+    | UserSaves
+    | Products
+    | SanityImageCrop
+    | SanityImageHotspot
+    | Slug
+    | Users
     | SanityImagePaletteSwatch
     | SanityImagePalette
     | SanityImageDimensions
     | SanityImageMetadata
-    | SanityImageHotspot
-    | SanityImageCrop
     | SanityFileAsset
     | SanityAssetSourceData
     | SanityImageAsset
-    | Geopoint
-    | Slug;
+    | Geopoint;
 export declare const internalGroqTypeReferenceTo: unique symbol;

@@ -1,4 +1,4 @@
-import { saveProduct, unsaveProduct } from "@/lib/sanity/saves";
+import { saveProduct, unsaveProduct } from "@/sanity/mutations/user-save";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {

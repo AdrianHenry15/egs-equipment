@@ -2,7 +2,10 @@ import { sanityClient } from "../lib/client";
 import { userByClerkIdQuery } from "../queries/user";
 
 export async function updateSanityUser(clerkId: string, data: Partial<any>) {
-    return sanityClient.patch(`user-${clerkId}`).set(data).commit();
+    const existing = await sanityClient.fetch(userByClerkIdQuery, { clerkId });
+    if (!existing) return null;
+
+    return sanityClient.patch(existing._id).set(data).commit();
 }
 
 export async function deleteSanityUser(clerkId: string) {

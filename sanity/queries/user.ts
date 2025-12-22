@@ -43,3 +43,8 @@ export async function ensureSanityUserFromWebhook(data: any) {
         role: "customer",
     });
 }
+
+export async function getSanityUserByClerkId(clerkId: string) {
+    const user = await sanityClient.fetch(userByClerkIdQuery, { clerkId });
+    return user ?? null;
+}
