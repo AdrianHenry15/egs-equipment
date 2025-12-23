@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { requireAdmin } from "@/lib/auth/require-admin";
+import { requireAdmin } from "@/lib/auth/require-server-admin";
 import { getAllEquipmentEventsQuery } from "@/sanity/queries/admin/equipment-event";
 import { createEquipmentEvent } from "@/sanity/mutations/admin/equipment-event";
 import { validateEquipmentEvent } from "@/lib/validation/validate-equipment-event";

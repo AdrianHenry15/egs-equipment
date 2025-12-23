@@ -1,28 +1,43 @@
-import { currentUser } from "@clerk/nextjs/server";
-import { sanityClient } from "../lib/client";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { sanityReadClient, sanityWriteClient } from "../lib/client";
 
 // Fetch user by Clerk ID
 export const userByClerkIdQuery = `
-  *[_type == "user" && clerkId == $clerkId][0]
+  *[_type == "user" && clerkId == $clerkId][0]{
+    _id,
+    role
+  }
 `;
 
+type SanityRole = "admin" | "customer";
+
+/**
+ * Server-side ensure (request-based)
+ */
 export async function ensureSanityUser() {
     const clerk = await currentUser();
     if (!clerk) return null;
 
-    const { id: clerkId, fullName, emailAddresses } = clerk;
-    const email = emailAddresses?.[0]?.emailAddress;
+    const { userId, orgRole } = await auth();
+    if (!userId) return null;
 
-    const existing = await sanityClient.fetch(userByClerkIdQuery, { clerkId });
+    const clerkId = clerk.id;
+    const email = clerk.emailAddresses?.[0]?.emailAddress ?? "";
+    const name = clerk.fullName ?? "";
 
-    if (existing) return existing;
+    const isClerkAdmin = orgRole === "org:admin";
 
-    return sanityClient.create({
+    const existing = await sanityReadClient.fetch(userByClerkIdQuery, { clerkId });
+
+    const finalRole: SanityRole = existing?.role === "admin" || isClerkAdmin ? "admin" : "customer";
+
+    return sanityWriteClient.createOrReplace({
+        _id: `user-${clerkId}`, // 🔒 deterministic
         _type: "user",
         clerkId,
         email,
-        name: fullName ?? "",
-        role: "customer",
+        name,
+        role: finalRole,
     });
 }
 
@@ -31,11 +46,11 @@ export async function ensureSanityUserFromWebhook(data: any) {
     const email = data.email_addresses?.[0]?.email_address;
     const name = `${data.first_name ?? ""} ${data.last_name ?? ""}`.trim();
 
-    const existing = await sanityClient.fetch(userByClerkIdQuery, { clerkId });
+    const existing = await sanityReadClient.fetch(userByClerkIdQuery, { clerkId });
 
     if (existing) return existing;
 
-    return sanityClient.create({
+    return sanityWriteClient.create({
         _type: "user",
         clerkId,
         email,
@@ -45,6 +60,6 @@ export async function ensureSanityUserFromWebhook(data: any) {
 }
 
 export async function getSanityUserByClerkId(clerkId: string) {
-    const user = await sanityClient.fetch(userByClerkIdQuery, { clerkId });
+    const user = await sanityReadClient.fetch(userByClerkIdQuery, { clerkId });
     return user ?? null;
 }

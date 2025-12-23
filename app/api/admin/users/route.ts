@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { sanityClient } from "@/sanity/lib/client";
 import { allUsersQuery } from "@/sanity/queries/admin/admin";
-import { requireAdmin } from "@/lib/auth/require-admin";
+import { requireAdmin } from "@/lib/auth/require-server-admin";
 
 export async function GET() {
     const admin = await requireAdmin();

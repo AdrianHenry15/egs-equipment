@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { sanityClient } from "@/sanity/lib/client";
-import { requireAdmin } from "@/lib/auth/require-admin";
+import { requireAdmin } from "@/lib/auth/require-server-admin";
 import { adminProductsQuery } from "@/sanity/queries/products";
 import { createProduct } from "@/sanity/mutations/products";
 

@@ -1,4 +1,4 @@
-import { requireAdmin } from "@/lib/auth/require-admin";
+import { requireAdmin } from "@/lib/auth/require-server-admin";
 import { getProductById } from "@/sanity/actions/products";
 import { deleteProduct, updateProduct } from "@/sanity/mutations/products";
 import { NextResponse } from "next/server";

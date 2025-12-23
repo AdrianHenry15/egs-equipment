@@ -6,7 +6,7 @@ import {
     updateLeadEquipment,
     deleteLead,
 } from "@/sanity/mutations/admin/leads";
-import { requireAdmin } from "@/lib/auth/require-admin";
+import { requireAdmin } from "@/lib/auth/require-server-admin";
 import { getLeadByIdQuery } from "@/sanity/queries/admin/leads";
 
 interface Params {

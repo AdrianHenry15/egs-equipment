@@ -1,18 +1,40 @@
 "use client";
 
-import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton, SignInButton, useUser } from "@clerk/nextjs";
+import { UserMenuLoader } from "./user-menu-loader";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { SiReasonstudios } from "react-icons/si";
+import { BiBookmark } from "react-icons/bi";
+import { FaLock } from "react-icons/fa6";
+import { useAdmin } from "@/hooks/use-admin";
 
 export default function UserMenu() {
+    const { user, isLoaded, isSignedIn } = useUser();
+    const router = useRouter();
+    const { isAdmin } = useAdmin();
+
+    useEffect(() => {
+        if (!isLoaded) return;
+
+        // console.log("[Client Clerk]", {
+        //     isSignedIn,
+        //     user,
+        // });
+    }, [isLoaded, isSignedIn, user]);
+
+    // Scoped loader only for this UI element
+    if (!isLoaded) {
+        return <UserMenuLoader />;
+    }
+
     return (
         <div className="mr-2">
-            {/* Signed in → avatar + dropdown */}
             <SignedIn>
                 <UserButton
+                    userProfileMode="modal"
                     fallback="/"
                     appearance={{
-                        layout: {
-                            helpPageUrl: "",
-                        },
                         elements: {
                             avatarBox: "w-9 h-9",
                             modalBackdrop: "fixed inset-0 bg-black/50",
@@ -21,26 +43,38 @@ export default function UserMenu() {
                             card: "w-full max-w-md rounded-xl shadow-2xl",
                         },
                     }}
-                />
+                >
+                    <UserButton.MenuItems>
+                        <UserButton.Action
+                            label="Saved Products"
+                            labelIcon={<BiBookmark />}
+                            onClick={() => router.push("/user/saved-products")}
+                        />
+                        {/* TODO: Admin Check */}
+                        {isAdmin && (
+                            <>
+                                <UserButton.Action
+                                    label="Admin Panel"
+                                    labelIcon={<FaLock />}
+                                    onClick={() => router.push("/admin")}
+                                />
+                                <UserButton.Action
+                                    label="Studio"
+                                    labelIcon={<SiReasonstudios />}
+                                    onClick={() => router.push("/studio")}
+                                />
+                            </>
+                        )}
+                    </UserButton.MenuItems>
+                </UserButton>
             </SignedIn>
 
-            {/* Signed out → avatar icon that opens sign-in modal */}
             <SignedOut>
-                <SignInButton
-                    appearance={{
-                        elements: {
-                            modalBackdrop: "cl-backdrop",
-                            modalContent: "cl-modalContent",
-                            card: "cl-card",
-                        },
-                    }}
-                    mode="modal"
-                >
+                <SignInButton mode="modal">
                     <button
                         aria-label="Sign in"
                         className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 hover:bg-gray-300 transition"
                     >
-                        {/* simple user glyph */}
                         <svg
                             viewBox="0 0 24 24"
                             className="h-5 w-5 text-gray-700"

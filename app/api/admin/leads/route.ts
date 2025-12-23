@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { sanityClient } from "@/sanity/lib/client";
 import { createLead } from "@/sanity/mutations/admin/leads";
-import { requireAdmin } from "@/lib/auth/require-admin";
+import { requireAdmin } from "@/lib/auth/require-server-admin";
 import { getAllLeadsQuery } from "@/sanity/queries/admin/leads";
 
 export async function GET(req: Request) {

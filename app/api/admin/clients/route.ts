@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { requireAdmin } from "@/lib/auth/require-admin";
+import { requireAdmin } from "@/lib/auth/require-server-admin";
 import { getAllClientsQuery } from "@/sanity/queries/admin/client";
 import { createClient } from "@/sanity/mutations/admin/client";
 import { sanityReadClient } from "@/sanity/lib/client";
