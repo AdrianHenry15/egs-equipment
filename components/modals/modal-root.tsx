@@ -1,6 +1,6 @@
 "use client";
 
-import { useModalStore } from "@/stores/modals/modal-store";
+import { useModalStore } from "@/stores/modal-store/modal-store";
 import AuthModal from "./auth-modal";
 import ConfirmationModal from "./confirmation-modal";
 import SuccessModal from "./success-modal";

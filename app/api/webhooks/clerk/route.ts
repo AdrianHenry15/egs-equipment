@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { Webhook } from "svix";
 import { NextResponse } from "next/server";
-import { ensureSanityUserFromWebhook } from "@/sanity/queries/user";
+import { ensureSanityUserFromWebhook } from "@/sanity/queries/users";
 import { deleteSanityUserFromWebhook, updateSanityUserFromWebhook } from "@/sanity/mutations/user";
 
 export async function POST(req: Request) {
@@ -11,6 +11,8 @@ export async function POST(req: Request) {
     const svix_id = headerPayload.get("svix-id");
     const svix_timestamp = headerPayload.get("svix-timestamp");
     const svix_signature = headerPayload.get("svix-signature");
+
+    console.log("📨 Clerk webhook hit");
 
     if (!svix_id || !svix_timestamp || !svix_signature) {
         return new NextResponse("Missing Svix headers", { status: 400 });
@@ -29,19 +31,25 @@ export async function POST(req: Request) {
         return new NextResponse("Invalid signature", { status: 400 });
     }
 
-    const { type, data } = evt;
+    const { type } = evt;
 
     switch (type) {
         case "user.created":
-            await ensureSanityUserFromWebhook(data);
+            await ensureSanityUserFromWebhook(evt.data);
+            console.log("Event:", evt.type, evt.data.id);
+
             break;
 
         case "user.updated":
-            await updateSanityUserFromWebhook(data);
+            await updateSanityUserFromWebhook(evt.data);
+            console.log("Event:", evt.type, evt.data.id);
+
             break;
 
         case "user.deleted":
-            await deleteSanityUserFromWebhook(data.id);
+            await deleteSanityUserFromWebhook(evt.data.id);
+            console.log("Event:", evt.type, evt.data.id);
+
             break;
     }
 

@@ -3,8 +3,8 @@
 import { Fragment } from "react";
 import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
 import Button from "../button";
-import { useModalStore } from "@/stores/modals/modal-store";
-import type { LinkConfirmationPayload } from "@/stores/modals/modal-types";
+import { useModalStore } from "@/stores/modal-store/modal-store";
+import type { LinkConfirmationPayload } from "@/stores/modal-store/modal-types";
 
 export default function LinkConfirmationModal() {
     const { type, isOpen, payload, closeModal } = useModalStore();

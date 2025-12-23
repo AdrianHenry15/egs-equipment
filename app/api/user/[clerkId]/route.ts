@@ -1,4 +1,4 @@
-import { getSanityUserByClerkId } from "@/sanity/queries/user";
+import { getSanityUserByClerkId } from "@/sanity/queries/users";
 import { NextResponse } from "next/server";
 
 interface Params {

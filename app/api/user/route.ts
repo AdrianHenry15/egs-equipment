@@ -2,7 +2,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 import { updateSanityUser, deleteSanityUser } from "@/sanity/mutations/user";
-import { getSanityUserByClerkId } from "@/sanity/queries/user";
+import { getSanityUserByClerkId } from "@/sanity/queries/users";
 
 export async function GET() {
     const auth = await currentUser();

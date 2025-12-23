@@ -77,7 +77,7 @@ export default function Navbar() {
             className={`bg-white/90 text-sm font-semibold flex w-full sticky top-0 z-101 shadow-md lg:pb-0`}
         >
             {mobileSearch && (
-                <div className="absolute flex justify-center items-center self-center w-full h-full ml-4 lg:hidden">
+                <div className="absolute flex justify-center items-center self-center w-full h-full ml-4 xl:hidden">
                     <SearchBar />
                 </div>
             )}
@@ -105,7 +105,7 @@ export default function Navbar() {
                 </div>
                 {/* NAV BUTTONS */}
             </div>
-            <div className="hidden lg:flex items-center gap-4 pr-6">
+            <div className="hidden xl:flex items-center gap-4 pr-6">
                 <SearchBar />
                 <UserMenu />
             </div>

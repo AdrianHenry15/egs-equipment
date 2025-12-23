@@ -2,8 +2,8 @@
 
 import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
 import { Fragment } from "react";
-import { useModalStore } from "@/stores/modals/modal-store";
-import type { ConfirmModalPayload } from "@/stores/modals/modal-types";
+import { useModalStore } from "@/stores/modal-store/modal-store";
+import type { ConfirmModalPayload } from "@/stores/modal-store/modal-types";
 
 export default function ConfirmationModal() {
     const { type, isOpen, loading, payload, closeModal, setLoading } = useModalStore();

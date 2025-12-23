@@ -1,6 +1,7 @@
 import { sanityClient } from "../lib/client";
-import { userByClerkIdQuery } from "../queries/user";
+import { userByClerkIdQuery } from "../queries/users";
 
+// UPDATE
 export async function updateSanityUser(clerkId: string, data: Partial<any>) {
     const existing = await sanityClient.fetch(userByClerkIdQuery, { clerkId });
     if (!existing) return null;
@@ -8,6 +9,9 @@ export async function updateSanityUser(clerkId: string, data: Partial<any>) {
     return sanityClient.patch(existing._id).set(data).commit();
 }
 
+// TODO: ARCHIVE USER FROM WEBHOOK
+
+// DELETE
 export async function deleteSanityUser(clerkId: string) {
     const user = await sanityClient.fetch(userByClerkIdQuery, { clerkId });
     if (!user) return null;
@@ -26,6 +30,8 @@ export async function updateSanityUserFromWebhook(data: any) {
 
     return sanityClient.patch(existing._id).set({ email, name }).commit();
 }
+
+// TODO: ARCHIVE USER FROM WEBHOOK
 
 // DELETE
 export async function deleteSanityUserFromWebhook(clerkId: string) {

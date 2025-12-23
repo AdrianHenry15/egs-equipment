@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
-import { adminUpdateUser, adminDeleteUser } from "@/sanity/mutations/admin";
+import { adminUpdateUser, adminDeleteUser } from "@/sanity/mutations/admin/admin";
 import { requireAdmin } from "@/lib/auth/require-admin";
-import { getSanityUserByClerkId } from "@/sanity/queries/user";
+import { getSanityUserByClerkId } from "@/sanity/queries/users";
 
 interface Params {
     params: {

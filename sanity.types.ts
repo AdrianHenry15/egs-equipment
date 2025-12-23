@@ -13,6 +13,106 @@
  */
 
 // Source: schema.json
+export type EquipmentEvents = {
+    _id: string;
+    _type: "equipmentEvents";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    client?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "clients";
+    };
+    eventType?: "purchase" | "upgrade" | "replacement" | "repair" | "retired";
+    lastEquipment?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "products";
+    };
+    currentEquipment?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "products";
+    };
+    reason?:
+        | "End of Life"
+        | "Upgrade"
+        | "Performance Issue"
+        | "Cost Savings"
+        | "New Field Type"
+        | "Expansion"
+        | "Other";
+    notes?: string;
+    eventDate?: string;
+};
+
+export type Clients = {
+    _id: string;
+    _type: "clients";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    name?: string;
+    email?: string;
+    phone?: string;
+    company?: string;
+    website?: string;
+    status?: "active" | "paused" | "completed" | "inactive";
+    equipmentOwned?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "products";
+    }>;
+    equipmentNeeds?: Array<string>;
+    equipmentInterest?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "products";
+    }>;
+    notes?: string;
+    lead?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "leads";
+    };
+    createdAt?: string;
+};
+
+export type Leads = {
+    _id: string;
+    _type: "leads";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    phone?: string;
+    company?: string;
+    equipmentNeeds?: Array<string>;
+    equipmentInterest?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "products";
+    }>;
+    message?: string;
+    source?: "Website Form" | "Email" | "Referral" | "Cold Outreach" | "Google" | "Other";
+    status?: "new" | "contacted" | "qualified" | "lost" | "converted";
+    priority?: "Low" | "Medium" | "High";
+    createdAt?: string;
+};
+
 export type CuttingSpecifications = {
     _type: "cuttingSpecifications";
     cutting_width?: string;
@@ -284,6 +384,9 @@ export type Geopoint = {
 };
 
 export type AllSanitySchemaTypes =
+    | EquipmentEvents
+    | Clients
+    | Leads
     | CuttingSpecifications
     | BrushSpecifications
     | EngineSpecifications

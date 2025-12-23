@@ -1,25 +1,31 @@
 import { type SchemaTypeDefinition } from "sanity";
 
-import details from "./products/details";
-import productSpecifications from "./products/product-specifications";
-import dimensions from "./products/dimensions";
-import engineSpecifictions from "./products/engine-specifictions";
-import brushSpecifictions from "./products/brush-specifictions";
-import cuttingSpecifications from "./products/cutting-specifications";
-import users from "./users";
-import userSaves from "./user-saves";
-import products from "./products/products";
+import detail from "./product/detail";
+import productSpecification from "./product/product-specification";
+import dimension from "./product/dimension";
+import engineSpecifiction from "./product/engine-specifiction";
+import brushSpecifiction from "./product/brush-specifiction";
+import cuttingSpecification from "./product/cutting-specification";
+import user from "./user";
+import userSave from "./user-save";
+import product from "./product/product";
+import lead from "./lead";
+import client from "./client";
+import equipmentEvent from "./equipment-event";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
     types: [
-        users,
-        userSaves,
-        products,
-        details,
-        productSpecifications,
-        dimensions,
-        engineSpecifictions,
-        brushSpecifictions,
-        cuttingSpecifications,
+        user,
+        userSave,
+        product,
+        detail,
+        productSpecification,
+        dimension,
+        engineSpecifiction,
+        brushSpecifiction,
+        cuttingSpecification,
+        lead,
+        client,
+        equipmentEvent,
     ],
 };

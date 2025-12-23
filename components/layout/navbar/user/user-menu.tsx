@@ -4,7 +4,7 @@ import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/nextjs";
 
 export default function UserMenu() {
     return (
-        <>
+        <div className="mr-2">
             {/* Signed in → avatar + dropdown */}
             <SignedIn>
                 <UserButton
@@ -51,6 +51,6 @@ export default function UserMenu() {
                     </button>
                 </SignInButton>
             </SignedOut>
-        </>
+        </div>
     );
 }

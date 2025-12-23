@@ -1,4 +1,4 @@
-import { ensureSanityUser } from "@/sanity/queries/user";
+import { ensureSanityUser } from "@/sanity/queries/users";
 import { NextResponse } from "next/server";
 
 export async function POST() {

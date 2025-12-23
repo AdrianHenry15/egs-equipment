@@ -10,7 +10,7 @@ import Logo from "@/public/logos/EGS1.png";
 import Button from "../button";
 import Textarea from "./textarea";
 import Input from "./input";
-import { useModalStore } from "@/stores/modals/modal-store";
+import { useModalStore } from "@/stores/modal-store/modal-store";
 
 const ContactForm = () => {
     const [inputClicked, setInputClicked] = useState(false);

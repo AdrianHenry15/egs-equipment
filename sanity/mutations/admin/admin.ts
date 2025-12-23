@@ -1,5 +1,5 @@
-import { sanityClient } from "../lib/client";
-import { userByClerkIdQuery } from "../queries/user";
+import { sanityClient } from "../../lib/client";
+import { userByClerkIdQuery } from "../../queries/users";
 
 // UPDATE ANY USER
 export async function adminUpdateUser(clerkId: string, data: Partial<any>) {

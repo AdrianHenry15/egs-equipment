@@ -1,7 +1,7 @@
 "use client";
 
 import { SignIn, SignUp } from "@clerk/nextjs";
-import { useModalStore } from "@/stores/modals/modal-store";
+import { useModalStore } from "@/stores/modal-store/modal-store";
 
 interface AuthModalProps {
     mode: "sign_in" | "sign_up";
