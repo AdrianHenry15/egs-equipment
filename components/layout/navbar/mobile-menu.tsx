@@ -12,6 +12,7 @@ import { FaPhone } from "react-icons/fa6";
 import Button from "@/components/button";
 import { BiChevronDown } from "react-icons/bi";
 import ProductsNavMenu from "./products-nav-menu";
+import UserMenu from "./user/user-menu";
 
 export default function MobileMenu() {
     // Constants
@@ -61,7 +62,7 @@ export default function MobileMenu() {
                         key={item.title}
                         href={item.link}
                         onClick={closeMobileMenu}
-                        className={`${pathname === item.link ? "underline" : ""}`}
+                        className={`${pathname === item.link ? "underline underline-offset-4 text-black" : ""}`}
                     >
                         <li
                             className={`py-4 text-xl text-black transition-colors hover:text-neutral-500`}
@@ -76,17 +77,22 @@ export default function MobileMenu() {
 
     return (
         <div className="relative">
-            <button
-                onClick={openMobileMenu}
-                aria-label="Open mobile menu"
-                className="flex h-11 w-11 items-center justify-center rounded-full text-black transition-colors overflow-hidden"
-            >
-                <Bars3Icon className="h-6 text-black" />
-            </button>
+            <div className="flex items-center">
+                {/* Mobile Navigation Bar */}
+                <button
+                    onClick={openMobileMenu}
+                    aria-label="Open mobile menu"
+                    className="flex h-11 w-11 items-center justify-center rounded-full text-black transition-colors overflow-hidden"
+                >
+                    <Bars3Icon className="h-6 text-black" />
+                </button>
+                {/* User Icon */}
+                <UserMenu />
+            </div>
             <AnimatePresence>
                 {isOpen && (
                     <Transition show={isOpen}>
-                        <Dialog onClose={closeMobileMenu} className="relative z-[9050]">
+                        <Dialog onClose={closeMobileMenu} className="relative z-9050">
                             <TransitionChild
                                 as={Fragment}
                                 enter="transition-opacity ease-in-out duration-100"
@@ -103,7 +109,7 @@ export default function MobileMenu() {
                                 animate={{ x: 0 }}
                                 exit={{ x: "100%" }}
                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                className="fixed bottom-0 right-0 top-0 flex h-full flex-col bg-white pb-6 w-full sm:w-[375px]"
+                                className="fixed bottom-0 right-0 top-0 flex h-full flex-col bg-white pb-6 w-full sm:w-93.75"
                             >
                                 <div className="p-4">
                                     <div className="flex items-center justify-between">
@@ -131,7 +137,7 @@ export default function MobileMenu() {
                                         <Button
                                             leftChildren
                                             roundedFull
-                                            className="mb-4 w-full py-4 flex justify-center sm:w-[300px]"
+                                            className="mb-4 w-full py-4 flex justify-center sm:w-75"
                                             name="704-842-3535"
                                             altColor
                                         >
@@ -147,7 +153,7 @@ export default function MobileMenu() {
                                         <Button
                                             leftChildren
                                             roundedFull
-                                            className="mb-4 w-full py-4 flex justify-center sm:w-[300px]"
+                                            className="mb-4 w-full py-4 flex justify-center sm:w-75"
                                             name="frank.eckert@eckertgolf.com"
                                         >
                                             <FaPhone className="mr-2" />

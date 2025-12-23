@@ -1,6 +1,4 @@
-// TODO: Update navbar to Home, Products [Natural Grass, Synthetic Turf, All Purpose], Parts & Service, About, Finance Options]
-
-import { NavMenuType } from "./types";
+import { NavMenuType } from "./types/navigation";
 
 export enum AltNavMenuLinks {
     CONTACT_US = "/contact-us",
@@ -36,16 +34,20 @@ export const ProductsMenuItems: NavMenuType[] = [
         link: "/products",
     },
     {
-        title: "Golf & Sports Turf",
-        link: "/products",
+        title: "Natural Turf",
+        link: "/products?natural-turf",
     },
     {
         title: "Synthetic Turf",
-        link: "/products",
+        link: "/products?synthetic-turf",
     },
     {
-        title: "All Purpose",
-        link: "/products",
+        title: "LineMarkers",
+        link: "/products?line-markers",
+    },
+    {
+        title: "Goals",
+        link: "/products?goals",
     },
 ];
 

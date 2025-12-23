@@ -7,13 +7,13 @@ import { useState } from "react";
 
 import Logo from "@/public/logos/EGS1.png";
 
-import MobileHeader from "./mobile-menu";
+import MobileMenu from "./mobile-menu";
 import { NavMenu } from "../../../lib/constants";
 import { BiChevronDown, BiSearch } from "react-icons/bi";
 import SearchBar from "@/components/search-bar";
 import ProductsNavMenu from "./products-nav-menu";
+import UserMenu from "./user/user-menu";
 
-// TODO: Update navbar to Home, Products [Natural Grass, Synthetic Turf, All Purpose], Parts & Service, About, Finance Options]
 export default function Navbar() {
     // Constants
     const pathname = usePathname();
@@ -74,7 +74,7 @@ export default function Navbar() {
     return (
         <nav
             id="nav-bar"
-            className={`bg-white/90 text-sm font-semibold flex w-full sticky top-0 z-[101] shadow-md lg:pb-0`}
+            className={`bg-white/90 text-sm font-semibold flex w-full sticky top-0 z-101 shadow-md lg:pb-0`}
         >
             {mobileSearch && (
                 <div className="absolute flex justify-center items-center self-center w-full h-full ml-4 lg:hidden">
@@ -91,23 +91,23 @@ export default function Navbar() {
                 </div>
             )}
             {/* MOBILE CONTAINER */}
-            <div className="absolute self-center right-0 top-4 lg:top-0 lg:hidden">
-                <MobileHeader />
+            <div className="absolute self-center right-0 top-4 xl:top-0 xl:hidden">
+                <MobileMenu />
             </div>
             {/* TITLE & LINKS  */}
             <div className="flex w-full mt-2 items-center justify-center py-4">
                 <div className="flex items-center">
                     <Link href="/" className="pl-10 lg:pl-0 lg:mr-10">
-                        {/* TODO: LOGO */}
-                        <Image className="w-[199px]" src={Logo} alt="logo" />
+                        <Image className="w-48" src={Logo} alt="logo" />
                     </Link>
                     {/* LINKS  */}
-                    <ul className="hidden text-gray-600 items-center lg:flex">{renderNavMenu()}</ul>
+                    <ul className="hidden text-gray-600 items-center xl:flex">{renderNavMenu()}</ul>
                 </div>
                 {/* NAV BUTTONS */}
             </div>
-            <div className="hidden lg:flex">
+            <div className="hidden lg:flex items-center gap-4 pr-6">
                 <SearchBar />
+                <UserMenu />
             </div>
         </nav>
     );

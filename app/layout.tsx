@@ -10,6 +10,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { SanityLive } from "@/sanity/lib/live";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
+import ModalRoot from "@/components/modals/modal-root";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -40,6 +41,7 @@ export default async function RootLayout({
                     <Navbar />
                     {/* <ContactBar /> */}
                     <Suspense fallback={<Loader />}>{children}</Suspense>
+                    <ModalRoot />
                     <SanityLive />
                     {(await draftMode()).isEnabled && <VisualEditing />}
                     <Footer />
