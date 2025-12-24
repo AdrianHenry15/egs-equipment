@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { requireAdmin } from "@/lib/auth/require-server-admin";
 import {
     createClientEquipmentEvent,
     replaceClientEquipment,
@@ -13,11 +12,6 @@ interface RouteContext {
 }
 
 export async function POST(req: Request, { params }: RouteContext) {
-    const admin = await requireAdmin();
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     const { id: clientId } = await params;
     const body = await req.json();
 

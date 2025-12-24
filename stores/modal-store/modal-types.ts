@@ -17,3 +17,7 @@ export interface LinkConfirmationPayload {
     confirmLabel?: string;
     cancelLabel?: string;
 }
+
+export interface SearchModalPayload {
+    placeholder?: string;
+}

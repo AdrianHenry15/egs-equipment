@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { requireAdmin } from "@/lib/auth/require-server-admin";
 import { getClientByIdQuery } from "@/sanity/queries/admin/client";
 import {
     deleteClient,
@@ -16,11 +15,6 @@ interface RouteContext {
 }
 
 export async function GET(_: Request, { params }: RouteContext) {
-    const admin = await requireAdmin();
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     const { id } = await params;
 
     try {
@@ -38,11 +32,6 @@ export async function GET(_: Request, { params }: RouteContext) {
 }
 
 export async function PATCH(req: Request, { params }: RouteContext) {
-    const admin = await requireAdmin();
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     const { id } = await params;
     const body = await req.json();
 
@@ -70,11 +59,6 @@ export async function PATCH(req: Request, { params }: RouteContext) {
 }
 
 export async function DELETE(_: Request, { params }: RouteContext) {
-    const admin = await requireAdmin();
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     const { id } = await params;
 
     try {

@@ -13,14 +13,15 @@ import { BiChevronDown, BiSearch } from "react-icons/bi";
 import SearchBar from "@/components/search-bar";
 import ProductsNavMenu from "./products-nav-menu";
 import UserMenu from "./user/user-menu";
+import { useModalStore } from "@/stores/modal-store/modal-store";
 
 export default function Navbar() {
     // Constants
     const pathname = usePathname();
+    const { isOpen, openModal, type, closeModal } = useModalStore();
 
     // State
     const [productsMenuOpen, setProductsMenuOpen] = useState(false);
-    const [mobileSearch, setMobileSearch] = useState(false);
 
     // Render
     const renderNavMenu = () => {
@@ -71,25 +72,28 @@ export default function Navbar() {
         });
     };
 
+    const toggleSearchModal = () => {
+        if (isOpen && type === "search") {
+            closeModal();
+        } else {
+            openModal("search", {
+                placeholder: "Search Products",
+            });
+        }
+    };
+
     return (
         <nav
             id="nav-bar"
             className={`bg-white/90 text-sm font-semibold flex w-full sticky top-0 z-101 shadow-md lg:pb-0`}
         >
-            {mobileSearch && (
-                <div className="absolute flex justify-center items-center self-center w-full h-full ml-4 xl:hidden">
-                    <SearchBar />
-                </div>
-            )}
-            {!mobileSearch && (
-                <div className="flex relative justify-center items-center self-center lg:hidden">
-                    <BiSearch
-                        onClick={() => setMobileSearch(!mobileSearch)}
-                        className="text-black cursor-pointer absolute ml-14"
-                        size={25}
-                    />
-                </div>
-            )}
+            <div className="flex relative justify-center items-center self-center lg:hidden">
+                <BiSearch
+                    onClick={toggleSearchModal}
+                    className="text-black cursor-pointer absolute ml-14"
+                    size={25}
+                />
+            </div>
             {/* MOBILE CONTAINER */}
             <div className="absolute self-center right-0 top-4 xl:top-0 xl:hidden">
                 <MobileMenu />

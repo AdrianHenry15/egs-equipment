@@ -7,20 +7,22 @@ import { useRouter } from "next/navigation";
 import { SiReasonstudios } from "react-icons/si";
 import { BiBookmark } from "react-icons/bi";
 import { FaLock } from "react-icons/fa6";
-import { useAdmin } from "@/hooks/use-admin";
 
 export default function UserMenu() {
     const { user, isLoaded, isSignedIn } = useUser();
     const router = useRouter();
-    const { isAdmin } = useAdmin();
+    // 🔒 Fail-safe admin check
+    const userEmail = user?.primaryEmailAddress?.emailAddress;
+
+    const adminEmails = [
+        process.env.NEXT_PUBLIC_DEV_EMAIL,
+        process.env.NEXT_PUBLIC_CLIENT_EMAIL,
+    ].filter(Boolean); // removes undefined values
+
+    const isAdmin = isLoaded && isSignedIn && !!userEmail && adminEmails.includes(userEmail);
 
     useEffect(() => {
         if (!isLoaded) return;
-
-        // console.log("[Client Clerk]", {
-        //     isSignedIn,
-        //     user,
-        // });
     }, [isLoaded, isSignedIn, user]);
 
     // Scoped loader only for this UI element
@@ -50,20 +52,20 @@ export default function UserMenu() {
                             labelIcon={<BiBookmark />}
                             onClick={() => router.push("/user/saved-products")}
                         />
-                        {/* TODO: Admin Check */}
+                        {/* Admin Check | No React Fragments because of Clerk Components */}
                         {isAdmin && (
-                            <>
-                                <UserButton.Action
-                                    label="Admin Panel"
-                                    labelIcon={<FaLock />}
-                                    onClick={() => router.push("/admin")}
-                                />
-                                <UserButton.Action
-                                    label="Studio"
-                                    labelIcon={<SiReasonstudios />}
-                                    onClick={() => router.push("/studio")}
-                                />
-                            </>
+                            <UserButton.Action
+                                label="Admin Panel"
+                                labelIcon={<FaLock />}
+                                onClick={() => router.push("/admin")}
+                            />
+                        )}
+                        {isAdmin && (
+                            <UserButton.Action
+                                label="Studio"
+                                labelIcon={<SiReasonstudios />}
+                                onClick={() => router.push("/studio")}
+                            />
                         )}
                     </UserButton.MenuItems>
                 </UserButton>

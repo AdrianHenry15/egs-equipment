@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
-import { sanityClient } from "@/sanity/lib/client";
+import { sanityReadClient } from "@/sanity/lib/client";
 import {
     updateLead,
     updateLeadStatus,
     updateLeadEquipment,
     deleteLead,
 } from "@/sanity/mutations/admin/leads";
-import { requireAdmin } from "@/lib/auth/require-server-admin";
 import { getLeadByIdQuery } from "@/sanity/queries/admin/leads";
 
 interface Params {
@@ -16,15 +15,10 @@ interface Params {
 }
 
 export async function GET(_: Request, { params }: Params) {
-    const admin = await requireAdmin();
     const { id } = await params;
 
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     try {
-        const lead = await sanityClient.fetch(getLeadByIdQuery, { id });
+        const lead = await sanityReadClient.fetch(getLeadByIdQuery, { id });
 
         if (!lead) {
             return NextResponse.json({ error: "Lead not found" }, { status: 404 });
@@ -38,12 +32,7 @@ export async function GET(_: Request, { params }: Params) {
 }
 
 export async function PATCH(req: Request, { params }: Params) {
-    const admin = await requireAdmin();
     const { id } = await params;
-
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
 
     try {
         const body = await req.json();
@@ -78,12 +67,7 @@ export async function PATCH(req: Request, { params }: Params) {
 }
 
 export async function DELETE(_: Request, { params }: Params) {
-    const admin = await requireAdmin();
     const { id } = await params;
-
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
 
     try {
         await deleteLead(id);

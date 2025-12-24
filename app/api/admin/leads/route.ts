@@ -1,15 +1,9 @@
 import { NextResponse } from "next/server";
-import { sanityClient } from "@/sanity/lib/client";
 import { createLead } from "@/sanity/mutations/admin/leads";
-import { requireAdmin } from "@/lib/auth/require-server-admin";
 import { getAllLeadsQuery } from "@/sanity/queries/admin/leads";
+import { sanityReadClient } from "@/sanity/lib/client";
 
 export async function GET(req: Request) {
-    const admin = await requireAdmin();
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     try {
         const { searchParams } = new URL(req.url);
         const status = searchParams.get("status");
@@ -18,7 +12,7 @@ export async function GET(req: Request) {
             ? `*[_type == "lead" && status == $status] | order(createdAt desc)`
             : getAllLeadsQuery;
 
-        const leads = await sanityClient.fetch(query, status ? { status } : {});
+        const leads = await sanityReadClient.fetch(query, status ? { status } : {});
 
         return NextResponse.json(leads);
     } catch (error) {
@@ -28,11 +22,6 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-    const admin = await requireAdmin();
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     try {
         const body = await req.json();
         const lead = await createLead(body);

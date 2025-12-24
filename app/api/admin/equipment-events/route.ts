@@ -1,16 +1,10 @@
 import { NextResponse } from "next/server";
-import { requireAdmin } from "@/lib/auth/require-server-admin";
 import { getAllEquipmentEventsQuery } from "@/sanity/queries/admin/equipment-event";
 import { createEquipmentEvent } from "@/sanity/mutations/admin/equipment-event";
 import { validateEquipmentEvent } from "@/lib/validation/validate-equipment-event";
 import { sanityReadClient } from "@/sanity/lib/client";
 
 export async function GET(req: Request) {
-    const admin = await requireAdmin();
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     try {
         const { searchParams } = new URL(req.url);
 
@@ -60,11 +54,6 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-    const admin = await requireAdmin();
-    if (!admin) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     try {
         const body = await req.json();
 

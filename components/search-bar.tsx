@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import Fuse from "fuse.js";
 import { AiOutlineSearch } from "react-icons/ai";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
-import { ProductType } from "@/lib/types";
 import { allProducts } from "@/lib/products/list/product-list";
+import { ProductType } from "@/lib/types/product";
 
 const products = allProducts;
 
@@ -18,26 +18,40 @@ const fuseOptions = {
 };
 
 const SearchBar: React.FC = () => {
+    const [open, setOpen] = useState(false);
     const [query, setQuery] = useState("");
     const [results, setResults] = useState<ProductType[]>([]);
-    const [selectedIndex, setSelectedIndex] = useState(-1); // Track the selected index
+    const [selectedIndex, setSelectedIndex] = useState(-1);
+
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const fuse = useMemo(() => new Fuse(products, fuseOptions), []);
 
-    // Variants for animation
-    const itemVariants = {
-        hidden: { opacity: 0, x: 100 },
-        visible: { opacity: 1, x: 0 },
-    };
+    // Autofocus input when modal opens
+    useEffect(() => {
+        if (open) {
+            setTimeout(() => inputRef.current?.focus(), 50);
+        }
+    }, [open]);
+
+    // Close on Escape
+    useEffect(() => {
+        const handleKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setOpen(false);
+        };
+
+        if (open) document.addEventListener("keydown", handleKey);
+        return () => document.removeEventListener("keydown", handleKey);
+    }, [open]);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const searchTerm = e.target.value;
-        setQuery(searchTerm);
+        const value = e.target.value;
+        setQuery(value);
 
-        if (searchTerm.trim() !== "") {
-            const searchResults = fuse.search(searchTerm);
-            setResults(searchResults.map((result) => result.item));
-            setSelectedIndex(-1); // Reset selected index when search query changes
+        if (value.trim()) {
+            const searchResults = fuse.search(value);
+            setResults(searchResults.map((r) => r.item));
+            setSelectedIndex(-1);
         } else {
             setResults([]);
         }
@@ -45,70 +59,96 @@ const SearchBar: React.FC = () => {
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
-            if (selectedIndex >= 0 && selectedIndex < results.length) {
-                // Navigate to the selected product if there is one
-                const selectedProduct = results[selectedIndex];
-                window.location.href = `/products/${selectedProduct.id}`;
-            } else if (query.trim() !== "") {
-                // Navigate to the first result if there are results but none are selected
-                const firstResult = results[0];
-                if (firstResult) {
-                    window.location.href = `/products/${firstResult.id}`;
-                }
+            const target = results[selectedIndex] ?? results[0];
+            if (target) {
+                window.location.href = `/products/${target.id}`;
+                setOpen(false);
             }
-        } else if (e.key === "ArrowDown") {
-            setSelectedIndex((prev) => Math.min(prev + 1, results.length - 1));
-        } else if (e.key === "ArrowUp") {
-            setSelectedIndex((prev) => Math.max(prev - 1, -1));
+        }
+
+        if (e.key === "ArrowDown") {
+            setSelectedIndex((i) => Math.min(i + 1, results.length - 1));
+        }
+
+        if (e.key === "ArrowUp") {
+            setSelectedIndex((i) => Math.max(i - 1, -1));
         }
     };
 
-    const handleItemClick = (product: ProductType) => {
-        setQuery(product.name); // Update input value to clicked product name
-        setResults([]); // Clear results after selection
-        window.location.href = `/products/${product.id}`; // Navigate to product page
+    const handleSelect = (product: ProductType) => {
+        setOpen(false);
+        window.location.href = `/products/${product.id}`;
     };
 
     return (
-        <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.01 }} // Trigger when 10% of the component is visible
-            transition={{ duration: 0.2, delay: 0.1 }} // Adjust delay for staggered effect
-            className="relative my-4 flex-1 w-[300px] md:w-[400px]"
-        >
-            <input
-                type="text"
-                placeholder="Search products..."
-                value={query}
-                onChange={handleSearch}
-                onKeyDown={handleKeyDown} // Add key down event
-                className="w-[90%] text-black p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-green-700"
-            />
-            <AiOutlineSearch className="absolute left-4 top-4 text-gray-500" />
+        <>
+            {/* Trigger */}
+            <button
+                onClick={() => setOpen(true)}
+                aria-label="Open search"
+                className="p-2 rounded-lg hover:bg-gray-100 transition"
+            >
+                <AiOutlineSearch className="text-xl text-gray-700" />
+            </button>
 
-            {results.length > 0 && (
-                <div className="border border-gray-300 absolute w-full bg-white text-black rounded-lg mt-1 max-h-40 overflow-auto">
-                    {results.map((product, index) => (
-                        <Link
-                            onClick={() => handleItemClick(product)}
-                            key={product.id}
-                            href={`/products/${product.id}`}
+            {/* Modal */}
+            <AnimatePresence>
+                {open && (
+                    <>
+                        {/* Overlay */}
+                        <motion.div
+                            className="fixed inset-0 z-40 bg-black/50"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setOpen(false)}
+                        />
+
+                        {/* Modal Content */}
+                        <motion.div
+                            className="fixed z-50 top-24 left-1/2 w-[90%] max-w-xl -translate-x-1/2 rounded-xl bg-white p-4 shadow-2xl"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
                         >
-                            <div
-                                className={`flex justify-between items-center py-2 px-4 cursor-pointer ${
-                                    selectedIndex === index ? "bg-gray-100" : ""
-                                }`} // Highlight selected item
-                                onMouseEnter={() => setSelectedIndex(index)} // Highlight on hover
-                            >
-                                <span>{product.name}</span>
+                            <div className="relative">
+                                <AiOutlineSearch className="absolute left-3 top-3 text-gray-500" />
+                                <input
+                                    ref={inputRef}
+                                    type="text"
+                                    placeholder="Search products..."
+                                    value={query}
+                                    onChange={handleSearch}
+                                    onKeyDown={handleKeyDown}
+                                    className="w-full rounded-lg border border-gray-300 py-2 pl-10 pr-3 text-black focus:outline-none focus:ring focus:ring-green-700"
+                                />
                             </div>
-                        </Link>
-                    ))}
-                </div>
-            )}
-        </motion.div>
+
+                            {results.length > 0 && (
+                                <div className="mt-2 max-h-60 overflow-auto rounded-lg border">
+                                    {results.map((product, index) => (
+                                        <Link
+                                            key={product.id}
+                                            href={`/products/${product.id}`}
+                                            onClick={() => handleSelect(product)}
+                                        >
+                                            <div
+                                                className={`px-4 py-2 cursor-pointer ${
+                                                    selectedIndex === index ? "bg-gray-100" : ""
+                                                }`}
+                                                onMouseEnter={() => setSelectedIndex(index)}
+                                            >
+                                                {product.name}
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
+        </>
     );
 };
 

@@ -1,5 +1,10 @@
 import { create } from "zustand";
-import { ConfirmModalPayload, LinkConfirmationPayload, SuccessModalPayload } from "./modal-types";
+import {
+    ConfirmModalPayload,
+    LinkConfirmationPayload,
+    SearchModalPayload,
+    SuccessModalPayload,
+} from "./modal-types";
 
 export type ModalPayloadMap = {
     confirmation: ConfirmModalPayload;
@@ -7,6 +12,7 @@ export type ModalPayloadMap = {
     sign_in: undefined;
     sign_up: undefined;
     link_confirmation: LinkConfirmationPayload;
+    search: SearchModalPayload;
 };
 
 export type ModalType = keyof ModalPayloadMap | null;
