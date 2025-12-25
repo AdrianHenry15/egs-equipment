@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Grid from "./components/grid/grid";
-import GridItem from "./components/grid/grid-item";
+import Grid from "../../components/grid/grid";
+import GridItem from "../../components/grid/grid-item";
 
 export default function AdminPage() {
     const router = useRouter();

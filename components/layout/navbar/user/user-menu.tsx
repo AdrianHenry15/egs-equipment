@@ -2,15 +2,18 @@
 
 import { SignedIn, SignedOut, UserButton, SignInButton, useUser } from "@clerk/nextjs";
 import { UserMenuLoader } from "./user-menu-loader";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SiReasonstudios } from "react-icons/si";
-import { BiBookmark } from "react-icons/bi";
+import { BiBookmark, BiMoon, BiSun } from "react-icons/bi";
 import { FaLock } from "react-icons/fa6";
+import { useTheme } from "next-themes";
 
 export default function UserMenu() {
     const { user, isLoaded, isSignedIn } = useUser();
+    const { theme, setTheme } = useTheme();
     const router = useRouter();
+    const [mounted, setmounted] = useState(false);
     // 🔒 Fail-safe admin check
     const userEmail = user?.primaryEmailAddress?.emailAddress;
 
@@ -22,11 +25,11 @@ export default function UserMenu() {
     const isAdmin = isLoaded && isSignedIn && !!userEmail && adminEmails.includes(userEmail);
 
     useEffect(() => {
-        if (!isLoaded) return;
-    }, [isLoaded, isSignedIn, user]);
+        setmounted(true);
+    }, []);
 
     // Scoped loader only for this UI element
-    if (!isLoaded) {
+    if (!isLoaded || !mounted) {
         return <UserMenuLoader />;
     }
 
@@ -51,6 +54,11 @@ export default function UserMenu() {
                             label="Saved Products"
                             labelIcon={<BiBookmark />}
                             onClick={() => router.push("/user/saved-products")}
+                        />
+                        <UserButton.Action
+                            label={`Theme (${theme === "dark" ? "Light" : "Dark"})`}
+                            labelIcon={theme === "dark" ? <BiSun /> : <BiMoon />}
+                            onClick={() => setTheme(theme === "dark" ? "Light" : "Dark")}
                         />
                         {/* Admin Check | No React Fragments because of Clerk Components */}
                         {isAdmin && (

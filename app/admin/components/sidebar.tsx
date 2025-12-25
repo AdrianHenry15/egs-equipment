@@ -12,36 +12,62 @@ const nav = [
     { label: "Events", href: "/admin/events" },
 ];
 
-export default function Sidebar() {
+interface SidebarProps {
+    open: boolean;
+    onClose: () => void;
+}
+
+export default function Sidebar({ open, onClose }: SidebarProps) {
     const [collapsed, setCollapsed] = useState(false);
 
     return (
-        <aside
-            className={cn(
-                "hidden md:flex flex-col border-r border-gray-200 dark:border-gray-800 transition-all",
-                collapsed ? "w-16" : "w-64",
-            )}
-        >
-            <div className="h-16 flex items-center px-4 font-semibold">{!collapsed && "Admin"}</div>
+        <>
+            {/* Mobile backdrop */}
+            {open && <div onClick={onClose} className="fixed inset-0 z-40 bg-black/50 md:hidden" />}
 
-            <nav className="flex-1 space-y-1 px-2">
-                {nav.map((item) => (
-                    <Link
-                        key={item.href}
-                        href={item.href}
-                        className="block rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-900"
-                    >
-                        {item.label}
-                    </Link>
-                ))}
-            </nav>
-
-            <button
-                onClick={() => setCollapsed(!collapsed)}
-                className="h-12 border-t border-gray-200 dark:border-gray-800 text-xs"
+            <aside
+                className={cn(
+                    "fixed z-50 inset-y-0 top-20 left-0 flex flex-col border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-black transition-transform md:static md:translate-x-0",
+                    open ? "translate-x-0" : "-translate-x-full",
+                    collapsed ? "md:w-16" : "md:w-64",
+                    "w-64",
+                )}
             >
-                {collapsed ? "→" : "←"}
-            </button>
-        </aside>
+                {/* Header */}
+                <div className="h-16 flex items-center justify-between px-4 font-semibold border-b border-gray-200 dark:border-gray-800">
+                    {!collapsed && <span>Admin</span>}
+
+                    {/* Mobile close button */}
+                    <button
+                        onClick={onClose}
+                        className="md:hidden rounded-md p-2 hover:bg-gray-100 dark:hover:bg-gray-900"
+                        aria-label="Close sidebar"
+                    >
+                        ✕
+                    </button>
+                </div>
+
+                <nav className="flex-1 space-y-1 px-2">
+                    {nav.map((item) => (
+                        <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={onClose}
+                            className="block rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-900"
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+                </nav>
+
+                {/* Desktop collapse toggle */}
+                <button
+                    onClick={() => setCollapsed(!collapsed)}
+                    className="hidden md:block h-12 border-t border-gray-200 dark:border-gray-800 text-xs"
+                >
+                    {collapsed ? "→" : "←"}
+                </button>
+            </aside>
+        </>
     );
 }

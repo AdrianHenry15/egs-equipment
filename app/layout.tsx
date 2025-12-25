@@ -11,6 +11,7 @@ import { SanityLive } from "@/sanity/lib/live";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 import ModalRoot from "@/components/modals/modal-root";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -35,16 +36,23 @@ export default async function RootLayout({
 }>) {
     return (
         <ClerkProvider>
-            <html lang="en">
+            <html lang="en" suppressHydrationWarning>
                 <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                    <Toaster />
-                    <Navbar />
-                    {/* <ContactBar /> */}
-                    <Suspense fallback={<Loader />}>{children}</Suspense>
-                    <ModalRoot />
-                    <SanityLive />
-                    {(await draftMode()).isEnabled && <VisualEditing />}
-                    <Footer />
+                    <ThemeProvider
+                        attribute={"class"}
+                        defaultTheme="dark"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        <Toaster />
+                        <Navbar />
+                        {/* <ContactBar /> */}
+                        <Suspense fallback={<Loader />}>{children}</Suspense>
+                        <ModalRoot />
+                        <SanityLive />
+                        {(await draftMode()).isEnabled && <VisualEditing />}
+                        <Footer />
+                    </ThemeProvider>
                 </body>
             </html>
         </ClerkProvider>

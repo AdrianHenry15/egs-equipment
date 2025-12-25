@@ -5,20 +5,12 @@ import { NextResponse } from "next/server";
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
-    const pathname = req.nextUrl.pathname;
-
-    console.log("[MW] Request:", pathname);
-
     // Public routes — no auth needed
     if (!isAdminRoute(req)) {
-        console.log("[MW] Public route → allow");
         return NextResponse.next();
     }
 
-    console.log("[MW] Admin route detected");
-
     const { userId } = await auth();
-    console.log("[MW] userId:", userId);
 
     // If not signed in, redirect to sign-in
     if (!userId) {
@@ -28,24 +20,18 @@ export default clerkMiddleware(async (auth, req) => {
 
     // Get the backend SDK client instance
     const client = await clerkClient();
-    console.log("[MW] Clerk client initialized");
 
     // Fetch the full user
     const user = await client.users.getUser(userId);
-    console.log("[MW] Clerk user fetched:", user.id);
 
     // Primary email
     const primaryEmail = user.emailAddresses.find(
         (e) => e.id === user.primaryEmailAddressId,
     )?.emailAddress;
 
-    console.log("[MW] Primary email:", primaryEmail);
-
     const allowedEmails = new Set(
         [process.env.NEXT_PUBLIC_DEV_EMAIL, process.env.NEXT_PUBLIC_CLIENT_EMAIL].filter(Boolean),
     );
-
-    console.log("[MW] Allowed emails:", Array.from(allowedEmails));
 
     // Unauthorized admin → redirect home
     if (!primaryEmail || !allowedEmails.has(primaryEmail)) {
@@ -53,7 +39,6 @@ export default clerkMiddleware(async (auth, req) => {
         return NextResponse.redirect(new URL("/", req.url));
     }
 
-    console.log("[MW] Admin access granted");
     return NextResponse.next();
 });
 
