@@ -8,7 +8,9 @@ const nav = [
     { label: "Dashboard", href: "/admin" },
     { label: "Leads", href: "/admin/leads" },
     { label: "Clients", href: "/admin/clients" },
-    { label: "Equipment", href: "/admin/equipment" },
+    { label: "Users", href: "/admin/users" },
+    { label: "Equipment Products", href: "/admin/products" },
+    { label: "Equipment Events", href: "/admin/equipment-events" },
     { label: "Events", href: "/admin/events" },
 ];
 
