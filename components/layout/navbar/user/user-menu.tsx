@@ -1,6 +1,6 @@
 "use client";
 
-import { SignedIn, SignedOut, UserButton, SignInButton, useUser } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton, SignInButton, useUser, useAuth } from "@clerk/nextjs";
 import { UserMenuLoader } from "./user-menu-loader";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -10,28 +10,22 @@ import { FaLock } from "react-icons/fa6";
 import { useTheme } from "next-themes";
 
 export default function UserMenu() {
-    const { user, isLoaded, isSignedIn } = useUser();
+    const { isLoaded: userLoaded, isSignedIn } = useUser();
+    const { orgRole, has, isLoaded: authLoaded } = useAuth();
+
     const { theme, setTheme } = useTheme();
     const router = useRouter();
-    const [mounted, setmounted] = useState(false);
-    // 🔒 Fail-safe admin check
-    const userEmail = user?.primaryEmailAddress?.emailAddress;
-
-    const adminEmails = [
-        process.env.NEXT_PUBLIC_DEV_EMAIL,
-        process.env.NEXT_PUBLIC_CLIENT_EMAIL,
-    ].filter(Boolean); // removes undefined values
-
-    const isAdmin = isLoaded && isSignedIn && !!userEmail && adminEmails.includes(userEmail);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setmounted(true);
+        setMounted(true);
     }, []);
 
-    // Scoped loader only for this UI element
-    if (!isLoaded || !mounted) {
+    if (!userLoaded || !authLoaded || !mounted) {
         return <UserMenuLoader />;
     }
+
+    const isAdmin = isSignedIn && (orgRole === "org:admin" || has?.({ role: "org:admin" }));
 
     return (
         <div className="mr-2">
@@ -55,12 +49,13 @@ export default function UserMenu() {
                             labelIcon={<BiBookmark />}
                             onClick={() => router.push("/user/saved-products")}
                         />
+
                         <UserButton.Action
                             label={`Theme (${theme === "dark" ? "Light" : "Dark"})`}
                             labelIcon={theme === "dark" ? <BiSun /> : <BiMoon />}
-                            onClick={() => setTheme(theme === "dark" ? "Light" : "Dark")}
+                            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                         />
-                        {/* Admin Check | No React Fragments because of Clerk Components */}
+
                         {isAdmin && (
                             <UserButton.Action
                                 label="Admin Panel"
@@ -68,6 +63,7 @@ export default function UserMenu() {
                                 onClick={() => router.push("/admin")}
                             />
                         )}
+
                         {isAdmin && (
                             <UserButton.Action
                                 label="Studio"

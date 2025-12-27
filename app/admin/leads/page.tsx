@@ -18,7 +18,7 @@ export default async function LeadsPage() {
                 </div>
 
                 <Link
-                    href="/admin/leads/new"
+                    href="/admin/leads/create"
                     className="inline-flex items-center gap-2 rounded-md bg-black px-4 py-2 text-sm font-medium text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-200"
                 >
                     + Create Lead

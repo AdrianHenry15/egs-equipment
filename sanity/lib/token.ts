@@ -1,11 +1,12 @@
 import "server-only";
 
-export const readToken = process.env.SANITY_READ_TOKEN;
-export const writeToken = process.env.SANITY_BACKEND_TOKEN;
+function requireEnv(name: string): string {
+    const value = process.env[name];
+    if (!value) {
+        throw new Error(`Missing required environment variable: ${name}`);
+    }
+    return value;
+}
 
-if (!readToken) {
-    throw new Error("Missing SANITY_READ_TOKEN");
-}
-if (!writeToken) {
-    throw new Error("Missing SANITY_BACKEND_TOKEN");
-}
+export const readToken = requireEnv("SANITY_READ_TOKEN");
+export const writeToken = requireEnv("SANITY_BACKEND_TOKEN");

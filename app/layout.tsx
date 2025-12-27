@@ -12,6 +12,7 @@ import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 import ModalRoot from "@/components/modals/modal-root";
 import { ThemeProvider } from "next-themes";
+import GlobalOptionsWidget from "./components/global-options-widget";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -51,6 +52,7 @@ export default async function RootLayout({
                         <ModalRoot />
                         <SanityLive />
                         {(await draftMode()).isEnabled && <VisualEditing />}
+                        <GlobalOptionsWidget />
                         <Footer />
                     </ThemeProvider>
                 </body>

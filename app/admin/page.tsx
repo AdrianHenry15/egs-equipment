@@ -18,6 +18,7 @@ export default function AdminPage() {
 
             {/* Quick access grid */}
             <Grid>
+                {/* Leads */}
                 <GridItem
                     title="Leads"
                     subtitle="New & active leads"
@@ -26,7 +27,7 @@ export default function AdminPage() {
                         router.push("/admin/leads");
                     }}
                 />
-
+                {/* Clients */}
                 <GridItem
                     title="Clients"
                     subtitle="Active customers"
@@ -35,20 +36,40 @@ export default function AdminPage() {
                         router.push("/admin/clients");
                     }}
                 />
-
+                {/* Users */}
                 <GridItem
-                    title="Equipment"
-                    subtitle="Product catalog"
-                    meta="Machines & inventory"
+                    title="Users"
+                    subtitle="Platform Account"
+                    meta="Admins, Staff, Registered Users"
                     onClick={() => {
-                        router.push("/admin/equipment");
+                        router.push("/admin/users");
                     }}
                 />
 
+                {/* Equipment Products */}
                 <GridItem
-                    title="Events"
+                    title="Equipment Products"
+                    subtitle="Product catalog"
+                    meta="Machines & inventory"
+                    onClick={() => {
+                        router.push("/admin/products");
+                    }}
+                />
+
+                {/* Equipment Events */}
+                <GridItem
+                    title="Equipment Events"
                     subtitle="Equipment history"
                     meta="Upgrades, repairs, retirements"
+                    onClick={() => {
+                        router.push("/admin/equipment-events");
+                    }}
+                />
+                {/* Events */}
+                <GridItem
+                    title="Events"
+                    subtitle="Company Calendar"
+                    meta="Meetings, site visits, trade shows"
                     onClick={() => {
                         router.push("/admin/events");
                     }}
