@@ -4,6 +4,8 @@ import { useState } from "react";
 import { DEFAULT_LEAD_FORM } from "@/lib/forms/constants";
 import { LeadFormValues } from "@/lib/forms/types";
 import { Field, Input, Select, Textarea } from "@/components/forms/form-module";
+import { useModalStore } from "@/stores/modal-store/modal-store";
+import { init } from "next/dist/compiled/webpack/webpack";
 
 /* -------------------------------- */
 /* Constants */
@@ -67,6 +69,7 @@ export default function LeadForm({
     const [form, setForm] = useState<LeadFormValues>(initialValues ?? DEFAULT_LEAD_FORM);
     const [errors, setErrors] = useState<LeadErrors>({});
     const [submitting, setSubmitting] = useState(false);
+    const { openModal } = useModalStore();
 
     function update<K extends keyof LeadFormValues>(key: K, value: LeadFormValues[K]) {
         setForm((prev) => ({ ...prev, [key]: value }));
@@ -82,15 +85,32 @@ export default function LeadForm({
         if (Object.keys(validationErrors).length > 0) return;
 
         setSubmitting(true);
-        await onSubmit(form);
-        setSubmitting(false);
+
+        try {
+            await onSubmit(form);
+
+            openModal("success", {
+                title: initialValues ? "Lead Updated" : "Lead Created",
+                message: initialValues
+                    ? "The lead was successfully updated."
+                    : "The lead was successfully created.",
+            });
+        } finally {
+            setSubmitting(false);
+        }
     }
 
     return (
         <form onSubmit={handleSubmit} className="space-y-8">
             <div className="space-y-1">
-                <h1 className="text-3xl font-semibold">Create Lead</h1>
-                <aside className="text-gray-400">Manually add a new lead to the system.</aside>
+                <h1 className="text-3xl font-semibold">
+                    {initialValues ? "Edit Lead" : "Create Lead"}
+                </h1>
+                <aside className="text-gray-400">
+                    {initialValues
+                        ? "Edit an existing lead."
+                        : "Manually add a new lead to the system."}
+                </aside>
             </div>
             {/* CONTACT INFO */}
             <section className="rounded-lg border p-6 bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">

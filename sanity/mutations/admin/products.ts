@@ -1,4 +1,5 @@
-import { sanityReadClient, sanityWriteClient } from "@/sanity/lib/client";
+import { sanityReadClient } from "@/sanity/lib/client";
+import { sanityWriteClient } from "@/sanity/lib/client.server";
 import { productByIdQuery } from "@/sanity/queries/products";
 
 // CREATE

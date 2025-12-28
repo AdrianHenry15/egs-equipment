@@ -12,6 +12,7 @@ import product from "./product/product";
 import lead from "./lead";
 import client from "./client";
 import equipmentEvent from "./equipment-event";
+import events from "./events";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
     types: [
@@ -27,5 +28,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
         lead,
         client,
         equipmentEvent,
+        events,
     ],
 };

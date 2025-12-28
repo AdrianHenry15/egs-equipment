@@ -46,9 +46,9 @@ export default function AdminPage() {
                     }}
                 />
 
-                {/* Equipment Products */}
+                {/* Products */}
                 <GridItem
-                    title="Equipment Products"
+                    title="Products"
                     subtitle="Product catalog"
                     meta="Machines & inventory"
                     onClick={() => {

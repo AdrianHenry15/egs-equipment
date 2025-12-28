@@ -13,6 +13,97 @@
  */
 
 // Source: schema.json
+export type Events = {
+    _id: string;
+    _type: "events";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    name?: string;
+    slug?: Slug;
+    type?: "trade_show" | "demo_day" | "tournament" | "conference" | "client_visit" | "other";
+    description?: string;
+    startDate?: string;
+    endDate?: string;
+    location?: {
+        venue?: string;
+        city?: string;
+        state?: string;
+        country?: string;
+    };
+    clients?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "clients";
+    }>;
+    productsFeatured?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "products";
+    }>;
+    leadsGenerated?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "leads";
+    }>;
+    coverImage?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+    };
+    gallery?: Array<{
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+        _key: string;
+    }>;
+    status?: "upcoming" | "completed" | "cancelled";
+    notes?: string;
+    createdAt?: string;
+};
+
+export type SanityImageCrop = {
+    _type: "sanity.imageCrop";
+    top?: number;
+    bottom?: number;
+    left?: number;
+    right?: number;
+};
+
+export type SanityImageHotspot = {
+    _type: "sanity.imageHotspot";
+    x?: number;
+    y?: number;
+    height?: number;
+    width?: number;
+};
+
+export type Slug = {
+    _type: "slug";
+    current?: string;
+    source?: string;
+};
+
 export type EquipmentEvents = {
     _id: string;
     _type: "equipmentEvents";
@@ -245,28 +336,6 @@ export type Products = {
     popular?: boolean;
 };
 
-export type SanityImageCrop = {
-    _type: "sanity.imageCrop";
-    top?: number;
-    bottom?: number;
-    left?: number;
-    right?: number;
-};
-
-export type SanityImageHotspot = {
-    _type: "sanity.imageHotspot";
-    x?: number;
-    y?: number;
-    height?: number;
-    width?: number;
-};
-
-export type Slug = {
-    _type: "slug";
-    current?: string;
-    source?: string;
-};
-
 export type Users = {
     _id: string;
     _type: "users";
@@ -384,6 +453,10 @@ export type Geopoint = {
 };
 
 export type AllSanitySchemaTypes =
+    | Events
+    | SanityImageCrop
+    | SanityImageHotspot
+    | Slug
     | EquipmentEvents
     | Clients
     | Leads
@@ -395,9 +468,6 @@ export type AllSanitySchemaTypes =
     | Details
     | UserSaves
     | Products
-    | SanityImageCrop
-    | SanityImageHotspot
-    | Slug
     | Users
     | SanityImagePaletteSwatch
     | SanityImagePalette

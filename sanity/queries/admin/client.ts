@@ -26,28 +26,28 @@ export const clientFields = `
 
 // GET ALL CLIENTS
 export const getAllClientsQuery = `
-  *[_type == "client"] | order(createdAt desc) {
+  *[_type == "clients"] | order(createdAt desc) {
     ${clientFields}
   }
 `;
 
 // GET CLIENT BY ID
 export const getClientByIdQuery = `
-  *[_type == "client" && _id == $id][0] {
+  *[_type == "clients" && _id == $id][0] {
     ${clientFields}
   }
 `;
 
 // GET CLIENT BY STATUS
 export const getClientsByStatusQuery = `
-  *[_type == "client" && status == $status] | order(createdAt desc) {
+  *[_type == "clients" && status == $status] | order(createdAt desc) {
     ${clientFields}
   }
 `;
 
 // SEARCH CLIENTS
 export const searchClientsQuery = `
-  *[_type == "client" &&
+  *[_type == "clients" &&
     (
       name match $query ||
       email match $query ||
@@ -60,7 +60,7 @@ export const searchClientsQuery = `
 
 // GET CLIENTS BY EQUIPMENT
 export const getClientsByEquipmentQuery = `
-  *[_type == "client" && references($productId)] | order(createdAt desc) {
+  *[_type == "clients" && references($productId)] | order(createdAt desc) {
     ${clientFields}
   }
 `;
@@ -91,7 +91,7 @@ export const getClientEquipmentTimelineQuery = `
 
 // GET CLIENT SELECT LIST
 export const getClientSelectListQuery = `
-  *[_type == "client"] | order(name asc) {
+  *[_type == "clients"] | order(name asc) {
     _id,
     name,
     company
@@ -101,8 +101,8 @@ export const getClientSelectListQuery = `
 // CLIENT COUNTS
 export const clientCountsQuery = `
 {
-  "active": count(*[_type == "client" && status == "active"]),
-  "inactive": count(*[_type == "client" && status == "inactive"]),
-  "archived": count(*[_type == "client" && status == "archived"])
+  "active": count(*[_type == "clients" && status == "active"]),
+  "inactive": count(*[_type == "clients" && status == "inactive"]),
+  "archived": count(*[_type == "clients" && status == "archived"])
 }
 `;

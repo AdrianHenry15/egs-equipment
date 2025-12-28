@@ -1,4 +1,4 @@
-import { sanityWriteClient } from "@/sanity/lib/client";
+import { sanityWriteClient } from "@/sanity/lib/client.server";
 
 type CreateEquipmentEventInput = {
     clientId: string;
@@ -17,7 +17,7 @@ export async function createEquipmentEvent(input: CreateEquipmentEventInput) {
     }
 
     return sanityWriteClient.create({
-        _type: "equipmentEvent",
+        _type: "equipmentEvents", // ✅ FIXED
 
         client: {
             _type: "reference",
@@ -40,8 +40,8 @@ export async function createEquipmentEvent(input: CreateEquipmentEventInput) {
             },
         }),
 
-        reason: input.reason,
-        notes: input.notes,
+        ...(input.reason && { reason: input.reason }),
+        ...(input.notes && { notes: input.notes }),
 
         eventDate: input.eventDate ?? new Date().toISOString(),
     });
@@ -76,8 +76,8 @@ export async function logEquipmentPurchase(input: {
         clientId: input.clientId,
         eventType: "purchase",
         currentEquipmentId: input.productId,
-        reason: input.reason ?? "Initial Purchase",
-        notes: input.notes,
+        ...(input.reason && { reason: input.reason }),
+        ...(input.notes && { notes: input.notes }),
     });
 }
 
@@ -94,8 +94,8 @@ export async function logEquipmentUpgrade(input: {
         eventType: "upgrade",
         lastEquipmentId: input.lastEquipmentId,
         currentEquipmentId: input.currentEquipmentId,
-        reason: input.reason,
-        notes: input.notes,
+        ...(input.reason && { reason: input.reason }),
+        ...(input.notes && { notes: input.notes }),
     });
 }
 
@@ -112,8 +112,8 @@ export async function logEquipmentReplacement(input: {
         eventType: "replacement",
         lastEquipmentId: input.lastEquipmentId,
         currentEquipmentId: input.currentEquipmentId,
-        reason: input.reason,
-        notes: input.notes,
+        ...(input.reason && { reason: input.reason }),
+        ...(input.notes && { notes: input.notes }),
     });
 }
 
@@ -127,7 +127,7 @@ export async function logEquipmentRepair(input: {
         clientId: input.clientId,
         eventType: "repair",
         lastEquipmentId: input.productId,
-        notes: input.notes,
+        ...(input.notes && { notes: input.notes }),
     });
 }
 
@@ -142,7 +142,7 @@ export async function logEquipmentRetirement(input: {
         clientId: input.clientId,
         eventType: "retired",
         lastEquipmentId: input.productId,
-        reason: input.reason ?? "End of Life",
-        notes: input.notes,
+        ...(input.reason && { reason: input.reason }),
+        ...(input.notes && { notes: input.notes }),
     });
 }

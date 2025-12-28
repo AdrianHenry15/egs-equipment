@@ -50,6 +50,42 @@ export type EquipmentEventReason =
     | "Other";
 
 export type UserRole = "customer" | "admin";
+export type ProductMainCategory =
+    | "Sport"
+    | "Synthetic Turf"
+    | "Natural Turf"
+    | "Line Marker"
+    | "Hand Tool"
+    | "Goal"
+    | "Debris Blower";
+
+export type ProductBrand =
+    | "Howardsons"
+    | "Harrod Sports"
+    | "Pitchmark"
+    | "Buffalo Turbine"
+    | "Eastman"
+    | "Dennis"
+    | "SISIS"
+    | "Syn-Pro";
+
+export type ProductUsedBy =
+    | "Golf"
+    | "Soccer"
+    | "American Football"
+    | "Baseball"
+    | "Lacrosse"
+    | "Sports Turf"
+    | "Synthetic Turf";
+export type EventType =
+    | "trade_show"
+    | "demo_day"
+    | "tournament"
+    | "conference"
+    | "client_visit"
+    | "other";
+
+export type EventStatus = "upcoming" | "completed" | "cancelled";
 
 /* =========================================================
    IMAGE / FILE TYPES (Sanity Core)
@@ -234,5 +270,35 @@ export interface UserSave extends SanityBase {
     _type: "userSaves";
     clerkId?: string;
     product?: SanityReference;
+    createdAt?: string;
+}
+
+export interface EventLocation {
+    _type: "eventLocation";
+    venue?: string;
+    city?: string;
+    state?: string;
+    country?: string;
+}
+
+export interface Event extends SanityBase {
+    _type: "events";
+    name?: string;
+    slug?: {
+        _type: "slug";
+        current?: string;
+    };
+    type?: EventType;
+    description?: string;
+    startDate?: string; // ISO datetime
+    endDate?: string;
+    location?: EventLocation;
+    clients?: SanityArrayReference[];
+    productsFeatured?: SanityArrayReference[];
+    leadsGenerated?: SanityArrayReference[];
+    coverImage?: SanityImage;
+    gallery?: SanityImage[];
+    status?: EventStatus;
+    notes?: string;
     createdAt?: string;
 }

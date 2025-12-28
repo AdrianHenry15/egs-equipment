@@ -1,8 +1,8 @@
 "use client";
 
 import { LeadFormValues } from "@/lib/forms/types";
-import { updateLeadAction } from "../actions";
 import LeadForm from "../../create/components/leads-form";
+import { updateLeadAction } from "../../actions";
 
 export default function EditLeadForm({
     id,

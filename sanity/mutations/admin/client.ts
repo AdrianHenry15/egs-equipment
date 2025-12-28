@@ -1,4 +1,4 @@
-import { sanityWriteClient } from "@/sanity/lib/client";
+import { sanityWriteClient } from "@/sanity/lib/client.server";
 
 type CreateClientInput = {
     name: string;
@@ -119,8 +119,8 @@ export async function replaceClientEquipment(input: {
         eventType: "replacement",
         lastEquipment: input.lastEquipmentId,
         currentEquipment: input.currentEquipmentId,
-        reason: input.reason,
-        notes: input.notes,
+        ...(input.reason && { reason: input.reason }),
+        ...(input.notes && { notes: input.notes }),
     });
 
     // 2. Update client current state

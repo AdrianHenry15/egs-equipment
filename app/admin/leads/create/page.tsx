@@ -1,6 +1,6 @@
 import LeadForm from "./components/leads-form";
 import LeadCsvDropzone from "./components/lead-csv-dropzone";
-import { bulkCreateLeadsAction, createLeadAction } from "./actions";
+import { bulkCreateLeadsAction, createLeadAction } from "../actions";
 
 export default function CreateLeadPage() {
     return (

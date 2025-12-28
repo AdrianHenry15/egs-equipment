@@ -1,4 +1,4 @@
-import { sanityClient } from "@/sanity/lib/client";
+import { sanityWriteClient } from "@/sanity/lib/client.server";
 
 type CreateLeadInput = {
     firstName: string;
@@ -13,7 +13,7 @@ type CreateLeadInput = {
 
 // CREATE
 export async function createLead(input: CreateLeadInput) {
-    return sanityClient.create({
+    return sanityWriteClient.create({
         _type: "lead",
         ...input,
         equipmentInterest: input.equipmentInterest?.map((id) => ({
@@ -37,7 +37,7 @@ export async function updateLead(
         message: string;
     }>,
 ) {
-    return sanityClient.patch(leadId).set(data).commit();
+    return sanityWriteClient.patch(leadId).set(data).commit();
 }
 
 // UPDATE LEAD STATUS
@@ -45,7 +45,7 @@ export async function updateLeadStatus(
     leadId: string,
     status: "new" | "contacted" | "qualified" | "converted" | "lost",
 ) {
-    return sanityClient.patch(leadId).set({ status }).commit();
+    return sanityWriteClient.patch(leadId).set({ status }).commit();
 }
 
 // UPDATE LEAD EQUIPMENT
@@ -56,7 +56,7 @@ export async function updateLeadEquipment(
         equipmentInterest?: string[];
     },
 ) {
-    return sanityClient
+    return sanityWriteClient
         .patch(leadId)
         .set({
             ...(input.equipmentNeeds && { equipmentNeeds: input.equipmentNeeds }),
@@ -72,7 +72,7 @@ export async function updateLeadEquipment(
 
 // MARK LEAD CONVERTED
 export async function markLeadConverted(leadId: string) {
-    return sanityClient
+    return sanityWriteClient
         .patch(leadId)
         .set({
             status: "converted",
@@ -83,10 +83,10 @@ export async function markLeadConverted(leadId: string) {
 
 // ARCHIVE
 export async function archiveLead(leadId: string) {
-    return sanityClient.patch(leadId).set({ status: "lost" }).commit();
+    return sanityWriteClient.patch(leadId).set({ status: "lost" }).commit();
 }
 
 // DELETE LEAD
 export async function deleteLead(leadId: string) {
-    return sanityClient.delete(leadId);
+    return sanityWriteClient.delete(leadId);
 }

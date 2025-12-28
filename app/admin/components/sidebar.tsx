@@ -9,7 +9,7 @@ const nav = [
     { label: "Leads", href: "/admin/leads" },
     { label: "Clients", href: "/admin/clients" },
     { label: "Users", href: "/admin/users" },
-    { label: "Equipment Products", href: "/admin/products" },
+    { label: "Products", href: "/admin/products" },
     { label: "Equipment Events", href: "/admin/equipment-events" },
     { label: "Events", href: "/admin/events" },
 ];
@@ -29,7 +29,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
 
             <aside
                 className={cn(
-                    "fixed z-50 inset-y-0 top-20 left-0 flex flex-col border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-black transition-transform md:static md:translate-x-0",
+                    "fixed z-40 inset-y-0 top-20 left-0 flex flex-col border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-black transition-transform md:static md:translate-x-0",
                     open ? "translate-x-0" : "-translate-x-full",
                     collapsed ? "md:w-16" : "md:w-64",
                     "w-64",
@@ -61,14 +61,6 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
                         </Link>
                     ))}
                 </nav>
-
-                {/* Desktop collapse toggle */}
-                <button
-                    onClick={() => setCollapsed(!collapsed)}
-                    className="hidden md:block h-12 border-t border-gray-200 dark:border-gray-800 text-xs"
-                >
-                    {collapsed ? "→" : "←"}
-                </button>
             </aside>
         </>
     );

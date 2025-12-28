@@ -1,18 +1,19 @@
-import { sanityClient } from "../../lib/client";
+import { sanityReadClient } from "@/sanity/lib/client";
 import { userByClerkIdQuery } from "../../queries/users";
+import { sanityWriteClient } from "@/sanity/lib/client.server";
 
 // UPDATE ANY USER
 export async function adminUpdateUser(clerkId: string, data: Partial<any>) {
-    const existing = await sanityClient.fetch(userByClerkIdQuery, { clerkId });
+    const existing = await sanityReadClient.fetch(userByClerkIdQuery, { clerkId });
     if (!existing) return null;
 
-    return sanityClient.patch(existing._id).set(data).commit();
+    return sanityWriteClient.patch(existing._id).set(data).commit();
 }
 
 // DELETE ANY USER
 export async function adminDeleteUser(clerkId: string) {
-    const existing = await sanityClient.fetch(userByClerkIdQuery, { clerkId });
+    const existing = await sanityReadClient.fetch(userByClerkIdQuery, { clerkId });
     if (!existing) return null;
 
-    return sanityClient.delete(existing._id);
+    return sanityWriteClient.delete(existing._id);
 }
