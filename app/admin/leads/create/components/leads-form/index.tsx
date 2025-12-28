@@ -88,6 +88,10 @@ export default function LeadForm({
 
     return (
         <form onSubmit={handleSubmit} className="space-y-8">
+            <div className="space-y-1">
+                <h1 className="text-3xl font-semibold">Create Lead</h1>
+                <aside className="text-gray-400">Manually add a new lead to the system.</aside>
+            </div>
             {/* CONTACT INFO */}
             <section className="rounded-lg border p-6 bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">
                 <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">

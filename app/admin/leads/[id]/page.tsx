@@ -2,9 +2,10 @@ import { sanityReadClient } from "@/sanity/lib/client";
 import { getLeadByIdQuery } from "@/sanity/queries/admin/leads";
 import EditLeadForm from "./components/edit-form";
 
-export default async function EditLeadPage({ params }: { params: { id: string } }) {
+export default async function EditLeadPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
     const lead = await sanityReadClient.fetch(getLeadByIdQuery, {
-        id: params.id,
+        id,
     });
 
     const initialValues = {
@@ -21,5 +22,5 @@ export default async function EditLeadPage({ params }: { params: { id: string } 
         priority: lead.priority ?? "",
     };
 
-    return <EditLeadForm id={params.id} initialValues={initialValues} />;
+    return <EditLeadForm id={id} initialValues={initialValues} />;
 }

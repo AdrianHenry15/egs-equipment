@@ -23,28 +23,28 @@ export const leadFields = `
 
 // GET ALL LEADS
 export const getAllLeadsQuery = `
-  *[_type == "lead"] | order(createdAt desc) {
+  *[_type == "leads"] | order(createdAt desc) {
     ${leadFields}
   }
 `;
 
 // BY STATUS QUERY
 export const getLeadsByStatusQuery = `
-  *[_type == "lead" && status == $status] | order(createdAt desc) {
+  *[_type == "leads" && status == $status] | order(createdAt desc) {
     ${leadFields}
   }
 `;
 
 // BY ID QUERY
 export const getLeadByIdQuery = `
-  *[_type == "lead" && _id == $id][0] {
+  *[_type == "leads" && _id == $id][0] {
     ${leadFields}
   }
 `;
 
 // SEARCH LEADS
 export const searchLeadsQuery = `
-  *[_type == "lead" &&
+  *[_type == "leads" &&
     (
       email match $query ||
       firstName match $query ||
@@ -58,21 +58,21 @@ export const searchLeadsQuery = `
 
 // BY EQUIPMENT NEED
 export const getLeadsByEquipmentNeedQuery = `
-  *[_type == "lead" && $need in equipmentNeeds] | order(createdAt desc) {
+  *[_type == "leads" && $need in equipmentNeeds] | order(createdAt desc) {
     ${leadFields}
   }
 `;
 
 // BY PRODUCT INTEREST
 export const getLeadsByProductInterestQuery = `
-  *[_type == "lead" && references($productId)] | order(createdAt desc) {
+  *[_type == "leads" && references($productId)] | order(createdAt desc) {
     ${leadFields}
   }
 `;
 
 // SELECT LIST
 export const getLeadSelectListQuery = `
-  *[_type == "lead"] | order(createdAt desc) {
+  *[_type == "leads"] | order(createdAt desc) {
     _id,
     email,
     status
@@ -82,10 +82,10 @@ export const getLeadSelectListQuery = `
 // BY STATUS
 export const leadCountsByStatusQuery = `
 {
-  "new": count(*[_type == "lead" && status == "new"]),
-  "contacted": count(*[_type == "lead" && status == "contacted"]),
-  "qualified": count(*[_type == "lead" && status == "qualified"]),
-  "converted": count(*[_type == "lead" && status == "converted"]),
-  "lost": count(*[_type == "lead" && status == "lost"])
+  "new": count(*[_type == "leads" && status == "new"]),
+  "contacted": count(*[_type == "leads" && status == "contacted"]),
+  "qualified": count(*[_type == "leads" && status == "qualified"]),
+  "converted": count(*[_type == "leads" && status == "converted"]),
+  "lost": count(*[_type == "leads" && status == "lost"])
 }
 `;
