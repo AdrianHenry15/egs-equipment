@@ -14,6 +14,10 @@ export const NavMenu: NavMenuType[] = [
         title: "Products",
         link: "",
     },
+    {
+        title: "Events",
+        link: "/events",
+    },
     // Parts Order Form
     {
         title: "Parts Form",

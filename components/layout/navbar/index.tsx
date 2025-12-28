@@ -14,7 +14,6 @@ import SearchBar from "@/components/search-bar";
 import ProductsNavMenu from "./products-nav-menu";
 import UserMenu from "./user/user-menu";
 import { useModalStore } from "@/stores/modal-store/modal-store";
-import { OrganizationSwitcher } from "@clerk/nextjs";
 
 export default function Navbar() {
     const pathname = usePathname();

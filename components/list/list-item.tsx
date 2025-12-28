@@ -6,13 +6,13 @@ interface ListItemProps {
     title: string;
     description?: string | undefined;
     meta?: string | undefined;
-    href: string;
+    href: string | undefined;
 }
 
 export default function ListItem({ image, title, description, meta, href }: ListItemProps) {
     return (
         <Link
-            href={href}
+            href={href ?? "#"}
             className="flex items-center gap-4 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-900 transition cursor-pointer"
         >
             {/* Left image / avatar */}

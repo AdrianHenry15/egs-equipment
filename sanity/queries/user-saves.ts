@@ -1,18 +1,12 @@
-// Fetch saved products for a user
-export const userSavedProductsQuery = `
-  *[_type == "userSave" && clerkId == $clerkId]{
-    "id": _id,
+export const getUserSavedProductsQuery = `
+  *[_type == "userSaves"] | order(createdAt desc) {
+    _id,
+    clerkId,
+    createdAt,
     product->{
       _id,
       name,
-      brand,
-      mainCategory,
-      image,
-      details{
-        specifications,
-        specs_description
-      }
-    },
-    createdAt
+      brand
+    }
   }
 `;
