@@ -64,7 +64,8 @@ export type GoalSubtypeTag =
 
 // Line Markers
 export type LineMarkerTag = "Paint" | "Machine" | "Accessories";
-export type LineMarkerPaint = "Ready To Use" | "Concentrate" | "Artificial Grass";
+export type LineMarkerPaint = "Ready-To-Use" | "Concentrate" | "Artificial Grass";
+export type LineMarkerPaintQuality = "Premium" | "Professional" | "Standard" | "Low" | "Bad";
 export type LineMarkerMachines = "Spray Machines" | "Wheel-To-Wheel";
 export type LineMarkerAccessories = "Field Accessories" | "Machine Accessories" | "Spare";
 
@@ -80,6 +81,10 @@ export type Tag =
     | SoccerGoalCategoryTag
     | SoccerGoalNetTag
     | LineMarkerTag
+    | LineMarkerPaint
+    | LineMarkerPaintQuality
+    | LineMarkerMachines
+    | LineMarkerAccessories
     | GoalSubtypeTag
     | MowerSubtypeTag
     | TurfTag;

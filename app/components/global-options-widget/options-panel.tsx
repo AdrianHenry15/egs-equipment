@@ -1,5 +1,6 @@
 "use client";
 
+import { useCookieConsentStore } from "@/stores/cookie-consent-store";
 import {
     OrganizationSwitcher,
     SignedIn,
@@ -19,6 +20,8 @@ const OptionsPanel = () => {
             keepPreviousData: true,
         },
     });
+
+    const { open: openCookieModal } = useCookieConsentStore();
 
     const hasOrgs = isLoaded && (memberships?.count ?? 0) > 0;
 
@@ -80,8 +83,21 @@ const OptionsPanel = () => {
                 )}
             </SignedIn>
 
-            {/* Future options */}
-            {/* Theme toggle, admin shortcuts, etc. */}
+            {/* COOKIE SETTINGS */}
+            <div className="pt-2 border-t dark:border-gray-800">
+                <div className="text-xs font-semibold uppercase text-gray-500 mb-2">Privacy</div>
+
+                <button
+                    onClick={openCookieModal}
+                    className="
+                        w-full text-black rounded-md border px-3 py-2 text-sm
+                        text-left hover:bg-gray-50 ease-in-out duration-150
+                        dark:hover:bg-gray-300
+                    "
+                >
+                    Cookie preferences
+                </button>
+            </div>
         </div>
     );
 };
