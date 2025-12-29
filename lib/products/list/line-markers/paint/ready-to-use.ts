@@ -14,7 +14,7 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Paint", "Premium", "Ready-To-Use"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -31,7 +31,7 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Paint", "Professional", "Ready-To-Use"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -48,7 +48,7 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Paint", "Professional", "Ready-To-Use"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -65,7 +65,7 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Paint", "Standard", "Ready-To-Use"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,

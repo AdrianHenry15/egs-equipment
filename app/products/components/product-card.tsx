@@ -1,10 +1,10 @@
 "use client";
 
-import { ProductType } from "@/lib/types";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { getProductBrandImage } from "@/lib/products/helpers/get-product-brand-image";
+import { ProductType } from "@/lib/types/product";
 
 interface ProductCardProps {
     product: ProductType;
@@ -16,52 +16,57 @@ export default function ProductCard({ product }: ProductCardProps) {
 
     const truncatedName =
         product.name.length > MAX_NAME_LENGTH
-            ? `${product.name.substring(0, MAX_NAME_LENGTH)}...`
+            ? `${product.name.slice(0, MAX_NAME_LENGTH)}…`
             : product.name;
 
     const truncatedDescription =
         product.description.length > MAX_DESCRIPTION_LENGTH
-            ? `${product.description.substring(0, MAX_DESCRIPTION_LENGTH)}...`
+            ? `${product.description.slice(0, MAX_DESCRIPTION_LENGTH)}…`
             : product.description;
+
+    /**
+     * Safely resolve primary product image
+     */
+    const primaryImage = product.images?.[0];
 
     return (
         <motion.div
             className="
-                flex flex-col
-                h-full
-                bg-white
-                border border-gray-200
-                rounded-lg
-                shadow
-                hover:shadow-lg
-                transition-shadow
+                flex flex-col h-full
+                rounded-lg border border-gray-200
+                bg-white shadow
+                transition-shadow hover:shadow-lg
                 overflow-hidden
             "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
         >
             {/* Main content */}
-            <Link href={`/products/${product.id}`} className="flex flex-col">
-                <Image
-                    width={1000}
-                    height={1000}
-                    src={typeof product.image === "string" ? product.image : product.image.src}
-                    alt={product.name}
-                    className="w-full h-48 object-cover"
-                />
+            <Link href={`/products/${product.id}`} className="flex flex-col grow">
+                {primaryImage && (
+                    <Image
+                        width={1000}
+                        height={1000}
+                        src={primaryImage}
+                        alt={product.name}
+                        className="h-48 w-full object-cover"
+                        priority={false}
+                    />
+                )}
 
-                <div className="flex flex-col p-4 flex-grow">
-                    <h3 className="text-lg text-black font-semibold mb-2">{truncatedName}</h3>
+                <div className="flex flex-col grow p-4">
+                    <h3 className="mb-2 text-lg font-semibold text-black">{truncatedName}</h3>
 
-                    <p className="text-sm text-gray-600 mb-4">{truncatedDescription}</p>
+                    <p className="mb-4 text-sm text-gray-600">{truncatedDescription}</p>
 
                     <div className="mt-auto">
                         <Image
                             width={
                                 product.brand === "Dennis" || product.brand === "Eastman" ? 100 : 60
                             }
+                            height={32}
                             className={product.brand === "Dennis" ? "h-8" : "h-6"}
                             alt={product.brand}
                             src={getProductBrandImage(product.brand)}
@@ -74,17 +79,13 @@ export default function ProductCard({ product }: ProductCardProps) {
             <Link
                 href="/contact"
                 className="
-                    mt-auto
                     flex items-center justify-center
-                    bg-green-700
-                    py-2
-                    text-white
-                    font-medium
-                    transition-transform
-                    hover:scale-[1.02]
+                    bg-green-700 py-2
+                    text-sm font-medium text-white
+                    transition hover:bg-green-800
                 "
             >
-                Request A Quote
+                Request a Quote
             </Link>
         </motion.div>
     );

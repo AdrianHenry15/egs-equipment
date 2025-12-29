@@ -60,6 +60,9 @@ export type GoalSubtypeTag =
     | "Hinged"
     | "Portable"
     | "Self-Weighted"
+    | "Portagoal"
+    | "Heavyweight"
+    | "Swivel"
     | "Socketed";
 
 // Line Markers

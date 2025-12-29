@@ -18,7 +18,7 @@ export const DebrisBlowerProducts: ProductType[] = [
         mainCategory: "Debris Blower",
         tags: ["Natural Turf", "Synthetic Turf", "Debris Blower"],
         brand: EquipmentBrand.BUFFALO_TURBINE,
-        image: Cyclone8000Img,
+        images: [Cyclone8000Img],
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
@@ -33,7 +33,7 @@ export const DebrisBlowerProducts: ProductType[] = [
         mainCategory: "Debris Blower",
         tags: ["Natural Turf", "Synthetic Turf", "Debris Blower"],
         brand: EquipmentBrand.BUFFALO_TURBINE,
-        image: CycloneKB4Img,
+        images: [CycloneKB4Img],
         details: {
             specs_description: ProductSpecDescriptions.cyclone_kb4,
             features: ProductFeatures.cyclone_kb4,
@@ -48,7 +48,7 @@ export const DebrisBlowerProducts: ProductType[] = [
         mainCategory: "Debris Blower",
         tags: ["Natural Turf", "Synthetic Turf", "Debris Blower"],
         brand: EquipmentBrand.BUFFALO_TURBINE,
-        image: CycloneSquaredImg,
+        images: [CycloneSquaredImg],
         details: {
             specs_description: ProductSpecDescriptions.cyclone_squared,
             features: ProductFeatures.cyclone_squared,
@@ -63,7 +63,7 @@ export const DebrisBlowerProducts: ProductType[] = [
         mainCategory: "Debris Blower",
         tags: ["Natural Turf", "Synthetic Turf", "Debris Blower"],
         brand: EquipmentBrand.BUFFALO_TURBINE,
-        image: CycloneMegaImg,
+        images: [CycloneMegaImg],
         details: {
             specs_description: ProductSpecDescriptions.cyclone_mega,
             features: ProductFeatures.cyclone_mega,
@@ -78,7 +78,7 @@ export const DebrisBlowerProducts: ProductType[] = [
         mainCategory: "Debris Blower",
         tags: ["Natural Turf", "Synthetic Turf", "Debris Blower"],
         brand: EquipmentBrand.BUFFALO_TURBINE,
-        image: CyclonePTOImg,
+        images: [CyclonePTOImg],
         details: {
             specs_description: ProductSpecDescriptions.cyclone_pto,
             features: ProductFeatures.cyclone_pto,

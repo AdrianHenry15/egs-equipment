@@ -5,7 +5,7 @@ import { ProductSpecifications } from "../../../product-specifications";
 import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
 
-export const LineMarkerFieldAccessoryProducts: ProductType[] = [
+export const LineMarkerMachineAccessoryProducts: ProductType[] = [
     // TODO: IMAGE | BRAND | DETAILS
     {
         id: "lmma-1",
@@ -14,7 +14,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Machine Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -31,7 +31,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Machine Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -48,7 +48,41 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Machine Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
+        brand: EquipmentBrand.PITCHMARK,
+        details: {
+            specs_description: ProductSpecDescriptions.javelin,
+            features: ProductFeatures.javelin,
+            specifications: ProductSpecifications.javelin,
+            video: "",
+        },
+    },
+    // TODO: IMAGE | BRAND | DETAILS
+    {
+        id: "lmma-4",
+        name: "EcoClean 10L",
+        description:
+            "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
+        mainCategory: "Line Marker",
+        tags: ["Line Marker", "Accessories", "Machine Accessories"],
+        images: [JavelinImg],
+        brand: EquipmentBrand.PITCHMARK,
+        details: {
+            specs_description: ProductSpecDescriptions.javelin,
+            features: ProductFeatures.javelin,
+            specifications: ProductSpecifications.javelin,
+            video: "",
+        },
+    },
+    // TODO: IMAGE | BRAND | DETAILS
+    {
+        id: "lmma-5",
+        name: "Concentrate Mixing Kit",
+        description:
+            "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
+        mainCategory: "Line Marker",
+        tags: ["Line Marker", "Accessories", "Machine Accessories"],
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,

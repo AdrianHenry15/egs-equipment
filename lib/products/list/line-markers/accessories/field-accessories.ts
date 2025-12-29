@@ -14,7 +14,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -31,7 +31,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -48,7 +48,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -65,7 +65,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -82,7 +82,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -99,7 +99,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -116,7 +116,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -133,7 +133,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -150,7 +150,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -167,7 +167,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -184,7 +184,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -201,7 +201,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -218,7 +218,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -235,7 +235,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Accessories", "Field Accessories"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.javelin,

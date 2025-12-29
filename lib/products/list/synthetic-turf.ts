@@ -23,7 +23,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         description: "Ride on brushing system",
         mainCategory: "Synthetic Turf",
         tags: ["Brush", "Synthetic Turf"],
-        image: BrushProImg,
+        images: [BrushProImg],
         brand: EquipmentBrand.SYNPRO,
         manual: "https://syn-pro-api.wsio-api.com/uploads/BRUSH_PRO_Manual_9a29794398.pdf",
         details: {
@@ -39,7 +39,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         description: "2-in-1 deep cleaning and decompaction machine",
         mainCategory: "Synthetic Turf",
         tags: ["Deep Cleaner", "Synthetic Turf"],
-        image: SVRImg,
+        images: [SVRImg],
         brand: EquipmentBrand.SYNPRO,
         manual: "https://syn-pro-api.wsio-api.com/uploads/SVR_1500_DEEP_CLEANER_Manual_7d0baa326a.pdf",
         details: {
@@ -56,7 +56,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         brand: EquipmentBrand.SISIS,
         mainCategory: "Synthetic Turf",
         tags: ["Synthetic Turf", "Sweeper"],
-        image: SSS1000Img,
+        images: [SSS1000Img],
         manual: "https://syn-pro-api.wsio-api.com/uploads/SSS_1000_Manual_03efd4ac67.pdf",
         details: {
             specs_description: ProductSpecDescriptions.sss1000,
@@ -72,7 +72,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         brand: EquipmentBrand.SYNPRO,
         mainCategory: "Synthetic Turf",
         tags: ["Brush", "Synthetic Turf"],
-        image: OSCA3Img,
+        images: [OSCA3Img],
         manual: "https://syn-pro-api.wsio-api.com/uploads/Osca_3_Manual_812d76894b.pdf",
         details: {
             specs_description: ProductSpecDescriptions.osca_3,
@@ -88,7 +88,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         brand: EquipmentBrand.SYNPRO,
         mainCategory: "Synthetic Turf",
         tags: ["Brush", "Synthetic Turf"],
-        image: VaribrushImg,
+        images: [VaribrushImg],
         manual: "https://syn-pro-api.wsio-api.com/uploads/VARIBRUSH_Manual_19262a27b6.pdf",
         details: {
             specs_description: ProductSpecDescriptions.varibrush,
@@ -104,7 +104,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         mainCategory: "Synthetic Turf",
         tags: ["Brush", "Synthetic Turf"],
         brand: EquipmentBrand.SYNPRO,
-        image: TriangularBrushImg,
+        images: [TriangularBrushImg],
         manual: "https://synprobysisis.com/triangular-brush",
         details: {
             specs_description: ProductSpecDescriptions.triangular_brush,
@@ -120,7 +120,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         mainCategory: "Synthetic Turf",
         tags: ["Spreader", "Synthetic Turf"],
         brand: EquipmentBrand.SYNPRO,
-        image: PowaspredImg,
+        images: [PowaspredImg],
         manual: "https://synprobysisis.com/powaspred",
         details: {
             specs_description: ProductSpecDescriptions.powaspred,
@@ -136,7 +136,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         mainCategory: "Synthetic Turf",
         tags: ["Brush", "Synthetic Turf"],
         brand: EquipmentBrand.SYNPRO,
-        image: TractorBrushImg,
+        images: [TractorBrushImg],
         details: {
             specs_description: ProductSpecDescriptions.tractor_brush_combinations,
             features: ProductFeatures.tractor_brush_combinations,
@@ -151,7 +151,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         mainCategory: "Synthetic Turf",
         tags: ["Brush", "Rake", "Synthetic Turf"],
         brand: EquipmentBrand.SYNPRO,
-        image: TractorBrushRakeImg,
+        images: [TractorBrushRakeImg],
         details: {
             specs_description: ProductSpecDescriptions.tractor_rake_and_brush_combinations,
             features: ProductFeatures.tractor_rake_and_brush_combinations,
@@ -166,7 +166,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         mainCategory: "Synthetic Turf",
         tags: ["All In One Brush System", "Brush", "Synthetic Turf"],
         brand: EquipmentBrand.SYNPRO,
-        image: TowedBrushImg,
+        images: [TowedBrushImg],
         details: {
             specs_description: ProductSpecDescriptions.towed_brush_combination,
             features: ProductFeatures.towed_brush_combination,
@@ -182,7 +182,7 @@ export const SyntheticTurfProducts: ProductType[] = [
         mainCategory: "Synthetic Turf",
         tags: ["Sweeper", "Synthetic Turf"],
         brand: EquipmentBrand.SYNPRO,
-        image: LitaminaImg,
+        images: [LitaminaImg],
         details: {
             specs_description: ProductSpecDescriptions.litamina,
             features: ProductFeatures.litamina,

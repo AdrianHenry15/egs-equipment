@@ -14,7 +14,7 @@ export const AeratorProducts: ProductType[] = [
             "Tractor mounted vertical action aerator for use on both fine and outfield turf.",
         mainCategory: "Natural Turf",
         tags: ["Aerator", "Natural Turf"],
-        image: JavelinImg,
+        images: [JavelinImg],
         brand: EquipmentBrand.SISIS,
         details: {
             specs_description: ProductSpecDescriptions.javelin,
@@ -30,7 +30,7 @@ export const AeratorProducts: ProductType[] = [
             "Independent powered vertical action aerator ideal for sports field maintenance.",
         mainCategory: "Natural Turf",
         tags: ["Aerator", "Natural Turf"],
-        image: DartImg,
+        images: [DartImg],
         brand: EquipmentBrand.SISIS,
         details: {
             specs_description: ProductSpecDescriptions.dart,

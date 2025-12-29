@@ -1,7 +1,7 @@
 "use client";
 
 import { allProducts } from "@/lib/products/list/product-list";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 export default function PopularProductsRow() {
@@ -18,7 +18,7 @@ export default function PopularProductsRow() {
                         >
                             <div className="relative h-48 w-full mb-4 rounded-lg overflow-hidden">
                                 <Image
-                                    src={product.image}
+                                    src={product.images[0] as StaticImageData}
                                     alt={product.name}
                                     fill
                                     className="object-cover"

@@ -14,7 +14,7 @@ export const ScarifierProducts: ProductType[] = [
         description: "Heavy duty scarifier",
         mainCategory: "Natural Turf",
         tags: ["Scarifier", "Natural Turf"],
-        image: RotoRakeImg,
+        images: [RotoRakeImg],
         brand: EquipmentBrand.SYNPRO,
         manual: "https://sisis-api.wsio-api.com/uploads/manuals_Rotorake_600_HD_9b10c22d0a.pdf",
         details: {
@@ -31,7 +31,7 @@ export const ScarifierProducts: ProductType[] = [
             "Self-propelled heavy duty scarifier and de-thatcher for removal and control of thatch on fine and other quality turf",
         mainCategory: "Natural Turf",
         tags: ["Scarifier", "Natural Turf"],
-        image: AutoRotoRakeImg,
+        images: [AutoRotoRakeImg],
         brand: EquipmentBrand.SISIS,
         manual: "https://sisis-api.wsio-api.com/uploads/manuals_AUTO_ROTORAKE_Mk_5_526d9a474a.pdf",
         details: {
@@ -47,7 +47,7 @@ export const ScarifierProducts: ProductType[] = [
         description: "Triple mounted hydraulic driven scarifier",
         mainCategory: "Natural Turf",
         tags: ["Scarifier", "Natural Turf"],
-        image: VeemoImg,
+        images: [VeemoImg],
         brand: EquipmentBrand.SISIS,
         manual: "https://sisis-api.wsio-api.com/uploads/manuals_VEEMO_MK_2_cf14cbf6fa.pdf",
         details: {

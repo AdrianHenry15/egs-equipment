@@ -10,7 +10,7 @@ export type ProductType = {
     mainCategory: MainCategory;
     tags: Tag[];
     brand: EquipmentBrand;
-    image: string | StaticImageData;
+    images: string[] | StaticImageData[];
     details: Details;
     manual?: string;
     usedBy?: Clients;

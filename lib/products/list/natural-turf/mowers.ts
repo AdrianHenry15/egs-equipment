@@ -14,7 +14,7 @@ export const MowerProducts: ProductType[] = [
         description: "Interchangeable Cassette System Mowers",
         mainCategory: "Natural Turf",
         tags: ["Reel Mower", "Rotary Mower", "Natural Turf"],
-        image: GSeriesImg,
+        images: [GSeriesImg],
         brand: EquipmentBrand.DENNIS,
         manual: "https://dennis-api.wsio-api.com/uploads/manuals_G_SERIES_CASSETTE_MOWER_d704cb9b31.pdf",
         details: {
@@ -30,7 +30,7 @@ export const MowerProducts: ProductType[] = [
         description: "Battery powered mower and Maintenance system",
         mainCategory: "Natural Turf",
         tags: ["Reel Mower", "Rotary Mower", "Natural Turf"],
-        image: ES860Img,
+        images: [ES860Img],
         brand: EquipmentBrand.DENNIS,
         manual: "https://dennis-api.wsio-api.com/uploads/manuals_ES_860_ES_760_5a49c756a8.pdf",
         details: {
@@ -46,7 +46,7 @@ export const MowerProducts: ProductType[] = [
         description: "Hover light mower",
         mainCategory: "Natural Turf",
         tags: ["Hover Mower", "Natural Turf"],
-        image: HoverMowerImg,
+        images: [HoverMowerImg],
         brand: EquipmentBrand.EASTMAN,
         manual: "https://thehovermower.com/pdf/HM16H-4-manual.pdf",
         details: {
