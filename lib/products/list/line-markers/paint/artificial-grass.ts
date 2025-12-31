@@ -1,4 +1,4 @@
-import JavelinImg from "@/public/products/aerators/javelin-aer-aid-1500-aerator.webp";
+import AGPImg from "@/public/products/line-markers/paint/artificial-grass/AGP-10L-1.webp";
 import { ProductSpecDescriptions } from "../../../product-spec-descriptions";
 import { ProductFeatures } from "../../../product-features";
 import { ProductSpecifications } from "../../../product-specifications";
@@ -6,20 +6,21 @@ import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
 
 export const LineMarkerArtificialGrassPaintProducts: ProductType[] = [
-    // TODO: DESCRIPTION | IMAGE | DETAILS
     {
         id: "lmpag-1",
         name: "AGP",
-        description:
-            "A handy pocket-sized line marking handbook that contains a range of pitch dimensions, saving you time when marking pitches",
+        description: `
+            AGP (Artificial Grass Paint) 
+            is an advanced ready-to-use formulation designed for artificial grass surfaces including 3G and 4G. 
+        `,
         mainCategory: "Line Marker",
         tags: ["Line Marker", "Paint", "Premium", "Artificial Grass"],
-        images: [JavelinImg],
+        images: [AGPImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.javelin,
-            features: ProductFeatures.javelin,
-            specifications: ProductSpecifications.javelin,
+            specs_description: ProductSpecDescriptions.agp,
+            features: ProductFeatures.agp,
+            specifications: ProductSpecifications.agp,
             video: "",
         },
     },

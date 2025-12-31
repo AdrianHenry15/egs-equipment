@@ -141,7 +141,6 @@ export const ProductSpecDescriptions: Record<ProductKey, string> = {
     "4g_net_hook_insertion_tool": ``,
     heavyweight_freestanding_goal: ``,
     folding_aluminum_goal: ``,
-    fixed_traing_goals: ``,
     wheelaway_analyst_shelter: ``,
     mini_target_goal: ``,
     perimeter_poles: ``,
