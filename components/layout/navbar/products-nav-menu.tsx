@@ -6,7 +6,7 @@ import { ProductsMenuItems } from "@/lib/constants";
 import Link from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 import { useProductFilters } from "@/hooks/use-product-filters";
-import { MainCategory } from "@/lib/types";
+import { MainCategory } from "@/lib/types/categories";
 
 interface IProductsNavMenuProps {
     setProductsMenuOpen: () => void;
@@ -24,7 +24,7 @@ const ProductsNavMenu = ({ setProductsMenuOpen }: IProductsNavMenuProps) => {
         setProductsMenuOpen();
 
         updateUrl({
-            category: title === "All Products" ? null : title,
+            category: title,
             subcategory: null,
             brand: null,
         });

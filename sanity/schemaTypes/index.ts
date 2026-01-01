@@ -7,7 +7,6 @@ import engineSpecifiction from "./product/engine-specifiction";
 import brushSpecifiction from "./product/brush-specifiction";
 import cuttingSpecification from "./product/cutting-specification";
 import user from "./user";
-import userSave from "./user-save";
 import product from "./product/product";
 import lead from "./lead";
 import client from "./client";
@@ -17,7 +16,6 @@ import events from "./events";
 export const schema: { types: SchemaTypeDefinition[] } = {
     types: [
         user,
-        userSave,
         product,
         detail,
         productSpecification,

@@ -2,13 +2,13 @@ import { getSanityUserByClerkId } from "@/sanity/queries/users";
 import { NextResponse } from "next/server";
 
 interface Params {
-    params: {
+    params: Promise<{
         clerkId: string;
-    };
+    }>;
 }
 
 export async function GET(_: Request, { params }: Params) {
-    const { clerkId } = params;
+    const { clerkId } = await params;
 
     const user = await getSanityUserByClerkId(clerkId);
 

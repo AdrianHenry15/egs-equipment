@@ -1,7 +1,7 @@
 "server only";
 
+import { sanityWriteClient } from "@/sanity/lib/client.server";
 import { currentUser } from "@clerk/nextjs/server";
-import { sanityWriteClient } from "@/sanity/lib/client";
 
 export async function syncSanityUser() {
     const user = await currentUser();

@@ -1,7 +1,6 @@
 "use client";
 
-import { ClientFormValues, ProductFormValues } from "@/lib/forms/types";
-import { updateProduct } from "@/sanity/mutations/admin/products";
+import { ProductFormValues } from "@/lib/forms/types";
 import { updateProductAction } from "../../actions";
 import ProductForm from "../../create/components/product-form";
 

@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import { Suspense } from "react";
-import { Loader } from "@/components/loader";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -13,7 +11,8 @@ import { VisualEditing } from "next-sanity/visual-editing";
 import ModalRoot from "@/components/modals/modal-root";
 import { ThemeProvider } from "next-themes";
 import GlobalOptionsWidget from "./components/global-options-widget";
-import CookieConsentModal from "@/components/modals/cookie-consent-modal";
+import CookieConsentCard from "@/components/cookie-consent-card";
+import Script from "next/script";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -29,6 +28,11 @@ const geistMono = localFont({
 export const metadata: Metadata = {
     title: "Home | EGS Equipment",
     description: "Flawless Greens, Expert Care",
+    icons: {
+        icon: "/logos/egs-swoosh.png",
+        shortcut: "/logos/egs-swoosh.png",
+        apple: "/logos/egs-swoosh.png",
+    },
 };
 
 export default async function RootLayout({
@@ -40,6 +44,11 @@ export default async function RootLayout({
         <ClerkProvider>
             <html lang="en" suppressHydrationWarning>
                 <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+                    {/* Google reCAPTCHA v3 */}
+                    <Script
+                        src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+                        strategy="afterInteractive"
+                    />
                     <ThemeProvider
                         attribute={"class"}
                         defaultTheme="dark"
@@ -48,10 +57,9 @@ export default async function RootLayout({
                     >
                         <Toaster />
                         <Navbar />
-                        {/* <ContactBar /> */}
-                        <Suspense fallback={<Loader />}>{children}</Suspense>
+                        {children}
                         <ModalRoot />
-                        <CookieConsentModal />
+                        <CookieConsentCard />
                         <SanityLive />
                         {(await draftMode()).isEnabled && <VisualEditing />}
                         <GlobalOptionsWidget />

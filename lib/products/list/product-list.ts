@@ -8,24 +8,28 @@ import { LineMarkerArtificialGrassPaintProducts } from "./line-markers/paint/art
 import { LineMarkerConcentratePaintProducts } from "./line-markers/paint/concentrate";
 import { LineMarkerFieldAccessoryProducts } from "./line-markers/accessories/field-accessories";
 import { LineMarkerReadyToUsePaintProducts } from "./line-markers/paint/ready-to-use";
-import { LineMarkerSparePartsProducts } from "./line-markers/accessories/spare-parts";
 import { LineMarkerMachineAccessoryProducts } from "./line-markers/accessories/machine-accessories";
 
-export const allProducts = [
-    ...ScarifierProducts,
-    ...MowerProducts,
-    ...SyntheticTurfProducts,
-    ...DebrisBlowerProducts,
-    ...AeratorProducts,
-    ...ScarifierProducts,
-    ...SoccerGoalProducts,
-    ...LineMarkerArtificialGrassPaintProducts,
-    ...LineMarkerConcentratePaintProducts,
-    ...LineMarkerFieldAccessoryProducts,
-    ...LineMarkerReadyToUsePaintProducts,
-    ...LineMarkerSparePartsProducts,
-    ...LineMarkerMachineAccessoryProducts,
+// Group all product collections once
+const productCollections = [
+    ScarifierProducts,
+    MowerProducts,
+    SyntheticTurfProducts,
+    DebrisBlowerProducts,
+    AeratorProducts,
+    // SoccerGoalProducts,
+    LineMarkerArtificialGrassPaintProducts,
+    LineMarkerConcentratePaintProducts,
+    LineMarkerFieldAccessoryProducts,
+    LineMarkerReadyToUsePaintProducts,
+    LineMarkerMachineAccessoryProducts,
 ];
+
+// All products (flattened)
+export const allProducts = productCollections.flat();
+
+// Featured products = first item of each collection (if it exists)
+export const featuredProducts = productCollections.map((products) => products[0]).filter(Boolean);
 
 export function getAllProducts() {
     return [...allProducts];

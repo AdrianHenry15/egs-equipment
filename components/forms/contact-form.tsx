@@ -11,6 +11,7 @@ import Button from "../button";
 import Textarea from "./textarea";
 import Input from "./input";
 import { useModalStore } from "@/stores/modal-store/modal-store";
+import { getRecaptchaToken } from "@/lib/utils";
 
 const ContactForm = () => {
     const [inputClicked, setInputClicked] = useState(false);
@@ -50,10 +51,22 @@ const ContactForm = () => {
         try {
             setLoading(true);
 
-            await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+            const captchaToken = await getRecaptchaToken();
+            console.log("reCAPTCHA token:", captchaToken);
+
+            await emailjs.send(
+                SERVICE_ID,
+                TEMPLATE_ID,
+                {
+                    templateParams,
+                    captchaToken,
+                },
+                PUBLIC_KEY,
+            );
 
             toast.success("Your estimate has been submitted successfully!");
 
+            closeModal();
             openModal("success", {
                 title: "Request Submitted",
                 message: "Someone from our team will be in touch shortly.",

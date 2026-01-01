@@ -1,4 +1,5 @@
 import { MainCategory, Tag } from "@/lib/types/categories";
+import { ProductBrand } from "@/sanity/types";
 
 export const Filters = {
     mainCategory: [
@@ -70,4 +71,14 @@ export const Filters = {
     mowerSubtype: ["Reel Mower", "Rotary Mower", "Hover Mower"] as Tag[],
 
     lineMarkerTags: ["Paint", "Machine", "Accessories"] as Tag[],
+    brand: [
+        "Howardsons",
+        "Harrod Sports",
+        "Pitchmark",
+        "Buffalo Turbine",
+        "Eastman",
+        "Dennis",
+        "SISIS",
+        "Syn-Pro",
+    ] as ProductBrand[],
 };

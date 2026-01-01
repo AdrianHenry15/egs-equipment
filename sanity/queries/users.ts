@@ -1,5 +1,6 @@
 import { auth, currentUser } from "@clerk/nextjs/server";
-import { sanityReadClient, sanityWriteClient } from "../lib/client";
+import { sanityReadClient } from "../lib/client";
+import { sanityWriteClient } from "../lib/client.server";
 
 // Fetch user by Clerk ID
 export const userByClerkIdQuery = `

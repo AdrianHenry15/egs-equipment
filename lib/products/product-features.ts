@@ -219,7 +219,17 @@ export const ProductFeatures: Record<ProductKey, string[]> = {
     u_peg_anchor_kit: [],
 
     // Line Marker Paint
-    ecoline: [],
+    ecoline: [
+        `This line marking paint is specifically designed for use on natural grass.`,
+        `Formulated for use through spray line marking machines using a red misting nozzle only.`,
+        `This paint is ready-to-use with no mixing or dilution required. Simply shake well and go.`,
+        `Available in 5L & 10L drums.`,
+        `10L can mark 6 full-size football pitches.`,
+        `Available in white, red, yellow, and blue`,
+        `This low-consumption line marking paint dries rapidly, allowing you to water your pitch straight after line marking.`,
+        `Ready-to-use paints don’t need mixing with water, making it far easier to line mark on sites without access to a water supply. It also cuts out the messy part; no more measuring and mixing!`,
+        `Used at top level professional sport, Ecoline+ line marking paint gives superior results. Many examples can be seen every week on TV from the best leagues in the world, including the English Premier League and UEFA Champions League`,
+    ],
     direct: [],
     edge: [],
     transfer: [],

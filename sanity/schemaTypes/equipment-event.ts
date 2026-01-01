@@ -10,8 +10,6 @@ export default defineType({
             const current = context.document?.currentEquipment;
             if (typeof value !== "string") return true;
 
-            const doc = context.document as any;
-
             if (value === "purchase" && (!current || last)) {
                 return "Purchase requires currentEquipment only";
             }

@@ -40,13 +40,6 @@ export default defineType({
         }),
 
         defineField({
-            name: "saves",
-            title: "Saved Products",
-            type: "array",
-            of: [{ type: "reference", to: [{ type: "products" }] }],
-        }),
-
-        defineField({
             name: "dateJoined",
             title: "Date Joined",
             type: "datetime",

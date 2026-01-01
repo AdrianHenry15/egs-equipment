@@ -9,12 +9,12 @@ import PromoRow from "@/components/promo-row";
 // Animation Variants
 const fadeIn = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } as const,
 };
 
 const staggerContainer = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } } as const,
 };
 
 const About: React.FC = () => {
@@ -27,7 +27,7 @@ const About: React.FC = () => {
         >
             {/* Jumbotron Header */}
             <motion.div
-                className="relative w-full h-96 md:h-[500px] overflow-hidden rounded-lg shadow-lg"
+                className="relative w-full h-96 md:h-125 overflow-hidden rounded-lg shadow-lg"
                 variants={fadeIn}
             >
                 <Image
@@ -39,7 +39,7 @@ const About: React.FC = () => {
                     priority
                     className="opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80 flex flex-col items-center justify-center text-center text-white px-6">
+                <div className="absolute inset-0 bg-linear-to-b from-black/50 to-black/80 flex flex-col items-center justify-center text-center text-white px-6">
                     <motion.h1
                         className="text-3xl md:text-5xl font-extrabold drop-shadow-lg"
                         variants={fadeIn}

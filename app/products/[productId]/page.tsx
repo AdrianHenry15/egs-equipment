@@ -1,9 +1,10 @@
 import Product from "@/app/products/[productId]/components/product";
 
-export default function ProductPage({ params }: { params: { productId: string } }) {
+export default async function ProductPage({ params }: { params: Promise<{ productId: string }> }) {
+    const { productId } = await params;
     return (
-        <div className="flex relative flex-col bg-zinc-800 items-center p-4 w-full">
-            <Product productId={params.productId} />
+        <div className="flex relative flex-col items-center w-full">
+            <Product productId={productId} />
         </div>
     );
 }

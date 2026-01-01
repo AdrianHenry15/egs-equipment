@@ -9,6 +9,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { allProducts } from "@/lib/products/list/product-list";
 import { ProductType } from "@/lib/types/product";
 import { useModalStore } from "@/stores/modal-store/modal-store";
+import Image from "next/image";
 
 type FilterState = {
     category: string | null;
@@ -82,9 +83,12 @@ export default function SearchModal({
         if (!filteredResults.length) return;
 
         switch (e.key) {
-            case "Enter":
-                navigate(filteredResults[selectedIndex]);
+            case "Enter": {
+                const product = filteredResults[selectedIndex];
+                if (!product) return; // 👈 hard guard
+                navigate(product);
                 break;
+            }
             case "ArrowDown":
                 setSelectedIndex((i) => Math.min(i + 1, filteredResults.length - 1));
                 break;
@@ -97,11 +101,18 @@ export default function SearchModal({
         }
     };
 
+    const getProductImage = (product: ProductType) => {
+        const img = product.images?.[0];
+        if (!img) return null;
+
+        return typeof img === "string" ? img : img.src;
+    };
+
     return (
-        <div className="w-full max-w-md sm:max-w-lg md:max-w-xl rounded-xl bg-white p-4 shadow-2xl">
+        <div className="w-full max-w-md sm:max-w-lg text-black md:max-w-xl rounded-xl bg-white p-4 shadow-2xl">
             {/* Search Input */}
             <div className="relative">
-                <AiOutlineSearch className="absolute left-3 top-3 text-gray-500" />
+                <AiOutlineSearch className="absolute left-3 top-3 text-black" />
                 <input
                     ref={inputRef}
                     type="text"
@@ -152,29 +163,55 @@ export default function SearchModal({
                     <div className="px-4 py-6 text-sm text-gray-500">No products found.</div>
                 )}
 
-                {filteredResults.map((product, index) => (
-                    <Link
-                        key={product.id}
-                        href={`/products/${product.id}`}
-                        onClick={() => navigate(product)}
-                    >
-                        <div
-                            className={`px-4 py-2 cursor-pointer ${
-                                selectedIndex === index ? "bg-gray-100" : ""
-                            }`}
-                            onMouseEnter={() => setSelectedIndex(index)}
+                {filteredResults.map((product, index) => {
+                    const imageSrc = getProductImage(product);
+
+                    return (
+                        <Link
+                            key={product.id}
+                            href={`/products/${product.id}`}
+                            onClick={() => navigate(product)}
                         >
-                            <div className="font-medium">{product.name}</div>
-                            {(product.brand || product.mainCategory) && (
-                                <div className="text-xs text-gray-500">
-                                    {[product.brand, product.mainCategory]
-                                        .filter(Boolean)
-                                        .join(" • ")}
+                            <div
+                                className={`flex items-center gap-3 px-4 py-2 cursor-pointer ${
+                                    selectedIndex === index ? "bg-gray-100" : ""
+                                }`}
+                                onMouseEnter={() => setSelectedIndex(index)}
+                            >
+                                {/* Image */}
+                                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md border bg-white">
+                                    {imageSrc ? (
+                                        <Image
+                                            src={imageSrc}
+                                            alt={product.name}
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    ) : (
+                                        <div className="flex h-full w-full items-center justify-center text-xs text-gray-400">
+                                            No image
+                                        </div>
+                                    )}
                                 </div>
-                            )}
-                        </div>
-                    </Link>
-                ))}
+
+                                {/* Text */}
+                                <div className="min-w-0">
+                                    <div className="truncate font-medium text-black">
+                                        {product.name}
+                                    </div>
+
+                                    {(product.brand || product.mainCategory) && (
+                                        <div className="truncate text-xs text-gray-500">
+                                            {[product.brand, product.mainCategory]
+                                                .filter(Boolean)
+                                                .join(" • ")}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </Link>
+                    );
+                })}
             </div>
         </div>
     );

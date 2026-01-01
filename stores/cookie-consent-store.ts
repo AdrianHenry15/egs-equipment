@@ -2,46 +2,37 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type CookieConsentState = {
-    version: 1;
-    essential: true;
-    analytics: boolean;
-    hasConsented: boolean;
     isOpen: boolean;
-
-    acceptAll: () => void;
-    acceptEssential: () => void;
+    consent: "all" | "essential" | null;
     open: () => void;
     close: () => void;
+    acceptAll: () => void;
+    acceptEssential: () => void;
 };
 
-export const useCookieConsentStore = create<CookieConsentState>()(
-    persist(
+export const useCookieConsentStore = create(
+    persist<CookieConsentState>(
         (set) => ({
-            version: 1,
-            essential: true,
-            analytics: false,
-            hasConsented: false,
-            isOpen: true,
+            isOpen: false,
+            consent: null,
+
+            open: () => set({ isOpen: true }),
+            close: () => set({ isOpen: false }),
 
             acceptAll: () =>
                 set({
-                    analytics: true,
-                    hasConsented: true,
+                    consent: "all",
                     isOpen: false,
                 }),
 
             acceptEssential: () =>
                 set({
-                    analytics: false,
-                    hasConsented: true,
+                    consent: "essential",
                     isOpen: false,
                 }),
-
-            open: () => set({ isOpen: true }),
-            close: () => set({ isOpen: false }),
         }),
         {
-            name: "cookie_consent_v1",
+            name: "cookie-consent",
         },
     ),
 );

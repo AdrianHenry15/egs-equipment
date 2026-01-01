@@ -6,8 +6,8 @@ This enables:
     Rewards logic later
 */
 
+import { sanityWriteClient } from "@/sanity/lib/client.server";
 import { auth } from "@clerk/nextjs/server";
-import { sanityWriteClient } from "@/sanity/lib/client";
 
 export async function POST() {
     const { userId } = await auth();

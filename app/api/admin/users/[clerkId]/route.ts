@@ -4,13 +4,14 @@ import { adminUpdateUser, adminDeleteUser } from "@/sanity/mutations/admin/admin
 import { getSanityUserByClerkId } from "@/sanity/queries/users";
 
 interface Params {
-    params: {
+    params: Promise<{
         clerkId: string;
-    };
+    }>;
 }
 
 export async function GET(_: Request, { params }: Params) {
-    const user = await getSanityUserByClerkId(params.clerkId);
+    const { clerkId } = await params;
+    const user = await getSanityUserByClerkId(clerkId);
     if (!user) {
         return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
@@ -19,13 +20,17 @@ export async function GET(_: Request, { params }: Params) {
 }
 
 export async function PATCH(req: Request, { params }: Params) {
+    const { clerkId } = await params;
+
     const data = await req.json();
-    const updated = await adminUpdateUser(params.clerkId, data);
+    const updated = await adminUpdateUser(clerkId, data);
 
     return NextResponse.json(updated);
 }
 
 export async function DELETE(_: Request, { params }: Params) {
-    await adminDeleteUser(params.clerkId);
-    return NextResponse.json({ status: "deleted", clerkId: params.clerkId });
+    const { clerkId } = await params;
+
+    await adminDeleteUser(clerkId);
+    return NextResponse.json({ status: "deleted", clerkId });
 }

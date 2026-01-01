@@ -29,7 +29,7 @@ const itemVariants = {
 
 export default function FilterGroup({
     title,
-    options,
+    options = [],
     selectedOption,
     onChange,
     defaultOpen = true,
@@ -41,6 +41,10 @@ export default function FilterGroup({
     defaultOpen?: boolean;
 }) {
     const [open, setOpen] = useState(defaultOpen);
+
+    if (!options.length) {
+        return null; // or render "No filters available"
+    }
 
     return (
         <section className="mt-4">

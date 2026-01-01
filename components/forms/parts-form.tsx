@@ -13,6 +13,7 @@ import Textarea from "./textarea";
 import Input from "./input";
 import { Loader } from "../loader";
 import { useModalStore } from "@/stores/modal-store/modal-store";
+import { getRecaptchaToken } from "@/lib/utils";
 
 const PartsForm = () => {
     // SWITCH BETWEEN CONTACT AND ESTIMATE FORM | BOTH FORMS DO THE SAME THING FOR NOW
@@ -50,8 +51,19 @@ const PartsForm = () => {
     const sendEstimate = async () => {
         setLoading(true);
 
+        const captchaToken = await getRecaptchaToken();
+        console.log("reCAPTCHA token:", captchaToken);
+
         try {
-            await emailjs.send(SERVICE_ID, TEMPLATE_ID, getValues(), PUBLIC_KEY);
+            await emailjs.send(
+                SERVICE_ID,
+                TEMPLATE_ID,
+                {
+                    getValues,
+                    captchaToken,
+                },
+                PUBLIC_KEY,
+            );
 
             toast.success("Your request has been submitted successfully.");
 

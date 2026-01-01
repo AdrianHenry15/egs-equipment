@@ -3,14 +3,15 @@ import { deleteProduct, updateProduct } from "@/sanity/mutations/admin/products"
 import { NextResponse } from "next/server";
 
 interface Params {
-    params: {
+    params: Promise<{
         id: string;
-    };
+    }>;
 }
 
 // GET (admin single)
 export async function GET(_: Request, { params }: Params) {
-    const product = await getProductById(params.id);
+    const { id } = await params;
+    const product = await getProductById(id);
     if (!product) {
         return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
@@ -21,14 +22,16 @@ export async function GET(_: Request, { params }: Params) {
 // UPDATE
 export async function PATCH(req: Request, { params }: Params) {
     const data = await req.json();
-    const updated = await updateProduct(params.id, data);
+    const { id } = await params;
+    const updated = await updateProduct(id, data);
 
     return NextResponse.json(updated);
 }
 
 // DELETE
 export async function DELETE(_: Request, { params }: Params) {
-    await deleteProduct(params.id);
+    const { id } = await params;
+    await deleteProduct(id);
 
-    return NextResponse.json({ status: "deleted", id: params.id });
+    return NextResponse.json({ status: "deleted", id });
 }
