@@ -36,6 +36,7 @@ import { ProductFeatures } from "../../../product-features";
 import { ProductSpecifications } from "../../../product-specifications";
 import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
+import { LineMarkerAccessorySpecifications } from "@/lib/products/line-marker-specifications/accessory-specifications";
 
 export const LineMarkerFieldAccessoryProducts: ProductType[] = [
     {
@@ -57,7 +58,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.line_marking_handbook,
             features: ProductFeatures.line_marking_handbook,
-            specifications: ProductSpecifications.line_marking_handbook,
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.line_marking_handbook,
+            },
             video: "",
         },
     },
@@ -74,7 +78,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.linefix,
             features: ProductFeatures.linefix,
-            specifications: ProductSpecifications.linefix,
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.linefix,
+            },
             video: "",
         },
     },
@@ -98,7 +105,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.grassroots_marking_kit,
             features: ProductFeatures.grassroots_marking_kit,
-            specifications: ProductSpecifications.grassroots_marking_kit,
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.grassroots_marking_kit,
+            },
             video: "",
         },
     },
@@ -113,7 +123,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.professional_marking_kit,
             features: ProductFeatures.professional_marking_kit,
-            specifications: ProductSpecifications.professional_marking_kit,
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.professional_marking_kit,
+            },
             video: "",
         },
     },
@@ -131,7 +144,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.initial_pitch_system,
             features: ProductFeatures.initial_pitch_system,
-            specifications: ProductSpecifications.initial_pitch_system,
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.initial_pitch_system,
+            },
             video: "",
         },
     },
@@ -146,7 +162,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions["200_m_string_line"],
             features: ProductFeatures["200_m_string_line"],
-            specifications: ProductSpecifications["200_m_string_line"],
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications["200_m_string_line"],
+            },
             video: "",
         },
     },
@@ -161,7 +180,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.pitch_marking_pegs,
             features: ProductFeatures.pitch_marking_pegs,
-            specifications: ProductSpecifications.pitch_marking_pegs,
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.pitch_marking_pegs,
+            },
             video: "",
         },
     },
@@ -176,7 +198,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.penalty_circle_marker,
             features: ProductFeatures.penalty_circle_marker,
-            specifications: ProductSpecifications.penalty_circle_marker,
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.penalty_circle_marker,
+            },
             video: "",
         },
     },
@@ -193,7 +218,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions["100m_measuring_tape"],
             features: ProductFeatures["100m_measuring_tape"],
-            specifications: ProductSpecifications["100m_measuring_tape"],
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications["100m_measuring_tape"],
+            },
             video: "",
         },
     },
@@ -210,7 +238,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.guide_reel,
             features: ProductFeatures.guide_reel,
-            specifications: ProductSpecifications.guide_reel,
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.guide_reel,
+            },
             video: "",
         },
     },
@@ -227,7 +258,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.mini_guide_reel,
             features: ProductFeatures.mini_guide_reel,
-            specifications: ProductSpecifications.mini_guide_reel,
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.mini_guide_reel,
+            },
             video: "",
         },
     },
@@ -244,7 +278,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions["3_4_5_triangle"],
             features: ProductFeatures["3_4_5_triangle"],
-            specifications: ProductSpecifications["3_4_5_triangle"],
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications["3_4_5_triangle"],
+            },
             video: "",
         },
     },
@@ -261,7 +298,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.kit_bag,
             features: ProductFeatures.kit_bag,
-            specifications: ProductSpecifications.kit_bag,
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.kit_bag,
+            },
             video: "",
         },
     },
@@ -277,7 +317,10 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions["750_ml_aerosol"],
             features: ProductFeatures["750_ml_aerosol"],
-            specifications: ProductSpecifications["750_ml_aerosol"],
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications["750_ml_aerosol"],
+            },
             video: "",
         },
     },

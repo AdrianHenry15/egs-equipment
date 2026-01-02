@@ -29,7 +29,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.brush_pro,
             features: ProductFeatures.brush_pro,
-            specifications: ProductSpecifications.brush_pro,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.brush_pro,
+            },
             video: "",
         },
     },
@@ -45,7 +48,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.svr_1500_deep_cleaner,
             features: ProductFeatures.svr_1500_deep_cleaner,
-            specifications: ProductSpecifications.svr_1500_deep_cleaner,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.svr_1500_deep_cleaner,
+            },
             video: "",
         },
     },
@@ -61,7 +67,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.sss1000,
             features: ProductFeatures.sss1000,
-            specifications: ProductSpecifications.sss1000,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.sss1000,
+            },
             video: "",
         },
     },
@@ -77,7 +86,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.osca_3,
             features: ProductFeatures.osca_3,
-            specifications: ProductSpecifications.osca_3,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.osca_3,
+            },
             video: "",
         },
     },
@@ -93,7 +105,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.varibrush,
             features: ProductFeatures.varibrush,
-            specifications: ProductSpecifications.varibrush,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.varibrush,
+            },
             video: "",
         },
     },
@@ -109,7 +124,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.triangular_brush,
             features: [],
-            specifications: ProductSpecifications.triangular_brush,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.triangular_brush,
+            },
             video: "",
         },
     },
@@ -125,7 +143,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.powaspred,
             features: ProductFeatures.powaspred,
-            specifications: ProductSpecifications.powaspred,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.powaspred,
+            },
             video: "",
         },
     },
@@ -140,7 +161,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.tractor_brush_combinations,
             features: ProductFeatures.tractor_brush_combinations,
-            specifications: ProductSpecifications.tractor_brush_combinations,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.tractor_brush_combinations,
+            },
             video: "",
         },
     },
@@ -155,7 +179,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.tractor_rake_and_brush_combinations,
             features: ProductFeatures.tractor_rake_and_brush_combinations,
-            specifications: ProductSpecifications.tractor_rake_and_brush_combinations,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.tractor_rake_and_brush_combinations,
+            },
             video: "",
         },
     },
@@ -170,7 +197,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.towed_brush_combination,
             features: ProductFeatures.towed_brush_combination,
-            specifications: ProductSpecifications.towed_brush_combination,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.towed_brush_combination,
+            },
             video: "",
         },
     },
@@ -186,7 +216,10 @@ export const SyntheticTurfProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.litamina,
             features: ProductFeatures.litamina,
-            specifications: ProductSpecifications.litamina,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.litamina,
+            },
             video: "",
         },
     },

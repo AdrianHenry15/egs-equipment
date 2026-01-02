@@ -192,5 +192,4 @@ export const ProductSpecDescriptions: Record<ProductKey, string> = {
     spray_marker_service_kit: ``,
     ecoclean_10l: ``,
     concentrate_mixing_kit: ``,
-    contact_local_distributor: ``,
 };

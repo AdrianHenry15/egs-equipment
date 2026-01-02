@@ -20,7 +20,10 @@ export const ScarifierProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.rotorake_600_hd,
             features: ProductFeatures.rotorake_600_hd,
-            specifications: ProductSpecifications.rotorake_600_hd,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.rotorake_600_hd,
+            },
             video: "",
         },
     },
@@ -37,7 +40,10 @@ export const ScarifierProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.auto_rotorake_mk5,
             features: ProductFeatures.auto_rotorake_mk5,
-            specifications: ProductSpecifications.auto_rotorake_mk5,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.auto_rotorake_mk5,
+            },
             video: "",
         },
     },
@@ -53,7 +59,10 @@ export const ScarifierProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.veemo_mk2,
             features: ProductFeatures.veemo_mk2,
-            specifications: ProductSpecifications.veemo_mk2,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.veemo_mk2,
+            },
             video: "",
         },
     },

@@ -7,6 +7,7 @@ import { ProductFeatures } from "../../../product-features";
 import { ProductSpecifications } from "../../../product-specifications";
 import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
+import { LineMarkerPaintSpecifications } from "@/lib/products/line-marker-specifications/paint-specifications";
 
 export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
     {
@@ -23,7 +24,10 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.ecoline,
             features: ProductFeatures.ecoline,
-            specifications: ProductSpecifications.ecoline,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.ecoline,
+            },
             video: "",
         },
     },
@@ -40,7 +44,10 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.direct,
             features: ProductFeatures.direct,
-            specifications: ProductSpecifications.direct,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.direct,
+            },
             video: "",
         },
     },
@@ -55,7 +62,10 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.edge,
             features: ProductFeatures.edge,
-            specifications: ProductSpecifications.edge,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.edge,
+            },
             video: "",
         },
     },
@@ -73,7 +83,10 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.transfer,
             features: ProductFeatures.transfer,
-            specifications: ProductSpecifications.transfer,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.transfer,
+            },
             video: "",
         },
     },

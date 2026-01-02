@@ -19,7 +19,10 @@ export const AeratorProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.javelin,
             features: ProductFeatures.javelin,
-            specifications: ProductSpecifications.javelin,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -35,7 +38,10 @@ export const AeratorProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.dart,
             features: ProductFeatures.dart,
-            specifications: ProductSpecifications.dart,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.dart,
+            },
             video: "",
         },
     },

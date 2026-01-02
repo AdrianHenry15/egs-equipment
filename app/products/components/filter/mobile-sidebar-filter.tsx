@@ -52,7 +52,7 @@ export default function MobileSidebarFilter() {
                             <div className="mb-4 flex items-center justify-between">
                                 <h2 className="text-xl font-semibold text-black">Filters</h2>
                                 <button onClick={() => setIsOpen(false)} aria-label="Close filters">
-                                    <XMarkIcon className="h-6 w-6" />
+                                    <XMarkIcon color="black" className="h-6 w-6" />
                                 </button>
                             </div>
 

@@ -18,7 +18,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -33,7 +36,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -48,7 +54,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -63,7 +72,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -78,7 +90,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -93,7 +108,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -108,7 +126,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -123,7 +144,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -138,7 +162,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -153,7 +180,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -168,7 +198,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -183,7 +216,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -198,7 +234,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -213,7 +252,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -228,7 +270,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -243,7 +288,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -258,7 +306,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -273,7 +324,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -288,7 +342,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -303,7 +360,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -318,7 +378,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -333,7 +396,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -348,7 +414,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -363,7 +432,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -378,7 +450,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -393,7 +468,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -408,7 +486,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -423,7 +504,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -438,7 +522,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -453,7 +540,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -468,7 +558,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -483,7 +576,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -498,7 +594,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -513,7 +612,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -528,7 +630,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -543,7 +648,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -558,7 +666,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },
@@ -573,7 +684,10 @@ export const SoccerGoalProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: ProductSpecifications.javelin,
+            },
             video: "",
         },
     },

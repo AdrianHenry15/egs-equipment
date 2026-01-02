@@ -14,7 +14,7 @@ export function useProductFilters() {
             else next.delete(key);
         });
 
-        router.push(`/products?${next.toString()}`, { scroll: false });
+        router.push(`/products?${next.toString().toLowerCase()}`, { scroll: false });
     };
 
     const resetUrl = () => {

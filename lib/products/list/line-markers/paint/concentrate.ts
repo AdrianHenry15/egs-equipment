@@ -8,6 +8,7 @@ import { ProductFeatures } from "../../../product-features";
 import { ProductSpecifications } from "../../../product-specifications";
 import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
+import { LineMarkerPaintSpecifications } from "@/lib/products/line-marker-specifications/paint-specifications";
 
 export const LineMarkerConcentratePaintProducts: ProductType[] = [
     {
@@ -25,7 +26,10 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.extreme,
             features: ProductFeatures.extreme,
-            specifications: ProductSpecifications.extreme,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.extreme,
+            },
             video: "",
         },
     },
@@ -42,7 +46,10 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.lumen,
             features: ProductFeatures.lumen,
-            specifications: ProductSpecifications.lumen,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.lumen,
+            },
             video: "",
         },
     },
@@ -57,7 +64,10 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.clubline,
             features: ProductFeatures.clubline,
-            specifications: ProductSpecifications.clubline,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.clubline,
+            },
             video: "",
         },
     },
@@ -73,7 +83,10 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.line_out,
             features: ProductFeatures.line_out,
-            specifications: ProductSpecifications.line_out,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.line_out,
+            },
             video: "",
         },
     },

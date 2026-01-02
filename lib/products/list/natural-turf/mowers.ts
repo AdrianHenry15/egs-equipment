@@ -20,7 +20,10 @@ export const MowerProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.gseries,
             features: ProductFeatures.gseries,
-            specifications: ProductSpecifications.gseries,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.gseries,
+            },
             video: "",
         },
     },
@@ -36,7 +39,10 @@ export const MowerProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.es860,
             features: ProductFeatures.es860,
-            specifications: ProductSpecifications.es860,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.es860,
+            },
             video: "",
         },
     },
@@ -52,7 +58,10 @@ export const MowerProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.hover_mower,
             features: [],
-            specifications: ProductSpecifications.hover_mower,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.hover_mower,
+            },
             video: "",
         },
     },

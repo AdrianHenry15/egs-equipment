@@ -22,7 +22,10 @@ export const DebrisBlowerProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_8000,
             features: ProductFeatures.cyclone_8000,
-            specifications: ProductSpecifications.cyclone_8000,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.cyclone_8000,
+            },
             video: "",
         },
     },
@@ -37,7 +40,10 @@ export const DebrisBlowerProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_kb4,
             features: ProductFeatures.cyclone_kb4,
-            specifications: ProductSpecifications.cyclone_kb4,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.cyclone_kb4,
+            },
             video: "",
         },
     },
@@ -52,7 +58,10 @@ export const DebrisBlowerProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_squared,
             features: ProductFeatures.cyclone_squared,
-            specifications: ProductSpecifications.cyclone_squared,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.cyclone_squared,
+            },
             video: "",
         },
     },
@@ -67,7 +76,10 @@ export const DebrisBlowerProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_mega,
             features: ProductFeatures.cyclone_mega,
-            specifications: ProductSpecifications.cyclone_mega,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.cyclone_mega,
+            },
             video: "",
         },
     },
@@ -82,7 +94,10 @@ export const DebrisBlowerProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.cyclone_pto,
             features: ProductFeatures.cyclone_pto,
-            specifications: ProductSpecifications.cyclone_pto,
+            specifications: {
+                type: "standard",
+                data: ProductSpecifications.cyclone_pto,
+            },
             video: "",
         },
     },

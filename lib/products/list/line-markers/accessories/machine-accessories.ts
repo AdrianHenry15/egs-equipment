@@ -8,6 +8,7 @@ import { ProductFeatures } from "../../../product-features";
 import { ProductSpecifications } from "../../../product-specifications";
 import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
+import { LineMarkerAccessorySpecifications } from "@/lib/products/line-marker-specifications/accessory-specifications";
 
 export const LineMarkerMachineAccessoryProducts: ProductType[] = [
     // TODO: IMAGE | BRAND | DETAILS
@@ -23,7 +24,10 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions["6l_water_tank"],
             features: ProductFeatures["6l_water_tank"],
-            specifications: ProductSpecifications["6l_water_tank"],
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications["6l_water_tank"],
+            },
             video: "",
         },
     },
@@ -39,7 +43,10 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions["25l_paint_tank"],
             features: ProductFeatures["25l_paint_tank"],
-            specifications: ProductSpecifications["25l_paint_tank"],
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications["25l_paint_tank"],
+            },
             video: "",
         },
     },
@@ -58,7 +65,10 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions["spray_marker_service_kit"],
             features: ProductFeatures["spray_marker_service_kit"],
-            specifications: ProductSpecifications["spray_marker_service_kit"],
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.spray_marker_service_kit,
+            },
             video: "",
         },
     },
@@ -76,7 +86,10 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions["ecoclean_10l"],
             features: ProductFeatures["ecoclean_10l"],
-            specifications: ProductSpecifications["ecoclean_10l"],
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.ecoclean_10l,
+            },
             video: "",
         },
     },
@@ -92,7 +105,10 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions["concentrate_mixing_kit"],
             features: ProductFeatures["concentrate_mixing_kit"],
-            specifications: ProductSpecifications["concentrate_mixing_kit"],
+            specifications: {
+                type: "line_marker_accessory",
+                data: LineMarkerAccessorySpecifications.concentrate_mixing_kit,
+            },
             video: "",
         },
     },

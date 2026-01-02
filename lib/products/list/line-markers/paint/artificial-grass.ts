@@ -4,6 +4,7 @@ import { ProductFeatures } from "../../../product-features";
 import { ProductSpecifications } from "../../../product-specifications";
 import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
+import { LineMarkerPaintSpecifications } from "@/lib/products/line-marker-specifications/paint-specifications";
 
 export const LineMarkerArtificialGrassPaintProducts: ProductType[] = [
     {
@@ -20,7 +21,10 @@ export const LineMarkerArtificialGrassPaintProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.agp,
             features: ProductFeatures.agp,
-            specifications: ProductSpecifications.agp,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.agp,
+            },
             video: "",
         },
     },

@@ -104,9 +104,7 @@ export type LineMarkerAccessoryProductKeys =
     | "25l_paint_tank"
     | "spray_marker_service_kit"
     | "ecoclean_10l"
-    | "concentrate_mixing_kit"
-    // Spare Parts
-    | "contact_local_distributor";
+    | "concentrate_mixing_kit";
 export type ProductKey =
     | MachineProductKey
     | HarrodProductKey

@@ -52,6 +52,7 @@ import { EquipmentBrand } from "@/lib/types/brands";
 import { ProductSpecDescriptions } from "../../product-spec-descriptions";
 import { ProductFeatures } from "../../product-features";
 import { ProductSpecifications } from "../../product-specifications";
+import { LineMarkerMachineSpecifications } from "../../line-marker-specifications/machine-specifications";
 
 export const LineMarkerMachineProducts: ProductType[] = [
     {
@@ -81,7 +82,10 @@ export const LineMarkerMachineProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.hybrid,
             features: ProductFeatures.hybrid,
-            specifications: ProductSpecifications.hybrid,
+            specifications: {
+                type: "line_marker_machine",
+                data: LineMarkerMachineSpecifications.hybrid,
+            },
             video: "",
         },
     },
@@ -103,7 +107,10 @@ export const LineMarkerMachineProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.eco_pro,
             features: ProductFeatures.eco_pro,
-            specifications: ProductSpecifications.eco_pro,
+            specifications: {
+                type: "line_marker_machine",
+                data: LineMarkerMachineSpecifications.eco_pro,
+            },
             video: "",
         },
     },
@@ -119,7 +126,10 @@ export const LineMarkerMachineProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.eco_club,
             features: ProductFeatures.eco_club,
-            specifications: ProductSpecifications.eco_club,
+            specifications: {
+                type: "line_marker_machine",
+                data: LineMarkerMachineSpecifications.eco_club,
+            },
             video: "",
         },
     },
@@ -143,7 +153,10 @@ export const LineMarkerMachineProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.eco_lite,
             features: ProductFeatures.eco_lite,
-            specifications: ProductSpecifications.eco_lite,
+            specifications: {
+                type: "line_marker_machine",
+                data: LineMarkerMachineSpecifications.eco_lite,
+            },
             video: "",
         },
     },
@@ -166,7 +179,10 @@ export const LineMarkerMachineProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.fusion,
             features: ProductFeatures.fusion,
-            specifications: ProductSpecifications.fusion,
+            specifications: {
+                type: "line_marker_machine",
+                data: LineMarkerMachineSpecifications.fusion,
+            },
             video: "",
         },
     },
@@ -182,7 +198,10 @@ export const LineMarkerMachineProducts: ProductType[] = [
         details: {
             specs_description: ProductSpecDescriptions.classic,
             features: ProductFeatures.classic,
-            specifications: ProductSpecifications.classic,
+            specifications: {
+                type: "line_marker_machine",
+                data: LineMarkerMachineSpecifications.classic,
+            },
             video: "",
         },
     },
