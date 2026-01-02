@@ -22,7 +22,7 @@ export default function MobileSidebarFilter() {
                 aria-label="Open filters"
                 className="fixed bottom-3 left-3 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-black bg-white p-2 opacity-75"
             >
-                <AiFillFilter size={20} />
+                <AiFillFilter color="black" size={20} />
             </button>
 
             <Transition show={isOpen}>

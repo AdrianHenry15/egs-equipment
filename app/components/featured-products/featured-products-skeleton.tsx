@@ -1,4 +1,4 @@
-export function ProductCardSkeleton() {
+export function FeaturedProductSkeleton() {
     return (
         <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-4 animate-pulse flex flex-col">
             <div className="h-48 w-full bg-gray-200 rounded-lg mb-4" />

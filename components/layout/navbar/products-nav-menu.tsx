@@ -42,7 +42,7 @@ const ProductsNavMenu = ({ setProductsMenuOpen }: IProductsNavMenuProps) => {
             <ul className="flex flex-col">
                 {ProductsMenuItems.map((item) => (
                     <Link
-                        onClick={() => onProductsNavMenuClick(item.title as MainCategory)}
+                        onClick={() => onProductsNavMenuClick(item.value as MainCategory)}
                         href={item.link}
                         key={item.title}
                         className="px-4 py-2 hover:bg-gray-100 flex justify-between items-center"

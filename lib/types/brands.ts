@@ -1,10 +1,10 @@
 export enum EquipmentBrand {
-    HOWARDSONS = "Howardsons",
-    HARROD_SPORTS = "Harrod Sports",
-    PITCHMARK = "Pitchmark",
-    BUFFALO_TURBINE = "Buffalo Turbine",
-    EASTMAN = "Eastman",
-    DENNIS = "Dennis",
-    SISIS = "SISIS",
-    SYNPRO = "Syn-Pro",
+    HOWARDSONS = "howardsons",
+    HARROD_SPORTS = "harrod_sports",
+    PITCHMARK = "pitchmark",
+    BUFFALO_TURBINE = "buffalo_turbine",
+    EASTMAN = "eastman",
+    DENNIS = "dennis",
+    SISIS = "sisis",
+    SYNPRO = "synpro",
 }

@@ -1,6 +1,9 @@
+import { MainCategory } from "./categories";
+
 export type NavMenuType = {
     title: string;
     link: string;
+    value?: MainCategory;
 };
 export type NavMenuItems = "Home" | "Products" | "Parts Form" | "About" | "Finance Options";
 

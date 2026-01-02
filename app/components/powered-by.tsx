@@ -98,7 +98,7 @@ export default function PoweredBy() {
                                 aria-label={`View ${logo.alt} equipment`}
                                 className="group"
                             >
-                                <div className="relative h-12 w-36 opacity-70 transition-all duration-300 group-hover:opacity-100">
+                                <div className="relative h-12 w-36 opacity-100 transition-all duration-300 group-hover:opacity-70">
                                     <Image
                                         src={logo.src}
                                         alt={logo.alt}

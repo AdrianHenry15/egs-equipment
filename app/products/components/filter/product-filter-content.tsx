@@ -3,22 +3,33 @@
 import { useSearchParams } from "next/navigation";
 import { useProductFilters } from "@/hooks/use-product-filters";
 import FilterGroup from "./filter-group";
-import { Filters } from "./filter-data";
+import { MAIN_CATEGORIES } from "@/lib/domain/categories";
+import { MainCategory } from "@/lib/types/categories";
+import { BRANDS } from "@/lib/domain/brands";
+import { CATEGORY_FILTER_TAGS } from "@/lib/domain/category-filters";
 
 export function ProductFilterContent() {
     const params = useSearchParams();
     const { updateUrl } = useProductFilters();
 
-    const selectedMainCategory = params.get("category");
+    const selectedCategory = params.get("category") as MainCategory | null;
     const selectedTag = params.get("tag");
     const selectedBrand = params.get("brand");
+
+    const tagOptions =
+        selectedCategory && CATEGORY_FILTER_TAGS[selectedCategory]
+            ? CATEGORY_FILTER_TAGS[selectedCategory].map((opt) => ({
+                  label: opt.label,
+                  value: opt.tag, // <-- adapt here
+              }))
+            : undefined;
 
     return (
         <>
             {/* BRAND */}
             <FilterGroup
                 title="Brand"
-                options={Filters.brand}
+                options={BRANDS}
                 selectedOption={selectedBrand}
                 onChange={(brand) => updateUrl({ brand })}
             />
@@ -26,64 +37,24 @@ export function ProductFilterContent() {
             {/* CATEGORY */}
             <FilterGroup
                 title="Category"
-                options={Filters.mainCategory}
-                selectedOption={selectedMainCategory}
+                options={MAIN_CATEGORIES}
+                selectedOption={selectedCategory}
                 onChange={(category) =>
                     updateUrl({
                         category,
-                        tag: null, // reset tag on category change
+                        tag: null,
                     })
                 }
             />
 
-            {/* CONDITIONAL TAGS */}
-            {selectedMainCategory === "Sport" && (
+            {/* TAGS (CATEGORY-DRIVEN) */}
+            {tagOptions && tagOptions.length > 0 && (
                 <FilterGroup
-                    title="Sport Type"
-                    options={Filters.sportTags}
+                    title="Type"
+                    options={tagOptions}
                     selectedOption={selectedTag}
                     onChange={(tag) => updateUrl({ tag })}
                 />
-            )}
-
-            {selectedMainCategory === "Natural Turf" && (
-                <FilterGroup
-                    title="Turf Tags"
-                    options={Filters.turfTags}
-                    selectedOption={selectedTag}
-                    onChange={(tag) => updateUrl({ tag })}
-                />
-            )}
-
-            {selectedMainCategory === "Synthetic Turf" && (
-                <FilterGroup
-                    title="Synthetic Turf Tags"
-                    options={Filters.turfTags}
-                    selectedOption={selectedTag}
-                    onChange={(tag) => updateUrl({ tag })}
-                />
-            )}
-
-            {selectedMainCategory === "Line Marker" && (
-                <FilterGroup
-                    title="Line Marker"
-                    options={Filters.lineMarkerTags}
-                    selectedOption={selectedTag}
-                    onChange={(tag) => updateUrl({ tag })}
-                />
-            )}
-
-            {selectedMainCategory === "Goal" && (
-                <FilterGroup
-                    title="Goal Type"
-                    options={Filters.goalSubtype}
-                    selectedOption={selectedTag}
-                    onChange={(tag) => updateUrl({ tag })}
-                />
-            )}
-
-            {selectedMainCategory === "Debris Blower" && (
-                <p className="mt-2 text-sm text-gray-500">No additional filters available.</p>
             )}
 
             {/* RESET */}

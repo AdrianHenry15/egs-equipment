@@ -1,81 +1,82 @@
 // Main categories (domain truth)
 export type MainCategory =
-    | "Sport"
-    | "Synthetic Turf"
-    | "Natural Turf"
-    | "Line Marker"
-    | "Hand Tool"
-    | "Goal"
-    | "Debris Blower";
+    | "synthetic_turf"
+    | "natural_turf"
+    | "line_marker"
+    | "goal"
+    | "debris_blower";
 
 export type TurfTag =
-    | "Brush"
-    | "Rake"
-    | "Spreader"
-    | "Goal"
-    | "Implement Frame"
-    | "Sweeper"
-    | "Top Dresser"
-    | "Deep Cleaner"
-    | "All In One Brush System"
-    | "Scarifier"
-    | "Aerator";
+    | "brush"
+    | "rake"
+    | "spreader"
+    | "goal"
+    | "implement_frame"
+    | "sweeper"
+    | "top_dresser"
+    | "deep_cleaner"
+    | "all_in_one_brush_system"
+    | "scarifier"
+    | "aerator";
+
 // SPORTS
 export type SportTag =
-    | "American Football"
-    | "Golf"
-    | "Soccer"
-    | "Baseball"
-    | "Softball"
-    | "Lacrosse";
+    | "american_football"
+    | "golf"
+    | "soccer"
+    | "baseball"
+    | "softball"
+    | "lacrosse";
 
 export type SportsEquipmentTag =
-    | "Goal"
-    | "Post"
-    | "Net"
-    | "Flag"
-    | "Trolley"
-    | "Official Shelter"
-    | "Technical Shelter"
-    | "Anchor"
-    | "Accessory"
-    | "Spare"
-    | "Mannequin"
-    | "Cone"
-    | "Training Goal"
-    | "Pole"
-    | "Hurdle"
-    | "Ladder"
-    | "Training";
+    | "goal"
+    | "post"
+    | "net"
+    | "flag"
+    | "trolley"
+    | "official_shelter"
+    | "technical_shelter"
+    | "anchor"
+    | "accessory"
+    | "spare"
+    | "mannequin"
+    | "cone"
+    | "training_goal"
+    | "pole"
+    | "hurdle"
+    | "ladder"
+    | "training";
 
-export type SportsLocationTag = "Synthetic Turf" | "Natural Turf" | "Indoor";
-export type SportsMaterialTag = "Aluminum" | "Netting" | "PVC" | "Rubber" | "Steel";
-export type SportsAgeTag = "Over 18" | "U15 to U18" | "U13 to U14" | "U11 to U12" | "U7 to U10";
+export type SportsLocationTag = "synthetic_turf" | "natural_turf" | "indoor";
 
-export type SoccerGoalCategoryTag = "Kids" | "Metal" | "Plastic" | "Mini";
-export type SoccerGoalNetTag = "Junior" | "Indoor";
+export type SportsMaterialTag = "aluminum" | "netting" | "pvc" | "rubber" | "steel";
+
+export type SportsAgeTag = "over_18" | "u15_to_u18" | "u13_to_u14" | "u11_to_u12" | "u7_to_u10";
+
+export type SoccerGoalCategoryTag = "kids" | "metal" | "plastic" | "mini";
+export type SoccerGoalNetTag = "junior" | "indoor";
 export type GoalSubtypeTag =
-    | "Freestanding"
-    | "Folding"
-    | "Hinged"
-    | "Portable"
-    | "Self-Weighted"
-    | "Portagoal"
-    | "Heavyweight"
-    | "Swivel"
-    | "Socketed";
+    | "freestanding"
+    | "folding"
+    | "hinged"
+    | "portable"
+    | "self_weighted"
+    | "portagoal"
+    | "heavyweight"
+    | "swivel"
+    | "socketed";
 
 // Line Markers
-export type LineMarkerTag = "Paint" | "Machine" | "Accessories";
-export type LineMarkerPaint = "Ready-To-Use" | "Concentrate" | "Artificial Grass";
-export type LineMarkerPaintQuality = "Premium" | "Professional" | "Standard" | "Low" | "Bad";
-export type LineMarkerMachines = "Spray Machines" | "Wheel-To-Wheel";
-export type LineMarkerAccessories = "Field Accessories" | "Machine Accessories" | "Spare";
+export type LineMarkerTag = "paint" | "machine" | "accessory";
+export type LineMarkerPaintType = "ready_to_use" | "concentrate" | "artificial_grass";
+export type LineMarkerPaintQuality = "premium" | "professional" | "standard" | "low";
+export type LineMarkerMachineType = "spray_machine" | "wheel_to_wheel";
+export type LineMarkerAccessoryType = "field_accessory" | "machine_accessory" | "spare";
 
-export type MowerSubtypeTag = "Reel Mower" | "Rotary Mower" | "Hover Mower";
+export type MowerSubtypeTag = "reel_mower" | "rotary_mower" | "hover_mower";
 
 export type Tag =
-    | MainCategory
+    | TurfTag
     | SportTag
     | SportsEquipmentTag
     | SportsLocationTag
@@ -84,10 +85,9 @@ export type Tag =
     | SoccerGoalCategoryTag
     | SoccerGoalNetTag
     | LineMarkerTag
-    | LineMarkerPaint
+    | LineMarkerPaintType
     | LineMarkerPaintQuality
-    | LineMarkerMachines
-    | LineMarkerAccessories
+    | LineMarkerMachineType
+    | LineMarkerAccessoryType
     | GoalSubtypeTag
-    | MowerSubtypeTag
-    | TurfTag;
+    | MowerSubtypeTag;

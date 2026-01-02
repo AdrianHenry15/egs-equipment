@@ -39,19 +39,23 @@ export const ProductsMenuItems: NavMenuType[] = [
     },
     {
         title: "Natural Turf",
-        link: "/products?natural-turf",
+        value: "natural_turf",
+        link: "/products",
     },
     {
         title: "Synthetic Turf",
-        link: "/products?synthetic-turf",
+        value: "synthetic_turf",
+        link: "/products",
     },
     {
         title: "Line Markers",
-        link: "/products?line-markers",
+        value: "line_marker",
+        link: "/products",
     },
     {
         title: "Goals",
-        link: "/products?goals",
+        value: "goal",
+        link: "/products",
     },
 ];
 

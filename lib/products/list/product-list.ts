@@ -9,20 +9,28 @@ import { LineMarkerConcentratePaintProducts } from "./line-markers/paint/concent
 import { LineMarkerFieldAccessoryProducts } from "./line-markers/accessories/field-accessories";
 import { LineMarkerReadyToUsePaintProducts } from "./line-markers/paint/ready-to-use";
 import { LineMarkerMachineAccessoryProducts } from "./line-markers/accessories/machine-accessories";
+import { LineMarkerMachineProducts } from "./line-markers/machines";
 
 // Group all product collections once
 const productCollections = [
+    // Grounds
     ScarifierProducts,
     MowerProducts,
     SyntheticTurfProducts,
     DebrisBlowerProducts,
     AeratorProducts,
+    // Goals
     // SoccerGoalProducts,
-    LineMarkerArtificialGrassPaintProducts,
+    // Line Markers
+    // Paints
     LineMarkerConcentratePaintProducts,
-    LineMarkerFieldAccessoryProducts,
     LineMarkerReadyToUsePaintProducts,
+    LineMarkerArtificialGrassPaintProducts,
+    // Accessories
+    LineMarkerFieldAccessoryProducts,
     LineMarkerMachineAccessoryProducts,
+    // Machines
+    LineMarkerMachineProducts,
 ];
 
 // All products (flattened)
