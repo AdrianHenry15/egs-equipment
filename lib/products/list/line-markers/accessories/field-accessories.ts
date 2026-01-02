@@ -43,8 +43,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         id: "lmfa-1",
         name: "Line Marking Handbook",
         description: `This handy pocket-sized line marking handbook contains a range of pitch dimensions, saving you time when marking pitches.`,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [
             BackCoverImg,
             CoverImg,
@@ -71,8 +71,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         description: `
             This product utilises a sequence of ‘sockets’ placed into the turf using the LineFix installation key. 
         `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [LineFixKitImg, LineFixWhiteImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -89,8 +89,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         id: "lmfa-3",
         name: "Grassroots Marking Kit",
         description: `Our Grassroots Marking Kit is a great kit to aid the groundsman when helping to measure and string out pitches from scratch.`,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [
             GrassRootsImg,
             StringLineImg,
@@ -116,8 +116,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         id: "lmfa-4",
         name: "Professional Marking Kit",
         description: `Our Professional Marking Kit is a great kit to aid the groundsman when helping to measure and string out pitches from scratch.`,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [GuideReelImg, ProIMTImg, KitBagImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -137,8 +137,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
             Five string lines, 30 LineFix orange sockets, 80 LineFix blue sockets, a measuring tape, a LineFix installation key, 
             10 LineFix pins, 10 LineFix mowing pins, and a premium carrying bag are included.
         `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [IPSSystemImg, IPSBagImg, IPS1Img, IPS2Img, IPS3Img],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -155,8 +155,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         id: "lmfa-6",
         name: "200m String Line",
         description: `This 200m String Line was designed & developed for marking out sports pitches, courts & tracks.`,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [StringLineImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -173,8 +173,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         id: "lmfa-7",
         name: "Pitch Marking Pegs",
         description: `Pitch Marking Pegs to aid with stringing out and marking of sports pitches on grass.`,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [MarkingPegsImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -191,8 +191,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         id: "lmfa-8",
         name: "Penalty Circle Marker",
         description: `A flexible rubber Penalty Circle Marker enables you to mark out perfect penalty spots on football pitches. `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [PenaltySpotMarkerImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -211,8 +211,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         description: `
             Perfect for groundsmen, this reliable 100m measuring tape (330ft) provides superior accuracy when setting out a pitch.
             `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [MeasuringTapeImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -231,8 +231,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         description: `
             This high-quality Rutland Guide Reel is great for stringing out your pitch when combined with 500 metres polywire.
             `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [GuideReelImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -251,8 +251,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         description: `
         This high-quality Rutland Mini Guide Reel is great for stringing out your pitch when combined with 500 metres of Polywire.
 `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [MiniReelImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -271,8 +271,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         description: `
             Our PVC 3-4-5 Triangle is used for setting out the corners of your sports pitch, ensuring the pitch has perfect right-angle corners quickly, and easily.
         `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [TriangleImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -291,8 +291,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         description: `
             The Pitchmark Kit Bag is extremely useful to help store and carry around your pitch marking accessories and equipment, such as pegs, string, reel and tape measure.
         `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [KitBagImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -310,8 +310,8 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         name: "750ml Aerosol",
         description: `
             Aerosol cans perfect for a wide range of hard surfaces, artificial grass and spot marking on natural grass. `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Field Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [AerosolImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {

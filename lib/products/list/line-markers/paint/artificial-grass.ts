@@ -14,8 +14,8 @@ export const LineMarkerArtificialGrassPaintProducts: ProductType[] = [
             AGP (Artificial Grass Paint) 
             is an advanced ready-to-use formulation designed for artificial grass surfaces including 3G and 4G. 
         `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Paint", "Premium", "Artificial Grass"],
+        mainCategory: "line_marker",
+        tags: ["paint", "premium", "artificial_grass"],
         images: [AGPImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {

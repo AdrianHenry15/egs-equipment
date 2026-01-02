@@ -154,42 +154,161 @@ export const ProductSpecDescriptions: Record<ProductKey, string> = {
     u_peg_anchor_kit: ``,
 
     // Line Marker Paint
-    ecoline: ``,
-    direct: ``,
-    edge: ``,
-    transfer: ``,
-    extreme: ``,
-    lumen: ``,
-    clubline: ``,
-    line_out: ``,
-    agp: ``,
+    ecoline: `Ecoline+ line marking paint is one of the most advanced 
+    low-volume ready-to-use line marking paints available anywhere in the world.  
+    Used in combination with our Eco markers and special nozzles, 
+    atomising technology allows you to mark a football pitch with as 
+    little as 1.5 litres with no mixing required.
+        Manufactured using the best pigments available on the market, 
+        including a large percentage of Ti02, Ecoline+ offers the user maximum brightness.  
+        Combined with advanced binders, 
+        this makes the paint extremely bright and ultra-durable on the leaf.`,
+    direct: `Direct line marking paint is an extremely popular 
+    low-volume ready-to-use, advanced ingredients make it a very bright and long-lasting pitch marking paint.  
+    Due to the supreme pigments and binders used, the paint dries 
+    extremely fast which allows other grounds maintenance 
+    equipment to be used on the sports pitch almost immediately.
+        Used in conjunction with our Eco markers and special nozzles, 
+        atomising technology allows you to mark a football pitch with 
+        as little as 2.5 litres of Direct, with no mixing required.`,
+    edge: `Transfer line marking paint is a bright and long-lasting 
+    ready-to-use specially formulated with added thickeners for 
+    wheel-to-wheel markers like our Classic. A great quality 
+    product that can be diluted at 1-1 if required.
+        Ready to pour into the machine before marking, 
+        it is the perfect paint for clubs with wheel-to-wheel 
+        marker and limited time.`,
+    transfer: `Transfer line marking paint is a bright and 
+    long-lasting ready-to-use specially formulated with added thickeners 
+    for wheel-to-wheel markers like our Classic. 
+    A great quality product that can be diluted at 1-1 if required.
+        Ready to pour into the machine before marking, 
+        it is the perfect paint for clubs with wheel-to-wheel marker and limited time.`,
+    extreme: `Extreme is our highest grade concentrate line marking paint, 
+    with extra pigments and binders to ensure it not only stands out on the pitch, 
+    but is also very durable and weather-resistant.  
+    This makes Extreme line marking paint a very popular 
+    choice for winter sports like football or rugby.`,
+    lumen: `Lumen line marking paint is a very bright and 
+    durable concentrate sitting between our Clubline and Extreme products.  
+    It is designed to be versatile and can be used in any spray or transfer 
+    wheel line marking machine.  It needs to be mixed thoroughly 
+    with water at ratios of up to 5:1.`,
+    clubline: `Clubline line marking paint is a bright and weather-resistant 
+    concentrate aimed at groundsmen marking out sports pitches regularly. 
+    It is designed to be versatile and can be used in any spray or transfer 
+    wheel line marking machine. It needs to be mixed 
+    thoroughly with water at ratios of up to 4:1.`,
+    line_out: `Line-Out is a specialised green concentrate 
+    paint designed to cover white lines.
+        Line-Out is ideal for stadia with multi-sport pitches, 
+        catering to all levels from grassroots to elite. 
+        It can be diluted to achieve the desired shade and 
+        is suitable for use with both spray and transfer wheel markers.`,
+    agp: `AGP (Artificial Grass Paint) is an advanced 
+    ready-to-use formulation designed for artificial grass 
+    surfaces including 3G and 4G. Using the latest acrylic 
+    binders provides greater adhesion to the surface making it long-lasting and durable.
+        AGP is available in white, red, yellow or blue, perfect for marking multiple sports on one surface.`,
 
     // Line Marker Machines
-    hybrid: ``,
-    eco_pro: ``,
-    eco_club: ``,
-    eco_lite: ``,
-    fusion: ``,
-    classic: ``,
+    hybrid: `Our premium Hybrid line marking machine is designed with and for sports turf professionals, perfect for use on stadium pitches.
+
+The Hybrid combines the manoeuvrability of a three-wheeled marker with the efficiency of a spray marker. By placing the battery, pump and electricals behind the rear axle, the machine feels incredibly well-balanced and light to lean back.
+
+Advanced patent-pending technology on the highly-engineered front wheel, combined with the proven spray system from the Eco Club and Eco Pro, give perfect results on the pitch.`,
+    eco_pro: `The Eco Pro line marking machine is a high-end upgraded version of our popular Eco Club and is just as easy-to-use for all grounds staff.
+
+Using the same proven chassis and components to achieve a fantastic line, the Eco Pro significantly benefits from extras including a 25L paint tank, a 6L water tank for cleaning, as well as a larger battery for extended use.`,
+    eco_club: `Used by groundsmen across the globe, the Eco Club is our most popular battery-powered spray line marking machine, engineered especially for our range of high-quality line marking paints.
+
+The Eco Club is designed by groundsmen, for groundsmen, so is straightforward to use and easy to maintain for all users. 
+
+Made in the UK from high-quality steel, the Eco Club utilises a 3-stage filtration system combined with a high-pressure pump for perfect results. `,
+    eco_lite: `The Eco Lite line marking machine is designed by grounds staff, for grounds staff, so is straightforward to use and easy to maintain for all users. Affordability, performance, and appearance make the Lite an excellent choice for all line marking needs.
+
+The plastic chassis is a real game changer, reducing costs dramatically, whilst maintaining the sturdiness that’s synonymous with the Pitchmark brand. During testing, grounds staff were surprised with just how robust & sturdy the machine felt in-hand.`,
+    fusion: `Affordability, performance, and appearance make the Fusion line marking machine an excellent choice for all levels of sport. Combining both the style and engineering from its older sibling, the Hybrid, along with a high-density polyethylene (HDPE) body instead of a steel chassis.
+
+Our Fusion also boasts advanced patent-pending technology on the highly-engineered front wheel, combined with the proven spray system from the Eco range, giving perfect results on the pitch time after time. 
+The plastic chassis is a real game changer, reducing costs dramatically, whilst maintaining the sturdiness that’s synonymous with the Pitchmark brand. During testing, grounds staff were surprised with just how robust & sturdy the machine felt in-hand.`,
+    classic: `The Classic line marking machine is extremely easy-to-use and popular with amateur and professional groundsmen alike, including several Premier League clubs & World Cup stadia. The Classic is available in 50, 75, 100, and 120mm line width variants with an 18L paint capacity.
+
+This machine is made to a demanding specification from the best quality materials available, and is supplied with a 3-year warranty.`,
 
     // Line Marker Accessories
-    line_marking_handbook: ``,
-    linefix: ``,
-    grassroots_marking_kit: ``,
-    professional_marking_kit: ``,
-    initial_pitch_system: ``,
-    "200_m_string_line": ``,
-    pitch_marking_pegs: ``,
+    line_marking_handbook: `This handy pocket-sized line marking handbook contains a range of pitch dimensions, saving you time when marking pitches.
+
+Our aim at Pitchmark is to help make life easier for ground staff worldwide, especially when it comes to line marking, so we’ve produced some advice and a number of diagrams to help with the process of line marking.  You can download the digital version here.
+
+Now includes 8-step how-to guide, updated dimensions from governing bodies and more pitches!`,
+    linefix: `Our ground-breaking LineFix System has been engineered to conveniently remark sports pitches, such as football, rugby, and cricket. LineFix was provided to the twelve stadiums in Brazil for the World Cup in 2014 and is esteemed as the ultimate ground marking system on the market.
+ 
+This product utilises a sequence of ‘sockets’ placed into the turf using the LineFix installation key. The sockets are distributed around the outer perimeter of the playing area to ensure that play will not be obstructed.
+ 
+By connecting a line between two of the sockets, you can accurately string out your pitch in record time. With LineFix, marking and re-marking a sports pitch is just a walk in the park.`,
+    grassroots_marking_kit: `Our Grassroots Marking Kit is a great kit to aid the groundsman when helping to measure and string out pitches from scratch.
+
+Containing a measuring tape, hand reel, string line, aerosol, pegs, penalty spot marker, and a 3-4-5 triangle to mark the perfect pitch from scratch.`,
+    professional_marking_kit: `Our Professional Marking Kit is a great kit to aid the groundsman when helping to measure and string out pitches from scratch.
+
+Containing a measuring tape, hand reel, string line, aerosol, pegs, penalty spot marker, and a 3-4-5 triangle supplied in a Pitchmark bag to mark the perfect pitch from scratch.`,
+    initial_pitch_system: `New for 2024!* Introducing Pitchmark’s latest field accessory, the Initial Pitch System. Designed for grounds staff marking multiple pitches or at top-level professional stadia, this is the ultimate set of line marking accessories.
+
+Five string lines, 30 LineFix orange sockets, 80 LineFix blue sockets, a measuring tape, a LineFix installation key, 10 LineFix pins, 10 LineFix mowing pins, and a premium carrying bag are included.`,
+    "200_m_string_line": `This 200m String Line was designed & developed for marking out sports pitches, courts & tracks.
+
+When marking out a pitch, the string often stretches when pulled between points, causing the line to appear wobbly. This 4mm thick string is specifically designed not to stretch, allowing you to have perfectly straight lines!
+
+It may seem obvious, but we made it yellow so that you can see it over the top of white lines, making it easier to follow.`,
+    pitch_marking_pegs: `
+Products | Accessories | Field Accessories | Pitch Marking Pegs
+
+Pitch Marking Pegs
+Field Accessory
+Pitch Marking Pegs to aid with stringing out and marking of sports pitches on grass.
+
+Supplied in a handy canvas bag, these sturdy pegs have a screw thread to make them easier to use when the ground is hard, particularly in the summer months.`,
     penalty_circle_marker: ``,
-    "100m_measuring_tape": ``,
-    guide_reel: ``,
-    mini_guide_reel: ``,
-    "3_4_5_triangle": ``,
+    "100m_measuring_tape": `Perfect for groundsmen, this reliable 100m measuring tape (330ft) provides superior accuracy when setting out a pitch.
+
+It is crafted with PVC-coated fibreglass with metric measurements and a metal hook on the end.
+
+It is also secured in a sturdy plastic case and its 3x geared mechanism ensures swift winding in, giving you the opportunity to maximize time efficiency out on the pitch.`,
+    guide_reel: `This high-quality Rutland Guide Reel is great for stringing out your pitch when combined with 500 metres polywire.
+
+Originally designed for electric fencing, this sturdy hand-held reel has a rubber grip and screw-thread brake system, and can hold up to 750 metres of polywire or string.`,
+    mini_guide_reel: `This high-quality Rutland Mini Guide Reel is great for stringing out your pitch when combined with 500 metres of Polywire.
+
+Originally designed for electric fencing, the Mini Guide Reel has a rubber grip and screw-thread brake system and can hold up to 500 metres of polywire or string.`,
+    "3_4_5_triangle": `Our PVC 3-4-5 Triangle is used for setting out the corners of your sports pitch, ensuring the pitch has perfect right-angle corners quickly, and easily.
+
+As seen in the diagram in the product image, the 3-4-5 method provides you with a perfect right angle using the pre-set measurements. This is based on Pythagorean theorem (a2 + b2 = c2).`,
     kit_bag: ``,
-    "750_ml_aerosol": ``,
-    "6l_water_tank": ``,
-    "25l_paint_tank": ``,
-    spray_marker_service_kit: ``,
-    ecoclean_10l: ``,
-    concentrate_mixing_kit: ``,
+    "750_ml_aerosol": `Aerosol cans perfect for a wide range of hard surfaces, artificial grass and spot marking on natural grass.  These 750ml spray paint cans can be applied by hand or through applicators like the Aero-Line marker.  Each order of aerosols comes supplied with spare nozzles.
+
+On an artificial grass surface, the paint can last up to 3 months.  If you’re looking for something more permanent, check out our AGP paint which can last up to 12 months.  Available in white, red, blue, yellow, orange, green or black.`,
+    "6l_water_tank": `This is an extremely useful add-on for the Eco Club and Eco Pro* line markers, slotting easily onto the front of the machine and making the process of cleaning the machine quicker and easier.
+
+The water tank needs to be filled with water and fitted to the machine before marking. When you’re done marking, simply wash it through with water. The weight of the tank also adds balance to the machine, and you can adjust the amount of water to adjust the weight.
+
+You can also use different Pitchmark water tanks for different colours if you need to.
+
+* Please note the Eco Pro includes one 6L Water Tank as standard.`,
+    "25l_paint_tank": `The 25L Paint Tank is a moulded plastic container used to contain more paint than normal when marking out pitches.
+
+It sits comfortably into the Eco Club, Eco Pro, and Hybrid spray markers, and can easily be removed for filling, emptying or cleaning via the large opening with a screw cap.
+
+When marking, simply fill it with paint, place it on your machine and insert the probe into the smaller opening.`,
+    spray_marker_service_kit: `Our Spray Marker Service Kit is suitable for customers who want to keep their spray line marking machine in top working order.  Although the Service Kit is suitable for the Eco Pro and Eco Club spray machines, it may be compatible with other pedestrian spray line markers on the market. 
+
+Parts included in the Spray Marker Service Kit can be replaced on your machine in a matter of seconds, ensuring your marker won’t be out of action for long. `,
+    ecoclean_10l: `EcoClean is a ready to use, pH neutral, biodegradable liquid cleaner designed to cleanse pump and nozzles of spray line marking machines. The patent pending technology behind EcoClean is the reason it is REACH compliant making it the most eco-friendly line marker cleaner available. 
+
+Supplied in 10 litre jerricans, and a 1 litre sample is supplied with the Eco Club and Eco Pro spray line markers. Soaking plastic machine components such as nozzles and filters will extend the life of your machines and ensures no future blockages occurring. `,
+    concentrate_mixing_kit: `This Concentrate Mixing Kit is useful for any groundsman who uses concentrated line marking paints like Pitchmark’s Clubline or Extreme.
+
+The 2-litre jug allows you to accurately measure out the paint so you can keep consistency in your pitch marking costs, whilst the bucket is large enough to hold 15 litres of mixing solution.
+
+You can mix the liquid using the hand stirrer or the metal drill piece for a quick and efficient mix.`,
 };

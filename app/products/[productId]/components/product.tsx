@@ -97,12 +97,19 @@ const Product = ({ productId }: IProductProps) => {
     /* ---------------------------- */
     const renderPaintSpecs = (data: LineMarkerPaintSpecificationsType) => (
         <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
-            {renderGridItem("Natural Grass", data.natural_grass)}
+            {renderGridItem("Natural Grass", data.grass)}
             {renderGridItem("Compatibility", data.compatibility)}
             {renderGridItem("Ready To Use", data.ready_to_use)}
             {renderGridItem("Size", data.size)}
             {renderGridItem("Coverage", data.coverage)}
-            {renderGridItem("Colors", data.colors)}
+
+            {data.colors && data.colors.length > 0 && (
+                <div className="flex flex-col">
+                    <span className="text-sm font-semibold text-black">Colors</span>
+                    <hr className="my-1 border-gray-300" />
+                    <span className="text-sm text-black">{data.colors.join(", ")}</span>
+                </div>
+            )}
         </div>
     );
 
@@ -131,20 +138,33 @@ const Product = ({ productId }: IProductProps) => {
             {renderGridItem("Width", data.width)}
             {renderGridItem("Height", data.height)}
             {renderGridItem("Weight", data.weight)}
+            {renderGridItem("Size", data.size)}
+            {renderGridItem("Capacity", data.capacity)}
+            {renderGridItem("Compatibility", data.compatability)}
 
-            {data.package_item && (
+            {data.colors && data.colors.length > 0 && (
+                <div className="flex flex-col">
+                    <span className="text-sm font-semibold text-black">Colors</span>
+                    <hr className="my-1 border-gray-300" />
+                    <span className="text-sm text-black">{data.colors.join(", ")}</span>
+                </div>
+            )}
+
+            {data.package_item && data.package_item.length > 0 && (
                 <div className="flex flex-col lg:col-span-3">
                     <span className="text-sm font-semibold text-black">Package Contents</span>
                     <hr className="my-1 border-gray-300" />
-                    <span className="text-sm text-black">
-                        {data.package_item.quantity} × {data.package_item.name} (
-                        {data.package_item.unit})
-                    </span>
-                    {data.package_item.description && (
-                        <span className="mt-1 text-sm text-black">
-                            {data.package_item.description}
-                        </span>
-                    )}
+
+                    <ul className="mt-1 space-y-1 text-sm text-black">
+                        {data.package_item.map((item, idx) => (
+                            <li key={idx}>
+                                <span className="font-semibold">
+                                    {item.quantity}× {item.name}
+                                </span>
+                                {item.description && <span className="ml-1">— {item.description}</span>}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             )}
         </div>
@@ -155,8 +175,7 @@ const Product = ({ productId }: IProductProps) => {
 
         return Object.values(data).some((value) => {
             if (Array.isArray(value)) return value.length > 0;
-            if (typeof value === "object" && value !== null)
-                return Object.values(value).some(Boolean);
+            if (typeof value === "object" && value !== null) return Object.values(value).some(Boolean);
             return Boolean(value);
         });
     };
@@ -176,9 +195,7 @@ const Product = ({ productId }: IProductProps) => {
 
                 {specBlock.type === "line_marker_accessory" && renderAccessorySpecs(specBlock.data)}
 
-                {specBlock.type === "goals" && (
-                    <p className="text-sm text-black">Goal specifications coming soon.</p>
-                )}
+                {specBlock.type === "goals" && <p className="text-sm text-black">Goal specifications coming soon.</p>}
             </div>
         );
     };

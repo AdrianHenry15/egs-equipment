@@ -17,8 +17,8 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         name: "6L Water Tank",
         description: `This is an extremely useful add-on for the Eco Club and Eco Pro* line markers, 
         slotting easily onto the front of the machine and making the process of cleaning the machine quicker and easier.`,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Machine Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [WaterTank6LImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -36,8 +36,8 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         id: "lmma-2",
         name: "25L Paint Tank",
         description: `The 25L Paint Tank is a moulded plastic container used to contain more paint than normal when marking out pitches.`,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Machine Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [PaintTank25LImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -58,8 +58,8 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         Our Spray Marker Service Kit is suitable for customers who want to keep their spray line marking machine in top working order.  
         Although the Service Kit is suitable for the Eco Pro and Eco Club spray machines, it may be compatible with other pedestrian spray line markers on the market. 
         `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Machine Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [ServiceKitImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -79,8 +79,8 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         description: `EcoClean is a ready to use, pH neutral, 
         biodegradable liquid cleaner designed to cleanse pump and nozzles of spray line marking machines. 
         The patent pending technology behind EcoClean is the reason it is REACH compliant making it the most eco-friendly line marker cleaner available. `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Machine Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [EcoClean10LImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -98,8 +98,8 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         id: "lmma-5",
         name: "Concentrate Mixing Kit",
         description: `This Concentrate Mixing Kit is useful for any groundsman who uses concentrated line marking paints like Pitchmark’s Clubline or Extreme.`,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Accessories", "Machine Accessories"],
+        mainCategory: "line_marker",
+        tags: ["accessory", "field_accessory"],
         images: [ConcentrateImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {

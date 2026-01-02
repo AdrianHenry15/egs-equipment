@@ -12,8 +12,8 @@ export const AeratorProducts: ProductType[] = [
         name: "Javelin Aer-Aid 1500",
         description:
             "Tractor mounted vertical action aerator for use on both fine and outfield turf.",
-        mainCategory: "Natural Turf",
-        tags: ["Aerator", "Natural Turf"],
+        mainCategory: "natural_turf",
+        tags: ["aerator", "natural_turf"],
         images: [JavelinImg],
         brand: EquipmentBrand.SISIS,
         details: {
@@ -31,8 +31,8 @@ export const AeratorProducts: ProductType[] = [
         name: "Dart",
         description:
             "Independent powered vertical action aerator ideal for sports field maintenance.",
-        mainCategory: "Natural Turf",
-        tags: ["Aerator", "Natural Turf"],
+        mainCategory: "natural_turf",
+        tags: ["aerator", "natural_turf"],
         images: [DartImg],
         brand: EquipmentBrand.SISIS,
         details: {

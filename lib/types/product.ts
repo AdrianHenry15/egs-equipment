@@ -82,12 +82,13 @@ export type ProductSpecificationsType = {
 };
 
 export type LineMarkerPaintSpecificationsType = {
-    natural_grass: string;
+    grass: string;
     compatibility: string;
-    ready_to_use: string;
+    ready_to_use?: string;
+    concentrate?: string;
     size: string;
-    coverage: string;
-    colors: string;
+    coverage?: string;
+    colors: string[];
 };
 export type LineMarkerMachineSpecificationsType = {
     spray_marker?: string;
@@ -106,18 +107,21 @@ export type LineMarkerMachineSpecificationsType = {
     filtration_system?: string;
 };
 export type LineMarkerAccessorySpecificationsType = {
-    package_item?: PackageItemType;
+    package_item?: PackageItemType[];
     length?: string;
     width?: string;
     height?: string;
     weight?: string;
+    size?: string;
+    colors?: string[];
+    capacity?: string;
+    compatability?: string;
 };
 
 export type PackageItemType = {
     name: string;
     quantity: number;
-    unit: string;
-    description?: string;
+    description: string;
 };
 
 export type StandardSpecifications = {

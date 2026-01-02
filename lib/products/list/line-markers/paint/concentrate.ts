@@ -5,7 +5,6 @@ import ClublineImg1 from "@/public/products/line-markers/paint/concentrate/clubl
 import ClublineImg2 from "@/public/products/line-markers/paint/concentrate/clubline/Clubline-750L-IBC-WEB.webp";
 import { ProductSpecDescriptions } from "../../../product-spec-descriptions";
 import { ProductFeatures } from "../../../product-features";
-import { ProductSpecifications } from "../../../product-specifications";
 import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
 import { LineMarkerPaintSpecifications } from "@/lib/products/line-marker-specifications/paint-specifications";
@@ -19,8 +18,8 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
             formulated with extra pigments and binders for maximum brightness, 
             durability, and weather resistance. 
          `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Paint", "Premium", "Concentrate"],
+        mainCategory: "line_marker",
+        tags: ["paint", "premium", "concentrate"],
         images: [ExtremeImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -39,8 +38,8 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         description: `
             Lumen line marking paint is a very bright and durable concentrate sitting between our Clubline and Extreme products.  
         `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Paint", "Professional", "Concentrate"],
+        mainCategory: "line_marker",
+        tags: ["paint", "professional", "concentrate"],
         images: [LumenImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -57,8 +56,8 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         id: "lmpc-3",
         name: "Clubline",
         description: `Clubline line marking paint is a bright and weather-resistant concentrate aimed at groundsmen marking out sports pitches regularly.`,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Paint", "Standard", "Concentrate"],
+        mainCategory: "line_marker",
+        tags: ["paint", "standard", "concentrate"],
         images: [ClublineImg1, ClublineImg2],
         brand: EquipmentBrand.PITCHMARK,
         details: {
@@ -76,8 +75,8 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         name: "Line-Out",
         description: `Line-Out is a specialised green concentrate paint designed to cover white lines.
           `,
-        mainCategory: "Line Marker",
-        tags: ["Line Marker", "Paint", "Premium", "Concentrate"],
+        mainCategory: "line_marker",
+        tags: ["paint", "premium", "concentrate"],
         images: [LineOutImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
