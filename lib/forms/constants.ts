@@ -25,7 +25,7 @@ export const DEFAULT_PRODUCT_FORM: ProductFormValues = {
         current: "",
     },
     description: "",
-    mainCategory: "" as MainCategory,
+    mainCategory: "",
     brand: "" as ProductBrand,
     tags: [],
     image: null,

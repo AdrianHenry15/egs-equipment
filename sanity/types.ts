@@ -28,13 +28,7 @@ export type LeadStatus = "new" | "contacted" | "qualified" | "lost" | "converted
 
 export type LeadPriority = "Low" | "Medium" | "High";
 
-export type LeadSource =
-    | "Website Form"
-    | "Email"
-    | "Referral"
-    | "Cold Outreach"
-    | "Google"
-    | "Other";
+export type LeadSource = "Website Form" | "Email" | "Referral" | "Cold Outreach" | "Google" | "Other";
 
 export type ClientStatus = "active" | "paused" | "completed" | "inactive";
 
@@ -51,6 +45,7 @@ export type EquipmentEventReason =
 
 export type UserRole = "customer" | "admin";
 export type ProductMainCategory =
+    | ""
     | "Sport"
     | "Synthetic Turf"
     | "Natural Turf"
@@ -77,13 +72,7 @@ export type ProductUsedBy =
     | "Lacrosse"
     | "Sports Turf"
     | "Synthetic Turf";
-export type EventType =
-    | "trade_show"
-    | "demo_day"
-    | "tournament"
-    | "conference"
-    | "client_visit"
-    | "other";
+export type EventType = "trade_show" | "demo_day" | "tournament" | "conference" | "client_visit" | "other";
 
 export type EventStatus = "upcoming" | "completed" | "cancelled";
 
@@ -224,14 +213,7 @@ export interface Product extends SanityBase {
         current?: string;
     };
     description?: string;
-    mainCategory?:
-        | "Sport"
-        | "Synthetic Turf"
-        | "Natural Turf"
-        | "Line Marker"
-        | "Hand Tool"
-        | "Goal"
-        | "Debris Blower";
+    mainCategory?: "Sport" | "Synthetic Turf" | "Natural Turf" | "Line Marker" | "Hand Tool" | "Goal" | "Debris Blower";
     tags?: string[];
     brand?:
         | "Howardsons"
@@ -245,14 +227,7 @@ export interface Product extends SanityBase {
     image?: SanityImage;
     details?: ProductDetails;
     manual?: SanityFile;
-    usedBy?:
-        | "Golf"
-        | "Soccer"
-        | "American Football"
-        | "Baseball"
-        | "Lacrosse"
-        | "Sports Turf"
-        | "Synthetic Turf";
+    usedBy?: "Golf" | "Soccer" | "American Football" | "Baseball" | "Lacrosse" | "Sports Turf" | "Synthetic Turf";
     popular?: boolean;
 }
 

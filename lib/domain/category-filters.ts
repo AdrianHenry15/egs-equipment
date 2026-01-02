@@ -1,6 +1,7 @@
 import { MainCategory, Tag } from "@/lib/types/categories";
 
 export const CATEGORY_FILTER_TAGS: Record<MainCategory, { label: string; tag: Tag }[]> = {
+    [""]: [],
     debris_blower: [],
     goal: [
         { label: "Freestanding", tag: "freestanding" },

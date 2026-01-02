@@ -1,10 +1,5 @@
 // Main categories (domain truth)
-export type MainCategory =
-    | "synthetic_turf"
-    | "natural_turf"
-    | "line_marker"
-    | "goal"
-    | "debris_blower";
+export type MainCategory = "" | "synthetic_turf" | "natural_turf" | "line_marker" | "goal" | "debris_blower";
 
 export type TurfTag =
     | "brush"
@@ -20,13 +15,7 @@ export type TurfTag =
     | "aerator";
 
 // SPORTS
-export type SportTag =
-    | "american_football"
-    | "golf"
-    | "soccer"
-    | "baseball"
-    | "softball"
-    | "lacrosse";
+export type SportTag = "american_football" | "golf" | "soccer" | "baseball" | "softball" | "lacrosse";
 
 export type SportsEquipmentTag =
     | "goal"

@@ -1,6 +1,6 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { getProductBrandImage } from "@/lib/products/helpers/get-product-brand-image";
@@ -15,9 +15,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     const MAX_DESCRIPTION_LENGTH = 50;
 
     const truncatedName =
-        product.name.length > MAX_NAME_LENGTH
-            ? `${product.name.slice(0, MAX_NAME_LENGTH)}…`
-            : product.name;
+        product.name.length > MAX_NAME_LENGTH ? `${product.name.slice(0, MAX_NAME_LENGTH)}…` : product.name;
 
     const truncatedDescription =
         product.description.length > MAX_DESCRIPTION_LENGTH
@@ -63,11 +61,9 @@ export default function ProductCard({ product }: ProductCardProps) {
 
                     <div className="mt-auto">
                         <Image
-                            width={
-                                product.brand === "Dennis" || product.brand === "Eastman" ? 100 : 60
-                            }
+                            width={product.brand === "dennis" || product.brand === "eastman" ? 100 : 60}
                             height={32}
-                            className={product.brand === "Dennis" ? "h-8" : "h-6"}
+                            className={product.brand === "dennis" ? "h-8" : "h-6"}
                             alt={product.brand}
                             src={getProductBrandImage(product.brand)}
                         />
