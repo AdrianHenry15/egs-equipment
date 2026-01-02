@@ -19,16 +19,28 @@ const Product = ({ productId }: IProductProps) => {
     const product = allProducts.find((p) => p.id === productId);
 
     if (!product) {
-        return <p className="text-center text-gray-500">Product not found.</p>;
+        return <p className="text-center text-black">Product not found.</p>;
     }
 
     const specBlock = product.details.specifications;
+
+    const renderGridItem = (label: string, value?: string) => {
+        if (!value) return null;
+
+        return (
+            <div className="flex flex-col">
+                <span className="text-sm font-semibold text-black">{label}</span>
+                <hr className="my-1 border-gray-300" />
+                <span className="text-sm text-black">{value}</span>
+            </div>
+        );
+    };
 
     const renderSpecRow = (label: string, value?: string) =>
         value ? (
             <div className="mt-1 flex text-sm">
                 <span className="font-semibold text-black">{label}:</span>
-                <span className="ml-2 text-gray-500">{value}</span>
+                <span className="ml-2 text-black">{value}</span>
             </div>
         ) : null;
 
@@ -61,13 +73,13 @@ const Product = ({ productId }: IProductProps) => {
                 <div className="mt-4">
                     <h5 className="text-lg font-semibold text-black">Inclusions</h5>
                     {Array.isArray(data.inclusions) ? (
-                        <ul className="list-disc ml-5 text-sm text-gray-500">
+                        <ul className="list-disc ml-5 text-sm text-black">
                             {data.inclusions.map((i, idx) => (
                                 <li key={idx}>{i}</li>
                             ))}
                         </ul>
                     ) : (
-                        <p className="text-sm text-gray-500">{data.inclusions}</p>
+                        <p className="text-sm text-black">{data.inclusions}</p>
                     )}
                 </div>
             )}
@@ -84,55 +96,58 @@ const Product = ({ productId }: IProductProps) => {
     /* LINE MARKER PAINT */
     /* ---------------------------- */
     const renderPaintSpecs = (data: LineMarkerPaintSpecificationsType) => (
-        <>
-            {renderSpecRow("Natural Grass", data.natural_grass)}
-            {renderSpecRow("Compatibility", data.compatibility)}
-            {renderSpecRow("Ready To Use", data.ready_to_use)}
-            {renderSpecRow("Size", data.size)}
-            {renderSpecRow("Coverage", data.coverage)}
-            {renderSpecRow("Colors", data.colors)}
-        </>
+        <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            {renderGridItem("Natural Grass", data.natural_grass)}
+            {renderGridItem("Compatibility", data.compatibility)}
+            {renderGridItem("Ready To Use", data.ready_to_use)}
+            {renderGridItem("Size", data.size)}
+            {renderGridItem("Coverage", data.coverage)}
+            {renderGridItem("Colors", data.colors)}
+        </div>
     );
 
     /* ---------------------------- */
     /* LINE MARKER MACHINE */
     /* ---------------------------- */
     const renderMachineSpecs = (data: LineMarkerMachineSpecificationsType) => (
-        <>
-            {renderSpecRow("Capacity", data.capacity)}
-            {renderSpecRow("Line Width", data.line_width)}
-            {renderSpecRow("Weight", data.weight)}
-            {renderSpecRow("Battery", data.battery)}
-            {renderSpecRow("Chassis", data.chassis)}
-            {renderSpecRow("Low Maintenance", data.low_maintenance)}
-            {renderSpecRow("Usage", data.usage)}
-            {renderSpecRow("Made in Britain", data.made_in_britain)}
-        </>
+        <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            {renderGridItem("Capacity", data.capacity)}
+            {renderGridItem("Line Width", data.line_width)}
+            {renderGridItem("Weight", data.weight)}
+            {renderGridItem("Battery", data.battery)}
+            {renderGridItem("Chassis", data.chassis)}
+            {renderGridItem("Low Maintenance", data.low_maintenance)}
+            {renderGridItem("Usage", data.usage)}
+            {renderGridItem("Made in Britain", data.made_in_britain)}
+        </div>
     );
 
     /* ---------------------------- */
     /* LINE MARKER ACCESSORY */
     /* ---------------------------- */
     const renderAccessorySpecs = (data: LineMarkerAccessorySpecificationsType) => (
-        <>
-            {renderSpecRow("Length", data.length)}
-            {renderSpecRow("Width", data.width)}
-            {renderSpecRow("Height", data.height)}
-            {renderSpecRow("Weight", data.weight)}
+        <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            {renderGridItem("Length", data.length)}
+            {renderGridItem("Width", data.width)}
+            {renderGridItem("Height", data.height)}
+            {renderGridItem("Weight", data.weight)}
 
             {data.package_item && (
-                <div className="mt-4">
-                    <h5 className="text-lg font-semibold text-black">Package Contents</h5>
-                    <p className="text-sm text-gray-500">
+                <div className="flex flex-col lg:col-span-3">
+                    <span className="text-sm font-semibold text-black">Package Contents</span>
+                    <hr className="my-1 border-gray-300" />
+                    <span className="text-sm text-black">
                         {data.package_item.quantity} × {data.package_item.name} (
                         {data.package_item.unit})
-                    </p>
+                    </span>
                     {data.package_item.description && (
-                        <p className="text-sm text-gray-500">{data.package_item.description}</p>
+                        <span className="mt-1 text-sm text-black">
+                            {data.package_item.description}
+                        </span>
                     )}
                 </div>
             )}
-        </>
+        </div>
     );
 
     const hasRenderableSpecs = (data: unknown): boolean => {
@@ -162,17 +177,17 @@ const Product = ({ productId }: IProductProps) => {
                 {specBlock.type === "line_marker_accessory" && renderAccessorySpecs(specBlock.data)}
 
                 {specBlock.type === "goals" && (
-                    <p className="text-sm text-gray-500">Goal specifications coming soon.</p>
+                    <p className="text-sm text-black">Goal specifications coming soon.</p>
                 )}
             </div>
         );
     };
 
     return (
-        <div className="w-full bg-gray-100 py-10">
+        <div className="w-full bg-gray-100 pb-10">
             <div className="flex flex-col gap-8 p-6 xl:flex-row">
-                <Link href="/products">
-                    <ChevronLeftIcon className="w-10 rounded-full p-2 hover:bg-black/25" />
+                <Link className="flex w-min" href="/products">
+                    <ChevronLeftIcon color="black" className="w-10 p-2" />
                 </Link>
 
                 <div className="xl:w-1/2 flex justify-center">
@@ -182,21 +197,19 @@ const Product = ({ productId }: IProductProps) => {
                 <div className="xl:w-1/2">
                     <h1 className="text-3xl font-bold text-black">{product.name}</h1>
 
-                    <p className="mt-2 text-lg text-gray-600">{product.description}</p>
+                    <p className="mt-2 text-lg text-black">{product.description}</p>
 
                     {product.details.specs_description && (
                         <div className="mt-6">
                             <h2 className="text-xl font-semibold text-black">Description</h2>
-                            <p className="mt-2 text-gray-500">
-                                {product.details.specs_description}
-                            </p>
+                            <p className="mt-2 text-black">{product.details.specs_description}</p>
                         </div>
                     )}
 
                     {product.details.features?.length ? (
                         <div className="mt-6">
                             <h2 className="text-xl font-semibold text-black">Features</h2>
-                            <ul className="ml-5 mt-2 list-disc text-sm text-gray-500">
+                            <ul className="ml-5 mt-2 list-disc text-sm text-black">
                                 {product.details.features.map((f, i) => (
                                     <li key={i}>{f}</li>
                                 ))}

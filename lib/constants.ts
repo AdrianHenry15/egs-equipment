@@ -46,7 +46,7 @@ export const ProductsMenuItems: NavMenuType[] = [
         link: "/products?synthetic-turf",
     },
     {
-        title: "LineMarkers",
+        title: "Line Markers",
         link: "/products?line-markers",
     },
     {
