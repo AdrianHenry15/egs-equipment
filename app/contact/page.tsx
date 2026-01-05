@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <section className="relative w-full bg-gray-50 py-20 px-6">
+        <section className="relative w-full bg-white py-20 px-6">
             <div className="mx-auto max-w-3xl text-left mb-12">
                 <h1 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">Contact EGS Equipment</h1>
 

@@ -38,24 +38,29 @@ export const ProductsMenuItems: NavMenuType[] = [
         link: "/products",
     },
     {
-        title: "Natural Turf",
-        value: "natural_turf",
-        link: "/products",
-    },
-    {
-        title: "Synthetic Turf",
-        value: "synthetic_turf",
-        link: "/products",
-    },
-    {
-        title: "Line Markers",
-        value: "line_marker",
-        link: "/products",
+        title: "Debris Blowers",
+        value: "debris_blower",
+        link: "/products?category=debris_blower",
     },
     {
         title: "Goals",
         value: "goal",
-        link: "/products",
+        link: "/products?category=goal",
+    },
+    {
+        title: "Line Markers",
+        value: "line_marker",
+        link: "/products?category=line_marker",
+    },
+    {
+        title: "Natural Turf",
+        value: "natural_turf",
+        link: "/products?category=natural_turf",
+    },
+    {
+        title: "Synthetic Turf",
+        value: "synthetic_turf",
+        link: "/products?category=synthetic_turf",
     },
 ];
 

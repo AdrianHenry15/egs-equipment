@@ -74,7 +74,7 @@ const FinanceOptions: React.FC = () => {
             </motion.div>
             <div className="flex justify-center items-center p-4 bg-gray-100">
                 <Link
-                    className="py-2 px-10 justify-center items-center flex bg-green-600 hover:bg-green-500/50 transition-colors ease-in-out duration-300 rounded-lg"
+                    className="py-2 px-10 justify-center items-center flex bg-green-600 hover:bg-green-800 transition-colors ease-in-out duration-300 rounded-lg"
                     href={"/contact"}
                 >
                     Contact Us

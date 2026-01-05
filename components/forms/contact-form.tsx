@@ -51,15 +51,15 @@ const ContactForm = () => {
         try {
             setLoading(true);
 
-            const captchaToken = await getRecaptchaToken();
-            console.log("reCAPTCHA token:", captchaToken);
+            // const captchaToken = await getRecaptchaToken();
+            // console.log("reCAPTCHA token:", captchaToken);
 
             await emailjs.send(
                 SERVICE_ID,
                 TEMPLATE_ID,
                 {
                     templateParams,
-                    captchaToken,
+                    // captchaToken,
                 },
                 PUBLIC_KEY,
             );
@@ -89,7 +89,7 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="flex flex-col bg-white items-center py-20 shadow-inner relative w-full md:px-4">
+        <section className="flex flex-col bg-white items-center py-20 relative w-full md:px-4">
             {/* FORM CONTAINER */}
             <div className="flex flex-col w-11/12 bg-zinc-100 p-6 rounded-2xl shadow-white shadow-lg border-2 md:w-162.5">
                 {/* LOGO */}

@@ -1,7 +1,7 @@
 import HomeSplash from "@/app/components/home-splash";
 import PoweredBy from "@/app/components/powered-by";
 import FeaturedProducts from "./components/featured-products/featured-products";
-import FeaturedEvents from "./components/featured-events";
+import FeaturedEvents from "./components/featured-events/featured-events";
 
 export default function Home() {
     return (

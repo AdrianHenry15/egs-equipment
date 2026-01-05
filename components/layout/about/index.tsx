@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import backgroundImg from "@/public/grass-img.jpg";
 import PromoRow from "@/components/promo-row";
+import Link from "next/link";
 
 // Animation Variants
 const fadeIn = {
@@ -40,31 +41,18 @@ const About: React.FC = () => {
                     className="opacity-90"
                 />
                 <div className="absolute inset-0 bg-linear-to-b from-black/50 to-black/80 flex flex-col items-center justify-center text-center text-white px-6">
-                    <motion.h1
-                        className="text-3xl md:text-5xl font-extrabold drop-shadow-lg"
-                        variants={fadeIn}
-                    >
+                    <motion.h1 className="text-3xl md:text-5xl font-extrabold drop-shadow-lg" variants={fadeIn}>
                         The Story of EGS Equipment
                     </motion.h1>
-                    <motion.p
-                        className="mt-3 text-lg md:text-xl max-w-2xl leading-relaxed"
-                        variants={fadeIn}
-                    >
-                        Serving turf and landscaping needs across the United States for over 25
-                        years with quality machinery and expertise.
+                    <motion.p className="mt-3 text-lg md:text-xl max-w-2xl leading-relaxed" variants={fadeIn}>
+                        Serving turf and landscaping needs across the United States for over 25 years with quality
+                        machinery and expertise.
                     </motion.p>
                 </div>
             </motion.div>
-
             {/* About Section */}
-            <motion.section
-                className="flex flex-col items-center py-16 px-6 md:px-12"
-                variants={staggerContainer}
-            >
-                <motion.h2
-                    className="text-4xl md:text-5xl font-bold text-gray-900 text-center"
-                    variants={fadeIn}
-                >
+            <motion.section className="flex flex-col items-center py-16 px-6 md:px-12" variants={staggerContainer}>
+                <motion.h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center" variants={fadeIn}>
                     About EGS Equipment
                 </motion.h2>
                 <motion.div className="w-16 h-1 bg-green-600 mt-4 mb-10" variants={fadeIn} />
@@ -81,6 +69,14 @@ const About: React.FC = () => {
                     />
                 </motion.div>
             </motion.section>
+            <div className="flex justify-center items-center p-4 bg-white">
+                <Link
+                    className="py-2 px-10 justify-center items-center flex bg-green-600 hover:bg-green-800 transition-colors ease-in-out duration-300 rounded-lg"
+                    href={"/contact"}
+                >
+                    Contact Us
+                </Link>
+            </div>{" "}
         </motion.div>
     );
 };

@@ -51,8 +51,8 @@ const PartsForm = () => {
     const sendEstimate = async () => {
         setLoading(true);
 
-        const captchaToken = await getRecaptchaToken();
-        console.log("reCAPTCHA token:", captchaToken);
+        // const captchaToken = await getRecaptchaToken();
+        // console.log("reCAPTCHA token:", captchaToken);
 
         try {
             await emailjs.send(
@@ -60,7 +60,7 @@ const PartsForm = () => {
                 TEMPLATE_ID,
                 {
                     getValues,
-                    captchaToken,
+                    // captchaToken,
                 },
                 PUBLIC_KEY,
             );
@@ -70,8 +70,7 @@ const PartsForm = () => {
             closeModal();
             openModal("success", {
                 title: "Request Submitted",
-                message:
-                    "Thank you for reaching out. Our team will review your request and get back to you shortly.",
+                message: "Thank you for reaching out. Our team will review your request and get back to you shortly.",
             });
         } catch (error) {
             console.error("EMAIL FAILED:", error);
@@ -86,8 +85,7 @@ const PartsForm = () => {
     const onSubmit = () => {
         openModal("confirmation", {
             title: "Confirm Submission",
-            message:
-                "Please confirm that all the information entered is correct before submitting.",
+            message: "Please confirm that all the information entered is correct before submitting.",
             confirmLabel: "Submit Request",
             cancelLabel: "Cancel",
             onConfirm: sendEstimate,
