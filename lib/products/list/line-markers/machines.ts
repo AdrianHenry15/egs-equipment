@@ -51,7 +51,6 @@ import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
 import { ProductSpecDescriptions } from "../../product-spec-descriptions";
 import { ProductFeatures } from "../../product-features";
-import { ProductSpecifications } from "../../product-specifications";
 import { LineMarkerMachineSpecifications } from "../../line-marker-specifications/machine-specifications";
 
 export const LineMarkerMachineProducts: ProductType[] = [
@@ -95,14 +94,7 @@ export const LineMarkerMachineProducts: ProductType[] = [
         description: `The Eco Pro line marking machine is a high-end upgraded version of our popular Eco Club and is just as easy-to-use for all grounds staff.`,
         mainCategory: "line_marker",
         tags: ["accessory", "machine", "spray_machine"],
-        images: [
-            EcoProDiscsImg,
-            EcoProPSGImg,
-            EcoProInUse2Img,
-            EcoProInUseImg,
-            EcoProImg,
-            EcoProFrontEndImg,
-        ],
+        images: [EcoProDiscsImg, EcoProPSGImg, EcoProInUse2Img, EcoProInUseImg, EcoProImg, EcoProFrontEndImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
             specs_description: ProductSpecDescriptions.eco_pro,

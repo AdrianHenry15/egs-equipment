@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import backgroundImg from "@/public/logos/canon-logo.png";
 import PromoRow from "@/components/promo-row";
+import Link from "next/link";
 
 const FinanceOptions: React.FC = () => {
     return (
@@ -15,7 +16,7 @@ const FinanceOptions: React.FC = () => {
             transition={{ duration: 0.8 }}
         >
             {/* Jumbotron Header */}
-            <div className="relative w-full h-96 md:h-[500px] bg-black overflow-hidden rounded-lg shadow-lg">
+            <div className="relative w-full h-96 md:h-125 bg-black overflow-hidden rounded-lg shadow-lg">
                 <Image
                     src={backgroundImg}
                     alt="Canon Financial Solutions"
@@ -40,8 +41,7 @@ const FinanceOptions: React.FC = () => {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
                     >
-                        Empowering businesses with flexible financial solutions to achieve their
-                        growth goals.
+                        Empowering businesses with flexible financial solutions to achieve their growth goals.
                     </motion.p>
                 </div>
             </div>
@@ -72,6 +72,14 @@ const FinanceOptions: React.FC = () => {
                     description="From startups to established corporations, Canon Financial crafts solutions tailored to your industry and budget. We work closely with you to understand your business objectives, ensuring you have the financial support to stay competitive in today’s marketplace."
                 />
             </motion.div>
+            <div className="flex justify-center items-center p-4 bg-gray-100">
+                <Link
+                    className="py-2 px-10 justify-center items-center flex bg-green-600 hover:bg-green-500/50 transition-colors ease-in-out duration-300 rounded-lg"
+                    href={"/contact"}
+                >
+                    Contact Us
+                </Link>
+            </div>
         </motion.div>
     );
 };

@@ -4,9 +4,6 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Finance Options | EGS Equipment",
     description: "Our finance options",
-    icons: {
-        icon: "/logos/placeholder.webp",
-    },
 };
 
 // TODO: Canon Financial Services

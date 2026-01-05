@@ -4,9 +4,6 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Contact Us | EGS Equipment",
     description: "For everything you need for freshness",
-    icons: {
-        icon: "/logos/placeholder.webp",
-    },
 };
 
 export default function ContactPage() {

@@ -35,10 +35,3 @@ const productCollections = [
 
 // All products (flattened)
 export const allProducts = productCollections.flat();
-
-// Featured products = first item of each collection (if it exists)
-export const featuredProducts = productCollections.map((products) => products[0]).filter(Boolean);
-
-export function getAllProducts() {
-    return [...allProducts];
-}

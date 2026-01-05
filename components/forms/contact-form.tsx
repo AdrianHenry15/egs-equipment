@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
-import Logo from "@/public/logos/egs-swoosh.png";
+import Logo from "@/public/logos/EGS1.png";
 import Button from "../button";
 import Textarea from "./textarea";
 import Input from "./input";
@@ -136,12 +136,7 @@ const ContactForm = () => {
                     />
 
                     {/* COMMENT */}
-                    <Textarea
-                        inputName={"comment"}
-                        inputLabel={"Comment"}
-                        placeholder={"Comment"}
-                        control={control}
-                    />
+                    <Textarea inputName={"comment"} inputLabel={"Comment"} placeholder={"Comment"} control={control} />
                     <div className={`${inputClicked ? "" : "animate-pulse"} my-10`}>
                         <Button
                             onClick={() => setInputClicked(true)}

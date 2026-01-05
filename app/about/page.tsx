@@ -4,9 +4,6 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "About | EGS Equipment",
     description: "Learn about how we started",
-    icons: {
-        icon: "/logos/placeholder.webp",
-    },
 };
 
 export default function AboutPage() {
