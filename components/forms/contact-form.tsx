@@ -11,7 +11,6 @@ import Button from "../button";
 import Textarea from "./textarea";
 import Input from "./input";
 import { useModalStore } from "@/stores/modal-store/modal-store";
-import { getRecaptchaToken } from "@/lib/utils";
 
 const ContactForm = () => {
     const [inputClicked, setInputClicked] = useState(false);
@@ -50,6 +49,7 @@ const ContactForm = () => {
     const submitEstimate = async () => {
         try {
             setLoading(true);
+            const formValues = getValues();
 
             // const captchaToken = await getRecaptchaToken();
             // console.log("reCAPTCHA token:", captchaToken);
@@ -58,7 +58,7 @@ const ContactForm = () => {
                 SERVICE_ID,
                 TEMPLATE_ID,
                 {
-                    templateParams,
+                    ...formValues,
                     // captchaToken,
                 },
                 PUBLIC_KEY,
