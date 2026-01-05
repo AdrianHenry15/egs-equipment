@@ -34,8 +34,8 @@ export default function ProductList() {
                 <h3 className="text-xl font-semibold text-black">No products match your filters</h3>
 
                 <p className="mt-2 max-w-md text-sm text-gray-600">
-                    This combination of category, brand, and type doesn’t return any products. Try
-                    removing a filter or selecting a different option.
+                    This combination of category, brand, and type doesn’t return any products. Try removing a filter or
+                    selecting a different option.
                 </p>
 
                 <div className="mt-6 flex gap-3">
