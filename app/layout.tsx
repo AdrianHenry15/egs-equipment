@@ -45,16 +45,11 @@ export default async function RootLayout({
             <html lang="en" suppressHydrationWarning>
                 <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                     {/* Google reCAPTCHA v3 */}
-                    <Script
+                    {/* <Script
                         src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
                         strategy="afterInteractive"
-                    />
-                    <ThemeProvider
-                        attribute={"class"}
-                        defaultTheme="dark"
-                        enableSystem
-                        disableTransitionOnChange
-                    >
+                    /> */}
+                    <ThemeProvider attribute={"class"} defaultTheme="dark" enableSystem disableTransitionOnChange>
                         <Toaster />
                         <Navbar />
                         {children}

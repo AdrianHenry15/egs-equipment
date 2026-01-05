@@ -79,15 +79,6 @@ const ContactForm = () => {
         }
     };
 
-    //EMAIL JS
-    const templateParams = {
-        firstName: getValues("firstName"),
-        lastName: getValues("lastName"),
-        phone: getValues("phone"),
-        email: getValues("email"),
-        comment: getValues("comment"),
-    };
-
     return (
         <section className="flex flex-col bg-white items-center py-20 relative w-full md:px-4">
             {/* FORM CONTAINER */}
