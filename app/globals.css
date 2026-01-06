@@ -53,7 +53,6 @@ body {
 
 /* Center the modal in the viewport with responsive padding */
 .cl-modalContent {
-    position: fixed;
     inset: 0;
     display: flex;
     align-items: center; /* vertical center */
@@ -65,7 +64,6 @@ body {
 .cl-card {
     width: 100%;
     max-width: 420px;
-    max-height: calc(100vh - 32px);
     overflow: auto;
     border-radius: 16px;
 }

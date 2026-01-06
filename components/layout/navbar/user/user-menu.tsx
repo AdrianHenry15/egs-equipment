@@ -5,15 +5,14 @@ import { UserMenuLoader } from "./user-menu-loader";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SiReasonstudios } from "react-icons/si";
-import { BiBookmark, BiMoon, BiSun } from "react-icons/bi";
 import { FaLock } from "react-icons/fa6";
-import { useTheme } from "next-themes";
+import { PaintBrushIcon } from "@heroicons/react/24/outline";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export default function UserMenu() {
     const { isLoaded: userLoaded, isSignedIn } = useUser();
     const { orgRole, has, isLoaded: authLoaded } = useAuth();
 
-    const { theme, setTheme } = useTheme();
     const router = useRouter();
     const [mounted, setMounted] = useState(false);
 
@@ -30,25 +29,8 @@ export default function UserMenu() {
     return (
         <div className="mr-2">
             <SignedIn>
-                <UserButton
-                    userProfileMode="modal"
-                    fallback="/"
-                    appearance={{
-                        elements: {
-                            avatarBox: "w-9 h-9",
-                            modalBackdrop: "fixed inset-0 bg-black/50",
-                            modalContent: "fixed inset-0 flex items-center justify-center p-4 sm:p-6",
-                            card: "w-full max-w-md rounded-xl shadow-2xl",
-                        },
-                    }}
-                >
+                <UserButton userProfileMode="modal" fallback="/">
                     <UserButton.MenuItems>
-                        <UserButton.Action
-                            label={`Theme (${theme === "dark" ? "Light" : "Dark"})`}
-                            labelIcon={theme === "dark" ? <BiSun /> : <BiMoon />}
-                            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                        />
-
                         {isAdmin && (
                             <UserButton.Action
                                 label="Admin Panel"
@@ -65,6 +47,15 @@ export default function UserMenu() {
                             />
                         )}
                     </UserButton.MenuItems>
+                    <UserButton.UserProfilePage
+                        label="Theme"
+                        labelIcon={<PaintBrushIcon className="h-5 w-5" />}
+                        url="theme"
+                    >
+                        <div className="px-1 py-2">
+                            <ThemeSwitcher />
+                        </div>
+                    </UserButton.UserProfilePage>
                 </UserButton>
             </SignedIn>
 
