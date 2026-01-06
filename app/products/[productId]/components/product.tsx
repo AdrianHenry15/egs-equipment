@@ -11,6 +11,20 @@ import {
     ProductSpecificationsType,
 } from "@/lib/types/product";
 
+const COLOR_MAP: Record<string, string> = {
+    white: "#ffffff",
+    black: "#000000",
+    yellow: "#facc15",
+    red: "#ef4444",
+    blue: "#3b82f6",
+    green: "#22c55e",
+    orange: "#f97316",
+    purple: "#a855f7",
+    pink: "#ec4899",
+    gray: "#9ca3af",
+    grey: "#9ca3af",
+};
+
 interface IProductProps {
     productId: string;
 }
@@ -23,6 +37,25 @@ const Product = ({ productId }: IProductProps) => {
     }
 
     const specBlock = product.details.specifications;
+
+    const renderColorDots = (colors: string[]) => (
+        <div className="mt-1 flex flex-wrap gap-2">
+            {colors.map((color, idx) => {
+                const hex = COLOR_MAP[color.toLowerCase().trim()];
+
+                return (
+                    <div
+                        key={`${color}-${idx}`}
+                        title={color}
+                        className="h-5 w-5 rounded-full border border-gray-400"
+                        style={{
+                            backgroundColor: hex ?? color, // fallback if hex not mapped
+                        }}
+                    />
+                );
+            })}
+        </div>
+    );
 
     const renderGridItem = (label: string, value?: string) => {
         if (!value) return null;
@@ -107,7 +140,7 @@ const Product = ({ productId }: IProductProps) => {
                 <div className="flex flex-col">
                     <span className="text-sm font-semibold text-black">Colors</span>
                     <hr className="my-1 border-gray-300" />
-                    <span className="text-sm text-black">{data.colors.join(", ")}</span>
+                    {renderColorDots(data.colors)}
                 </div>
             )}
         </div>
@@ -146,7 +179,7 @@ const Product = ({ productId }: IProductProps) => {
                 <div className="flex flex-col">
                     <span className="text-sm font-semibold text-black">Colors</span>
                     <hr className="my-1 border-gray-300" />
-                    <span className="text-sm text-black">{data.colors.join(", ")}</span>
+                    {renderColorDots(data.colors)}
                 </div>
             )}
 

@@ -1,7 +1,6 @@
 import AGPImg from "@/public/products/line-markers/paint/artificial-grass/AGP-10L-1.webp";
 import { ProductSpecDescriptions } from "../../../product-spec-descriptions";
 import { ProductFeatures } from "../../../product-features";
-import { ProductSpecifications } from "../../../product-specifications";
 import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
 import { LineMarkerPaintSpecifications } from "@/lib/products/line-marker-specifications/paint-specifications";
