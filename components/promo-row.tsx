@@ -10,7 +10,7 @@ interface IPromoRowProps {
 const PromoRow: React.FC<IPromoRowProps> = ({ title, description, dark }) => {
     return (
         <motion.section
-            className={`relative flex flex-col items-center w-full px-6 py-14 md:px-10 md:py-20 rounded-lg shadow-lg transition-all ${
+            className={`relative flex flex-col items-center w-full px-6 py-14 md:px-10 md:py-20 rounded-lg transition-all ${
                 dark ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
             }`}
             initial={{ opacity: 0, y: 20 }}

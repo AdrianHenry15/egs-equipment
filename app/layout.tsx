@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import { Suspense } from "react";
-import { Loader } from "@/components/loader";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-import ContactBar from "@/components/layout/contact-bar";
+import { ClerkProvider } from "@clerk/nextjs";
+import { SanityLive } from "@/sanity/lib/live";
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity/visual-editing";
+import ModalRoot from "@/components/modals/modal-root";
+import { ThemeProvider } from "next-themes";
+import GlobalOptionsWidget from "./components/global-options-widget";
+import CookieConsentCard from "@/components/cookie-consent-card";
+import Script from "next/script";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -23,28 +29,39 @@ export const metadata: Metadata = {
     title: "Home | EGS Equipment",
     description: "Flawless Greens, Expert Care",
     icons: {
-        // icon: {
-        //     url: "/logos/EGS1.png",
-        //     type: "image/png",
-        //     sizes: "128x128",
-        // },
+        icon: "/logos/egs-swoosh.png",
+        shortcut: "/logos/egs-swoosh.png",
+        apple: "/logos/egs-swoosh.png",
     },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <Toaster />
-                <Navbar />
-                <ContactBar />
-                <Suspense fallback={<Loader />}>{children}</Suspense>
-                <Footer />
-            </body>
-        </html>
+        <ClerkProvider>
+            <html lang="en" suppressHydrationWarning>
+                <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+                    {/* Google reCAPTCHA v3 */}
+                    {/* <Script
+                        src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+                        strategy="afterInteractive"
+                    /> */}
+                    <ThemeProvider attribute={"class"} defaultTheme="system" enableSystem>
+                        <Toaster />
+                        <Navbar />
+                        {children}
+                        <ModalRoot />
+                        <CookieConsentCard />
+                        <SanityLive />
+                        {(await draftMode()).isEnabled && <VisualEditing />}
+                        <GlobalOptionsWidget />
+                        <Footer />
+                    </ThemeProvider>
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }

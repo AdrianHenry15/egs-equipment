@@ -1,17 +1,32 @@
+"use client";
+
 import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
 import { Fragment } from "react";
+import { useModalStore } from "@/stores/modal-store/modal-store";
+import type { ConfirmModalPayload } from "@/stores/modal-store/modal-types";
 
-interface IConfirmationModalProps {
-    isOpen: boolean;
-    loading: boolean;
-    closeModal: () => void;
-    confirmEstimate: () => void;
-}
+export default function ConfirmationModal() {
+    const { type, isOpen, loading, payload, closeModal, setLoading } = useModalStore();
 
-const ConfirmationModal = (props: IConfirmationModalProps) => {
+    // 🔑 Type narrowing (this is required)
+    if (type !== "confirmation") return null;
+
+    const confirm = payload as ConfirmModalPayload;
+
+    async function handleConfirm() {
+        try {
+            setLoading(true);
+            await confirm.onConfirm();
+            closeModal();
+        } catch (err) {
+            console.error("Confirmation failed", err);
+            setLoading(false);
+        }
+    }
+
     return (
-        <Transition appear show={props.isOpen} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={props.closeModal}>
+        <Transition appear show={isOpen} as={Fragment}>
+            <Dialog as="div" className="relative z-50" onClose={closeModal}>
                 <TransitionChild
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -35,34 +50,33 @@ const ConfirmationModal = (props: IConfirmationModalProps) => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <DialogPanel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-center align-middle shadow-xl transition-all">
-                                <DialogTitle
-                                    as="h3"
-                                    className="text-lg font-medium leading-6 text-gray-900 border-b-[1px] pb-2"
-                                >
-                                    Confirm Your Request
+                            <DialogPanel className="w-full max-w-md rounded-2xl bg-white p-6 text-center shadow-xl">
+                                <DialogTitle className="text-lg font-medium text-gray-900 border-b pb-2">
+                                    {confirm.title ?? "Confirm Action"}
                                 </DialogTitle>
-                                <div className="my-4">
-                                    <p className="text-sm text-gray-500">
-                                        Confirm your Request and someone from our team will be in
-                                        touch with you as soon as possible
-                                    </p>
-                                </div>
 
-                                <div className="mt-4 justify-center">
+                                <p className="my-4 text-sm text-gray-500">
+                                    {confirm.message ??
+                                        "Are you sure you want to continue with this action?"}
+                                </p>
+
+                                <div className="mt-4 flex justify-center gap-4">
                                     <button
-                                        type="button"
-                                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 mr-4 mt-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                        onClick={props.confirmEstimate}
+                                        className="rounded-md bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 disabled:opacity-50"
+                                        onClick={handleConfirm}
+                                        disabled={loading}
                                     >
-                                        {props.loading ? "Confirming..." : "Get Your Free Request"}
+                                        {loading
+                                            ? "Processing..."
+                                            : (confirm.confirmLabel ?? "Confirm")}
                                     </button>
+
                                     <button
-                                        type="button"
-                                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                        onClick={props.closeModal}
+                                        className="rounded-md bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200"
+                                        onClick={closeModal}
+                                        disabled={loading}
                                     >
-                                        Cancel
+                                        {confirm.cancelLabel ?? "Cancel"}
                                     </button>
                                 </div>
                             </DialogPanel>
@@ -72,6 +86,4 @@ const ConfirmationModal = (props: IConfirmationModalProps) => {
             </Dialog>
         </Transition>
     );
-};
-
-export default ConfirmationModal;
+}

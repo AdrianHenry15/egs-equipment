@@ -1,0 +1,91 @@
+import EcolineImg from "@/public/products/line-markers/paint/ready-to-use/Ecoline-10L-1.webp";
+import DirectImg from "@/public/products/line-markers/paint/ready-to-use/Direct-10L-1.webp";
+import EdgeboxImg from "@/public/products/line-markers/paint/ready-to-use/Edge-Box-10L-Brown-Main-View.webp";
+import TransferImg from "@/public/products/line-markers/paint/ready-to-use/Transfer-10L-1.webp";
+import { ProductSpecDescriptions } from "../../../product-spec-descriptions";
+import { ProductFeatures } from "../../../product-features";
+import { ProductType } from "@/lib/types/product";
+import { EquipmentBrand } from "@/lib/types/brands";
+import { LineMarkerPaintSpecifications } from "@/lib/products/line-marker-specifications/paint-specifications";
+
+export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
+    {
+        id: "lmprtu-1",
+        name: "Ecoline+",
+        description: `
+            Ecoline+ line marking paint is an advanced, 
+            low-volume, ready-to-use solution designed for maximum efficiency and visibility.
+        `,
+        mainCategory: "line_marker",
+        tags: ["paint", "premium", "ready_to_use"],
+        images: [EcolineImg],
+        brand: EquipmentBrand.PITCHMARK,
+        details: {
+            specs_description: ProductSpecDescriptions.ecoline,
+            features: ProductFeatures.ecoline,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.ecoline,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "lmprtu-2",
+        name: "Direct",
+        description: `Direct line marking paint is a popular low-volume, 
+            ready-to-use solution formulated with advanced ingredients for bright, 
+            long-lasting field markings.`,
+        mainCategory: "line_marker",
+        tags: ["paint", "professional", "ready_to_use"],
+        images: [DirectImg],
+        brand: EquipmentBrand.PITCHMARK,
+        details: {
+            specs_description: ProductSpecDescriptions.direct,
+            features: ProductFeatures.direct,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.direct,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "lmprtu-3",
+        name: "Edge",
+        description: `Introducing Edge, Pitchmark’s latest specialist formulation, designed for use with any spray or robot line marking machine.`,
+        mainCategory: "line_marker",
+        tags: ["paint", "professional", "ready_to_use"],
+        images: [EdgeboxImg],
+        brand: EquipmentBrand.PITCHMARK,
+        details: {
+            specs_description: ProductSpecDescriptions.edge,
+            features: ProductFeatures.edge,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.edge,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "lmprtu-4",
+        name: "Transfer",
+        description: `
+            Transfer line marking paint is a bright and long-lasting ready-to-use 
+            specially formulated with added thickeners for wheel-to-wheel markers like our Classic.`,
+        mainCategory: "line_marker",
+        tags: ["paint", "standard", "ready_to_use"],
+        images: [TransferImg],
+        brand: EquipmentBrand.PITCHMARK,
+        details: {
+            specs_description: ProductSpecDescriptions.transfer,
+            features: ProductFeatures.transfer,
+            specifications: {
+                type: "line_marker_paint",
+                data: LineMarkerPaintSpecifications.transfer,
+            },
+            video: "",
+        },
+    },
+];

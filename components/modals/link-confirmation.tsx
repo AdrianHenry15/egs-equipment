@@ -1,0 +1,70 @@
+"use client";
+
+import { Fragment } from "react";
+import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
+import Button from "../button";
+import { useModalStore } from "@/stores/modal-store/modal-store";
+import type { LinkConfirmationPayload } from "@/stores/modal-store/modal-types";
+
+export default function LinkConfirmationModal() {
+    const { type, isOpen, payload, closeModal } = useModalStore();
+
+    if (type !== "link_confirmation") return null;
+
+    const { title, link, confirmLabel, cancelLabel } = payload as LinkConfirmationPayload;
+
+    const openLink = () => {
+        window.open(link, "_blank", "noopener,noreferrer");
+        closeModal();
+    };
+
+    return (
+        <Transition appear show={isOpen} as={Fragment}>
+            <Dialog as="div" className="relative z-50" onClose={closeModal}>
+                <TransitionChild
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                >
+                    <div className="fixed inset-0 bg-black/25" />
+                </TransitionChild>
+
+                <div className="fixed inset-0 overflow-y-auto">
+                    <div className="flex min-h-full items-center justify-center p-4 text-center">
+                        <TransitionChild
+                            as={Fragment}
+                            enter="ease-out duration-300"
+                            enterFrom="opacity-0 scale-95"
+                            enterTo="opacity-100 scale-100"
+                            leave="ease-in duration-200"
+                            leaveFrom="opacity-100 scale-100"
+                            leaveTo="opacity-0 scale-95"
+                        >
+                            <DialogPanel className="w-full max-w-md rounded-2xl bg-white p-6 text-left shadow-xl">
+                                <DialogTitle className="text-lg font-medium text-gray-900">
+                                    {`Open ${title}`}
+                                </DialogTitle>
+
+                                <p className="mt-2 text-sm text-gray-500">
+                                    This will open a new tab and take you to the website.
+                                </p>
+
+                                <div className="mt-6 flex justify-evenly">
+                                    <Button
+                                        name={confirmLabel ?? "Go To Website"}
+                                        onClick={openLink}
+                                    />
+                                    <Button name={cancelLabel ?? "Go Back"} onClick={closeModal} />
+                                </div>
+                            </DialogPanel>
+                        </TransitionChild>
+                    </div>
+                </div>
+            </Dialog>
+        </Transition>
+    );
+}

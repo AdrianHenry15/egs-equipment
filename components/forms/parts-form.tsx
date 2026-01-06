@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { usePathname } from "next/navigation";
 import emailjs from "@emailjs/browser";
@@ -12,16 +11,14 @@ import Logo from "@/public/logos/EGS1.png";
 import Button from "../button";
 import Textarea from "./textarea";
 import Input from "./input";
-import ConfirmationModal from "../modals/confirmation-modal";
-import SuccessModal from "../modals/success-modal";
 import { Loader } from "../loader";
+import { useModalStore } from "@/stores/modal-store/modal-store";
 
 const PartsForm = () => {
     // SWITCH BETWEEN CONTACT AND ESTIMATE FORM | BOTH FORMS DO THE SAME THING FOR NOW
     const pathname = usePathname();
+    const { openModal, closeModal } = useModalStore();
 
-    const [isOpen, setIsOpen] = useState(false);
-    const [estimateSuccess, setEstimateSuccess] = useState(false);
     const [loading, setLoading] = useState(false);
 
     // EMAIL JS
@@ -49,73 +46,62 @@ const PartsForm = () => {
         },
     });
 
-    const onSubmit = (data: any) => {
-        // open confirmation modal
-        setIsOpen(true);
-        console.log(data);
-    };
-
-    const confirmEstimate = () => {
-        // EMAIL JS
-        emailjs
-            .send(SERVICE_ID as string, TEMPLATE_ID as string, templateParams, PUBLIC_KEY as string)
-            .then(
-                function (response) {
-                    toast.success("Your estimate has been submitted successfully!");
-                    console.log("SUCCESS!", response.status, response.text);
-                },
-                function (error) {
-                    toast.error("There was an error submitting your estimate. Please try again.");
-                    console.log("FAILED...", error);
-                }
-            );
-        // close modal
-        setIsOpen(false);
-        setTimeout(() => {
-            // open success modal
-            setEstimateSuccess(true);
-            setLoading(false);
-        }, 1000);
-
+    // Final send action (only runs after confirmation)
+    const sendEstimate = async () => {
         setLoading(true);
+
+        // Resolve form values
+        const formValues = getValues();
+
+        // const captchaToken = await getRecaptchaToken();
+        // console.log("reCAPTCHA token:", captchaToken);
+
+        try {
+            await emailjs.send(
+                SERVICE_ID,
+                TEMPLATE_ID,
+                {
+                    ...formValues,
+                    // captchaToken,
+                },
+                PUBLIC_KEY,
+            );
+
+            toast.success("Your request has been submitted successfully.");
+
+            closeModal();
+            openModal("success", {
+                title: "Request Submitted",
+                message: "Thank you for reaching out. Our team will review your request and get back to you shortly.",
+            });
+        } catch (error) {
+            console.error("EMAIL FAILED:", error);
+            toast.error("There was an error submitting your request. Please try again.");
+        } finally {
+            setLoading(false);
+        }
     };
 
-    //EMAIL JS
-    const templateParams = {
-        firstName: getValues("firstName"),
-        lastName: getValues("lastName"),
-        phone: getValues("phone"),
-        email: getValues("email"),
-        machine: getValues("machine"),
-        serialNumber: getValues("serialNumber"),
-        partsNumbers: getValues("partsNumbers"),
-        comment: getValues("comment"),
-        companyName: getValues("companyName"),
-        shippingAddress: getValues("shippingAddress"),
+    // Submit handler — opens confirmation modal only
+
+    const onSubmit = () => {
+        openModal("confirmation", {
+            title: "Confirm Submission",
+            message: "Please confirm that all the information entered is correct before submitting.",
+            confirmLabel: "Submit Request",
+            cancelLabel: "Cancel",
+            onConfirm: sendEstimate,
+        });
     };
 
     return (
         <section className="flex flex-col bg-white items-center py-20 shadow-inner relative w-full md:px-4">
-            {isOpen && (
-                <ConfirmationModal
-                    loading={loading}
-                    confirmEstimate={confirmEstimate}
-                    isOpen={isOpen}
-                    closeModal={() => setIsOpen(false)}
-                />
-            )}
-            {estimateSuccess && (
-                <SuccessModal
-                    isOpen={estimateSuccess}
-                    closeModal={() => setEstimateSuccess(false)}
-                />
-            )}
             {loading ? <Loader /> : null}
             <h1 className="text-3xl text-black mb-10 font-light animate-bounce">{`${
                 pathname === "/contact-us" ? "Contact Us" : "Request A Quote!"
             }`}</h1>
             {/* FORM CONTAINER */}
-            <div className="flex flex-col w-11/12 bg-zinc-100 p-6 rounded-2xl shadow-white shadow-lg border-2 md:w-[650px]">
+            <div className="flex flex-col w-11/12 bg-zinc-100 p-6 rounded-2xl shadow-white shadow-lg border-2 md:w-162.5">
                 {/* LOGO */}
                 <div className="flex justify-center my-10">
                     <Image loading="eager" width={150} src={Logo} alt="logo-icon" />

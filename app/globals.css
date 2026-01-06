@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
     --background: #ffffff;
@@ -35,4 +33,37 @@ body {
     .text-balance {
         text-wrap: balance;
     }
+}
+
+button {
+    cursor: pointer !important;
+}
+
+/* Optional: keeps a consistent vertical scrollbar behavior */
+body {
+    overflow-y: scroll;
+}
+
+/* Clerk modal backdrop */
+.cl-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Center the modal in the viewport with responsive padding */
+.cl-modalContent {
+    inset: 0;
+    display: flex;
+    align-items: center; /* vertical center */
+    justify-content: center; /* horizontal center */
+    padding: 16px;
+}
+
+/* Ensure the card never exceeds the viewport height and scrolls internally if needed */
+.cl-card {
+    width: 100%;
+    max-width: 420px;
+    overflow: auto;
+    border-radius: 16px;
 }

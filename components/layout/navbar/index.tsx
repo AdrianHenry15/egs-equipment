@@ -7,107 +7,95 @@ import { useState } from "react";
 
 import Logo from "@/public/logos/EGS1.png";
 
-import MobileHeader from "./mobile-menu";
-import { NavMenu } from "../../../lib/constants";
+import MobileMenu from "./mobile-menu";
+import { NavMenu } from "@/lib/constants";
 import { BiChevronDown, BiSearch } from "react-icons/bi";
 import SearchBar from "@/components/search-bar";
 import ProductsNavMenu from "./products-nav-menu";
+import UserMenu from "./user/user-menu";
+import { useModalStore } from "@/stores/modal-store/modal-store";
 
-// TODO: Update navbar to Home, Products [Natural Grass, Synthetic Turf, All Purpose], Parts & Service, About, Finance Options]
 export default function Navbar() {
-    // Constants
     const pathname = usePathname();
-
-    // State
+    const { isOpen, openModal, type, closeModal } = useModalStore();
     const [productsMenuOpen, setProductsMenuOpen] = useState(false);
-    const [mobileSearch, setMobileSearch] = useState(false);
 
-    // Render
-    const renderNavMenu = () => {
-        return NavMenu.map((item) => {
+    const toggleSearchModal = () => {
+        if (isOpen && type === "search") closeModal();
+        else openModal("search", { placeholder: "Search Products" });
+    };
+
+    const renderNavMenu = () =>
+        NavMenu.map((item) => {
             if (item.title === "Products") {
                 return (
-                    <div className="relative cursor-pointer" key={item.title}>
-                        <span
-                            onClick={(e) => {
-                                e.preventDefault();
-                                setProductsMenuOpen(!productsMenuOpen);
-                            }}
-                        >
-                            <li
-                                className={`whitespace-nowrap flex items-center mx-2 transition-all duration-300 ease-in-out hover:text-green-700 hover:underline ${
-                                    pathname === item.link ? "underline" : ""
-                                }`}
-                            >
-                                {item.title}
-                                <BiChevronDown size={20} />
-                            </li>
-                        </span>
-                        {productsMenuOpen && (
-                            <ProductsNavMenu
-                                setProductsMenuOpen={() => setProductsMenuOpen(false)}
-                            />
-                        )}
-                    </div>
-                );
-            } else {
-                return (
-                    <Link
-                        onClick={() => setProductsMenuOpen(false)}
-                        key={item.title}
-                        href={item.link}
-                        className="mr-2"
-                    >
-                        <li
-                            className={` flex items-center mx-2 transition-all duration-300 ease-in-out hover:text-green-700 hover:underline ${
+                    <div key={item.title} className="relative">
+                        <button
+                            onClick={() => setProductsMenuOpen((prev) => !prev)}
+                            className={`flex items-center gap-1 px-2 py-1 transition hover:text-green-700 ${
                                 pathname === item.link ? "underline" : ""
                             }`}
                         >
                             {item.title}
-                        </li>
-                    </Link>
+                            <BiChevronDown size={18} />
+                        </button>
+
+                        {productsMenuOpen && <ProductsNavMenu setProductsMenuOpen={() => setProductsMenuOpen(false)} />}
+                    </div>
                 );
             }
+
+            return (
+                <Link
+                    key={item.title}
+                    href={item.link}
+                    className={`px-2 py-1 whitespace-nowrap transition hover:text-green-700 ${
+                        pathname === item.link ? "underline" : ""
+                    }`}
+                >
+                    {item.title}
+                </Link>
+            );
         });
-    };
 
     return (
-        <nav
-            id="nav-bar"
-            className={`bg-white/90 text-sm font-semibold flex w-full sticky top-0 z-[101] shadow-md lg:pb-0`}
-        >
-            {mobileSearch && (
-                <div className="absolute flex justify-center items-center self-center w-full h-full ml-4 lg:hidden">
-                    <SearchBar />
+        <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-md">
+            <div className="grid h-20 grid-cols-3 items-center px-4 xl:px-8">
+                {/* LEFT */}
+                <div className="flex items-center gap-3">
+                    {/* Mobile search */}
+                    <button
+                        onClick={toggleSearchModal}
+                        className="xl:hidden text-gray-700 hover:text-black"
+                        aria-label="Search"
+                    >
+                        <BiSearch size={22} />
+                    </button>
+
+                    {/* Desktop nav */}
+                    <ul className="hidden xl:flex items-center gap-3 text-sm font-semibold text-gray-600">
+                        {renderNavMenu()}
+                    </ul>
                 </div>
-            )}
-            {!mobileSearch && (
-                <div className="flex relative justify-center items-center self-center lg:hidden">
-                    <BiSearch
-                        onClick={() => setMobileSearch(!mobileSearch)}
-                        className="text-black cursor-pointer absolute ml-14"
-                        size={25}
-                    />
-                </div>
-            )}
-            {/* MOBILE CONTAINER */}
-            <div className="absolute self-center right-0 top-4 lg:top-0 lg:hidden">
-                <MobileHeader />
-            </div>
-            {/* TITLE & LINKS  */}
-            <div className="flex w-full mt-2 items-center justify-center py-4">
-                <div className="flex items-center">
-                    <Link href="/" className="pl-10 lg:pl-0 lg:mr-10">
-                        {/* TODO: LOGO */}
-                        <Image className="w-[199px]" src={Logo} alt="logo" />
+
+                {/* CENTER (TRUE CENTER LOGO) */}
+                <div className="flex justify-center">
+                    <Link href="/" aria-label="Home">
+                        <Image src={Logo} alt="EGS Equipment" className="w-44 object-contain" priority />
                     </Link>
-                    {/* LINKS  */}
-                    <ul className="hidden text-gray-600 items-center lg:flex">{renderNavMenu()}</ul>
                 </div>
-                {/* NAV BUTTONS */}
-            </div>
-            <div className="hidden lg:flex">
-                <SearchBar />
+
+                {/* Mobile menu */}
+                <div className="xl:hidden absolute right-4">
+                    <MobileMenu />
+                </div>
+
+                {/* RIGHT */}
+
+                <div className="hidden xl:flex items-center justify-end gap-4">
+                    <SearchBar />
+                    <UserMenu />
+                </div>
             </div>
         </nav>
     );

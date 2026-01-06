@@ -1,0 +1,76 @@
+import { LineMarkerPaintSpecificationsType } from "@/lib/types/product";
+import { LineMarkerPaintProductKeys } from "../product-keys";
+
+export const LineMarkerPaintSpecifications: Record<LineMarkerPaintProductKeys, LineMarkerPaintSpecificationsType> = {
+    ecoline: {
+        grass: `This line marking paint is specifically designed for us on natural grass.`,
+        compatibility: `Formulated for use through spray line marking machines using a red misting nozzle only.`,
+        ready_to_use: `This paint is ready-to-use with no mixing or dilution required. Simply shake well and go.`,
+        size: `Available in 5L & 10L drums.`,
+        coverage: `10L can mark 6 full-size football fields.`,
+        colors: ["white", "red", "blue", "yellow"],
+    },
+    direct: {
+        grass: `This line marking paint is specifically designed for us on natural grass.`,
+        compatibility: `Formulated for use through spray line marking machines using a green misting nozzle only.`,
+        ready_to_use: `This paint is ready-to-use with no mixing or dilution required. Simply shake well and go.`,
+        size: `Available in 5L & 10L drums.`,
+        coverage: `10L can mark 4 full-size football fields.`,
+        colors: ["white"],
+    },
+    edge: {
+        grass: `This line marking paint is specifically designed for us on natural grass.`,
+        compatibility: `Formulated for use through spray line marking machines using a green misting nozzle only.`,
+        ready_to_use: `This paint is ready-to-use with no mixing or dilution required. Simply shake well and go.`,
+        size: `Available in 10L drums.`,
+        coverage: `10L can mark 4 full-size football fields.`,
+        colors: ["white"],
+    },
+    transfer: {
+        grass: `This line marking paint is specifically designed for us on natural grass.`,
+        compatibility: `Formulated for use through transfer wheel machines only.`,
+        ready_to_use: `This paint is ready-to-use with no mixing or dilution required, however it can be diluted with water at 1:1 if required.`,
+        size: `Available in 5L & 10L drums.`,
+        coverage: `10L can mark 1.5 full-size football fields.`,
+        colors: ["white"],
+    },
+    extreme: {
+        grass: `This line marking paint is specifically designed for us on natural grass.`,
+        compatibility: `Formulated for use through spray line marking machines using a green flat fan nozzle.`,
+        concentrate: `Designed to be mixed with water at a rate of 1.5L of paint to 5L of water for one full-size football field.`,
+        size: `Available in 5L & 10L drums.`,
+        coverage: `10L can mark 6 full-size football fields.`,
+        colors: ["white"],
+    },
+    lumen: {
+        grass: `This line marking paint is specifically designed for us on natural grass.`,
+        compatibility: `Formulated for use through spray line marking machines using a green flat fan nozzle.`,
+        concentrate: `Designed to be mixed with water at a rate of 2L of paint to 4.5L of water for one full-size football field.`,
+        size: `Available in 5L & 10L drums as well as 600L & 750L IBC's.`,
+        coverage: `10L can mark 5 full-size football fields.`,
+        colors: ["white"],
+    },
+    clubline: {
+        grass: `This line marking paint is specifically designed for us on natural grass.`,
+        compatibility: `Formulated for use through both wheel-to-wheel and spray line marking machines.`,
+        concentrate: `Designed to be mixed with water at a rate of 2.5L of paint to 4L of water for one full-size football field.`,
+        size: `Available in 5L & 10L drums as well as 600L & 750L IBC's.`,
+        coverage: `10L can mark 4 full-size football fields.`,
+        colors: ["red", "white", "yellow", "blue"],
+    },
+    line_out: {
+        grass: `This line marking paint is specifically designed for us on natural grass.`,
+        compatibility: `Formulated for use through both wheel-to-wheel and spray line marking machines.`,
+        concentrate: `Designed to be mixed with water at a rate of 2L of paint to 4L of water. Can be further diluted to achieve the desired shade of green.`,
+        size: `Available in 10L drums`,
+        colors: ["green"],
+    },
+    agp: {
+        grass: `This line marking paint is specifically designed for use on artificial grass.`,
+        compatibility: `Formulated for use through spray line marking machines using a green flat fan nozzle only.`,
+        ready_to_use: `This Paint is ready-to-use with no mixing or dilution required. Simply shake well and go.`,
+        size: `Available in 5L & 10L drums`,
+        coverage: `10L can mark 1.5 full-size football fields (6.5L per pitch).`,
+        colors: ["red", "white", "yellow", "blue"],
+    },
+};

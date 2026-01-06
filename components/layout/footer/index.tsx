@@ -25,17 +25,12 @@ const Footer = () => {
             {/* SOCIALS  */}
             <SocialsCard />
             {/* CREATED BY */}
-            <div className="flex items-center justify-center text-center self-center w-full border-t-[1px] py-2 text-xs border-zinc-900">
-                <div className="flex flex-col justify-center items-center">
-                    <p className="text-xs mx-1 text-[10px]">Created by</p>
+            <div className="flex items-center justify-center text-center self-center w-full py-2 text-xs">
+                <div className="flex justify-center w-full items-center">
                     {/* THIRD GEN LOGO */}
-                    <Link
-                        className="flex items-center"
-                        target="_blank"
-                        href="https://www.thirdgenerationstudios.com/"
-                    >
-                        <MdCopyright size={8} className="mb-2 mr-1 text-white" />
-                        <p className="text-zinc-500 text-[10px]">Third Generation Studios</p>
+                    <Link className="flex items-center" target="_blank" href="https://www.thirdgenerationstudios.com/">
+                        {/* <MdCopyright size={8} className="mb-1 mr-1 text-white" /> */}
+                        <p className="text-zinc-500 text-[10px]">Third Generation Studios.</p>
                     </Link>
                 </div>
             </div>
