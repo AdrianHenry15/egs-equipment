@@ -14,3 +14,37 @@ export const getRecaptchaToken = async () => {
         action: "submit_estimate",
     });
 };
+
+export function formatEventDateRange(startDate: string, endDate?: string) {
+    const start = new Date(startDate);
+    const end = endDate ? new Date(endDate) : null;
+
+    if (!end || start.toDateString() === end.toDateString()) {
+        // Single-day event
+        return start.toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+        });
+    }
+
+    const sameMonth = start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear();
+
+    if (sameMonth) {
+        // January 19–22, 2026
+        return `${start.toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+        })}–${end.getDate()}, ${start.getFullYear()}`;
+    }
+
+    // January 30 – February 2, 2026
+    return `${start.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+    })} – ${end.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+    })}`;
+}

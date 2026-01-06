@@ -1,10 +1,12 @@
 "use client";
 
-import EventsGrid, { Event } from "./events-grid";
+import { UpcomingEvents } from "@/lib/events/events-list";
+import EventsGrid, { EventDemo } from "./events-grid";
 
-const upcomingEvents: Event[] = [];
+// const upcomingEvents: Event[] = [];
+const upcomingEvents = UpcomingEvents;
 
-const pastEvents: Event[] = [
+const pastEvents: EventDemo[] = [
     // {
     //     id: "fall-demo-day-2025",
     //     title: "Fall Equipment Demo Day",

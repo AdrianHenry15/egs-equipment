@@ -3,11 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CalendarDaysIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import { formatEventDateRange } from "@/lib/utils";
 
-export type Event = {
+export type EventDemo = {
     id: string;
     title: string;
-    date: string;
+    startDate: string;
+    endDate: string;
     location: string;
     description: string;
     image: string;
@@ -15,7 +17,7 @@ export type Event = {
 };
 
 type EventsGridProps = {
-    events: Event[];
+    events: EventDemo[];
     variant: "upcoming" | "past";
 };
 
@@ -42,8 +44,6 @@ export default function EventsGrid({ events, variant }: EventsGridProps) {
                     {/* Image */}
                     <div className={isUpcoming ? "relative h-56 w-full overflow-hidden" : "h-40 w-full"}>
                         <Image
-                            width={100}
-                            height={100}
                             src={event.image}
                             alt={event.title}
                             fill={isUpcoming}
@@ -57,7 +57,9 @@ export default function EventsGrid({ events, variant }: EventsGridProps) {
 
                     {/* Content */}
                     <div className={isUpcoming ? "p-6" : "p-4"}>
-                        <h4 className={isUpcoming ? "text-xl font-semibold" : "font-semibold"}>{event.title}</h4>
+                        <h4 className={`${isUpcoming ? "text-xl font-semibold" : "font-semibold"} text-black`}>
+                            {event.title}
+                        </h4>
 
                         <div
                             className={
@@ -68,7 +70,7 @@ export default function EventsGrid({ events, variant }: EventsGridProps) {
                         >
                             <span className="flex items-center gap-1">
                                 <CalendarDaysIcon className="h-4 w-4" />
-                                {event.date}
+                                {formatEventDateRange(event.startDate, event.endDate)}
                             </span>
                             <span className="flex items-center gap-1">
                                 <MapPinIcon className="h-4 w-4" />
