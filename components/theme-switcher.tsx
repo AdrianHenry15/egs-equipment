@@ -7,7 +7,23 @@ export function ThemeSwitcher() {
     const { theme, setTheme, systemTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
-    useEffect(() => setMounted(true), []);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    // 🔍 Log when theme or systemTheme changes
+    useEffect(() => {
+        if (!mounted) return;
+
+        const resolvedTheme = theme === "system" ? systemTheme : theme;
+
+        console.log("[ThemeSwitcher] Theme updated", {
+            selectedTheme: theme,
+            systemTheme,
+            resolvedTheme,
+        });
+    }, [theme, systemTheme, mounted]);
+
     if (!mounted) return null;
 
     const activeTheme = theme === "system" ? systemTheme : theme;
@@ -21,7 +37,10 @@ export function ThemeSwitcher() {
                 {["light", "dark", "system"].map((value) => (
                     <button
                         key={value}
-                        onClick={() => setTheme(value)}
+                        onClick={() => {
+                            console.log("[ThemeSwitcher] Theme selected", value);
+                            setTheme(value);
+                        }}
                         className={`
                             rounded-lg border px-4 py-3 text-sm font-medium transition
                             ${

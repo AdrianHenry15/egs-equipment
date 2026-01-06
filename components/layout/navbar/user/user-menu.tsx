@@ -47,7 +47,7 @@ export default function UserMenu() {
                             />
                         )}
                     </UserButton.MenuItems>
-                    <UserButton.UserProfilePage
+                    {/* <UserButton.UserProfilePage
                         label="Theme"
                         labelIcon={<PaintBrushIcon className="h-5 w-5" />}
                         url="theme"
@@ -55,7 +55,7 @@ export default function UserMenu() {
                         <div className="px-1 py-2">
                             <ThemeSwitcher />
                         </div>
-                    </UserButton.UserProfilePage>
+                    </UserButton.UserProfilePage> */}
                 </UserButton>
             </SignedIn>
 

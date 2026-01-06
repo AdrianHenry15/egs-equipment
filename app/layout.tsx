@@ -49,7 +49,7 @@ export default async function RootLayout({
                         src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
                         strategy="afterInteractive"
                     /> */}
-                    <ThemeProvider attribute={"class"} defaultTheme="dark" enableSystem disableTransitionOnChange>
+                    <ThemeProvider attribute={"class"} defaultTheme="system" enableSystem>
                         <Toaster />
                         <Navbar />
                         {children}
