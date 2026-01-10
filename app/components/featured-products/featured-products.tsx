@@ -19,7 +19,7 @@ const BRAND_LOGO_MAP: Record<string, { src: any; alt: string }> = {
     Pitchmark: { src: PitchmarkLogo, alt: "Pitchmark logo" },
     "Buffalo Turbine": { src: BuffaloTurbineLogo, alt: "Buffalo Turbine logo" },
     Dennis: { src: DennisLogo, alt: "Dennis logo" },
-    Harrod: { src: HarrodLogo, alt: "Harrod logo" },
+    "Harrod Sport": { src: HarrodLogo, alt: "Harrod logo" },
 };
 
 export default function FeaturedProducts() {
@@ -31,7 +31,7 @@ export default function FeaturedProducts() {
         pitchmark: "Pitchmark",
         buffalo_turbine: "Buffalo Turbine",
         dennis: "Dennis",
-        harrod: "Harrod",
+        harrod_sport: "Harrod Sport",
     };
 
     function getPitchmarkCategory(product: ProductType) {

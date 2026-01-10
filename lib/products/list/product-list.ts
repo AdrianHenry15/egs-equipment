@@ -20,7 +20,7 @@ const productCollections = [
     DebrisBlowerProducts,
     AeratorProducts,
     // Goals
-    // SoccerGoalProducts,
+    SoccerGoalProducts,
     // Line Markers
     // Paints
     LineMarkerConcentratePaintProducts,

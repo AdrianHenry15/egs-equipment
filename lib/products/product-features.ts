@@ -143,12 +143,7 @@ export const ProductFeatures: Record<ProductKey, string[]> = {
         `Rotating brush at point of discharge to ensure even spread`,
         `Cable controls for material shit off from tractor`,
     ],
-    tractor_brush_combinations: [
-        `Singleplay Frame`,
-        `Twinplay Frame`,
-        `Twin Implemenet Extension Arms`,
-        `Flexicomb`,
-    ],
+    tractor_brush_combinations: [`Singleplay Frame`, `Twinplay Frame`, `Twin Implemenet Extension Arms`, `Flexicomb`],
     tractor_rake_and_brush_combinations: [
         `Singleplay Frame`,
         `Twinplay Frame`,
@@ -187,8 +182,21 @@ export const ProductFeatures: Record<ProductKey, string[]> = {
     triangular_brush: [],
 
     // Harrod Products
-    finesse_folding_target_goal: [],
-    folding_target_goal: [],
+    finesse_folding_target_goal: [
+        `The Finesse 8 x 4ft PVC goal is virtually maintenance free. They are commonly used in back gardens and make great football practice for kids.`,
+    ],
+    folding_target_goal: [
+        `Harrod Sport Aluminium Folding Target Goal`,
+        `Freestanding design allows the goal to be used on all surfaces without anchors`,
+        `Manufactured from heavy duty 50mm aluminium, powder coated black`,
+        `High quality black micromesh football goal net with hook and loop straps`,
+        `This foldable football goal takes 10 seconds to set up and can easily fit into a car boot when collapsed`,
+        `Sold as a single goal complete with net`,
+        `Goal frame arrives assembled with net attached in the box`,
+        `Available in two sizes`,
+        `5ft x 3ft (1.5m x 0.9m) Folded Size 100cm x 75cm x 12cm`,
+        `6ft x 4ft (1.83m x 1.22m) Folded Size 130cm x100cm x 12cm`,
+    ],
     "4g_stadium_pro_goal_braided_nets": [],
     portaball_pro: [],
     "4g_stadium_pro_goal_hex_nets": [],
