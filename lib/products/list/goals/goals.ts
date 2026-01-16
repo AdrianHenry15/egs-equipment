@@ -36,11 +36,11 @@ import GNHITImg from "@/public/products/goals/4gnhit.jpg";
 import FTrainGImg from "@/public/products/goals/FTrainingG.jpg";
 import WUEFAPSImg from "@/public/products/goals/4gweps.jpg";
 
-import { ProductSpecDescriptions } from "../product-spec-descriptions";
-import { ProductFeatures } from "../product-features";
-import { ProductSpecifications } from "../product-specifications";
+import { ProductSpecDescriptions } from "../../product-spec-descriptions";
+import { ProductFeatures } from "../../product-features";
 import { EquipmentBrand } from "@/lib/types/brands";
 import { ProductType } from "@/lib/types/product";
+import { GoalSpecifications } from "./goal-specifications";
 
 export const SoccerGoalProducts: ProductType[] = [
     {
@@ -57,7 +57,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.finesse_folding_target_goal,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.finesse_folding_target_goal,
+                data: GoalSpecifications.finesse_folding_target_goal,
             },
             video: "",
         },
@@ -82,7 +82,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.folding_target_goal,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.folding_target_goal,
+                data: GoalSpecifications.folding_target_goal,
             },
             video: "",
         },
@@ -103,7 +103,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.portaball_pro,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.portaball_pro,
+                data: GoalSpecifications.portaball_pro,
             },
             video: "",
         },
@@ -121,7 +121,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures["4g_swivel_portagoal"],
             specifications: {
                 type: "goals",
-                data: ProductSpecifications["4g_swivel_portagoal"],
+                data: GoalSpecifications["4g_swivel_portagoal"],
             },
             video: "",
         },
@@ -144,7 +144,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures["4g_portagoal"],
             specifications: {
                 type: "goals",
-                data: ProductSpecifications["4g_portagoal"],
+                data: GoalSpecifications["4g_portagoal"],
             },
             video: "",
         },
@@ -168,7 +168,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures["4g_swivel_weighted_portagoal"],
             specifications: {
                 type: "goals",
-                data: ProductSpecifications["4g_swivel_weighted_portagoal"],
+                data: GoalSpecifications["4g_swivel_weighted_portagoal"],
             },
             video: "",
         },
@@ -188,7 +188,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures["4g_euro_swivel_portagoal"],
             specifications: {
                 type: "goals",
-                data: ProductSpecifications["4g_euro_swivel_portagoal"],
+                data: GoalSpecifications["4g_euro_swivel_portagoal"],
             },
             video: "",
         },
@@ -211,7 +211,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures["4g_weighted_portagoal"],
             specifications: {
                 type: "goals",
-                data: ProductSpecifications["4g_weighted_portagoal"],
+                data: GoalSpecifications["4g_weighted_portagoal"],
             },
             video: "",
         },
@@ -238,7 +238,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.polygoal,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.polygoal,
+                data: GoalSpecifications.polygoal,
             },
             video: "",
         },
@@ -246,7 +246,11 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-10",
         name: "4G PortaBall Portagoal with Net",
-        description: "Lightweight compact debris blower",
+        description: `Engineered for high-performance sessions, 
+            the Harrod Sport 4G PortaBall Portagoal is an elite portable 
+            football goal with a patented spherical ball system that glides 
+            in any direction on artificial 
+            and natural turf - far more agile than wheel-based designs.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding", "net", "netting"],
         brand: EquipmentBrand.HARROD_SPORT,
@@ -256,7 +260,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures["4g_portaball_portagoal_with_net"],
             specifications: {
                 type: "goals",
-                data: ProductSpecifications["4g_portaball_portagoal_with_net"],
+                data: GoalSpecifications["4g_portaball_portagoal_with_net"],
             },
             video: "",
         },
@@ -274,7 +278,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures["4g_euro_portagoal"],
             specifications: {
                 type: "goals",
-                data: ProductSpecifications["4g_euro_portagoal"],
+                data: GoalSpecifications["4g_euro_portagoal"],
             },
             video: "",
         },
@@ -292,7 +296,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.heavyweight_freestanding_goal,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.heavyweight_freestanding_goal,
+                data: GoalSpecifications.heavyweight_freestanding_goal,
             },
             video: "",
         },
@@ -310,7 +314,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.freestanding_steel_goal,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.freestanding_steel_goal,
+                data: GoalSpecifications.freestanding_steel_goal,
             },
             video: "",
         },
@@ -328,7 +332,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.freestanding_aluminium_goal,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.freestanding_aluminium_goal,
+                data: GoalSpecifications.freestanding_aluminium_goal,
             },
             video: "",
         },
@@ -346,7 +350,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -364,7 +368,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -382,7 +386,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -400,7 +404,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -418,7 +422,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -436,7 +440,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -454,7 +458,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -472,7 +476,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -490,7 +494,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -508,7 +512,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -526,7 +530,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -544,7 +548,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -562,7 +566,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -580,7 +584,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -598,7 +602,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -616,7 +620,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures["4g_stadium_pro_goal_braided_nets"],
             specifications: {
                 type: "goals",
-                data: ProductSpecifications["4g_stadium_pro_goal_braided_nets"],
+                data: GoalSpecifications["4g_stadium_pro_goal_braided_nets"],
             },
             video: "",
         },
@@ -634,7 +638,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -652,7 +656,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -670,7 +674,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -688,7 +692,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -706,7 +710,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -724,7 +728,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -742,7 +746,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
@@ -760,7 +764,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: ProductSpecifications.javelin,
+                data: GoalSpecifications.javelin,
             },
             video: "",
         },
