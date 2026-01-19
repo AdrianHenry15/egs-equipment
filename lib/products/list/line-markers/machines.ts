@@ -79,8 +79,6 @@ export const LineMarkerMachineProducts: ProductType[] = [
         ],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.hybrid,
-            features: ProductFeatures.hybrid,
             specifications: {
                 type: "line_marker_machine",
                 data: LineMarkerMachineSpecifications.hybrid,
@@ -97,8 +95,6 @@ export const LineMarkerMachineProducts: ProductType[] = [
         images: [EcoProDiscsImg, EcoProPSGImg, EcoProInUse2Img, EcoProInUseImg, EcoProImg, EcoProFrontEndImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.eco_pro,
-            features: ProductFeatures.eco_pro,
             specifications: {
                 type: "line_marker_machine",
                 data: LineMarkerMachineSpecifications.eco_pro,
@@ -116,8 +112,6 @@ export const LineMarkerMachineProducts: ProductType[] = [
         images: [EcoPlusImg, EcoClubImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.eco_club,
-            features: ProductFeatures.eco_club,
             specifications: {
                 type: "line_marker_machine",
                 data: LineMarkerMachineSpecifications.eco_club,
@@ -143,8 +137,6 @@ export const LineMarkerMachineProducts: ProductType[] = [
         ],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.eco_lite,
-            features: ProductFeatures.eco_lite,
             specifications: {
                 type: "line_marker_machine",
                 data: LineMarkerMachineSpecifications.eco_lite,
@@ -169,8 +161,6 @@ export const LineMarkerMachineProducts: ProductType[] = [
         ],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.fusion,
-            features: ProductFeatures.fusion,
             specifications: {
                 type: "line_marker_machine",
                 data: LineMarkerMachineSpecifications.fusion,
@@ -188,8 +178,6 @@ export const LineMarkerMachineProducts: ProductType[] = [
         images: [ClassicImg, Classic2Img, Classic3Img, Classic4Img, Classic5Img],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.classic,
-            features: ProductFeatures.classic,
             specifications: {
                 type: "line_marker_machine",
                 data: LineMarkerMachineSpecifications.classic,

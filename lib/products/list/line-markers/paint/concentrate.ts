@@ -23,8 +23,6 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         images: [ExtremeImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.extreme,
-            features: ProductFeatures.extreme,
             specifications: {
                 type: "line_marker_paint",
                 data: LineMarkerPaintSpecifications.extreme,
@@ -43,8 +41,6 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         images: [LumenImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.lumen,
-            features: ProductFeatures.lumen,
             specifications: {
                 type: "line_marker_paint",
                 data: LineMarkerPaintSpecifications.lumen,
@@ -61,8 +57,6 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         images: [ClublineImg1, ClublineImg2],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.clubline,
-            features: ProductFeatures.clubline,
             specifications: {
                 type: "line_marker_paint",
                 data: LineMarkerPaintSpecifications.clubline,
@@ -80,8 +74,6 @@ export const LineMarkerConcentratePaintProducts: ProductType[] = [
         images: [LineOutImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.line_out,
-            features: ProductFeatures.line_out,
             specifications: {
                 type: "line_marker_paint",
                 data: LineMarkerPaintSpecifications.line_out,

@@ -114,7 +114,6 @@ export type LineMarkerAccessoryProductKeys =
     | "concentrate_mixing_kit";
 export type ProductKey =
     | MachineProductKey
-    | HarrodProductKey
     | LineMarkerPaintProductKeys
     | LineMarkerMachineProductKeys
     | LineMarkerAccessoryProductKeys;

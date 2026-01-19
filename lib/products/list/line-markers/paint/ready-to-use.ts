@@ -21,8 +21,6 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
         images: [EcolineImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.ecoline,
-            features: ProductFeatures.ecoline,
             specifications: {
                 type: "line_marker_paint",
                 data: LineMarkerPaintSpecifications.ecoline,
@@ -41,8 +39,6 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
         images: [DirectImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.direct,
-            features: ProductFeatures.direct,
             specifications: {
                 type: "line_marker_paint",
                 data: LineMarkerPaintSpecifications.direct,
@@ -59,8 +55,6 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
         images: [EdgeboxImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.edge,
-            features: ProductFeatures.edge,
             specifications: {
                 type: "line_marker_paint",
                 data: LineMarkerPaintSpecifications.edge,
@@ -79,8 +73,6 @@ export const LineMarkerReadyToUsePaintProducts: ProductType[] = [
         images: [TransferImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.transfer,
-            features: ProductFeatures.transfer,
             specifications: {
                 type: "line_marker_paint",
                 data: LineMarkerPaintSpecifications.transfer,

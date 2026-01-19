@@ -620,7 +620,6 @@ Santiago Bernabeu, home of Real Madrid.`,
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GSPGQBNImg],
         details: {
-            specs_description: ProductSpecDescriptions["4g_stadium_pro_goal_braided_nets"],
             specifications: {
                 type: "goals",
                 data: GoalSpecifications["4g_stadium_pro_goal_braided_nets"],

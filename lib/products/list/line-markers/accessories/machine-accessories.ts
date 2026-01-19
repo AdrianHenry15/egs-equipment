@@ -5,7 +5,6 @@ import PaintTank25LImg from "@/public/products/line-markers/accessories/machine-
 import ConcentrateImg from "@/public/products/line-markers/accessories/machine-accessories/mixing-kit-for-concentrate-line-marking-paints.webp";
 import { ProductSpecDescriptions } from "../../../product-spec-descriptions";
 import { ProductFeatures } from "../../../product-features";
-import { ProductSpecifications } from "../../../product-specifications";
 import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
 import { LineMarkerAccessorySpecifications } from "@/lib/products/line-marker-specifications/accessory-specifications";
@@ -22,8 +21,6 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         images: [WaterTank6LImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions["6l_water_tank"],
-            features: ProductFeatures["6l_water_tank"],
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications["6l_water_tank"],
@@ -41,8 +38,6 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         images: [PaintTank25LImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions["25l_paint_tank"],
-            features: ProductFeatures["25l_paint_tank"],
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications["25l_paint_tank"],
@@ -63,8 +58,6 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         images: [ServiceKitImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions["spray_marker_service_kit"],
-            features: ProductFeatures["spray_marker_service_kit"],
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.spray_marker_service_kit,
@@ -84,8 +77,6 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         images: [EcoClean10LImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions["ecoclean_10l"],
-            features: ProductFeatures["ecoclean_10l"],
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.ecoclean_10l,
@@ -103,8 +94,6 @@ export const LineMarkerMachineAccessoryProducts: ProductType[] = [
         images: [ConcentrateImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions["concentrate_mixing_kit"],
-            features: ProductFeatures["concentrate_mixing_kit"],
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.concentrate_mixing_kit,

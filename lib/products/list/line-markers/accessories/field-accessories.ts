@@ -45,19 +45,9 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         description: `This handy pocket-sized line marking handbook contains a range of pitch dimensions, saving you time when marking pitches.`,
         mainCategory: "line_marker",
         tags: ["accessory", "field_accessory"],
-        images: [
-            BackCoverImg,
-            CoverImg,
-            FrontBackImg,
-            HowToImg,
-            InsidePageImg,
-            InsidePage2Img,
-            ProductsImg,
-        ],
+        images: [BackCoverImg, CoverImg, FrontBackImg, HowToImg, InsidePageImg, InsidePage2Img, ProductsImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.line_marking_handbook,
-            features: ProductFeatures.line_marking_handbook,
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.line_marking_handbook,
@@ -76,8 +66,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [LineFixKitImg, LineFixWhiteImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.linefix,
-            features: ProductFeatures.linefix,
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.linefix,
@@ -103,8 +91,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         ],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.grassroots_marking_kit,
-            features: ProductFeatures.grassroots_marking_kit,
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.grassroots_marking_kit,
@@ -121,8 +107,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [GuideReelImg, ProIMTImg, KitBagImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.professional_marking_kit,
-            features: ProductFeatures.professional_marking_kit,
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.professional_marking_kit,
@@ -142,8 +126,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [IPSSystemImg, IPSBagImg, IPS1Img, IPS2Img, IPS3Img],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.initial_pitch_system,
-            features: ProductFeatures.initial_pitch_system,
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.initial_pitch_system,
@@ -160,8 +142,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [StringLineImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions["200_m_string_line"],
-            features: ProductFeatures["200_m_string_line"],
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications["200_m_string_line"],
@@ -178,8 +158,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [MarkingPegsImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.pitch_marking_pegs,
-            features: ProductFeatures.pitch_marking_pegs,
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.pitch_marking_pegs,
@@ -196,8 +174,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [PenaltySpotMarkerImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.penalty_circle_marker,
-            features: ProductFeatures.penalty_circle_marker,
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.penalty_circle_marker,
@@ -216,8 +192,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [MeasuringTapeImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions["100m_measuring_tape"],
-            features: ProductFeatures["100m_measuring_tape"],
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications["100m_measuring_tape"],
@@ -236,8 +210,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [GuideReelImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.guide_reel,
-            features: ProductFeatures.guide_reel,
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.guide_reel,
@@ -256,8 +228,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [MiniReelImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.mini_guide_reel,
-            features: ProductFeatures.mini_guide_reel,
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.mini_guide_reel,
@@ -276,8 +246,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [TriangleImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions["3_4_5_triangle"],
-            features: ProductFeatures["3_4_5_triangle"],
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications["3_4_5_triangle"],
@@ -296,8 +264,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [KitBagImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.kit_bag,
-            features: ProductFeatures.kit_bag,
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications.kit_bag,
@@ -315,8 +281,6 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
         images: [AerosolImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions["750_ml_aerosol"],
-            features: ProductFeatures["750_ml_aerosol"],
             specifications: {
                 type: "line_marker_accessory",
                 data: LineMarkerAccessorySpecifications["750_ml_aerosol"],
