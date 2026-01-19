@@ -53,8 +53,6 @@ export const SoccerGoalProducts: ProductType[] = [
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FFTG1Img, FFTG2Img],
         details: {
-            specs_description: ProductSpecDescriptions.finesse_folding_target_goal,
-            features: ProductFeatures.finesse_folding_target_goal,
             specifications: {
                 type: "goals",
                 data: GoalSpecifications.finesse_folding_target_goal,
@@ -78,8 +76,6 @@ export const SoccerGoalProducts: ProductType[] = [
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FTGImg, FTG2Img],
         details: {
-            specs_description: ProductSpecDescriptions.folding_target_goal,
-            features: ProductFeatures.folding_target_goal,
             specifications: {
                 type: "goals",
                 data: GoalSpecifications.folding_target_goal,
@@ -99,8 +95,6 @@ export const SoccerGoalProducts: ProductType[] = [
         brand: EquipmentBrand.HARROD_SPORT,
         images: [PPImg],
         details: {
-            specs_description: ProductSpecDescriptions.portaball_pro,
-            features: ProductFeatures.portaball_pro,
             specifications: {
                 type: "goals",
                 data: GoalSpecifications.portaball_pro,
@@ -111,14 +105,14 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-4",
         name: "4G Swivel Portagoal",
-        description: ``,
+        description: `Harrod Sport's new 4G Swivel Weighted
+         Portagoal has been developed in conjunction 
+         with Premier League Football Coaches.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GSPImg],
         details: {
-            specs_description: ProductSpecDescriptions["4g_swivel_portagoal"],
-            features: ProductFeatures["4g_swivel_portagoal"],
             specifications: {
                 type: "goals",
                 data: GoalSpecifications["4g_swivel_portagoal"],
@@ -140,8 +134,6 @@ export const SoccerGoalProducts: ProductType[] = [
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GPImg],
         details: {
-            specs_description: ProductSpecDescriptions["4g_portagoal"],
-            features: ProductFeatures["4g_portagoal"],
             specifications: {
                 type: "goals",
                 data: GoalSpecifications["4g_portagoal"],
@@ -164,8 +156,6 @@ export const SoccerGoalProducts: ProductType[] = [
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GSWPImg],
         details: {
-            specs_description: ProductSpecDescriptions["4g_swivel_weighted_portagoal"],
-            features: ProductFeatures["4g_swivel_weighted_portagoal"],
             specifications: {
                 type: "goals",
                 data: GoalSpecifications["4g_swivel_weighted_portagoal"],
@@ -184,8 +174,6 @@ export const SoccerGoalProducts: ProductType[] = [
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GESPImg],
         details: {
-            specs_description: ProductSpecDescriptions["4g_euro_swivel_portagoal"],
-            features: ProductFeatures["4g_euro_swivel_portagoal"],
             specifications: {
                 type: "goals",
                 data: GoalSpecifications["4g_euro_swivel_portagoal"],
@@ -207,8 +195,6 @@ export const SoccerGoalProducts: ProductType[] = [
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GWPImg],
         details: {
-            specs_description: ProductSpecDescriptions["4g_weighted_portagoal"],
-            features: ProductFeatures["4g_weighted_portagoal"],
             specifications: {
                 type: "goals",
                 data: GoalSpecifications["4g_weighted_portagoal"],
@@ -234,8 +220,6 @@ export const SoccerGoalProducts: ProductType[] = [
         brand: EquipmentBrand.HARROD_SPORT,
         images: [Poly7_5Img],
         details: {
-            specs_description: ProductSpecDescriptions.polygoal,
-            features: ProductFeatures.polygoal,
             specifications: {
                 type: "goals",
                 data: GoalSpecifications.polygoal,
@@ -256,8 +240,6 @@ export const SoccerGoalProducts: ProductType[] = [
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GPWNImg],
         details: {
-            specs_description: ProductSpecDescriptions["4g_portaball_portagoal_with_net"],
-            features: ProductFeatures["4g_portaball_portagoal_with_net"],
             specifications: {
                 type: "goals",
                 data: GoalSpecifications["4g_portaball_portagoal_with_net"],
@@ -268,14 +250,14 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-11",
         name: "4G Euro Portagoal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport 4G Portagoals are the 
+            preferred choice of professional clubs 
+            and academy facilities.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GEPImg],
         details: {
-            specs_description: ProductSpecDescriptions["4g_euro_portagoal"],
-            features: ProductFeatures["4g_euro_portagoal"],
             specifications: {
                 type: "goals",
                 data: GoalSpecifications["4g_euro_portagoal"],
@@ -286,14 +268,15 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-12",
         name: "Heavyweight Freestanding Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport heavyweight freestanding 
+        steel goal, is ideal for schools and clubs, and 
+        designed so the goal can be moved in one piece 
+        when used with flip-over wheels.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [HFGImg],
         details: {
-            specs_description: ProductSpecDescriptions.heavyweight_freestanding_goal,
-            features: ProductFeatures.heavyweight_freestanding_goal,
             specifications: {
                 type: "goals",
                 data: GoalSpecifications.heavyweight_freestanding_goal,
@@ -304,14 +287,12 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-13",
         name: "Freestanding Steel Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport fixed freestanding steel goal for outdoor use.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FSGImg],
         details: {
-            specs_description: ProductSpecDescriptions.freestanding_steel_goal,
-            features: ProductFeatures.freestanding_steel_goal,
             specifications: {
                 type: "goals",
                 data: GoalSpecifications.freestanding_steel_goal,
@@ -322,14 +303,14 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-14",
         name: "Freestanding Aluminium Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport freestanding portable 
+        aluminium goals are designed for use on grass or 
+        synthetic surfaces.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FAGImg],
         details: {
-            specs_description: ProductSpecDescriptions.freestanding_aluminium_goal,
-            features: ProductFeatures.freestanding_aluminium_goal,
             specifications: {
                 type: "goals",
                 data: GoalSpecifications.freestanding_aluminium_goal,
@@ -340,17 +321,16 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-15",
         name: "FS1 Fold-away Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport FS1 folding goal 
+        designed specifically for sports halls.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding", "folding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FSFAGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.folding_steel_goal,
             },
             video: "",
         },
@@ -358,17 +338,17 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-16",
         name: "FS8 Folding Wheelaway Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport FS8 heavy duty 
+        indoor wheel away goal designed specifically 
+        for sports halls.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding", "folding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FSFWGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.folding_target_goal,
             },
             video: "",
         },
@@ -376,17 +356,19 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-17",
         name: "Heavy Duty Galvanised Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport heavy duty 
+        football goals are the preferred option 
+        for football specific venues that have high usage. 
+        These goals have fully welded side frames for 
+        added strength.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [HDGGImg],
         details: {
-            specs_description: ProductSpecDescriptions["100m_measuring_tape"],
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.heavy_duty_galvanised_goal,
             },
             video: "",
         },
@@ -394,17 +376,23 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-18",
         name: "Weighted UEFA Portagoal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport 4G UEFA Portagoal 
+        has been designed to meet the UEFA specification. 
+        At 24ft x 8ft (7.32m x 2.44m) the framework is 
+        made from impressive 102mm x 112mm reinforced 
+        aluminium (including an integral weighted back bar) 
+        and features net supports, zinc plated internal 
+        corner joints and internal reinforced upright 
+        connections – the ultimate box goal to 
+        bring the big match feel to 11 v 11 games.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [WUEFAPImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications["4g_uefa_portagoal"],
             },
             video: "",
         },
@@ -412,17 +400,18 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-19",
         name: "Finesse 12 x 6ft Match Goal c/w Bag",
-        description: "Lightweight compact debris blower",
+        description: `Our Finesse PVC freestanding goal 
+        is a lightweight football goal that can be easily 
+        assembled and dismantled, for ease of transportation 
+        to and from the pitch complete with a carry bag.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FMGCWBImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.finesse_match_goal_w_bag,
             },
             video: "",
         },
@@ -430,17 +419,18 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-20",
         name: "Finesse 12 x 6ft Standard Goal",
-        description: "Lightweight compact debris blower",
+        description: `Our Finesse PVC freestanding goal is a
+         lightweight football goal that can be easily 
+         assembled and dismantled, for ease of 
+         transportation to and from the pitch.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FSG126Img],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.finesse_standard_goal,
             },
             video: "",
         },
@@ -448,17 +438,17 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-21",
         name: "Finesse 6 x 4ft Standard Goal",
-        description: "Lightweight compact debris blower",
+        description: `Finesse 6 x 4ft goals are ideal 
+        for use in the back garden and make great football 
+        practice for children.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [F64SGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.finesse_standard_goal,
             },
             video: "",
         },
@@ -466,17 +456,17 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-22",
         name: "Finesse 8 x 4ft Standard Goal",
-        description: "Lightweight compact debris blower",
+        description: `Finesse 8 x 4ft goals are commonly 
+        used in back gardens and make great football 
+        practice for children.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [F84SGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.finesse_standard_goal,
             },
             video: "",
         },
@@ -484,17 +474,18 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-23",
         name: "Folding Aluminium Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport freestanding portable 
+        aluminium goals are designed for use on grass or 
+        synthetic surfaces. These goals have folding side 
+        frames for ease of transportation and storage.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "folding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FAGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.folding_aluminum_goal,
             },
             video: "",
         },
@@ -502,17 +493,17 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-24",
         name: "Folding Steel Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport freestanding portable 
+        steel goals, designed with folding side frames 
+        for ease of transportation and storage.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "folding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FSGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.folding_steel_goal,
             },
             video: "",
         },
@@ -520,17 +511,16 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-25",
         name: "FS1 Fold-away Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport FS1 folding goal 
+        designed specifically for sports halls.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "folding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FSFAGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.finesse_folding_target_goal,
             },
             video: "",
         },
@@ -538,17 +528,17 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-26",
         name: "FS8 Folding Wheelaway Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport FS8 heavy duty 
+        indoor wheel away goal designed specifically 
+        for sports halls.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "folding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FSFWGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.finesse_folding_target_goal,
             },
             video: "",
         },
@@ -556,25 +546,34 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-27",
         name: "4G Fence Folding Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport freestanding portable 
+        aluminium goals are designed for use on grass 
+        or synthetic surfaces. These goals have folding 
+        side frames for ease of transportation and storage.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "folding"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FFGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications["4g_fence_folding_goal"],
             },
             video: "",
         },
     },
     {
         id: "sgp-28",
-        name: "3G Foldaway Euro Portagoal",
-        description: "Lightweight compact debris blower",
+        name: "3G Foldaway Euro Portagoals",
+        description: `Harrod Sport unique Foldaway Euro 
+        Portagoal is the ultimate pre-match solution for
+         national stadiums and professional football clubs, 
+         with each goal able to be demounted and folded 
+         into a bag, ready to be transported away from the 
+         pitch.
+As used at stadiums including Wembley, Dublin's Aviva 
+Stadium, Arsenal's Emirates Stadium and the famous 
+Santiago Bernabeu, home of Real Madrid.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "folding"],
         brand: EquipmentBrand.HARROD_SPORT,
@@ -584,7 +583,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications["3g_foldaway_euro_portagoal"],
             },
             video: "",
         },
@@ -592,7 +591,9 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-29",
         name: "3G Hinged Portagoal - Senior",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport 3G Hinged Portagoal 
+        is perfect for pre-match warm up at clubs with 
+        accessible storage space.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "hinged"],
         brand: EquipmentBrand.HARROD_SPORT,
@@ -602,7 +603,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications["3g_hinged_portagoal_senior"],
             },
             video: "",
         },
@@ -610,14 +611,16 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-30",
         name: "4G Stadium Pro Goal - FIFA  Quality Package - Braided Nets",
-        description: "Lightweight compact debris blower",
+        description: `The Harrod Sport 4G Stadium Pro 
+        Football Goal is the latest evolution in goal 
+        posts and recently became the first goal in the 
+        world to achieve FIFA Approved status.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "net", "netting"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GSPGQBNImg],
         details: {
             specs_description: ProductSpecDescriptions["4g_stadium_pro_goal_braided_nets"],
-            features: ProductFeatures["4g_stadium_pro_goal_braided_nets"],
             specifications: {
                 type: "goals",
                 data: GoalSpecifications["4g_stadium_pro_goal_braided_nets"],
@@ -628,7 +631,13 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-31",
         name: "4G Stadium Pro Goal",
-        description: "Lightweight compact debris blower",
+        description: `The Harrod Sport 4G Stadium Pro Football 
+        Goal is the latest evolution in goal posts, 
+        manufactured to the highest standards and built 
+        to be the world's best stadium goal, it is used 
+        by prestigious football clubs and stadiums all over 
+        the world. These goal posts and nets are suitable 
+        for the highest level of professional football matches.`,
         mainCategory: "goal",
         tags: ["soccer", "goal"],
         brand: EquipmentBrand.HARROD_SPORT,
@@ -638,7 +647,7 @@ export const SoccerGoalProducts: ProductType[] = [
             features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications["4g_stadium_pro_goal_hex_nets"],
             },
             video: "",
         },
@@ -646,17 +655,19 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-32",
         name: "4G Stadium Pro Goal - FIFA  Quality Package - Hex Nets",
-        description: "Lightweight compact debris blower",
+        description: `The Harrod Sport 4G Stadium Pro Goal 
+        is the latest evolution in football goal 
+        posts which recently achieved FIFA Approved 
+        status, becoming the first accredited goal 
+        in the world, available with Hex Nets.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "net", "netting"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [HexNetsImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications["4g_stadium_pro_goal_hex_nets"],
             },
             video: "",
         },
@@ -664,17 +675,18 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-33",
         name: "4G Stadium Goal",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport unique Stadium Goal, 
+        in small sided and full sized versions. 
+        Ideal small sided goal for top level 
+        clubs and schools.`,
         mainCategory: "goal",
         tags: ["soccer", "goal"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GSGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications["4g_stadium_goal"],
             },
             video: "",
         },
@@ -682,17 +694,22 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-34",
         name: "4G UEFA Portagoal",
-        description: "Lightweight compact debris blower",
+        description: `
+        A bottom hinged net support 
+        designed to be used in conjunction 
+        with the new UEFA Portagoal and allows 
+        the net to be folded up when not in use 
+        to protect from vermin damage and to enable 
+        ground maintenance.
+        `,
         mainCategory: "goal",
         tags: ["soccer", "goal"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GUEFAPImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications["4g_uefa_portagoal"],
             },
             video: "",
         },
@@ -700,17 +717,17 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-35",
         name: "Slimline Bottom Hinged Net Support Bracket",
-        description: "Lightweight compact debris blower",
+        description: `The New Slimline Net Support Bracket 
+        has been designed for use with the Harrod Sport 
+        Stadium Pro Goal.`,
         mainCategory: "goal",
         tags: ["soccer", "goal"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [SlimelineBracketImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.slimline_bottom_hinged_net_support_bracket,
             },
             video: "",
         },
@@ -718,17 +735,20 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-36",
         name: "4G Net Hook Insertion Tool",
-        description: "Lightweight compact debris blower",
+        description: `This useful tool will make 
+        removing the 4G net hooks quick and simple. 
+        The net hooks fit securely into the goal 
+        frame sections and this tool makes it easier 
+        to take them out when the netting is being 
+        \removed or replaced.`,
         mainCategory: "goal",
         tags: ["soccer", "goal"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [GNHITImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications["4g_net_hook_insertion_tool"],
             },
             video: "",
         },
@@ -736,17 +756,19 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-37",
         name: "Fixed Training Goals",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport New Fixed 4G Training 
+        Football Goals are designed and manufactured 
+        to meet BS EN 16579, the perfect training 
+        aid and top class goal for target practice 
+        on any training pitch.`,
         mainCategory: "goal",
         tags: ["soccer", "goal"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [FTrainGImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications.fixed_training_goals,
             },
             video: "",
         },
@@ -754,17 +776,19 @@ export const SoccerGoalProducts: ProductType[] = [
     {
         id: "sgp-38",
         name: "4G Weighted Euro Portagoal - Senior",
-        description: "Lightweight compact debris blower",
+        description: `Harrod Sport 4G Weighted Euro 
+        Portagoal designed as the ultimate training 
+        ground portable goal, allowing clubs to mirror 
+        the 4G Stadium Goal, but with a goal that can 
+        be transported utilising the Hi-Raise Wheels.`,
         mainCategory: "goal",
         tags: ["soccer", "goal"],
         brand: EquipmentBrand.HARROD_SPORT,
         images: [WUEFAPSImg],
         details: {
-            specs_description: ProductSpecDescriptions.cyclone_8000,
-            features: ProductFeatures.cyclone_8000,
             specifications: {
                 type: "goals",
-                data: GoalSpecifications.javelin,
+                data: GoalSpecifications["4g_weighted_portagoal"],
             },
             video: "",
         },
