@@ -53,7 +53,7 @@ export const ProductFeatures: Record<MachineProductKey, string[]> = {
         `No risk of contaminant fluid leaks`,
         `Full battery provides 5.76kwh`,
         `3000watt (Rapid 2hr charge)`,
-        `Full battery performance of > 40km / > 6hrs / approx 4 football pitches`,
+        `Full battery performance of > 40km / > 6hrs / approx 4 soccer pitches`,
         `Choice of 13 interchangeable cassettes`,
         `Easy to adjust height of cut control`,
         `Slow take up speed for smooth set off`,

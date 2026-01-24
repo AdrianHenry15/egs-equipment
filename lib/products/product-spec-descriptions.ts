@@ -16,14 +16,14 @@ export const ProductSpecDescriptions: Record<MachineProductKey, string> = {
     gseries: `Built on the FT principle these quality mowers are interchangeable cassette systems with one minute changeover 
             giving options to fit 8 different heads including scarifiers, verticutters, brushes, spikers, slitters as well as 6 or 8 
             bladed cutter cassettes. Available as 26" (66cm), 30" (76cm) and 34"(86cm) widths.`,
-    es860: `The ES-860 is a 34" (860mm) battery powered mower and maintenance system using the latest lithium ion battery technology for maintaining football pitches, 
+    es860: `The ES-860 is a 34" (860mm) battery powered mower and maintenance system using the latest lithium ion battery technology for maintaining soccer pitches, 
             rugby pitches, cricket squares and outfields and ornamental lawns at private estates, universities, colleges and schools. 
             The machine is fitted with a weather proof colour LCD programmable display and keypad which operates the machine 
             and will feed back information to the operator including ground speed, battery charge level, instructions and much more. 
             This can easily be updated and customised to suit individual customer requirements.
             The interchangeable cassette system allows a variety of cassettes to be used for a number of various maintenance tasks including cutting, 
             scarifying, verticutting, brushing and surface spiking. The cassettes are interchangeable between the ES-860 and the G860 (petrol version).
-            For clubs looking to use battery mowers for their football pitches or cricket squares, 
+            For clubs looking to use battery mowers for their soccer pitches or cricket squares, 
             the E-Series range will help meet sustainability and environmental initiatives, 
             minimise carbon footprint, emissions, running costs, HAV's and noise without any range anxiety.`,
     rotorake_600_hd: `This heavy duty scarifier is equally at home when used for regular routine use at a shallow setting or a deeper setting when required.

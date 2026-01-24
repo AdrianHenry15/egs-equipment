@@ -4,10 +4,10 @@ import { HarrodProductKey } from "../../product-keys";
 export const GoalSpecifications: Record<HarrodProductKey, GoalSpecificationsType> = {
     fixed_training_goals: {
         specifications: `
-        Harrod Sport Lightweight Fixed Training Football 
+        Harrod Sport Lightweight Fixed Training Soccer 
         Goals designed and manufactured to meet EN16579, 
         the perfect training aid for target practice. 
-        These fixed football goal posts feature a 
+        These fixed soccer goal posts feature a 
         premium polyester powder coating in white 
         ensuring excellent levels of visibility during 
         training sessions. Complete with 4mm thick FPX 
@@ -91,7 +91,7 @@ Side frames lock in the play and folded positions for added safety.
     finesse_standard_goal: {
         specifications: `
         The Finesse 8 x 4ft PVC goal is virtually maintenance free.
-They are commonly used in back gardens and make great football practice for kids.
+They are commonly used in back gardens and make great soccer practice for kids.
         `,
         features: ["Size 2.44m x 1.22m"],
         included: ["1 Goal", "1 Net", "Net Clips", "2 Anchors"],
@@ -271,7 +271,7 @@ Fully welded corner joints provide superior strength and added safety.
         specifications: `
         This unique training goal is 
         manufactured from the latest 
-        Harrod Sport 4G aluminium football
+        Harrod Sport 4G aluminium soccer
          goal section, with a side frame that 
          contours up and over the wheels mounted 
          in-line with the side frame.
@@ -306,7 +306,7 @@ Fully welded corner joints provide superior strength and added safety.
         effortless movement in all directions
         `,
         features: [
-            "Truly portable football goal with patented spherical ball system for omnidirectional movement and quick setup",
+            "Truly portable soccer goal with patented spherical ball system for omnidirectional movement and quick setup",
             "Double-pivot handle allows effortless lifting and lowering with reduced strain for coaches and ground staff",
             "Elite build quality with 4G reinforced aluminium frame and zinc-plated internal joints for long-term durability",
             "Pitch-friendly design suitable for both 3G/4G artificial turf and natural grass surfaces",
@@ -376,7 +376,7 @@ Fully welded corner joints provide superior strength and added safety.
         specifications: `
         This unique training goal is manufactured 
         from the latest Harrod Sport 4G aluminium
-         football goal section, with a side frame 
+         soccer goal section, with a side frame 
          that contours up and over the wheels mounted 
          in-line with the side frame.
         `,
@@ -408,20 +408,20 @@ Fully welded corner joints provide superior strength and added safety.
         specifications: `
         Harrod Sport 4G UEFA Portagoal has been 
         designed to meet the UEFA specification. 
-        At 24ft x 8ft (7.32m x 2.44m) the football 
+        At 24ft x 8ft (7.32m x 2.44m) the soccer 
         goal framework is made from impressive 102mm x 112mm 
         reinforced aluminium and features net supports, 
         zinc plated internal corner joints and internal 
         reinforced upright connections – the ultimate box 
-        football goal to bring the big match feel to 11 v 11 
+        soccer goal to bring the big match feel to 11 v 11 
         games. The Harrod Sport 4G UEFA Portagoals are also 
-        popular with football academies for European matches 
+        popular with soccer academies for European matches 
         at the lower age groups.
         `,
         features: [
             "Goal size: 24ft x 8ft (7.32m x 2.44m)",
             "British engineered to deliver high-quality, world-class performance",
-            "Uprights, crossbars, sidebars, and backbars manufactured from 102mm x 112mm reinforced aluminium football goal section conforming to BS EN 748 safety standards",
+            "Uprights, crossbars, sidebars, and backbars manufactured from 102mm x 112mm reinforced aluminium soccer goal section conforming to BS EN 748 safety standards",
             "Optional weighted backbar version available with integral weight insert and ballast for enhanced safety",
             "Goal framework polyester powder-coated white using an in-house process for a corrosion-resistant, durable finish",
             "Fully welded zinc-plated corner joints provide superior strength and added safety",
@@ -662,7 +662,7 @@ Nets are raised and lowered using a haulage rope system
         assembled and dismantled. With a robust, weather 
         resistant frame, the goal has been thoughtfully 
         designed to withstand consistent year-round 
-        football games and training sessions for youngsters.
+        soccer games and training sessions for youngsters.
         `,
         features: [
             "Goal size: 3.66m x 1.83m",
@@ -754,8 +754,8 @@ Nets are raised and lowered using a haulage rope system
     finesse_folding_target_goal: {
         specifications: `The Finesse Folding Target Goals are ideal for small sided practice matches and trainings, simple to assemble and move these goals feature an innovative folding system so they can be set up in less than 10 seconds and collapse so that they can fit into a car boot.
                             The goal arrives fully assembled including the green mesh netting and easily unfolds, secured in place by a 2 piece folding hinged back bar. Available in 2 sizes 5ft x 3ft and 6ft by 4ft for different training scenarios or for different age ranges.
-                            Our Finesse Target Goals are popular as a portable training aid and used in a number of professional football academies. These handy football goals are also perfect for use at home in the garden. The goal is manufactured from heavy-duty aluminium with a strong green micromesh football goal net which is secured in place with hook and loop straps.
-                            Whether on the training pitch or having a kickabout in the garden, these practical and robust goals will give hours of fun for footballers of all abilities.`,
+                            Our Finesse Target Goals are popular as a portable training aid and used in a number of professional soccer academies. These handy soccer goals are also perfect for use at home in the garden. The goal is manufactured from heavy-duty aluminium with a strong green micromesh soccer goal net which is secured in place with hook and loop straps.
+                            Whether on the training pitch or having a kickabout in the garden, these practical and robust goals will give hours of fun for soccer players of all abilities.`,
         sizes: [
             `5ft x 3ft (1.5m x 0.9m) Folded Size 100cm x 75cm x 12cm`,
             `6ft x 4ft (1.83m x 1.22m) Folded Size 130cm x100cm x 12cm`,
@@ -764,8 +764,8 @@ Nets are raised and lowered using a haulage rope system
             `Finesse Folding Target Goal`,
             `Freestanding design allows the goal to be used on all surfaces without anchors`,
             `Manufactured from heavy duty 50mm aluminium, powder coated black`,
-            `High quality green micromesh football goal net with hook and loop straps`,
-            `This foldable football goal takes 10 seconds to set up and can easily fit into a car boot when collapsed`,
+            `High quality green micromesh soccer goal net with hook and loop straps`,
+            `This foldable soccer goal takes 10 seconds to set up and can easily fit into a car boot when collapsed`,
             `Sold as a single goal complete with net`,
             `Goal frame arrives assembled with net attached in the box`,
         ],
@@ -831,23 +831,23 @@ Side frames lock in the play and folded positions for added safety.
         The goals are also perfect for the garden or local park, 
         a quick and simple option for small sided games with friends or just to hone shooting skills. 
         The goals are popular with pro-clubs for training sessions, 
-        but are equally suited to playing football in the garden or local park. 
+        but are equally suited to playing soccer in the garden or local park. 
         The goals are extremely practical to set up, move and can be used on any playing surface.
         The goal is manufactured from heavy-duty 
-        aluminium with a strong black micromesh football goal 
+        aluminium with a strong black micromesh soccer goal 
         net which is secured in place with hook and loop straps. 
         The goal arrives assembled and simply unfolds and is 
         secured in place by a 2 piece folding hinged back bar. 
         Available in 2 sizes 5ft x 3ft and 6ft by 4ft to suit different ages or training scenarios.
         Whether on the professional training pitch or having a kickabout in the garden, 
-        these practical and robust goals will give hours of fun for footballers of all abilities.
+        these practical and robust goals will give hours of fun for soccer players of all abilities.
         `,
         features: [
             `Harrod Sport Aluminium Folding Target Goal`,
             `Freestanding design allows the goal to be used on all surfaces without anchors`,
             `Manufactured from heavy duty 50mm aluminium, powder coated black`,
-            `High quality black micromesh football goal net with hook and loop straps`,
-            `This foldable football goal takes 10 seconds to set up and can easily fit into a car boot when collapsed`,
+            `High quality black micromesh soccer goal net with hook and loop straps`,
+            `This foldable soccer goal takes 10 seconds to set up and can easily fit into a car boot when collapsed`,
             `Sold as a single goal complete with net`,
             `Goal frame arrives assembled with net attached in the box`,
         ],

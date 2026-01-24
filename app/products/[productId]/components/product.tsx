@@ -5,11 +5,13 @@ import Link from "next/link";
 import { allProducts } from "@/lib/products/list/product-list";
 import { ImageScroller } from "./image-scroller";
 import {
+    GoalSpecificationsType,
     LineMarkerAccessorySpecificationsType,
     LineMarkerMachineSpecificationsType,
     LineMarkerPaintSpecificationsType,
     ProductSpecificationsType,
 } from "@/lib/types/product";
+import { GoalSpecifications } from "@/lib/products/list/goals/goal-specifications";
 
 const COLOR_MAP: Record<string, string> = {
     white: "#ffffff",
@@ -213,6 +215,76 @@ const Product = ({ productId }: IProductProps) => {
         });
     };
 
+    const renderGoalSpecs = (data?: GoalSpecificationsType) => {
+        if (!data) return null;
+
+        const hasSpecs = typeof data.specifications === "string" && data.specifications.trim().length > 0;
+
+        const hasSizes = Array.isArray(data.sizes) && data.sizes.length > 0;
+        const hasFeatures = Array.isArray(data.features) && data.features.length > 0;
+        const hasBenefits = Array.isArray(data.benefits) && data.benefits.length > 0;
+        const hasIncluded = Array.isArray(data.included) && data.included.length > 0;
+
+        if (!hasSpecs && !hasSizes && !hasFeatures && !hasBenefits && !hasIncluded) {
+            return null;
+        }
+
+        return (
+            <>
+                {hasSpecs && (
+                    <div className="mt-4">
+                        <h5 className="text-lg font-semibold text-black">Overview</h5>
+                        <p className="mt-2 text-sm text-black">{data.specifications!.trim()}</p>
+                    </div>
+                )}
+
+                {hasSizes && (
+                    <div className="mt-4">
+                        <h5 className="text-lg font-semibold text-black">Available Sizes</h5>
+                        <ul className="ml-5 mt-2 list-disc text-sm text-black">
+                            {data.sizes!.map((size, idx) => (
+                                <li key={idx}>{size}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+
+                {hasFeatures && (
+                    <div className="mt-4">
+                        <h5 className="text-lg font-semibold text-black">Features</h5>
+                        <ul className="ml-5 mt-2 list-disc text-sm text-black">
+                            {data.features!.map((feature, idx) => (
+                                <li key={idx}>{feature}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+
+                {hasBenefits && (
+                    <div className="mt-4">
+                        <h5 className="text-lg font-semibold text-black">Benefits</h5>
+                        <ul className="ml-5 mt-2 list-disc text-sm text-black">
+                            {data.benefits!.map((benefit, idx) => (
+                                <li key={idx}>{benefit}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+
+                {hasIncluded && (
+                    <div className="mt-4">
+                        <h5 className="text-lg font-semibold text-black">What’s Included</h5>
+                        <ul className="ml-5 mt-2 list-disc text-sm text-black">
+                            {data.included!.map((item, idx) => (
+                                <li key={idx}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+            </>
+        );
+    };
+
     const renderSpecifications = () => {
         if (!specBlock?.data || !hasRenderableSpecs(specBlock.data)) return null;
 
@@ -228,7 +300,7 @@ const Product = ({ productId }: IProductProps) => {
 
                 {specBlock.type === "line_marker_accessory" && renderAccessorySpecs(specBlock.data)}
 
-                {specBlock.type === "goals" && <p className="text-sm text-black">Goal specifications coming soon.</p>}
+                {specBlock.type === "goals" && renderGoalSpecs(specBlock.data)}
             </div>
         );
     };
@@ -274,7 +346,7 @@ const Product = ({ productId }: IProductProps) => {
             <div className="flex w-full justify-center pt-10">
                 <Link
                     href="/contact"
-                    className="w-[50%] rounded-lg bg-green-600 py-2 text-center font-semibold transition-colors hover:bg-green-700"
+                    className="w-75 rounded-lg bg-green-600 py-2 text-center font-semibold transition-colors hover:bg-green-700"
                 >
                     Request Estimate
                 </Link>

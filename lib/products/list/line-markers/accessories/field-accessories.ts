@@ -168,7 +168,7 @@ export const LineMarkerFieldAccessoryProducts: ProductType[] = [
     {
         id: "lmfa-8",
         name: "Penalty Circle Marker",
-        description: `A flexible rubber Penalty Circle Marker enables you to mark out perfect penalty spots on football pitches. `,
+        description: `A flexible rubber Penalty Circle Marker enables you to mark out perfect penalty spots on soccer pitches. `,
         mainCategory: "line_marker",
         tags: ["accessory", "field_accessory"],
         images: [PenaltySpotMarkerImg],

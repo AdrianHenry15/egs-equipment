@@ -47,7 +47,7 @@ export const SoccerGoalProducts: ProductType[] = [
         id: "sgp-1",
         name: "Finesse Folding Target Goal",
         description:
-            "Finesse 8 x 4ft goals are commonly used in back gardens and make great football practice for children.",
+            "Finesse 8 x 4ft goals are commonly used in back gardens and make great soccer practice for children.",
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
@@ -87,7 +87,7 @@ export const SoccerGoalProducts: ProductType[] = [
         id: "sgp-3",
         name: "Portaball Pro",
         description: `Our new patented and innovative Portaball Pro 
-        football goal has been specifically designed to meet the 
+        Soccer goal has been specifically designed to meet the 
         exacting standards and requirements of the world's 
         best clubs and coaches.`,
         mainCategory: "goal",
@@ -107,7 +107,7 @@ export const SoccerGoalProducts: ProductType[] = [
         name: "4G Swivel Portagoal",
         description: `Harrod Sport's new 4G Swivel Weighted
          Portagoal has been developed in conjunction 
-         with Premier League Football Coaches.`,
+         with Premier League Soccer Coaches.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
         brand: EquipmentBrand.HARROD_SPORT,
@@ -145,7 +145,7 @@ export const SoccerGoalProducts: ProductType[] = [
         id: "sgp-6",
         name: "4G Swivel Weighted Portagoal",
         description: `Harrod Sport's new 4G Swivel Weighted Portagoal 
-        has been developed in conjunction with Premier League Football Coaches. 
+        has been developed in conjunction with Premier League Soccer Coaches. 
         Please Note: All recommended nets and extras must be purchased separately 
         (unless stated as included with product) 
         and can be found listed by clicking the 
@@ -211,7 +211,7 @@ export const SoccerGoalProducts: ProductType[] = [
         freestanding portable PVC goal can be easily assembled and dismantled. 
         With a robust, weather resistant frame, 
         the goal has been thoughtfully designed to withstand consistent 
-        year-round football games and training sessions for youngsters. 
+        year-round soccer games and training sessions for youngsters. 
         Please Note: All recommended nets and extras must be purchased separately 
         (unless stated as included with product) and can be found listed by clicking the View Set and Buy button. 
         Please ensure that all boxes are ticked for the required product before proceeding to checkout.`,
@@ -232,7 +232,7 @@ export const SoccerGoalProducts: ProductType[] = [
         name: "4G PortaBall Portagoal with Net",
         description: `Engineered for high-performance sessions, 
             the Harrod Sport 4G PortaBall Portagoal is an elite portable 
-            football goal with a patented spherical ball system that glides 
+            soccer goal with a patented spherical ball system that glides 
             in any direction on artificial 
             and natural turf - far more agile than wheel-based designs.`,
         mainCategory: "goal",
@@ -357,8 +357,8 @@ export const SoccerGoalProducts: ProductType[] = [
         id: "sgp-17",
         name: "Heavy Duty Galvanised Goal",
         description: `Harrod Sport heavy duty 
-        football goals are the preferred option 
-        for football specific venues that have high usage. 
+        soccer goals are the preferred option 
+        for soccer specific venues that have high usage. 
         These goals have fully welded side frames for 
         added strength.`,
         mainCategory: "goal",
@@ -401,7 +401,7 @@ export const SoccerGoalProducts: ProductType[] = [
         id: "sgp-19",
         name: "Finesse 12 x 6ft Match Goal c/w Bag",
         description: `Our Finesse PVC freestanding goal 
-        is a lightweight football goal that can be easily 
+        is a lightweight soccer goal that can be easily 
         assembled and dismantled, for ease of transportation 
         to and from the pitch complete with a carry bag.`,
         mainCategory: "goal",
@@ -420,7 +420,7 @@ export const SoccerGoalProducts: ProductType[] = [
         id: "sgp-20",
         name: "Finesse 12 x 6ft Standard Goal",
         description: `Our Finesse PVC freestanding goal is a
-         lightweight football goal that can be easily 
+         lightweight soccer goal that can be easily 
          assembled and dismantled, for ease of 
          transportation to and from the pitch.`,
         mainCategory: "goal",
@@ -439,7 +439,7 @@ export const SoccerGoalProducts: ProductType[] = [
         id: "sgp-21",
         name: "Finesse 6 x 4ft Standard Goal",
         description: `Finesse 6 x 4ft goals are ideal 
-        for use in the back garden and make great football 
+        for use in the back garden and make great soccer 
         practice for children.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
@@ -457,7 +457,7 @@ export const SoccerGoalProducts: ProductType[] = [
         id: "sgp-22",
         name: "Finesse 8 x 4ft Standard Goal",
         description: `Finesse 8 x 4ft goals are commonly 
-        used in back gardens and make great football 
+        used in back gardens and make great soccer 
         practice for children.`,
         mainCategory: "goal",
         tags: ["soccer", "goal", "freestanding"],
@@ -567,7 +567,7 @@ export const SoccerGoalProducts: ProductType[] = [
         name: "3G Foldaway Euro Portagoals",
         description: `Harrod Sport unique Foldaway Euro 
         Portagoal is the ultimate pre-match solution for
-         national stadiums and professional football clubs, 
+         national stadiums and professional soccer clubs, 
          with each goal able to be demounted and folded 
          into a bag, ready to be transported away from the 
          pitch.
@@ -612,7 +612,7 @@ Santiago Bernabeu, home of Real Madrid.`,
         id: "sgp-30",
         name: "4G Stadium Pro Goal - FIFA  Quality Package - Braided Nets",
         description: `The Harrod Sport 4G Stadium Pro 
-        Football Goal is the latest evolution in goal 
+        Soccer Goal is the latest evolution in goal 
         posts and recently became the first goal in the 
         world to achieve FIFA Approved status.`,
         mainCategory: "goal",
@@ -630,13 +630,13 @@ Santiago Bernabeu, home of Real Madrid.`,
     {
         id: "sgp-31",
         name: "4G Stadium Pro Goal",
-        description: `The Harrod Sport 4G Stadium Pro Football 
+        description: `The Harrod Sport 4G Stadium Pro Soccer 
         Goal is the latest evolution in goal posts, 
         manufactured to the highest standards and built 
         to be the world's best stadium goal, it is used 
-        by prestigious football clubs and stadiums all over 
+        by prestigious soccer clubs and stadiums all over 
         the world. These goal posts and nets are suitable 
-        for the highest level of professional football matches.`,
+        for the highest level of professional soccer matches.`,
         mainCategory: "goal",
         tags: ["soccer", "goal"],
         brand: EquipmentBrand.HARROD_SPORT,
@@ -655,7 +655,7 @@ Santiago Bernabeu, home of Real Madrid.`,
         id: "sgp-32",
         name: "4G Stadium Pro Goal - FIFA  Quality Package - Hex Nets",
         description: `The Harrod Sport 4G Stadium Pro Goal 
-        is the latest evolution in football goal 
+        is the latest evolution in soccer goal 
         posts which recently achieved FIFA Approved 
         status, becoming the first accredited goal 
         in the world, available with Hex Nets.`,
@@ -756,7 +756,7 @@ Santiago Bernabeu, home of Real Madrid.`,
         id: "sgp-37",
         name: "Fixed Training Goals",
         description: `Harrod Sport New Fixed 4G Training 
-        Football Goals are designed and manufactured 
+        Soccer Goals are designed and manufactured 
         to meet BS EN 16579, the perfect training 
         aid and top class goal for target practice 
         on any training pitch.`,
