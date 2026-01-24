@@ -9,7 +9,7 @@ export const UpcomingEvents: EventDemo[] = [
         startDate: "2026-01-19",
         endDate: "2026-01-22",
         location: "Fort Worth, TX",
-        image: "/logos/SFMA-logo-600px.jpg",
+        image: "/flyers/egs_sfma.jpg",
         href: "https://www.sportsfieldmanagement.org/conference/",
     },
     {
