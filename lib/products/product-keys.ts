@@ -25,6 +25,13 @@ export type MachineProductKey =
     | "cyclone_pto";
 
 export type HarrodProductKey =
+    | "fixed_training_goals"
+    | "3g_hinged_portagoal_senior"
+    | "3g_foldaway_euro_portagoal"
+    | "4g_fence_folding_goal"
+    | "finesse_standard_goal"
+    | "finesse_match_goal_w_bag"
+    | "heavy_duty_galvanised_goal"
     | "finesse_folding_target_goal"
     | "folding_target_goal"
     | "4g_stadium_pro_goal_braided_nets"
@@ -107,7 +114,6 @@ export type LineMarkerAccessoryProductKeys =
     | "concentrate_mixing_kit";
 export type ProductKey =
     | MachineProductKey
-    | HarrodProductKey
     | LineMarkerPaintProductKeys
     | LineMarkerMachineProductKeys
     | LineMarkerAccessoryProductKeys;

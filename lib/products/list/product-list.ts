@@ -3,7 +3,7 @@ import { DebrisBlowerProducts } from "./debris-blowers";
 import { MowerProducts } from "./natural-turf/mowers";
 import { ScarifierProducts } from "./natural-turf/scarifiers";
 import { SyntheticTurfProducts } from "./synthetic-turf";
-import { SoccerGoalProducts } from "./goals";
+import { SoccerGoalProducts } from "./goals/goals";
 import { LineMarkerArtificialGrassPaintProducts } from "./line-markers/paint/artificial-grass";
 import { LineMarkerConcentratePaintProducts } from "./line-markers/paint/concentrate";
 import { LineMarkerFieldAccessoryProducts } from "./line-markers/accessories/field-accessories";
@@ -20,7 +20,7 @@ const productCollections = [
     DebrisBlowerProducts,
     AeratorProducts,
     // Goals
-    // SoccerGoalProducts,
+    SoccerGoalProducts,
     // Line Markers
     // Paints
     LineMarkerConcentratePaintProducts,

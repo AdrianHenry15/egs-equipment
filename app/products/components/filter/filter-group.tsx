@@ -76,7 +76,7 @@ export default function FilterGroup({
 
                     return (
                         <motion.button
-                            key={option.value}
+                            key={`${option.value}-${option.label}`}
                             variants={itemVariants}
                             type="button"
                             onClick={() => onChange(isSelected ? null : option.value)}

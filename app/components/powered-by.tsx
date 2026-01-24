@@ -43,7 +43,7 @@ const logos: ILogos[] = [
     {
         src: HarrodLogo,
         alt: "Harrod Sport",
-        brand: EquipmentBrand.HARROD_SPORTS,
+        brand: EquipmentBrand.HARROD_SPORT,
     },
     {
         src: PitchmarkLogo,
@@ -75,12 +75,8 @@ export default function PoweredBy() {
             <div className="mx-auto max-w-7xl px-6">
                 {/* Header */}
                 <div className="mb-10 text-center">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">
-                        Powered By
-                    </p>
-                    <h3 className="mt-2 text-lg font-medium text-gray-900">
-                        Trusted Equipment From Our Partners
-                    </h3>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">Powered By</p>
+                    <h3 className="mt-2 text-lg font-medium text-gray-900">Trusted Equipment From Our Partners</h3>
                 </div>
 
                 {/* Logos */}
@@ -99,12 +95,7 @@ export default function PoweredBy() {
                                 className="group"
                             >
                                 <div className="relative h-12 w-36 opacity-100 transition-all duration-300 group-hover:opacity-70">
-                                    <Image
-                                        src={logo.src}
-                                        alt={logo.alt}
-                                        fill
-                                        className="object-contain"
-                                    />
+                                    <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
                                 </div>
                             </Link>
                         </motion.li>

@@ -11,11 +11,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-    const MAX_NAME_LENGTH = 15;
-    const MAX_DESCRIPTION_LENGTH = 50;
-
-    const truncatedName =
-        product.name.length > MAX_NAME_LENGTH ? `${product.name.slice(0, MAX_NAME_LENGTH)}…` : product.name;
+    const MAX_DESCRIPTION_LENGTH = 100;
 
     const truncatedDescription =
         product.description.length > MAX_DESCRIPTION_LENGTH
@@ -55,7 +51,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 )}
 
                 <div className="flex flex-col grow p-4">
-                    <h3 className="mb-2 text-lg font-semibold text-black">{truncatedName}</h3>
+                    <h3 className="mb-2 text-lg font-semibold text-black">{product.name}</h3>
 
                     <p className="mb-4 text-sm text-gray-600">{truncatedDescription}</p>
 

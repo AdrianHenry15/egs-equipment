@@ -17,7 +17,7 @@ export const BRANDS: {
         label: "Eastman",
     },
     {
-        value: EquipmentBrand.HARROD_SPORTS,
+        value: EquipmentBrand.HARROD_SPORT,
         label: "Harrod Sports",
     },
     // {

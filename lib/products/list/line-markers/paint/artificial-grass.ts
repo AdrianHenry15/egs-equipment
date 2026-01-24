@@ -18,8 +18,6 @@ export const LineMarkerArtificialGrassPaintProducts: ProductType[] = [
         images: [AGPImg],
         brand: EquipmentBrand.PITCHMARK,
         details: {
-            specs_description: ProductSpecDescriptions.agp,
-            features: ProductFeatures.agp,
             specifications: {
                 type: "line_marker_paint",
                 data: LineMarkerPaintSpecifications.agp,

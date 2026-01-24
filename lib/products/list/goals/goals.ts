@@ -1,0 +1,795 @@
+import Cyclone8000Img from "@/public/products/debris-blowers/cyclone-8000.webp";
+import FFTG1Img from "@/public/products/goals/fftg-1.jpg";
+import FFTG2Img from "@/public/products/goals/fftg-2.jpg";
+import FTGImg from "@/public/products/goals/ftg.jpg";
+import FTG2Img from "@/public/products/goals/ftg-2.jpg";
+import PPImg from "@/public/products/goals/pp-1.jpg";
+import GSPImg from "@/public/products/goals/4gsp-1.jpg";
+import GPImg from "@/public/products/goals/4gp-1.jpg";
+import GSWPImg from "@/public/products/goals/4gswp-1.jpg";
+import GESPImg from "@/public/products/goals/4gesp-1.jpg";
+import GWPImg from "@/public/products/goals/4gwp.jpg";
+import Poly7_5Img from "@/public/products/goals/poly7v5.jpg";
+import GPWNImg from "@/public/products/goals/4gpwn.jpg";
+import GEPImg from "@/public/products/goals/4gep.jpg";
+import HFGImg from "@/public/products/goals/hfg.jpg";
+import FSGImg from "@/public/products/goals/fsg-1.jpg";
+import FAGImg from "@/public/products/goals/fag-1.jpg";
+import FSFAGImg from "@/public/products/goals/fs1fag-1.jpg";
+import FSFWGImg from "@/public/products/goals/fs8fwg-1.jpg";
+import HDGGImg from "@/public/products/goals/hdgg-1.jpg";
+import WUEFAPImg from "@/public/products/goals/wuefap-1.jpg";
+import FMGCWBImg from "@/public/products/goals/f126mgcwb.jpg";
+import FSG126Img from "@/public/products/goals/f126sg.jpg";
+import F64SGImg from "@/public/products/goals/f64sg.jpg";
+import F84SGImg from "@/public/products/goals/f84sg.jpg";
+import FFGImg from "@/public/products/goals/4gffg.jpg";
+import GFEPImg from "@/public/products/goals/3gfep.jpg";
+import GHPSImg from "@/public/products/goals/3ghp.jpg";
+import GSPGQBNImg from "@/public/products/goals/4gspgqpbn.jpg";
+import GSPGImg from "@/public/products/goals/4gspg.jpg";
+import HexNetsImg from "@/public/products/goals/hexnets.jpg";
+import GSGImg from "@/public/products/goals/4gsg.jpg";
+import GUEFAPImg from "@/public/products/goals/4guefap.jpg";
+import SlimelineBracketImg from "@/public/products/goals/slimlinebracket.jpg";
+import GNHITImg from "@/public/products/goals/4gnhit.jpg";
+import FTrainGImg from "@/public/products/goals/FTrainingG.jpg";
+import WUEFAPSImg from "@/public/products/goals/4gweps.jpg";
+
+import { ProductSpecDescriptions } from "../../product-spec-descriptions";
+import { ProductFeatures } from "../../product-features";
+import { EquipmentBrand } from "@/lib/types/brands";
+import { ProductType } from "@/lib/types/product";
+import { GoalSpecifications } from "./goal-specifications";
+
+export const SoccerGoalProducts: ProductType[] = [
+    {
+        id: "sgp-1",
+        name: "Finesse Folding Target Goal",
+        description:
+            "Finesse 8 x 4ft goals are commonly used in back gardens and make great soccer practice for children.",
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FFTG1Img, FFTG2Img],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.finesse_folding_target_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-2",
+        name: "Folding Target Goal",
+        description: `The Harrod Sport Aluminium Folding Target Goals 
+        are quick to set up featuring our innovative folding system ideal for 
+        training sessions and drills or a back garden kickabout. 
+        The collapsible designs means they can be assembled in seconds 
+        and easily folded back down small enough to fit in a car boot. 
+        Perfect for target practice, these strong, portable goals are 
+        made using high quality aluminium and feature strong mesh 
+        netting to withstand the most powerful shots.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FTGImg, FTG2Img],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.folding_target_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-3",
+        name: "Portaball Pro",
+        description: `Our new patented and innovative Portaball Pro 
+        Soccer goal has been specifically designed to meet the 
+        exacting standards and requirements of the world's 
+        best clubs and coaches.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [PPImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.portaball_pro,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-4",
+        name: "4G Swivel Portagoal",
+        description: `Harrod Sport's new 4G Swivel Weighted
+         Portagoal has been developed in conjunction 
+         with Premier League Soccer Coaches.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GSPImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_swivel_portagoal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-5",
+        name: "4G Portagoal",
+        description: `Harrod Sport 4G Portagoals are the preferred choice of professional clubs and academy facilities. 
+        Please Note: All recommended nets and extras must be purchased separately 
+        (unless stated as included with product) 
+        and can be found listed by clicking the 
+        View Set and Buy button. Please ensure that all boxes are 
+        ticked for the required product before proceeding to checkout.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GPImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_portagoal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-6",
+        name: "4G Swivel Weighted Portagoal",
+        description: `Harrod Sport's new 4G Swivel Weighted Portagoal 
+        has been developed in conjunction with Premier League Soccer Coaches. 
+        Please Note: All recommended nets and extras must be purchased separately 
+        (unless stated as included with product) 
+        and can be found listed by clicking the 
+        View Set and Buy button. Please ensure that all boxes are 
+        ticked for the required product before proceeding to checkout.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GSWPImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_swivel_weighted_portagoal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-7",
+        name: "4G Euro Swivel Portagoal",
+        description: `Bring the big match feel to any pitch with the Harrod Sport 4G Euro Swivel Portagoal. 
+        Designed to deliver the ultimate box goal experience across a wide range of formats, 
+        this premium freestanding goal combines professional quality with outstanding manoeuvrability.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GESPImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_euro_swivel_portagoal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-8",
+        name: "4G Weighted Portagoal",
+        description: `Harrod Sport 4G Weighted Portagoal is designed to be portable on both grass and synthetic surfaces. 
+        Please Note: All recommended nets and extras must be purchased separately 
+        (unless stated as included with product) 
+        and can be found listed by clicking the View Set and Buy button. 
+        Please ensure that all boxes are ticked for the 
+        required product before proceeding to checkout.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GWPImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_weighted_portagoal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-9",
+        name: "Polygoal - 7v7/5v5",
+        description: `Perfect for matches, 
+        training sessions and garden kickabouts, 
+        this 12ft x 6ft lightweight yet highly durable, 
+        freestanding portable PVC goal can be easily assembled and dismantled. 
+        With a robust, weather resistant frame, 
+        the goal has been thoughtfully designed to withstand consistent 
+        year-round soccer games and training sessions for youngsters. 
+        Please Note: All recommended nets and extras must be purchased separately 
+        (unless stated as included with product) and can be found listed by clicking the View Set and Buy button. 
+        Please ensure that all boxes are ticked for the required product before proceeding to checkout.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [Poly7_5Img],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.polygoal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-10",
+        name: "4G PortaBall Portagoal with Net",
+        description: `Engineered for high-performance sessions, 
+            the Harrod Sport 4G PortaBall Portagoal is an elite portable 
+            soccer goal with a patented spherical ball system that glides 
+            in any direction on artificial 
+            and natural turf - far more agile than wheel-based designs.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding", "net", "netting"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GPWNImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_portaball_portagoal_with_net"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-11",
+        name: "4G Euro Portagoal",
+        description: `Harrod Sport 4G Portagoals are the 
+            preferred choice of professional clubs 
+            and academy facilities.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GEPImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_euro_portagoal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-12",
+        name: "Heavyweight Freestanding Goal",
+        description: `Harrod Sport heavyweight freestanding 
+        steel goal, is ideal for schools and clubs, and 
+        designed so the goal can be moved in one piece 
+        when used with flip-over wheels.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [HFGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.heavyweight_freestanding_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-13",
+        name: "Freestanding Steel Goal",
+        description: `Harrod Sport fixed freestanding steel goal for outdoor use.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FSGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.freestanding_steel_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-14",
+        name: "Freestanding Aluminium Goal",
+        description: `Harrod Sport freestanding portable 
+        aluminium goals are designed for use on grass or 
+        synthetic surfaces.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FAGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.freestanding_aluminium_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-15",
+        name: "FS1 Fold-away Goal",
+        description: `Harrod Sport FS1 folding goal 
+        designed specifically for sports halls.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding", "folding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FSFAGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.folding_steel_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-16",
+        name: "FS8 Folding Wheelaway Goal",
+        description: `Harrod Sport FS8 heavy duty 
+        indoor wheel away goal designed specifically 
+        for sports halls.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding", "folding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FSFWGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.folding_target_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-17",
+        name: "Heavy Duty Galvanised Goal",
+        description: `Harrod Sport heavy duty 
+        soccer goals are the preferred option 
+        for soccer specific venues that have high usage. 
+        These goals have fully welded side frames for 
+        added strength.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [HDGGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.heavy_duty_galvanised_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-18",
+        name: "Weighted UEFA Portagoal",
+        description: `Harrod Sport 4G UEFA Portagoal 
+        has been designed to meet the UEFA specification. 
+        At 24ft x 8ft (7.32m x 2.44m) the framework is 
+        made from impressive 102mm x 112mm reinforced 
+        aluminium (including an integral weighted back bar) 
+        and features net supports, zinc plated internal 
+        corner joints and internal reinforced upright 
+        connections – the ultimate box goal to 
+        bring the big match feel to 11 v 11 games.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [WUEFAPImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_uefa_portagoal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-19",
+        name: "Finesse 12 x 6ft Match Goal c/w Bag",
+        description: `Our Finesse PVC freestanding goal 
+        is a lightweight soccer goal that can be easily 
+        assembled and dismantled, for ease of transportation 
+        to and from the pitch complete with a carry bag.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FMGCWBImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.finesse_match_goal_w_bag,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-20",
+        name: "Finesse 12 x 6ft Standard Goal",
+        description: `Our Finesse PVC freestanding goal is a
+         lightweight soccer goal that can be easily 
+         assembled and dismantled, for ease of 
+         transportation to and from the pitch.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FSG126Img],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.finesse_standard_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-21",
+        name: "Finesse 6 x 4ft Standard Goal",
+        description: `Finesse 6 x 4ft goals are ideal 
+        for use in the back garden and make great soccer 
+        practice for children.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [F64SGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.finesse_standard_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-22",
+        name: "Finesse 8 x 4ft Standard Goal",
+        description: `Finesse 8 x 4ft goals are commonly 
+        used in back gardens and make great soccer 
+        practice for children.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "freestanding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [F84SGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.finesse_standard_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-23",
+        name: "Folding Aluminium Goal",
+        description: `Harrod Sport freestanding portable 
+        aluminium goals are designed for use on grass or 
+        synthetic surfaces. These goals have folding side 
+        frames for ease of transportation and storage.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "folding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FAGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.folding_aluminum_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-24",
+        name: "Folding Steel Goal",
+        description: `Harrod Sport freestanding portable 
+        steel goals, designed with folding side frames 
+        for ease of transportation and storage.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "folding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FSGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.folding_steel_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-25",
+        name: "FS1 Fold-away Goal",
+        description: `Harrod Sport FS1 folding goal 
+        designed specifically for sports halls.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "folding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FSFAGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.finesse_folding_target_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-26",
+        name: "FS8 Folding Wheelaway Goal",
+        description: `Harrod Sport FS8 heavy duty 
+        indoor wheel away goal designed specifically 
+        for sports halls.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "folding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FSFWGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.finesse_folding_target_goal,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-27",
+        name: "4G Fence Folding Goal",
+        description: `Harrod Sport freestanding portable 
+        aluminium goals are designed for use on grass 
+        or synthetic surfaces. These goals have folding 
+        side frames for ease of transportation and storage.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "folding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FFGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_fence_folding_goal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-28",
+        name: "3G Foldaway Euro Portagoals",
+        description: `Harrod Sport unique Foldaway Euro 
+        Portagoal is the ultimate pre-match solution for
+         national stadiums and professional soccer clubs, 
+         with each goal able to be demounted and folded 
+         into a bag, ready to be transported away from the 
+         pitch.
+As used at stadiums including Wembley, Dublin's Aviva 
+Stadium, Arsenal's Emirates Stadium and the famous 
+Santiago Bernabeu, home of Real Madrid.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "folding"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GFEPImg],
+        details: {
+            specs_description: ProductSpecDescriptions.cyclone_8000,
+            features: ProductFeatures.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["3g_foldaway_euro_portagoal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-29",
+        name: "3G Hinged Portagoal - Senior",
+        description: `Harrod Sport 3G Hinged Portagoal 
+        is perfect for pre-match warm up at clubs with 
+        accessible storage space.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "hinged"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GHPSImg],
+        details: {
+            specs_description: ProductSpecDescriptions.cyclone_8000,
+            features: ProductFeatures.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["3g_hinged_portagoal_senior"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-30",
+        name: "4G Stadium Pro Goal - FIFA  Quality Package - Braided Nets",
+        description: `The Harrod Sport 4G Stadium Pro 
+        Soccer Goal is the latest evolution in goal 
+        posts and recently became the first goal in the 
+        world to achieve FIFA Approved status.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "net", "netting"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GSPGQBNImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_stadium_pro_goal_braided_nets"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-31",
+        name: "4G Stadium Pro Goal",
+        description: `The Harrod Sport 4G Stadium Pro Soccer 
+        Goal is the latest evolution in goal posts, 
+        manufactured to the highest standards and built 
+        to be the world's best stadium goal, it is used 
+        by prestigious soccer clubs and stadiums all over 
+        the world. These goal posts and nets are suitable 
+        for the highest level of professional soccer matches.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GSPGImg],
+        details: {
+            specs_description: ProductSpecDescriptions.cyclone_8000,
+            features: ProductFeatures.cyclone_8000,
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_stadium_pro_goal_hex_nets"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-32",
+        name: "4G Stadium Pro Goal - FIFA  Quality Package - Hex Nets",
+        description: `The Harrod Sport 4G Stadium Pro Goal 
+        is the latest evolution in soccer goal 
+        posts which recently achieved FIFA Approved 
+        status, becoming the first accredited goal 
+        in the world, available with Hex Nets.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal", "net", "netting"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [HexNetsImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_stadium_pro_goal_hex_nets"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-33",
+        name: "4G Stadium Goal",
+        description: `Harrod Sport unique Stadium Goal, 
+        in small sided and full sized versions. 
+        Ideal small sided goal for top level 
+        clubs and schools.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GSGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_stadium_goal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-34",
+        name: "4G UEFA Portagoal",
+        description: `
+        A bottom hinged net support 
+        designed to be used in conjunction 
+        with the new UEFA Portagoal and allows 
+        the net to be folded up when not in use 
+        to protect from vermin damage and to enable 
+        ground maintenance.
+        `,
+        mainCategory: "goal",
+        tags: ["soccer", "goal"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GUEFAPImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_uefa_portagoal"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-35",
+        name: "Slimline Bottom Hinged Net Support Bracket",
+        description: `The New Slimline Net Support Bracket 
+        has been designed for use with the Harrod Sport 
+        Stadium Pro Goal.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [SlimelineBracketImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.slimline_bottom_hinged_net_support_bracket,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-36",
+        name: "4G Net Hook Insertion Tool",
+        description: `This useful tool will make 
+        removing the 4G net hooks quick and simple. 
+        The net hooks fit securely into the goal 
+        frame sections and this tool makes it easier 
+        to take them out when the netting is being 
+        \removed or replaced.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [GNHITImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_net_hook_insertion_tool"],
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-37",
+        name: "Fixed Training Goals",
+        description: `Harrod Sport New Fixed 4G Training 
+        Soccer Goals are designed and manufactured 
+        to meet BS EN 16579, the perfect training 
+        aid and top class goal for target practice 
+        on any training pitch.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [FTrainGImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications.fixed_training_goals,
+            },
+            video: "",
+        },
+    },
+    {
+        id: "sgp-38",
+        name: "4G Weighted Euro Portagoal - Senior",
+        description: `Harrod Sport 4G Weighted Euro 
+        Portagoal designed as the ultimate training 
+        ground portable goal, allowing clubs to mirror 
+        the 4G Stadium Goal, but with a goal that can 
+        be transported utilising the Hi-Raise Wheels.`,
+        mainCategory: "goal",
+        tags: ["soccer", "goal"],
+        brand: EquipmentBrand.HARROD_SPORT,
+        images: [WUEFAPSImg],
+        details: {
+            specifications: {
+                type: "goals",
+                data: GoalSpecifications["4g_weighted_portagoal"],
+            },
+            video: "",
+        },
+    },
+];

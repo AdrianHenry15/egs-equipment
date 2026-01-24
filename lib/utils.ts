@@ -15,9 +15,31 @@ export const getRecaptchaToken = async () => {
     });
 };
 
+function parseLocalDate(dateString: string): Date {
+    if (!dateString) {
+        throw new Error("parseLocalDate: dateString is required");
+    }
+
+    const match = dateString.match(/^(\d{4})-(\d{2})-(\d{2})/);
+
+    if (!match) {
+        throw new Error(`parseLocalDate: Invalid date format "${dateString}"`);
+    }
+
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+
+    if (Number.isNaN(year) || Number.isNaN(month) || Number.isNaN(day)) {
+        throw new Error(`parseLocalDate: Invalid date values "${dateString}"`);
+    }
+
+    return new Date(year, month - 1, day);
+}
+
 export function formatEventDateRange(startDate: string, endDate?: string) {
-    const start = new Date(startDate);
-    const end = endDate ? new Date(endDate) : null;
+    const start = parseLocalDate(startDate);
+    const end = endDate ? parseLocalDate(endDate) : null;
 
     if (!end || start.toDateString() === end.toDateString()) {
         // Single-day event

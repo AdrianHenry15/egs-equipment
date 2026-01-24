@@ -17,7 +17,7 @@ export const getProductBrandImage = (brand: EquipmentBrand) => {
             return BuffaloTurbineLogo;
         case EquipmentBrand.DENNIS:
             return DennisLogo;
-        case EquipmentBrand.HARROD_SPORTS:
+        case EquipmentBrand.HARROD_SPORT:
             return HarrodSportsLogo;
         case EquipmentBrand.HOWARDSONS:
             return HowardsonsLogo;

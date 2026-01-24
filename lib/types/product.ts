@@ -118,6 +118,14 @@ export type LineMarkerAccessorySpecificationsType = {
     compatability?: string;
 };
 
+export type GoalSpecificationsType = {
+    sizes?: string[];
+    included?: string[];
+    features?: string[];
+    benefits?: string[];
+    specifications?: string;
+};
+
 export type PackageItemType = {
     name: string;
     quantity: number;
@@ -146,7 +154,7 @@ export type LineMarkerAccessorySpecifications = {
 
 export type GoalSpecifications = {
     type: "goals";
-    data: any;
+    data: GoalSpecificationsType;
 };
 
 export type Details = {

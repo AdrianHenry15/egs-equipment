@@ -1,7 +1,7 @@
 import { ProductSpecificationsType } from "../types/product";
-import { ProductKey } from "./product-keys";
+import { MachineProductKey, ProductKey } from "./product-keys";
 
-export const ProductSpecifications: Record<ProductKey, ProductSpecificationsType> = {
+export const ProductSpecifications: Record<MachineProductKey, ProductSpecificationsType> = {
     javelin: {
         model: "Javelin Aer-Aid 1500",
         code: "FS1066",
@@ -95,10 +95,7 @@ export const ProductSpecifications: Record<ProductKey, ProductSpecificationsType
         engine: {
             tractor_power_requirement: `30hp minimum`,
         },
-        inclusions: [
-            "Includes 2mm tungssten tipped 'hook' blades reel",
-            "Integral heavy duty Oil cooler",
-        ],
+        inclusions: ["Includes 2mm tungssten tipped 'hook' blades reel", "Integral heavy duty Oil cooler"],
     },
     hover_mower: {
         model: "Hover Mower",
@@ -257,75 +254,4 @@ export const ProductSpecifications: Record<ProductKey, ProductSpecificationsType
     cyclone_pto: {
         model: `Cyclone PTO`,
     },
-    // Harrod Products
-    finesse_folding_target_goal: {},
-    folding_target_goal: {},
-    "4g_stadium_pro_goal_braided_nets": {},
-    portaball_pro: {},
-    "4g_stadium_pro_goal_hex_nets": {},
-    "4g_stadium_goal": {},
-    "4g_swivel_portagoal": {},
-    "4g_portagoal": {},
-    "4g_swivel_weighted_portagoal": {},
-    "4g_euro_swivel_portagoal": {},
-    "4g_weighted_portagoal": {},
-    polygoal: {},
-    "4g_portaball_portagoal_with_net": {},
-    "4g_uefa_portagoal": {},
-    "4g_euro_portagoal": {},
-    slimline_bottom_hinged_net_support_bracket: {},
-    "4g_net_hook_insertion_tool": {},
-    heavyweight_freestanding_goal: {},
-    folding_aluminum_goal: {},
-    wheelaway_analyst_shelter: {},
-    mini_target_goal: {},
-    perimeter_poles: {},
-    hi_raise_wheels: {},
-    super_heavyweight_goal: {},
-    heavyweight_goal: {},
-    super_heavyweight_goal_with_locking_sockets: {},
-    freestanding_steel_goal: {},
-    folding_steel_goal: {},
-    freestanding_aluminium_goal: {},
-    u_peg_anchor_kit: {},
-
-    // Line Marker Paint
-    ecoline: {},
-    direct: {},
-    edge: {},
-    transfer: {},
-    extreme: {},
-    lumen: {},
-    clubline: {},
-    line_out: {},
-    agp: {},
-
-    // Line Marker Machines
-    hybrid: {},
-    eco_pro: {},
-    eco_club: {},
-    eco_lite: {},
-    fusion: {},
-    classic: {},
-
-    // Line Marker Accessories
-    line_marking_handbook: {},
-    linefix: {},
-    grassroots_marking_kit: {},
-    professional_marking_kit: {},
-    initial_pitch_system: {},
-    "200_m_string_line": {},
-    pitch_marking_pegs: {},
-    penalty_circle_marker: {},
-    "100m_measuring_tape": {},
-    guide_reel: {},
-    mini_guide_reel: {},
-    "3_4_5_triangle": {},
-    kit_bag: {},
-    "750_ml_aerosol": {},
-    "6l_water_tank": {},
-    "25l_paint_tank": {},
-    spray_marker_service_kit: {},
-    ecoclean_10l: {},
-    concentrate_mixing_kit: {},
 };
