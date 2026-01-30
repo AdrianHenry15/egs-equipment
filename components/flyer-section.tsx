@@ -8,7 +8,7 @@ export default function SfmaFlyerSection() {
             {/* Background layer */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/flyers/egs_sfma.jpg"
+                    src="/flyers/gcsaa.jpg"
                     alt=""
                     fill
                     aria-hidden
@@ -22,7 +22,7 @@ export default function SfmaFlyerSection() {
                     <div className="px-4 py-10">
                         <div className="mx-auto w-full max-w-5xl">
                             <Image
-                                src="/flyers/egs_sfma.jpg"
+                                src="/flyers/gcsaa.jpg"
                                 alt="SFMA 2026 Conference – Dennis & SISIS"
                                 width={1600}
                                 height={900}
@@ -41,7 +41,7 @@ export default function SfmaFlyerSection() {
 
                         <div className="flex flex-wrap items-center gap-3">
                             <span className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-bold text-white">
-                                Stand 105
+                                Booth 1349
                             </span>
 
                             <Link
