@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function SfmaFlyerSection() {
+export default function FlyerSection() {
     return (
         <section className="relative mx-auto max-w-7xl px-4 py-12 sm:py-16">
             {/* Card wrapper MUST be relative */}
@@ -35,8 +35,8 @@ export default function SfmaFlyerSection() {
                     {/* Content */}
                     <div className="flex flex-col gap-4 bg-white/90 px-6 py-6 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between">
                         <div>
-                            <h2 className="text-lg font-semibold text-slate-900">SFMA 2026 Conference & Exhibition</h2>
-                            <p className="mt-1 text-sm text-slate-600">January 19–22 · Fort Worth Convention Center</p>
+                            <h2 className="text-lg font-semibold text-slate-900">2026 GCSAA Conference & Trade Show</h2>
+                            <p className="mt-1 text-sm text-slate-600">Februrary 2-5 · Orlando Florida</p>
                         </div>
 
                         <div className="flex flex-wrap items-center gap-3">
