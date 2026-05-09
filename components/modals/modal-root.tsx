@@ -13,15 +13,15 @@ export default function ModalRoot() {
     if (!isOpen || !type) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-            {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={closeModal} />
+        <div className="fixed inset-0 z-9000 flex items-center justify-center px-4 py-20 sm:py-24" role="presentation">
+            <button
+                type="button"
+                aria-label="Close modal"
+                className="absolute inset-0 cursor-default bg-brand-black/60 backdrop-blur-sm"
+                onClick={closeModal}
+            />
 
-            {/* Modal shell */}
-            <div
-                className="relative z-10 mt-16 sm:mt-24 w-full px-4 flex justify-center"
-                onClick={(e) => e.stopPropagation()}
-            >
+            <div className="relative z-10 flex w-full justify-center" onClick={(event) => event.stopPropagation()}>
                 {type === "sign_in" && <AuthModal mode="sign_in" />}
                 {type === "sign_up" && <AuthModal mode="sign_up" />}
                 {type === "confirmation" && <ConfirmationModal />}
