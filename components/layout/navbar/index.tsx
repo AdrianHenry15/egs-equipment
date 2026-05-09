@@ -67,7 +67,7 @@ export default function Navbar() {
         });
 
     return (
-        <nav className="sticky top-0 z-50 border-b border-border bg-background/90 text-foreground shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/75">
+        <nav className="sticky top-0 z-50 border-b border-border bg-background/90 text-foreground shadow-sm backdrop-blur supports-backdrop-filter:bg-background/75">
             <div className="grid h-20 grid-cols-3 items-center px-4 xl:px-8">
                 <div className="flex items-center gap-3">
                     <button
