@@ -10,7 +10,7 @@ const sendEmail = (
     serviceId: string,
     templateId: string,
     templateParams: TemplateParams,
-    publicKey: string
+    publicKey: string,
 ): Promise<{ success: boolean; response?: EmailJSResponseStatus; error?: unknown }> => {
     return emailjs.send(serviceId, templateId, templateParams, publicKey).then(
         (response: EmailJSResponseStatus) => {
@@ -20,7 +20,7 @@ const sendEmail = (
         (error: unknown) => {
             toast.error("There was an error submitting your estimate. Please try again.");
             return { success: false, error };
-        }
+        },
     );
 };
 

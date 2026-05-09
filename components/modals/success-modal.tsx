@@ -31,17 +31,13 @@ const SuccessModal = () => {
                             leaveTo="opacity-0 scale-95"
                         >
                             <DialogPanel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                                <DialogTitle
-                                    as="h3"
-                                    className="text-lg font-medium leading-6 text-gray-900"
-                                >
+                                <DialogTitle as="h3" className="text-lg font-medium leading-6 text-gray-900">
                                     Estimate Request successful
                                 </DialogTitle>
                                 <div className="mt-2">
                                     <p className="text-sm text-gray-500">
-                                        Your Estimate Request has been successfully submitted. We’ve
-                                        sent you an email with all of the details of your Estimate
-                                        Request.
+                                        Your Estimate Request has been successfully submitted. We’ve sent you an email
+                                        with all of the details of your Estimate Request.
                                     </p>
                                 </div>
 

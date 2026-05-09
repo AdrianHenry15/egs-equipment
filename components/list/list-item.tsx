@@ -17,11 +17,7 @@ export default function ListItem({ image, title, description, meta, href }: List
         >
             {/* Left image / avatar */}
             {image ? (
-                <Image
-                    src={image}
-                    alt=""
-                    className="h-12 w-12 rounded-md object-cover bg-gray-200"
-                />
+                <Image src={image} alt="" className="h-12 w-12 rounded-md object-cover bg-gray-200" />
             ) : (
                 <div className="h-12 w-12 rounded-md bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-sm font-medium">
                     {title.charAt(0)}
@@ -31,11 +27,7 @@ export default function ListItem({ image, title, description, meta, href }: List
             {/* Main content */}
             <div className="flex-1 min-w-0">
                 <p className="truncate font-medium text-gray-900 dark:text-gray-100">{title}</p>
-                {description && (
-                    <p className="truncate text-sm text-gray-600 dark:text-gray-400">
-                        {description}
-                    </p>
-                )}
+                {description && <p className="truncate text-sm text-gray-600 dark:text-gray-400">{description}</p>}
             </div>
 
             {/* Right meta */}

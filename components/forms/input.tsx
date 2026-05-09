@@ -31,12 +31,7 @@ const Input = ({
             defaultValue={defaultValue}
             render={({ field }) => (
                 <div>
-                    <input
-                        {...field}
-                        className={InputClass}
-                        type="text"
-                        placeholder={placeholder}
-                    />
+                    <input {...field} className={InputClass} type="text" placeholder={placeholder} />
                     {errors && errors[inputName] && errors[inputName]?.type === "required" && (
                         <p className="text-sm text-red-600 ml-4">{errorRequiredText}</p>
                     )}

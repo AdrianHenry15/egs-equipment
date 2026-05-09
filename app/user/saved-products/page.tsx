@@ -20,9 +20,7 @@ export default async function SavedProductsPage() {
             {/* Empty State */}
             {(!saves || saves.length === 0) && (
                 <div className="rounded-xl border border-dashed border-emerald-200 dark:border-emerald-900 bg-white dark:bg-gray-950 py-20 text-center">
-                    <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
-                        No saved products yet
-                    </p>
+                    <p className="text-lg font-medium text-gray-700 dark:text-gray-300">No saved products yet</p>
                     <p className="mt-1 text-sm text-gray-500">
                         Saved items will appear here once users start bookmarking products.
                     </p>
@@ -49,9 +47,7 @@ export default async function SavedProductsPage() {
 
                                     <p className="mt-1 text-sm text-gray-500">
                                         Saved by user
-                                        <span className="ml-1 font-mono text-xs text-gray-400">
-                                            {save.clerkId}
-                                        </span>
+                                        <span className="ml-1 font-mono text-xs text-gray-400">{save.clerkId}</span>
                                     </p>
 
                                     {save.product?.brand && (

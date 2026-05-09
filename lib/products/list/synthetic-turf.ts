@@ -207,8 +207,7 @@ export const SyntheticTurfProducts: ProductType[] = [
     {
         id: "syn-11",
         name: "Litamina 1200",
-        description:
-            "Compact sweeper for collection of debris from sand or rubber crumb synthetics",
+        description: "Compact sweeper for collection of debris from sand or rubber crumb synthetics",
         mainCategory: "synthetic_turf",
         tags: ["sweeper", "synthetic_turf"],
         brand: EquipmentBrand.SYNPRO,

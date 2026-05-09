@@ -45,12 +45,8 @@ export async function createClientEquipmentEvent(input: EquipmentEventInput) {
             _ref: input.clientId,
         },
         eventType: input.eventType,
-        lastEquipment: input.lastEquipment
-            ? { _type: "reference", _ref: input.lastEquipment }
-            : undefined,
-        currentEquipment: input.currentEquipment
-            ? { _type: "reference", _ref: input.currentEquipment }
-            : undefined,
+        lastEquipment: input.lastEquipment ? { _type: "reference", _ref: input.lastEquipment } : undefined,
+        currentEquipment: input.currentEquipment ? { _type: "reference", _ref: input.currentEquipment } : undefined,
         reason: input.reason,
         notes: input.notes,
         eventDate: new Date().toISOString(),
@@ -71,10 +67,7 @@ export async function updateClient(
 }
 
 // UPDATE CLIENT STATUS
-export async function updateClientStatus(
-    clientId: string,
-    status: "active" | "inactive" | "archived",
-) {
+export async function updateClientStatus(clientId: string, status: "active" | "inactive" | "archived") {
     return sanityWriteClient.patch(clientId).set({ status }).commit();
 }
 

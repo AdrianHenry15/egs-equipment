@@ -20,9 +20,7 @@ export function validateEquipmentEvent(input: {
         case "upgrade":
         case "replacement":
             if (!lastEquipmentId || !currentEquipmentId) {
-                throw new Error(
-                    `${eventType} requires both lastEquipmentId and currentEquipmentId`,
-                );
+                throw new Error(`${eventType} requires both lastEquipmentId and currentEquipmentId`);
             }
             break;
 

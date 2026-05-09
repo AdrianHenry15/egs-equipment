@@ -91,9 +91,7 @@ export default function LeadForm({
 
             openModal("success", {
                 title: initialValues ? "Lead Updated" : "Lead Created",
-                message: initialValues
-                    ? "The lead was successfully updated."
-                    : "The lead was successfully created.",
+                message: initialValues ? "The lead was successfully updated." : "The lead was successfully created.",
             });
         } finally {
             setSubmitting(false);
@@ -103,37 +101,27 @@ export default function LeadForm({
     return (
         <form onSubmit={handleSubmit} className="space-y-8">
             <div className="space-y-1">
-                <h1 className="text-3xl font-semibold">
-                    {initialValues ? "Edit Lead" : "Create Lead"}
-                </h1>
+                <h1 className="text-3xl font-semibold">{initialValues ? "Edit Lead" : "Create Lead"}</h1>
                 <aside className="text-gray-400">
-                    {initialValues
-                        ? "Edit an existing lead."
-                        : "Manually add a new lead to the system."}
+                    {initialValues ? "Edit an existing lead." : "Manually add a new lead to the system."}
                 </aside>
             </div>
             {/* CONTACT INFO */}
             <section className="rounded-lg border p-6 bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">
-                <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
-                    Contact Information
-                </h2>
+                <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">Contact Information</h2>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                     <Field label="First name" required error={errors.firstName}>
                         <Input
                             value={form.firstName}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                                update("firstName", e.target.value)
-                            }
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => update("firstName", e.target.value)}
                         />
                     </Field>
 
                     <Field label="Last name">
                         <Input
                             value={form.lastName}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                                update("lastName", e.target.value)
-                            }
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => update("lastName", e.target.value)}
                         />
                     </Field>
 
@@ -141,18 +129,14 @@ export default function LeadForm({
                         <Input
                             type="email"
                             value={form.email}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                                update("email", e.target.value)
-                            }
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => update("email", e.target.value)}
                         />
                     </Field>
 
                     <Field label="Phone" error={errors.phone}>
                         <Input
                             value={form.phone}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                                update("phone", e.target.value)
-                            }
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => update("phone", e.target.value)}
                         />
                     </Field>
                 </div>
@@ -160,29 +144,21 @@ export default function LeadForm({
 
             {/* COMPANY */}
             <section className="rounded-lg border p-6 bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">
-                <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
-                    Company
-                </h2>
+                <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">Company</h2>
 
                 <Field label="Company name">
                     <Input
                         value={form.company}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                            update("company", e.target.value)
-                        }
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => update("company", e.target.value)}
                     />
                 </Field>
             </section>
 
             {/* EQUIPMENT */}
             <section className="rounded-lg border p-6 bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">
-                <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
-                    Equipment Needs
-                </h2>
+                <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">Equipment Needs</h2>
 
-                {errors.equipmentNeeds && (
-                    <p className="mb-2 text-sm text-red-600">{errors.equipmentNeeds}</p>
-                )}
+                {errors.equipmentNeeds && <p className="mb-2 text-sm text-red-600">{errors.equipmentNeeds}</p>}
 
                 <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                     {EQUIPMENT_CATEGORIES.map((item) => {
@@ -213,24 +189,18 @@ export default function LeadForm({
 
             {/* NOTES */}
             <section className="rounded-lg border p-6 bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">
-                <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
-                    Notes
-                </h2>
+                <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">Notes</h2>
 
                 <Textarea
                     rows={4}
                     value={form.message}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-                        update("message", e.target.value)
-                    }
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => update("message", e.target.value)}
                 />
             </section>
 
             {/* META */}
             <section className="rounded-lg border p-6 bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">
-                <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
-                    Lead Details
-                </h2>
+                <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">Lead Details</h2>
 
                 <div className="grid gap-4 sm:grid-cols-3">
                     <Field label="Source">

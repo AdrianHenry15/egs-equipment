@@ -56,8 +56,7 @@ export default function ConfirmationModal() {
                                 </DialogTitle>
 
                                 <p className="my-4 text-sm text-gray-500">
-                                    {confirm.message ??
-                                        "Are you sure you want to continue with this action?"}
+                                    {confirm.message ?? "Are you sure you want to continue with this action?"}
                                 </p>
 
                                 <div className="mt-4 flex justify-center gap-4">
@@ -66,9 +65,7 @@ export default function ConfirmationModal() {
                                         onClick={handleConfirm}
                                         disabled={loading}
                                     >
-                                        {loading
-                                            ? "Processing..."
-                                            : (confirm.confirmLabel ?? "Confirm")}
+                                        {loading ? "Processing..." : (confirm.confirmLabel ?? "Confirm")}
                                     </button>
 
                                     <button

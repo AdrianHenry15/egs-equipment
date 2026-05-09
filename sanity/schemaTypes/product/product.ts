@@ -32,15 +32,7 @@ export default defineType({
             name: "mainCategory",
             type: "string",
             options: {
-                list: [
-                    "Sport",
-                    "Synthetic Turf",
-                    "Natural Turf",
-                    "Line Marker",
-                    "Hand Tool",
-                    "Goal",
-                    "Debris Blower",
-                ],
+                list: ["Sport", "Synthetic Turf", "Natural Turf", "Line Marker", "Hand Tool", "Goal", "Debris Blower"],
             },
             validation: (Rule) => Rule.required(),
         }),
@@ -89,15 +81,7 @@ export default defineType({
             name: "usedBy",
             type: "string",
             options: {
-                list: [
-                    "Golf",
-                    "Soccer",
-                    "American Football",
-                    "Baseball",
-                    "Lacrosse",
-                    "Sports Turf",
-                    "Synthetic Turf",
-                ],
+                list: ["Golf", "Soccer", "American Football", "Baseball", "Lacrosse", "Sports Turf", "Synthetic Turf"],
             },
         }),
 

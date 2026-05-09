@@ -9,10 +9,6 @@ export type NavMenuItems = "Home" | "Products" | "Parts Form" | "About" | "Finan
 
 export type NavMenuLinks = "/" | "/products" | "/parts-form" | "/about" | "/finance-options";
 
-export type ProductNavItems =
-    | "All Products"
-    | "Golf & Sports Turf"
-    | "Synthetic Turf"
-    | "All Purpose";
+export type ProductNavItems = "All Products" | "Golf & Sports Turf" | "Synthetic Turf" | "All Purpose";
 
 export type ProductNavLinks = "/products" | "/products/synthetic-turf" | "/products/all-purpose";

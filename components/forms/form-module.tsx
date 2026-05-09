@@ -39,9 +39,7 @@ export function Field({
 
             {children}
 
-            {description && !error && (
-                <span className="text-xs text-gray-500 dark:text-gray-400">{description}</span>
-            )}
+            {description && !error && <span className="text-xs text-gray-500 dark:text-gray-400">{description}</span>}
 
             {error && <span className="text-xs text-red-600 dark:text-red-500">{error}</span>}
         </label>
@@ -52,10 +50,10 @@ export function Field({
 /* Input */
 /* -------------------------------- */
 
-export const Input = React.forwardRef<
-    HTMLInputElement,
-    React.InputHTMLAttributes<HTMLInputElement>
->(function Input({ className, ...props }, ref) {
+export const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(function Input(
+    { className, ...props },
+    ref,
+) {
     return <input ref={ref} className={cn(baseInputStyles, className)} {...props} />;
 });
 
@@ -63,24 +61,22 @@ export const Input = React.forwardRef<
 /* Select */
 /* -------------------------------- */
 
-export const Select = React.forwardRef<
-    HTMLSelectElement,
-    React.SelectHTMLAttributes<HTMLSelectElement>
->(function Select({ className, children, ...props }, ref) {
-    return (
-        <select ref={ref} className={cn(baseInputStyles, className)} {...props}>
-            {children}
-        </select>
-    );
-});
+export const Select = React.forwardRef<HTMLSelectElement, React.SelectHTMLAttributes<HTMLSelectElement>>(
+    function Select({ className, children, ...props }, ref) {
+        return (
+            <select ref={ref} className={cn(baseInputStyles, className)} {...props}>
+                {children}
+            </select>
+        );
+    },
+);
 
 /* -------------------------------- */
 /* Textarea */
 /* -------------------------------- */
 
-export const Textarea = React.forwardRef<
-    HTMLTextAreaElement,
-    React.TextareaHTMLAttributes<HTMLTextAreaElement>
->(function Textarea({ className, ...props }, ref) {
-    return <textarea ref={ref} className={cn(baseInputStyles, className)} {...props} />;
-});
+export const Textarea = React.forwardRef<HTMLTextAreaElement, React.TextareaHTMLAttributes<HTMLTextAreaElement>>(
+    function Textarea({ className, ...props }, ref) {
+        return <textarea ref={ref} className={cn(baseInputStyles, className)} {...props} />;
+    },
+);

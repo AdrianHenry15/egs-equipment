@@ -38,11 +38,10 @@ export default function EventsGrid({ events, variant }: EventsGridProps) {
                     key={event.id}
                     className={
                         isUpcoming
-                            ? "group overflow-hidden rounded-xl border border-border bg-card transition-shadow duration-300 hover:shadow-2xl"
-                            : "overflow-hidden rounded-lg border border-border bg-muted"
+                            ? "group flex flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground transition-shadow duration-300 hover:shadow-2xl"
+                            : "flex flex-col overflow-hidden rounded-lg border border-border bg-muted"
                     }
                 >
-                    {/* Image */}
                     <div
                         className={
                             isUpcoming ? "relative h-56 w-full overflow-hidden" : "relative h-40 w-full overflow-hidden"
@@ -61,8 +60,7 @@ export default function EventsGrid({ events, variant }: EventsGridProps) {
                         />
                     </div>
 
-                    {/* Content */}
-                    <div className={isUpcoming ? "p-6" : "p-4"}>
+                    <div className={isUpcoming ? "flex flex-1 flex-col p-6" : "flex flex-1 flex-col p-4"}>
                         <h4 className={`${isUpcoming ? "text-xl font-semibold" : "font-semibold"} text-foreground`}>
                             {event.title}
                         </h4>
@@ -76,7 +74,6 @@ export default function EventsGrid({ events, variant }: EventsGridProps) {
                         >
                             <span className="flex items-center gap-1">
                                 <CalendarDaysIcon className="h-4 w-4" />
-
                                 {formatEventDateRange(event.startDate, event.endDate)}
                             </span>
 
@@ -90,10 +87,10 @@ export default function EventsGrid({ events, variant }: EventsGridProps) {
                             {event.description}
                         </p>
 
-                        <div className={isUpcoming ? "mt-6" : "mt-3"}>
+                        <div className={isUpcoming ? "mt-auto pt-6" : "mt-auto pt-3"}>
                             <Link
                                 href={event.href}
-                                className="inline-flex items-center text-sm font-semibold text-primary transition hover:text-primary/80"
+                                className="inline-flex text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                             >
                                 {isUpcoming ? "View Event →" : "View Recap →"}
                             </Link>

@@ -30,9 +30,7 @@ export default async function UsersPage() {
             {(!users || users.totalCount === 0) && (
                 <div className="rounded-lg border border-dashed py-16 text-center text-gray-500">
                     <p className="text-lg font-medium">No users yet</p>
-                    <p className="text-sm">
-                        Users will appear here once someone submits an inquiry.
-                    </p>
+                    <p className="text-sm">Users will appear here once someone submits an inquiry.</p>
                 </div>
             )}
 

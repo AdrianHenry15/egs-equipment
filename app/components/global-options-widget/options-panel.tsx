@@ -76,9 +76,7 @@ const OptionsPanel = () => {
                 {isLoaded && !hasOrgs && (
                     <div className="rounded-md border px-3 py-2 text-sm text-gray-500">
                         No organizations yet
-                        <div className="mt-2 text-xs text-gray-400">
-                            Create one when you need team access.
-                        </div>
+                        <div className="mt-2 text-xs text-gray-400">Create one when you need team access.</div>
                     </div>
                 )}
             </SignedIn>

@@ -61,9 +61,7 @@ export default function ClientForm({
     return (
         <form onSubmit={handleSubmit} className="space-y-8">
             <div className="space-y-1">
-                <h1 className="text-3xl font-semibold">
-                    {initialValues ? "Edit Client" : "Create Client"}
-                </h1>
+                <h1 className="text-3xl font-semibold">{initialValues ? "Edit Client" : "Create Client"}</h1>
                 <aside className="text-gray-400">
                     {initialValues ? "Edit an existing client." : "Add a client to the system."}
                 </aside>
@@ -79,39 +77,23 @@ export default function ClientForm({
                     </Field>
 
                     <Field label="Email" required error={errors.email}>
-                        <Input
-                            type="email"
-                            value={form.email}
-                            onChange={(e) => update("email", e.target.value)}
-                        />
+                        <Input type="email" value={form.email} onChange={(e) => update("email", e.target.value)} />
                     </Field>
 
                     <Field label="Phone">
-                        <Input
-                            value={form.phone}
-                            onChange={(e) => update("phone", e.target.value)}
-                        />
+                        <Input value={form.phone} onChange={(e) => update("phone", e.target.value)} />
                     </Field>
 
                     <Field label="Company">
-                        <Input
-                            value={form.company}
-                            onChange={(e) => update("company", e.target.value)}
-                        />
+                        <Input value={form.company} onChange={(e) => update("company", e.target.value)} />
                     </Field>
 
                     <Field label="Website">
-                        <Input
-                            value={form.website}
-                            onChange={(e) => update("website", e.target.value)}
-                        />
+                        <Input value={form.website} onChange={(e) => update("website", e.target.value)} />
                     </Field>
 
                     <Field label="Status">
-                        <Select
-                            value={form.status}
-                            onChange={(e) => update("status", e.target.value as any)}
-                        >
+                        <Select value={form.status} onChange={(e) => update("status", e.target.value as any)}>
                             <option value="active">Active</option>
                             <option value="paused">Paused</option>
                             <option value="completed">Completed</option>
@@ -125,11 +107,7 @@ export default function ClientForm({
             <section className="rounded-lg border p-6 bg-white dark:bg-gray-950">
                 <h2 className="mb-4 text-lg font-semibold">Internal Notes</h2>
 
-                <Textarea
-                    rows={4}
-                    value={form.notes}
-                    onChange={(e) => update("notes", e.target.value)}
-                />
+                <Textarea rows={4} value={form.notes} onChange={(e) => update("notes", e.target.value)} />
             </section>
 
             {/* ACTION BAR */}

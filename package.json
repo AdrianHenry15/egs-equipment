@@ -7,6 +7,8 @@
         "build": "next build --turbopack",
         "start": "next start",
         "lint": "next lint",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
         "typegen": "sanity schema extract && sanity typegen generate"
     },
     "dependencies": {
@@ -48,6 +50,8 @@
         "eslint": "^9",
         "eslint-config-next": "16.1.0",
         "postcss": "^8",
+        "prettier": "^3.8.3",
+        "prettier-plugin-tailwindcss": "^0.8.0",
         "tailwindcss": "^4.1.18",
         "typescript": "^5"
     }

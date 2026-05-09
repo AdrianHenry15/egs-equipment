@@ -10,7 +10,7 @@ interface GoogleReview {
 export async function getGoogleReviews(placeId: string, apiKey: string): Promise<GoogleReview> {
     try {
         const response = await fetch(
-            `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`
+            `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`,
         );
         const data = await response.json();
         return data;

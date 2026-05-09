@@ -90,10 +90,7 @@ export default function EventForm({
                     </Field>
 
                     <Field label="Event type" required error={errors.type}>
-                        <Select
-                            value={form.type}
-                            onChange={(e) => update("type", e.target.value as any)}
-                        >
+                        <Select value={form.type} onChange={(e) => update("type", e.target.value as any)}>
                             <option value="trade_show">Trade Show</option>
                             <option value="demo_day">Demo Day</option>
                             <option value="tournament">Tournament</option>
@@ -104,10 +101,7 @@ export default function EventForm({
                     </Field>
 
                     <Field label="Status">
-                        <Select
-                            value={form.status}
-                            onChange={(e) => update("status", e.target.value as any)}
-                        >
+                        <Select value={form.status} onChange={(e) => update("status", e.target.value as any)}>
                             <option value="upcoming">Upcoming</option>
                             <option value="completed">Completed</option>
                             <option value="cancelled">Cancelled</option>
@@ -198,22 +192,14 @@ export default function EventForm({
             <section className="rounded-lg border p-6 bg-white dark:bg-gray-950">
                 <h2 className="mb-4 text-lg font-semibold">Description</h2>
 
-                <Textarea
-                    rows={4}
-                    value={form.description}
-                    onChange={(e) => update("description", e.target.value)}
-                />
+                <Textarea rows={4} value={form.description} onChange={(e) => update("description", e.target.value)} />
             </section>
 
             {/* NOTES */}
             <section className="rounded-lg border p-6 bg-white dark:bg-gray-950">
                 <h2 className="mb-4 text-lg font-semibold">Internal Notes</h2>
 
-                <Textarea
-                    rows={4}
-                    value={form.notes}
-                    onChange={(e) => update("notes", e.target.value)}
-                />
+                <Textarea rows={4} value={form.notes} onChange={(e) => update("notes", e.target.value)} />
             </section>
 
             {/* ACTION BAR */}

@@ -1,8 +1,5 @@
 import { NextResponse } from "next/server";
-import {
-    createClientEquipmentEvent,
-    replaceClientEquipment,
-} from "@/sanity/mutations/admin/client";
+import { createClientEquipmentEvent, replaceClientEquipment } from "@/sanity/mutations/admin/client";
 import { sanityReadClient } from "@/sanity/lib/client";
 
 interface RouteContext {
@@ -23,10 +20,9 @@ export async function POST(req: Request, { params }: RouteContext) {
 
     try {
         // 1. Ensure client exists
-        const clientExists = await sanityReadClient.fetch(
-            `*[_type == "client" && _id == $id][0]{ _id }`,
-            { id: clientId },
-        );
+        const clientExists = await sanityReadClient.fetch(`*[_type == "client" && _id == $id][0]{ _id }`, {
+            id: clientId,
+        });
 
         if (!clientExists) {
             return NextResponse.json({ error: "Client not found" }, { status: 404 });

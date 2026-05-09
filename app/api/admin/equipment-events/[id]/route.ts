@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
 import { getEquipmentEventByIdQuery } from "@/sanity/queries/admin/equipment-event";
-import {
-    deleteEquipmentEvent,
-    updateEquipmentEvent,
-} from "@/sanity/mutations/admin/equipment-event";
+import { deleteEquipmentEvent, updateEquipmentEvent } from "@/sanity/mutations/admin/equipment-event";
 import { sanityReadClient } from "@/sanity/lib/client";
 
 interface RouteContext {

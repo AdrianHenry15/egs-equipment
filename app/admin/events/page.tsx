@@ -29,9 +29,7 @@ export default async function EventsPage() {
             {(!events || events.length === 0) && (
                 <div className="rounded-lg border border-dashed py-16 text-center text-gray-500">
                     <p className="text-lg font-medium">No events yet</p>
-                    <p className="text-sm">
-                        Events will appear here once someone submits an inquiry.
-                    </p>
+                    <p className="text-sm">Events will appear here once someone submits an inquiry.</p>
                 </div>
             )}
 

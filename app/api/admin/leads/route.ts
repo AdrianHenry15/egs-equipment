@@ -8,9 +8,7 @@ export async function GET(req: Request) {
         const { searchParams } = new URL(req.url);
         const status = searchParams.get("status");
 
-        const query = status
-            ? `*[_type == "lead" && status == $status] | order(createdAt desc)`
-            : getAllLeadsQuery;
+        const query = status ? `*[_type == "lead" && status == $status] | order(createdAt desc)` : getAllLeadsQuery;
 
         const leads = await sanityReadClient.fetch(query, status ? { status } : {});
 
