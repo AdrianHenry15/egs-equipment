@@ -16,7 +16,6 @@ const ContactForm = () => {
     const [inputClicked, setInputClicked] = useState(false);
     const { openModal, setLoading, closeModal } = useModalStore();
 
-    // EMAIL JS
     const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID as string;
     const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string;
     const PUBLIC_KEY = process.env.NEXT_PUBLIC_KEY as string;
@@ -51,15 +50,11 @@ const ContactForm = () => {
             setLoading(true);
             const formValues = getValues();
 
-            // const captchaToken = await getRecaptchaToken();
-            // console.log("reCAPTCHA token:", captchaToken);
-
             await emailjs.send(
                 SERVICE_ID,
                 TEMPLATE_ID,
                 {
                     ...formValues,
-                    // captchaToken,
                 },
                 PUBLIC_KEY,
             );
@@ -80,15 +75,16 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="flex flex-col bg-white items-center py-20 relative w-full md:px-4">
+        <section className="relative flex w-full flex-col items-center bg-background py-20 md:px-4">
             {/* FORM CONTAINER */}
-            <div className="flex flex-col w-11/12 bg-zinc-100 p-6 rounded-2xl shadow-white shadow-lg border-2 md:w-162.5">
+            <div className="flex w-11/12 flex-col rounded-2xl border-2 border-border bg-card p-6 shadow-lg md:w-162.5">
                 {/* LOGO */}
-                <div className="flex justify-center my-10">
+                <div className="my-10 flex justify-center">
                     <Image loading="eager" width={150} src={Logo} alt="logo-icon" />
                 </div>
+
                 {/* FORM */}
-                <form className="self-center w-full md:w-2/3" onSubmit={handleSubmit(onSubmit)}>
+                <form className="w-full self-center md:w-2/3" onSubmit={handleSubmit(onSubmit)}>
                     {/* FIRST NAME */}
                     <Input
                         inputName={"firstName"}
@@ -98,6 +94,7 @@ const ContactForm = () => {
                         errors={errors}
                         errorPatternText="First Name is required."
                     />
+
                     {/* LAST NAME */}
                     <Input
                         inputName={"lastName"}
@@ -106,6 +103,7 @@ const ContactForm = () => {
                         control={control}
                         errorPatternText="Last Name is required."
                     />
+
                     {/* PHONE NUMBER */}
                     <Input
                         inputName={"phone"}
@@ -115,6 +113,7 @@ const ContactForm = () => {
                         errors={errors}
                         errorPatternText={"Phone Number is not valid."}
                     />
+
                     {/* EMAIL */}
                     <Input
                         inputName={"email"}
@@ -128,13 +127,14 @@ const ContactForm = () => {
 
                     {/* COMMENT */}
                     <Textarea inputName={"comment"} inputLabel={"Comment"} placeholder={"Comment"} control={control} />
+
                     <div className={`${inputClicked ? "" : "animate-pulse"} my-10`}>
                         <Button
                             onClick={() => setInputClicked(true)}
                             submit
                             name="Submit Request"
                             className="w-full justify-center"
-                        ></Button>
+                        />
                     </div>
                 </form>
             </div>

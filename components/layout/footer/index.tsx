@@ -28,12 +28,12 @@ const Footer = () => {
             </div>
 
             {/* COPYRIGHT */}
-            <div className="border-t border-border">
-                <div className="mx-auto flex w-full max-w-7xl items-center justify-center px-4 py-4 text-center">
+            <div>
+                <div className="mx-auto flex w-full max-w-7xl items-center justify-center py-1 text-center">
                     <Link
                         href="https://www.thirdgenerationstudios.com/"
                         target="_blank"
-                        className="text-xs text-muted-foreground transition hover:text-primary"
+                        className="text-[0.575rem] text-muted-foreground transition hover:text-primary"
                     >
                         Third Generation Studios.
                     </Link>

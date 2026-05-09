@@ -8,7 +8,6 @@ import type { ConfirmModalPayload } from "@/stores/modal-store/modal-types";
 export default function ConfirmationModal() {
     const { type, isOpen, loading, payload, closeModal, setLoading } = useModalStore();
 
-    // 🔑 Type narrowing (this is required)
     if (type !== "confirmation") return null;
 
     const confirm = payload as ConfirmModalPayload;
@@ -36,7 +35,7 @@ export default function ConfirmationModal() {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <div className="fixed inset-0 bg-black/25" />
+                    <div className="fixed inset-0 bg-foreground/25" />
                 </TransitionChild>
 
                 <div className="fixed inset-0 overflow-y-auto">
@@ -50,18 +49,18 @@ export default function ConfirmationModal() {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <DialogPanel className="w-full max-w-md rounded-2xl bg-white p-6 text-center shadow-xl">
-                                <DialogTitle className="text-lg font-medium text-gray-900 border-b pb-2">
+                            <DialogPanel className="w-full max-w-md rounded-2xl border border-border bg-card p-6 text-center text-card-foreground shadow-xl">
+                                <DialogTitle className="border-b border-border pb-2 text-lg font-medium text-foreground">
                                     {confirm.title ?? "Confirm Action"}
                                 </DialogTitle>
 
-                                <p className="my-4 text-sm text-gray-500">
+                                <p className="my-4 text-sm text-muted-foreground">
                                     {confirm.message ?? "Are you sure you want to continue with this action?"}
                                 </p>
 
                                 <div className="mt-4 flex justify-center gap-4">
                                     <button
-                                        className="rounded-md bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 disabled:opacity-50"
+                                        className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
                                         onClick={handleConfirm}
                                         disabled={loading}
                                     >
@@ -69,7 +68,7 @@ export default function ConfirmationModal() {
                                     </button>
 
                                     <button
-                                        className="rounded-md bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200"
+                                        className="rounded-md border border-border bg-muted px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted/80 disabled:cursor-not-allowed disabled:opacity-50"
                                         onClick={closeModal}
                                         disabled={loading}
                                     >

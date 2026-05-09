@@ -13,7 +13,7 @@ export default function ModalRoot() {
     if (!isOpen || !type) return null;
 
     return (
-        <div className="fixed inset-0 z-9000 flex items-center justify-center px-4 py-20 sm:py-24" role="presentation">
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-20 sm:py-24" role="presentation">
             <button
                 type="button"
                 aria-label="Close modal"

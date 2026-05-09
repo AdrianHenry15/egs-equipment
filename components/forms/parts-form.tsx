@@ -15,13 +15,11 @@ import { Loader } from "../loader";
 import { useModalStore } from "@/stores/modal-store/modal-store";
 
 const PartsForm = () => {
-    // SWITCH BETWEEN CONTACT AND ESTIMATE FORM | BOTH FORMS DO THE SAME THING FOR NOW
     const pathname = usePathname();
     const { openModal, closeModal } = useModalStore();
 
     const [loading, setLoading] = useState(false);
 
-    // EMAIL JS
     const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID as string;
     const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string;
     const PUBLIC_KEY = process.env.NEXT_PUBLIC_KEY as string;
@@ -46,15 +44,10 @@ const PartsForm = () => {
         },
     });
 
-    // Final send action (only runs after confirmation)
     const sendEstimate = async () => {
         setLoading(true);
 
-        // Resolve form values
         const formValues = getValues();
-
-        // const captchaToken = await getRecaptchaToken();
-        // console.log("reCAPTCHA token:", captchaToken);
 
         try {
             await emailjs.send(
@@ -62,7 +55,6 @@ const PartsForm = () => {
                 TEMPLATE_ID,
                 {
                     ...formValues,
-                    // captchaToken,
                 },
                 PUBLIC_KEY,
             );
@@ -82,8 +74,6 @@ const PartsForm = () => {
         }
     };
 
-    // Submit handler — opens confirmation modal only
-
     const onSubmit = () => {
         openModal("confirmation", {
             title: "Confirm Submission",
@@ -95,20 +85,24 @@ const PartsForm = () => {
     };
 
     return (
-        <section className="flex flex-col bg-white items-center py-20 shadow-inner relative w-full md:px-4">
+        <section className="relative flex w-full flex-col items-center bg-background py-20 shadow-inner md:px-4">
             {loading ? <Loader /> : null}
-            <h1 className="text-3xl text-black mb-10 font-light animate-bounce">{`${
-                pathname === "/contact-us" ? "Contact Us" : "Request A Quote!"
-            }`}</h1>
+
+            <h1 className="mb-10 animate-bounce text-3xl font-light text-foreground">
+                {pathname === "/contact-us" ? "Contact Us" : "Request A Quote!"}
+            </h1>
+
             {/* FORM CONTAINER */}
-            <div className="flex flex-col w-11/12 bg-zinc-100 p-6 rounded-2xl shadow-white shadow-lg border-2 md:w-162.5">
+            <div className="flex w-11/12 flex-col rounded-2xl border-2 border-border bg-card p-6 shadow-lg md:w-162.5">
                 {/* LOGO */}
-                <div className="flex justify-center my-10">
+                <div className="my-10 flex justify-center">
                     <Image loading="eager" width={150} src={Logo} alt="logo-icon" />
                 </div>
+
                 {/* FORM */}
-                <form className="self-center w-full md:w-2/3" onSubmit={handleSubmit(onSubmit)}>
-                    <h5 className="text-lg font-semibold text-black">Contact Info</h5>
+                <form className="w-full self-center md:w-2/3" onSubmit={handleSubmit(onSubmit)}>
+                    <h5 className="text-lg font-semibold text-foreground">Contact Info</h5>
+
                     {/* FIRST NAME */}
                     <Input
                         inputName={"firstName"}
@@ -118,6 +112,7 @@ const PartsForm = () => {
                         errors={errors}
                         errorPatternText="First Name is required."
                     />
+
                     {/* LAST NAME */}
                     <Input
                         inputName={"lastName"}
@@ -126,6 +121,7 @@ const PartsForm = () => {
                         control={control}
                         errorPatternText="Last Name is required."
                     />
+
                     {/* PHONE NUMBER */}
                     <Input
                         inputName={"phone"}
@@ -135,6 +131,7 @@ const PartsForm = () => {
                         errors={errors}
                         errorPatternText={"Phone Number is not valid."}
                     />
+
                     {/* EMAIL */}
                     <Input
                         inputName={"email"}
@@ -145,6 +142,7 @@ const PartsForm = () => {
                         errorRequiredText={"Email is Required."}
                         errorPatternText={"Email is not valid."}
                     />
+
                     {/* COMPANY NAME */}
                     <Input
                         inputName={"companyName"}
@@ -155,6 +153,7 @@ const PartsForm = () => {
                         errorRequiredText={"Company Name is Required."}
                         errorPatternText={"Company Name is not valid."}
                     />
+
                     {/* Shipping Address */}
                     <Input
                         inputName={"shippingAddress"}
@@ -165,8 +164,11 @@ const PartsForm = () => {
                         errorRequiredText={"Shipping Address is Required."}
                         errorPatternText={"Shipping Address is not valid."}
                     />
-                    <hr className="border-black my-4" />
-                    <h5 className="text-md text-black font-semibold">Machine Info</h5>
+
+                    <hr className="my-4 border-border" />
+
+                    <h5 className="text-md font-semibold text-foreground">Machine Info</h5>
+
                     {/* Machine */}
                     <Input
                         inputName={"machine"}
@@ -174,6 +176,7 @@ const PartsForm = () => {
                         placeholder={"Machine/Model"}
                         control={control}
                     />
+
                     {/* Serial Number */}
                     <Input
                         inputName={"serialNumber"}
@@ -181,6 +184,7 @@ const PartsForm = () => {
                         placeholder={"Serial Number"}
                         control={control}
                     />
+
                     {/* Parts Numbers */}
                     <Textarea
                         inputName={"partsNumbers"}
@@ -188,7 +192,9 @@ const PartsForm = () => {
                         placeholder={"Parts Numbers"}
                         control={control}
                     />
-                    <hr className="border-black my-2" />
+
+                    <hr className="my-2 border-border" />
+
                     {/* Comments/Extra Details */}
                     <Textarea
                         inputName={"comment"}
@@ -196,7 +202,8 @@ const PartsForm = () => {
                         placeholder={"Comments/Extra Details"}
                         control={control}
                     />
-                    <div className={`my-10`}>
+
+                    <div className="my-10">
                         <Button submit name="Submit Request" className="w-full justify-center" />
                     </div>
                 </form>

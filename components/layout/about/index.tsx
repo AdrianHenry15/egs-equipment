@@ -3,11 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import backgroundImg from "@/public/grass-img.jpg";
 import PromoRow from "@/components/promo-row";
-import Link from "next/link";
 
-// Animation Variants
 const fadeIn = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } as const,
@@ -21,43 +20,43 @@ const staggerContainer = {
 const About: React.FC = () => {
     return (
         <motion.div
-            className="min-h-screen w-full bg-white"
+            className="min-h-screen w-full bg-background"
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
         >
-            {/* Jumbotron Header */}
             <motion.div
-                className="relative w-full h-96 md:h-125 overflow-hidden rounded-lg shadow-lg"
+                className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg md:h-125"
                 variants={fadeIn}
             >
                 <Image
                     src={backgroundImg}
                     alt="Jumbotron Background"
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center"
+                    fill
+                    sizes="100vw"
                     priority
-                    className="opacity-90"
+                    className="object-cover object-center opacity-90"
                 />
-                <div className="absolute inset-0 bg-linear-to-b from-black/50 to-black/80 flex flex-col items-center justify-center text-center text-white px-6">
-                    <motion.h1 className="text-3xl md:text-5xl font-extrabold drop-shadow-lg" variants={fadeIn}>
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-linear-to-b from-foreground/50 to-foreground/80 px-6 text-center text-background">
+                    <motion.h1 className="text-3xl font-extrabold drop-shadow-lg md:text-5xl" variants={fadeIn}>
                         The Story of EGS Equipment
                     </motion.h1>
-                    <motion.p className="mt-3 text-lg md:text-xl max-w-2xl leading-relaxed" variants={fadeIn}>
+
+                    <motion.p className="mt-3 max-w-2xl text-lg leading-relaxed md:text-xl" variants={fadeIn}>
                         Serving turf and landscaping needs across the United States for over 25 years with quality
                         machinery and expertise.
                     </motion.p>
                 </div>
             </motion.div>
-            {/* About Section */}
-            <motion.section className="flex flex-col items-center py-16 px-6 md:px-12" variants={staggerContainer}>
-                <motion.h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center" variants={fadeIn}>
+
+            <motion.section className="flex flex-col items-center px-6 py-16 md:px-12" variants={staggerContainer}>
+                <motion.h2 className="text-center text-4xl font-bold text-foreground md:text-5xl" variants={fadeIn}>
                     About EGS Equipment
                 </motion.h2>
-                <motion.div className="w-16 h-1 bg-green-600 mt-4 mb-10" variants={fadeIn} />
 
-                {/* PromoRow Component */}
+                <motion.div className="mt-4 mb-10 h-1 w-16 bg-primary" variants={fadeIn} />
+
                 <motion.div variants={fadeIn}>
                     <PromoRow
                         title="Our Journey"
@@ -69,14 +68,15 @@ const About: React.FC = () => {
                     />
                 </motion.div>
             </motion.section>
-            <div className="flex justify-center items-center p-4 bg-white">
+
+            <div className="flex items-center justify-center bg-background p-4">
                 <Link
-                    className="py-2 px-10 justify-center items-center flex bg-green-600 hover:bg-green-800 transition-colors ease-in-out duration-300 rounded-lg"
-                    href={"/contact"}
+                    className="flex items-center justify-center rounded-lg bg-primary px-10 py-2 text-primary-foreground transition-colors duration-300 ease-in-out hover:bg-primary/90"
+                    href="/contact"
                 >
                     Contact Us
                 </Link>
-            </div>{" "}
+            </div>
         </motion.div>
     );
 };
