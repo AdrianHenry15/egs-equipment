@@ -1,0 +1,12 @@
+{
+    "entry": [
+        "app/**/*.{ts,tsx}",
+        "pages/**/*.{ts,tsx}",
+        "components/**/*.{ts,tsx}",
+        "lib/**/*.{ts,tsx}",
+        "middleware.ts",
+        "next.config.*"
+    ],
+    "project": ["**/*.{ts,tsx,js,jsx}"],
+    "ignore": [".next/**", "node_modules/**", "supabase/**", "public/**"]
+}
