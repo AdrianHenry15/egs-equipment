@@ -35,7 +35,7 @@ const Product = ({ productId }: IProductProps) => {
     const product = allProducts.find((p) => p.id === productId);
 
     if (!product) {
-        return <p className="text-center text-black">Product not found.</p>;
+        return <p className="text-center text-foreground">Product not found.</p>;
     }
 
     const specBlock = product.details.specifications;
@@ -64,9 +64,9 @@ const Product = ({ productId }: IProductProps) => {
 
         return (
             <div className="flex flex-col">
-                <span className="text-sm font-semibold text-black">{label}</span>
-                <hr className="my-1 border-gray-300" />
-                <span className="text-sm text-black">{value}</span>
+                <span className="text-sm font-semibold text-foreground">{label}</span>
+                <hr className="my-1 border-border" />
+                <span className="text-sm text-foreground">{value}</span>
             </div>
         );
     };
@@ -289,8 +289,8 @@ const Product = ({ productId }: IProductProps) => {
         if (!specBlock?.data || !hasRenderableSpecs(specBlock.data)) return null;
 
         return (
-            <div className="mt-6 rounded-lg border border-black bg-white p-4">
-                <h2 className="text-xl font-semibold text-black">Specifications</h2>
+            <div className="mt-6 rounded-lg border border-border bg-card p-4">
+                <h2 className="text-xl font-semibold text-foreground">Specifications</h2>
 
                 {specBlock.type === "standard" && renderStandardSpecs(specBlock.data)}
 
@@ -306,10 +306,10 @@ const Product = ({ productId }: IProductProps) => {
     };
 
     return (
-        <div className="w-full bg-gray-100 pb-10">
+        <div className="w-full bg-muted pb-10">
             <div className="flex flex-col gap-8 p-6 xl:flex-row">
                 <Link className="flex w-min" href="/products">
-                    <ChevronLeftIcon color="black" className="w-10 p-2" />
+                    <ChevronLeftIcon className="w-10 p-2 text-foreground" />
                 </Link>
 
                 <div className="xl:w-1/2 flex justify-center">
@@ -317,21 +317,21 @@ const Product = ({ productId }: IProductProps) => {
                 </div>
 
                 <div className="xl:w-1/2">
-                    <h1 className="text-3xl font-bold text-black">{product.name}</h1>
+                    <h1 className="text-3xl font-bold text-foreground">{product.name}</h1>
 
-                    <p className="mt-2 text-lg text-black">{product.description}</p>
+                    <p className="mt-2 text-lg text-foreground">{product.description}</p>
 
                     {product.details.specs_description && (
                         <div className="mt-6">
-                            <h2 className="text-xl font-semibold text-black">Description</h2>
-                            <p className="mt-2 text-black">{product.details.specs_description}</p>
+                            <h2 className="text-xl font-semibold text-foreground">Description</h2>
+                            <p className="mt-2 text-foreground">{product.details.specs_description}</p>
                         </div>
                     )}
 
                     {product.details.features?.length ? (
                         <div className="mt-6">
-                            <h2 className="text-xl font-semibold text-black">Features</h2>
-                            <ul className="ml-5 mt-2 list-disc text-sm text-black">
+                            <h2 className="text-xl font-semibold text-foreground">Features</h2>
+                            <ul className="ml-5 mt-2 list-disc text-sm text-foreground">
                                 {product.details.features.map((f, i) => (
                                     <li key={i}>{f}</li>
                                 ))}
@@ -346,7 +346,7 @@ const Product = ({ productId }: IProductProps) => {
             <div className="flex w-full justify-center pt-10">
                 <Link
                     href="/contact"
-                    className="w-75 rounded-lg bg-green-600 py-2 text-center font-semibold transition-colors hover:bg-green-700"
+                    className="w-75 rounded-lg bg-primary py-2 text-center font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                     Request Estimate
                 </Link>
