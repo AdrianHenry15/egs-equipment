@@ -1,11 +1,15 @@
 export function FeaturedProductSkeleton() {
     return (
-        <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-4 animate-pulse flex flex-col">
-            <div className="h-48 w-full bg-gray-200 rounded-lg mb-4" />
-            <div className="h-6 bg-gray-200 rounded w-3/4 mb-2" />
-            <div className="h-4 bg-gray-200 rounded w-full mb-2" />
-            <div className="h-4 bg-gray-200 rounded w-5/6 mb-4" />
-            <div className="h-10 bg-gray-300 rounded-md mt-auto" />
+        <div className="flex animate-pulse flex-col rounded-xl border border-border bg-card p-4 shadow-sm">
+            <div className="mb-4 h-48 w-full rounded-lg bg-muted" />
+
+            <div className="mb-2 h-6 w-3/4 rounded bg-muted" />
+
+            <div className="mb-2 h-4 w-full rounded bg-muted" />
+
+            <div className="mb-4 h-4 w-5/6 rounded bg-muted" />
+
+            <div className="mt-auto h-10 rounded-md bg-accent" />
         </div>
     );
 }

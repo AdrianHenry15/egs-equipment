@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Fuse, { IFuseOptions } from "fuse.js";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -9,7 +10,6 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { allProducts } from "@/lib/products/list/product-list";
 import { ProductType } from "@/lib/types/product";
 import { useModalStore } from "@/stores/modal-store/modal-store";
-import Image from "next/image";
 
 type FilterState = {
     category: string | null;
@@ -21,11 +21,7 @@ const fuseOptions: IFuseOptions<ProductType> = {
     keys: ["name"],
 };
 
-export default function SearchModal({
-    placeholder = "Search products...",
-}: {
-    placeholder?: string;
-}) {
+export default function SearchModal({ placeholder = "Search products..." }: { placeholder?: string }) {
     const router = useRouter();
     const { closeModal } = useModalStore();
     const inputRef = useRef<HTMLInputElement>(null);
@@ -40,24 +36,23 @@ export default function SearchModal({
 
     const fuse = useMemo(() => new Fuse(allProducts, fuseOptions), []);
 
-    // Autofocus when modal opens
     useEffect(() => {
-        const id = setTimeout(() => inputRef.current?.focus(), 50);
-        return () => clearTimeout(id);
+        const id = window.setTimeout(() => inputRef.current?.focus(), 50);
+        return () => window.clearTimeout(id);
     }, []);
 
     const filteredResults = useMemo(() => {
-        let base = results;
+        return results.filter((product) => {
+            if (filters.category && product.mainCategory !== filters.category) {
+                return false;
+            }
 
-        if (filters.category) {
-            base = base.filter((p) => p.mainCategory === filters.category);
-        }
+            if (filters.brand && product.brand !== filters.brand) {
+                return false;
+            }
 
-        if (filters.brand) {
-            base = base.filter((p) => p.brand === filters.brand);
-        }
-
-        return base;
+            return true;
+        });
     }, [results, filters]);
 
     const handleSearch = (value: string) => {
@@ -69,87 +64,99 @@ export default function SearchModal({
             return;
         }
 
-        const searchResults = fuse.search(value).map((r) => r.item);
-        setResults(searchResults);
+        setResults(fuse.search(value).map((result) => result.item));
         setSelectedIndex(0);
     };
 
-    const navigate = (product: ProductType) => {
+    const navigateToProduct = (product: ProductType) => {
         closeModal();
         router.push(`/products/${product.id}`);
     };
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === "Escape") {
+            closeModal();
+            return;
+        }
+
         if (!filteredResults.length) return;
 
-        switch (e.key) {
-            case "Enter": {
-                const product = filteredResults[selectedIndex];
-                if (!product) return; // 👈 hard guard
-                navigate(product);
-                break;
+        if (event.key === "Enter") {
+            const product = filteredResults[selectedIndex];
+
+            if (product) {
+                navigateToProduct(product);
             }
-            case "ArrowDown":
-                setSelectedIndex((i) => Math.min(i + 1, filteredResults.length - 1));
-                break;
-            case "ArrowUp":
-                setSelectedIndex((i) => Math.max(i - 1, 0));
-                break;
-            case "Escape":
-                closeModal();
-                break;
+
+            return;
+        }
+
+        if (event.key === "ArrowDown") {
+            event.preventDefault();
+            setSelectedIndex((index) => Math.min(index + 1, filteredResults.length - 1));
+        }
+
+        if (event.key === "ArrowUp") {
+            event.preventDefault();
+            setSelectedIndex((index) => Math.max(index - 1, 0));
         }
     };
 
     const getProductImage = (product: ProductType) => {
-        const img = product.images?.[0];
-        if (!img) return null;
+        const image = product.images?.[0];
 
-        return typeof img === "string" ? img : img.src;
+        if (!image) return null;
+
+        return typeof image === "string" ? image : image.src;
     };
 
     return (
-        <div className="w-full max-w-md sm:max-w-lg text-black md:max-w-xl rounded-xl bg-white p-4 shadow-2xl">
-            {/* Search Input */}
+        <div className="w-full max-w-md rounded-2xl border border-border bg-card p-4 text-card-foreground shadow-2xl sm:max-w-lg md:max-w-xl">
             <div className="relative">
-                <AiOutlineSearch className="absolute left-3 top-3 text-black" />
+                <AiOutlineSearch className="absolute top-1/2 left-3 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
+
                 <input
                     ref={inputRef}
                     type="text"
                     placeholder={placeholder}
                     value={query}
-                    onChange={(e) => handleSearch(e.target.value)}
+                    onChange={(event) => handleSearch(event.target.value)}
                     onKeyDown={handleKeyDown}
-                    className="w-full rounded-lg border border-gray-300 py-2 pl-10 pr-3 text-black focus:outline-none focus:ring focus:ring-green-700"
+                    className="h-11 w-full rounded-xl border border-input bg-background pr-3 pl-10 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring"
                 />
             </div>
 
-            {/* Filters */}
             {results.length > 0 && (
-                <div className="flex flex-wrap gap-2 mt-3 text-sm">
+                <div className="mt-3 flex flex-wrap gap-2 text-sm">
                     <button
+                        type="button"
                         onClick={() =>
-                            setFilters((f) => ({
-                                ...f,
-                                category: f.category ? null : "Golf & Sports Turf",
+                            setFilters((filter) => ({
+                                ...filter,
+                                category: filter.category ? null : "Golf & Sports Turf",
                             }))
                         }
-                        className={`px-3 py-1 rounded-full border ${
-                            filters.category ? "bg-green-700 text-white" : "bg-gray-100"
+                        className={`rounded-full border px-3 py-1.5 text-sm font-medium transition ${
+                            filters.category
+                                ? "border-primary bg-primary text-primary-foreground"
+                                : "border-border bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                         }`}
                     >
                         Golf
                     </button>
 
                     <button
+                        type="button"
                         onClick={() =>
-                            setFilters((f) => ({
-                                ...f,
-                                brand: f.brand ? null : "SISIS",
+                            setFilters((filter) => ({
+                                ...filter,
+                                brand: filter.brand ? null : "SISIS",
                             }))
                         }
-                        className={`px-3 py-1 rounded-full border ${
-                            filters.brand ? "bg-green-700 text-white" : "bg-gray-100"
+                        className={`rounded-full border px-3 py-1.5 text-sm font-medium transition ${
+                            filters.brand
+                                ? "border-primary bg-primary text-primary-foreground"
+                                : "border-border bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                         }`}
                     >
                         SISIS
@@ -157,57 +164,52 @@ export default function SearchModal({
                 </div>
             )}
 
-            {/* Results */}
-            <div className="mt-3 max-h-[60vh] overflow-auto rounded-lg border">
+            <div className="mt-3 max-h-[60vh] overflow-auto rounded-xl border border-border bg-background">
                 {filteredResults.length === 0 && query && (
-                    <div className="px-4 py-6 text-sm text-gray-500">No products found.</div>
+                    <div className="px-4 py-6 text-sm text-muted-foreground">No products found.</div>
                 )}
 
                 {filteredResults.map((product, index) => {
                     const imageSrc = getProductImage(product);
+                    const isSelected = selectedIndex === index;
 
                     return (
                         <Link
                             key={product.id}
                             href={`/products/${product.id}`}
-                            onClick={() => navigate(product)}
+                            onClick={(event) => {
+                                event.preventDefault();
+                                navigateToProduct(product);
+                            }}
+                            onMouseEnter={() => setSelectedIndex(index)}
+                            className={`flex cursor-pointer items-center gap-3 px-4 py-3 transition ${
+                                isSelected ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-muted"
+                            }`}
                         >
-                            <div
-                                className={`flex items-center gap-3 px-4 py-2 cursor-pointer ${
-                                    selectedIndex === index ? "bg-gray-100" : ""
-                                }`}
-                                onMouseEnter={() => setSelectedIndex(index)}
-                            >
-                                {/* Image */}
-                                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md border bg-white">
-                                    {imageSrc ? (
-                                        <Image
-                                            src={imageSrc}
-                                            alt={product.name}
-                                            fill
-                                            className="object-contain"
-                                        />
-                                    ) : (
-                                        <div className="flex h-full w-full items-center justify-center text-xs text-gray-400">
-                                            No image
-                                        </div>
-                                    )}
-                                </div>
-
-                                {/* Text */}
-                                <div className="min-w-0">
-                                    <div className="truncate font-medium text-black">
-                                        {product.name}
+                            <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg border border-border bg-card">
+                                {imageSrc ? (
+                                    <Image
+                                        src={imageSrc}
+                                        alt={product.name}
+                                        fill
+                                        sizes="48px"
+                                        className="object-contain"
+                                    />
+                                ) : (
+                                    <div className="flex h-full w-full items-center justify-center text-xs text-muted-foreground">
+                                        No image
                                     </div>
+                                )}
+                            </div>
 
-                                    {(product.brand || product.mainCategory) && (
-                                        <div className="truncate text-xs text-gray-500">
-                                            {[product.brand, product.mainCategory]
-                                                .filter(Boolean)
-                                                .join(" • ")}
-                                        </div>
-                                    )}
-                                </div>
+                            <div className="min-w-0">
+                                <div className="truncate text-sm font-medium text-foreground">{product.name}</div>
+
+                                {(product.brand || product.mainCategory) && (
+                                    <div className="truncate text-xs text-muted-foreground">
+                                        {[product.brand, product.mainCategory].filter(Boolean).join(" • ")}
+                                    </div>
+                                )}
                             </div>
                         </Link>
                     );

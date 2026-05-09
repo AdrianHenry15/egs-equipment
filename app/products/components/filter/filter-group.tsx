@@ -1,15 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { FiCheckSquare, FiChevronDown, FiSquare } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { FiCheckSquare, FiChevronDown, FiSquare } from "react-icons/fi";
 
 const containerVariants = {
     collapsed: {
         height: 0,
         opacity: 0,
-        transition: { duration: 0.2, ease: "easeInOut" },
+        transition: {
+            duration: 0.2,
+            ease: "easeInOut",
+        },
     },
+
     open: {
         height: "auto",
         opacity: 1,
@@ -22,8 +26,15 @@ const containerVariants = {
 } as const;
 
 const itemVariants = {
-    collapsed: { opacity: 0, y: -4 },
-    open: { opacity: 1, y: 0 },
+    collapsed: {
+        opacity: 0,
+        y: -4,
+    },
+
+    open: {
+        opacity: 1,
+        y: 0,
+    },
 } as const;
 
 export type FilterOption = {
@@ -51,20 +62,26 @@ export default function FilterGroup({
     if (!options.length) return null;
 
     return (
-        <section className="mt-4">
+        <section className="mt-4 border-b border-border pb-4">
+            {/* Header */}
             <button
                 type="button"
-                onClick={() => setOpen((o) => !o)}
-                className="flex w-full items-center justify-between text-sm font-semibold text-black"
+                onClick={() => setOpen((value) => !value)}
                 aria-expanded={open}
+                className="flex w-full items-center justify-between text-left text-sm font-semibold text-card-foreground transition hover:text-primary"
             >
-                {title}
-                <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
+                <span>{title}</span>
+
+                <motion.span
+                    animate={{ rotate: open ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-muted-foreground"
+                >
                     <FiChevronDown />
                 </motion.span>
             </button>
 
-            {/* ALWAYS MOUNTED — ONLY ANIMATING STATE */}
+            {/* Options */}
             <motion.div
                 initial={false}
                 animate={open ? "open" : "collapsed"}
@@ -79,16 +96,24 @@ export default function FilterGroup({
                             key={`${option.value}-${option.label}`}
                             variants={itemVariants}
                             type="button"
-                            onClick={() => onChange(isSelected ? null : option.value)}
-                            className="flex items-center gap-2 rounded px-1 py-0.5 text-left hover:bg-gray-100"
                             aria-pressed={isSelected}
+                            onClick={() => onChange(isSelected ? null : option.value)}
+                            className={`
+                                flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left transition
+                                ${
+                                    isSelected
+                                        ? "bg-accent text-accent-foreground"
+                                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                                }
+                            `}
                         >
                             {isSelected ? (
-                                <FiCheckSquare className="h-4 w-4 text-black" />
+                                <FiCheckSquare className="h-4 w-4 text-primary" />
                             ) : (
-                                <FiSquare className="h-4 w-4 text-black" />
+                                <FiSquare className="h-4 w-4 text-muted-foreground" />
                             )}
-                            <span className="text-sm text-black">{option.label}</span>
+
+                            <span className="text-sm font-medium">{option.label}</span>
                         </motion.button>
                     );
                 })}

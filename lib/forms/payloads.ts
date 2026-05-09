@@ -87,10 +87,7 @@ export function eventPayload(form: EventFormValues) {
         endDate: form.endDate || undefined,
 
         location:
-            form.location?.venue ||
-            form.location?.city ||
-            form.location?.state ||
-            form.location?.country
+            form.location?.venue || form.location?.city || form.location?.state || form.location?.country
                 ? {
                       venue: form.location.venue || undefined,
                       city: form.location.city || undefined,

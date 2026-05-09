@@ -5,26 +5,26 @@ import { AiFillFacebook, AiOutlineInstagram } from "react-icons/ai";
 
 const SocialsCard = () => {
     return (
-        <div className="flex flex-col justify-center w-full items-center py-10 border-y-[1px] border-zinc-900">
-            <h5 className="text-xl mb-10">Connect With Us</h5>
-            <div className="flex justify-evenly items-center w-full">
+        <div className="flex w-full flex-col items-center justify-center py-2">
+            <h5 className="mb-8 text-xl font-semibold tracking-wide text-card-foreground">Connect With Us</h5>
+
+            <div className="flex items-center justify-center gap-6">
                 <Link
-                    className="hover:scale-125 transition-all duration-300 ease-in-out"
                     target="_blank"
-                    href={"https://www.facebook.com/EGSturf/"}
+                    href="https://www.facebook.com/EGSturf/"
+                    aria-label="EGS Equipment Facebook"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition duration-300 ease-in-out hover:scale-110 hover:bg-accent hover:text-accent-foreground"
                 >
-                    <AiFillFacebook size={25} />
+                    <AiFillFacebook size={24} />
                 </Link>
+
                 <Link
                     target="_blank"
-                    href={
-                        "https://www.instagram.com/egsturf?igsh=MWhubzJoaGZiaWsybA%3D%3D&utm_source=qr"
-                    }
+                    href="https://www.instagram.com/egsturf?igsh=MWhubzJoaGZiaWsybA%3D%3D&utm_source=qr"
+                    aria-label="EGS Equipment Instagram"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition duration-300 ease-in-out hover:scale-110 hover:bg-accent hover:text-accent-foreground"
                 >
-                    <AiOutlineInstagram
-                        className="hover:scale-125 transition-all duration-300 ease-in-out"
-                        size={25}
-                    />
+                    <AiOutlineInstagram size={24} />
                 </Link>
             </div>
         </div>

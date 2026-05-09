@@ -7,7 +7,7 @@ const nextConfig = {
         NEXT_PRIVATE_KEY: process.env.NEXT_PRIVATE_KEY,
         SANITY_READ_TOKEN: process.env.SANITY_READ_TOKEN,
         SANITY_BACKEND_TOKEN: process.env.SANITY_BACKEND_TOKEN,
-        CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY
+        CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
     },
     images: {
         remotePatterns: [
@@ -15,10 +15,10 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "cdn.sanity.io",
                 port: "",
-                pathname: "/images/**"
-            }
-        ]
-    }
+                pathname: "/images/**",
+            },
+        ],
+    },
 };
 
 export default nextConfig;

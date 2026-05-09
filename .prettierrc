@@ -6,5 +6,5 @@
     "singleQuote": false,
     "trailingComma": "all",
     "proseWrap": "preserve",
-    "embeddedLanguageFormatting": "off"
+    "embeddedLanguageFormatting": "off",
 }

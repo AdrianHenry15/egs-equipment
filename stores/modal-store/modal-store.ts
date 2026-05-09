@@ -1,10 +1,5 @@
 import { create } from "zustand";
-import {
-    ConfirmModalPayload,
-    LinkConfirmationPayload,
-    SearchModalPayload,
-    SuccessModalPayload,
-} from "./modal-types";
+import { ConfirmModalPayload, LinkConfirmationPayload, SearchModalPayload, SuccessModalPayload } from "./modal-types";
 
 export type ModalPayloadMap = {
     confirmation: ConfirmModalPayload;

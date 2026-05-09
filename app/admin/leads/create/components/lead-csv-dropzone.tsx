@@ -4,11 +4,7 @@ import { DEFAULT_LEAD_FORM } from "@/lib/forms/constants";
 import { LeadFormValues } from "@/lib/forms/types";
 import Papa from "papaparse";
 
-export default function LeadCsvDropzone({
-    onParsed,
-}: {
-    onParsed: (rows: LeadFormValues[]) => void;
-}) {
+export default function LeadCsvDropzone({ onParsed }: { onParsed: (rows: LeadFormValues[]) => void }) {
     function parse(file: File) {
         Papa.parse(file, {
             header: true,
@@ -18,9 +14,7 @@ export default function LeadCsvDropzone({
                     ...DEFAULT_LEAD_FORM,
                     ...row,
                     equipmentNeeds: row.equipmentNeeds ? row.equipmentNeeds.split("|") : [],
-                    equipmentInterest: row.equipmentInterest
-                        ? row.equipmentInterest.split("|")
-                        : [],
+                    equipmentInterest: row.equipmentInterest ? row.equipmentInterest.split("|") : [],
                 }));
 
                 onParsed(rows);

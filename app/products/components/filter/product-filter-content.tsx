@@ -1,8 +1,11 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+
 import { useProductFilters } from "@/hooks/use-product-filters";
+
 import FilterGroup from "./filter-group";
+
 import { MAIN_CATEGORIES } from "@/lib/domain/categories";
 import { MainCategory } from "@/lib/types/categories";
 import { BRANDS } from "@/lib/domain/brands";
@@ -10,6 +13,7 @@ import { CATEGORY_FILTER_TAGS } from "@/lib/domain/category-filters";
 
 export function ProductFilterContent() {
     const params = useSearchParams();
+
     const { updateUrl } = useProductFilters();
 
     const selectedCategory = params.get("category") as MainCategory | null;
@@ -18,14 +22,14 @@ export function ProductFilterContent() {
 
     const tagOptions =
         selectedCategory && CATEGORY_FILTER_TAGS[selectedCategory]
-            ? CATEGORY_FILTER_TAGS[selectedCategory].map((opt) => ({
-                  label: opt.label,
-                  value: opt.tag, // <-- adapt here
+            ? CATEGORY_FILTER_TAGS[selectedCategory].map((option) => ({
+                  label: option.label,
+                  value: option.tag,
               }))
             : undefined;
 
     return (
-        <>
+        <div className="space-y-6">
             {/* BRAND */}
             <FilterGroup
                 title="Brand"
@@ -47,7 +51,7 @@ export function ProductFilterContent() {
                 }
             />
 
-            {/* TAGS (CATEGORY-DRIVEN) */}
+            {/* TAGS */}
             {tagOptions && tagOptions.length > 0 && (
                 <FilterGroup
                     title="Type"
@@ -59,6 +63,7 @@ export function ProductFilterContent() {
 
             {/* RESET */}
             <button
+                type="button"
                 onClick={() =>
                     updateUrl({
                         category: null,
@@ -66,10 +71,23 @@ export function ProductFilterContent() {
                         brand: null,
                     })
                 }
-                className="mt-6 w-full rounded bg-red-500 py-2 font-semibold text-white"
+                className="
+                    mt-6 w-full rounded-xl
+                    border border-destructive/20
+                    bg-destructive px-4 py-2.5
+                    font-semibold text-white
+                    shadow-sm
+                    transition
+                    hover:opacity-90
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-ring
+                    focus:ring-offset-2
+                    focus:ring-offset-background
+                "
             >
                 Reset Filters
             </button>
-        </>
+        </div>
     );
 }

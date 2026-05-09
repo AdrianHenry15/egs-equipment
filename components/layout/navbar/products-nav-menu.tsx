@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-import { ProductsMenuItems } from "@/lib/constants";
 import Link from "next/link";
 import { BiChevronRight } from "react-icons/bi";
+
+import { ProductsMenuItems } from "@/lib/constants";
 import { useProductFilters } from "@/hooks/use-product-filters";
 import { MainCategory } from "@/lib/types/categories";
 
@@ -14,8 +14,14 @@ interface IProductsNavMenuProps {
 
 const ProductsNavMenu = ({ setProductsMenuOpen }: IProductsNavMenuProps) => {
     const menuVariants = {
-        hidden: { opacity: 0, y: -10 },
-        visible: { opacity: 1, y: 0 },
+        hidden: {
+            opacity: 0,
+            y: -10,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+        },
     };
 
     const { updateUrl } = useProductFilters();
@@ -32,24 +38,26 @@ const ProductsNavMenu = ({ setProductsMenuOpen }: IProductsNavMenuProps) => {
 
     return (
         <motion.div
-            className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2"
+            className="absolute top-full left-0 z-50 mt-2 w-56 overflow-hidden rounded-xl border border-border bg-card py-2 text-card-foreground shadow-xl"
             initial="hidden"
             animate="visible"
             exit="hidden"
             variants={menuVariants}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
         >
             <ul className="flex flex-col">
                 {ProductsMenuItems.map((item) => (
-                    <Link
-                        onClick={() => onProductsNavMenuClick(item.value as MainCategory)}
-                        href={item.link}
-                        key={item.title}
-                        className="px-4 py-2 hover:bg-gray-100 flex justify-between items-center"
-                    >
-                        <li className="text-black">{item.title}</li>
-                        <BiChevronRight className="text-black" size={20} />
-                    </Link>
+                    <li key={item.title}>
+                        <Link
+                            href={item.link}
+                            onClick={() => onProductsNavMenuClick(item.value as MainCategory)}
+                            className="group flex items-center justify-between px-4 py-2.5 text-sm font-medium text-muted-foreground transition hover:bg-accent hover:text-accent-foreground"
+                        >
+                            <span>{item.title}</span>
+
+                            <BiChevronRight size={20} className="transition group-hover:translate-x-0.5" />
+                        </Link>
+                    </li>
                 ))}
             </ul>
         </motion.div>

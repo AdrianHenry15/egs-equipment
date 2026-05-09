@@ -55,12 +55,7 @@ export default async function ClientPage({ params }: { params: Promise<{ id: str
                     {client.website && (
                         <p>
                             <strong>Website:</strong>{" "}
-                            <a
-                                href={client.website}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="underline"
-                            >
+                            <a href={client.website} target="_blank" rel="noopener noreferrer" className="underline">
                                 {client.website}
                             </a>
                         </p>

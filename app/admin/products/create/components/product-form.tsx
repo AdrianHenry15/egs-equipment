@@ -95,11 +95,7 @@ export default function ProductForm({
             <section className="rounded-lg border p-6 bg-white border-gray-200 dark:bg-gray-950 dark:border-gray-800">
                 <h2 className="mb-4 text-lg font-semibold">Description</h2>
 
-                <Textarea
-                    rows={4}
-                    value={form.description}
-                    onChange={(e) => update("description", e.target.value)}
-                />
+                <Textarea rows={4} value={form.description} onChange={(e) => update("description", e.target.value)} />
             </section>
 
             {/* CATEGORIZATION */}
@@ -124,10 +120,7 @@ export default function ProductForm({
                     </Field>
 
                     <Field label="Brand" required error={errors.brand}>
-                        <Select
-                            value={form.brand}
-                            onChange={(e) => update("brand", e.target.value as any)}
-                        >
+                        <Select value={form.brand} onChange={(e) => update("brand", e.target.value as any)}>
                             <option value="">Select</option>
                             <option>Howardsons</option>
                             <option>Harrod Sports</option>
@@ -141,10 +134,7 @@ export default function ProductForm({
                     </Field>
 
                     <Field label="Used by">
-                        <Select
-                            value={form.usedBy}
-                            onChange={(e) => update("usedBy", e.target.value as any)}
-                        >
+                        <Select value={form.usedBy} onChange={(e) => update("usedBy", e.target.value as any)}>
                             <option value="">Select</option>
                             <option>Golf</option>
                             <option>Soccer</option>

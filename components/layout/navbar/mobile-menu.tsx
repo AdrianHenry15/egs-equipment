@@ -5,162 +5,173 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { motion, AnimatePresence } from "framer-motion"; // Import Framer Motion components
+import { motion, AnimatePresence } from "framer-motion";
 
-import { NavMenu } from "../../../lib/constants";
-import { FaPhone } from "react-icons/fa6";
-import Button from "@/components/button";
+import { NavMenu } from "@/lib/constants";
+import { FaEnvelope, FaPhone } from "react-icons/fa6";
 import { BiChevronDown } from "react-icons/bi";
+
+import Button from "@/components/button";
 import ProductsNavMenu from "./products-nav-menu";
 import UserMenu from "./user/user-menu";
 
+const ICON_BUTTON_CLASSES =
+    "flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-card-foreground shadow-sm transition hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background";
+
 export default function MobileMenu() {
-    // Constants
     const pathname = usePathname();
 
-    // State
     const [isOpen, setIsOpen] = useState(false);
-    const openMobileMenu = () => setIsOpen(true);
-    const closeMobileMenu = () => setIsOpen(false);
     const [productsMenuOpen, setProductsMenuOpen] = useState(false);
+
+    const closeMobileMenu = () => {
+        setIsOpen(false);
+        setProductsMenuOpen(false);
+    };
 
     useEffect(() => {
         closeMobileMenu();
     }, [pathname]);
 
-    // Renders
     const renderNavMenu = () => {
         return NavMenu.map((item) => {
+            const isActive = pathname === item.link;
+
             if (item.title === "Products") {
                 return (
-                    <div key={item.title} className="relative cursor-pointer">
-                        <span
-                            key={item.title}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                setProductsMenuOpen(!productsMenuOpen);
-                            }}
-                            className={`${
-                                pathname === item.link ? "underline" : ""
-                            } flex items-center hover:text-neutral-500 ease-in-out duration-300`}
+                    <li key={item.title} className="relative">
+                        <button
+                            type="button"
+                            onClick={() => setProductsMenuOpen((prev) => !prev)}
+                            className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-lg font-semibold transition ${
+                                isActive
+                                    ? "bg-primary text-primary-foreground"
+                                    : "text-card-foreground hover:bg-accent hover:text-accent-foreground"
+                            }`}
                         >
-                            <li className={`py-4 text-xl text-black transition-colors`}>
-                                {item.title}
-                            </li>
-                            <BiChevronDown className="text-black" size={20} />
-                        </span>
-                        {productsMenuOpen && (
-                            <ProductsNavMenu
-                                setProductsMenuOpen={() => setProductsMenuOpen(false)}
+                            <span>{item.title}</span>
+
+                            <BiChevronDown
+                                size={22}
+                                className={`transition-transform ${productsMenuOpen ? "rotate-180" : ""}`}
                             />
+                        </button>
+
+                        {productsMenuOpen && (
+                            <div className="mt-2">
+                                <ProductsNavMenu setProductsMenuOpen={() => setProductsMenuOpen(false)} />
+                            </div>
                         )}
-                    </div>
-                );
-            } else {
-                return (
-                    <Link
-                        key={item.title}
-                        href={item.link}
-                        onClick={closeMobileMenu}
-                        className={`${pathname === item.link ? "underline underline-offset-4 text-black" : ""}`}
-                    >
-                        <li
-                            className={`py-4 text-xl text-black transition-colors hover:text-neutral-500`}
-                        >
-                            {item.title}
-                        </li>
-                    </Link>
+                    </li>
                 );
             }
+
+            return (
+                <li key={item.title}>
+                    <Link
+                        href={item.link}
+                        onClick={closeMobileMenu}
+                        className={`block rounded-xl px-4 py-3 text-lg font-semibold transition ${
+                            isActive
+                                ? "bg-primary text-primary-foreground"
+                                : "text-card-foreground hover:bg-accent hover:text-accent-foreground"
+                        }`}
+                    >
+                        {item.title}
+                    </Link>
+                </li>
+            );
         });
     };
 
     return (
         <div className="relative">
-            <div className="flex items-center">
-                {/* Mobile Navigation Bar */}
+            <div className="flex items-center gap-2">
                 <button
-                    onClick={openMobileMenu}
+                    type="button"
+                    onClick={() => setIsOpen(true)}
                     aria-label="Open mobile menu"
-                    className="flex h-11 w-11 items-center justify-center rounded-full text-black transition-colors overflow-hidden"
+                    className={ICON_BUTTON_CLASSES}
                 >
-                    <Bars3Icon className="h-6 text-black" />
+                    <Bars3Icon className="h-5 w-5" />
                 </button>
-                {/* User Icon */}
+
                 <UserMenu />
             </div>
+
             <AnimatePresence>
                 {isOpen && (
                     <Transition show={isOpen}>
-                        <Dialog onClose={closeMobileMenu} className="relative z-9050">
+                        <Dialog onClose={closeMobileMenu} className="relative z-[9050]">
                             <TransitionChild
                                 as={Fragment}
-                                enter="transition-opacity ease-in-out duration-100"
+                                enter="transition-opacity ease-in-out duration-150"
                                 enterFrom="opacity-0"
                                 enterTo="opacity-100"
-                                leave="transition-opacity ease-in-out duration-100"
+                                leave="transition-opacity ease-in-out duration-150"
                                 leaveFrom="opacity-100"
                                 leaveTo="opacity-0"
                             >
-                                <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+                                <div className="fixed inset-0 bg-black/60" aria-hidden="true" />
                             </TransitionChild>
-                            <motion.div
+
+                            <motion.aside
                                 initial={{ x: "100%" }}
                                 animate={{ x: 0 }}
                                 exit={{ x: "100%" }}
-                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                className="fixed bottom-0 right-0 top-0 flex h-full flex-col bg-white pb-6 w-full sm:w-93.75"
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 320,
+                                    damping: 34,
+                                }}
+                                className="fixed inset-y-0 right-0 flex h-dvh w-full flex-col border-l border-border bg-card text-card-foreground shadow-2xl sm:w-[375px]"
                             >
-                                <div className="p-4">
-                                    <div className="flex items-center justify-between">
-                                        <button
-                                            className="flex h-11 w-11 items-center justify-center rounded-md text-black transition-colors"
-                                            onClick={closeMobileMenu}
-                                            aria-label="Close mobile menu"
-                                        >
-                                            <XMarkIcon className="h-6" />
-                                        </button>
-                                    </div>
+                                <div className="flex items-center justify-between border-b border-border px-4 py-4">
+                                    <span className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                                        Menu
+                                    </span>
 
-                                    <ul className="flex w-full flex-col h-full">
-                                        {renderNavMenu()}
-                                    </ul>
+                                    <button
+                                        type="button"
+                                        className={ICON_BUTTON_CLASSES}
+                                        onClick={closeMobileMenu}
+                                        aria-label="Close mobile menu"
+                                    >
+                                        <XMarkIcon className="h-5 w-5" />
+                                    </button>
                                 </div>
-                                {/* NAV BUTTONS */}
-                                <ul className="bottom-0 fixed flex flex-col self-start w-full">
-                                    {/* Phone */}
-                                    <Link
-                                        onClick={closeMobileMenu}
-                                        className="w-full px-10 flex justify-start"
-                                        href="tel:7048423535"
-                                    >
-                                        <Button
-                                            leftChildren
-                                            roundedFull
-                                            className="mb-4 w-full py-4 flex justify-center sm:w-75"
-                                            name="704-842-3535"
-                                            altColor
-                                        >
-                                            <FaPhone className="mr-2" />
-                                        </Button>
-                                    </Link>
-                                    {/* Email */}
-                                    <Link
-                                        onClick={closeMobileMenu}
-                                        className="w-full px-10 flex justify-start"
-                                        href="mailto:frank.eckert@eckertgolf.com"
-                                    >
-                                        <Button
-                                            leftChildren
-                                            roundedFull
-                                            className="mb-4 w-full py-4 flex justify-center sm:w-75"
-                                            name="frank.eckert@eckertgolf.com"
-                                        >
-                                            <FaPhone className="mr-2" />
-                                        </Button>
-                                    </Link>
-                                </ul>
-                            </motion.div>
+
+                                <nav className="flex-1 overflow-y-auto px-4 py-5">
+                                    <ul className="flex flex-col gap-2">{renderNavMenu()}</ul>
+                                </nav>
+
+                                <div className="border-t border-border bg-card px-4 py-4">
+                                    <div className="flex flex-col gap-3">
+                                        <Link href="tel:7048423535" onClick={closeMobileMenu}>
+                                            <Button
+                                                leftChildren
+                                                roundedFull
+                                                className="w-full justify-center py-4"
+                                                name="704-842-3535"
+                                                altColor
+                                            >
+                                                <FaPhone className="mr-2" />
+                                            </Button>
+                                        </Link>
+
+                                        <Link href="mailto:frank.eckert@eckertgolf.com" onClick={closeMobileMenu}>
+                                            <Button
+                                                leftChildren
+                                                roundedFull
+                                                className="w-full justify-center py-4"
+                                                name="frank.eckert@eckertgolf.com"
+                                            >
+                                                <FaEnvelope className="mr-2" />
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </motion.aside>
                         </Dialog>
                     </Transition>
                 )}

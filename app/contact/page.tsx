@@ -1,22 +1,39 @@
+import type { Metadata } from "next";
 import ContactForm from "@/components/forms/contact-form";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact Us | EGS Equipment",
-    description: "Get in touch with EGS Equipment for sales, support, and product inquiries.",
+    title: "Contact EGS Equipment | Sales, Support & Quotes",
+    description:
+        "Contact EGS Equipment for product questions, equipment quotes, sales support, parts assistance, and general inquiries.",
+    alternates: {
+        canonical: "/contact",
+    },
+    openGraph: {
+        title: "Contact EGS Equipment | Sales, Support & Quotes",
+        description:
+            "Get in touch with EGS Equipment for product questions, equipment quotes, sales support, and general inquiries.",
+        type: "website",
+        url: "/contact",
+    },
+    twitter: {
+        card: "summary",
+        title: "Contact EGS Equipment | Sales, Support & Quotes",
+        description:
+            "Get in touch with EGS Equipment for product questions, equipment quotes, sales support, and general inquiries.",
+    },
 };
 
 export default function ContactPage() {
     return (
-        <section className="relative w-full bg-white py-20 px-6">
-            <div className="mx-auto max-w-3xl text-left mb-12">
-                <h1 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">Contact EGS Equipment</h1>
+        <section className="relative w-full bg-background px-6 py-20">
+            <div className="mx-auto mb-12 max-w-3xl text-left">
+                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Contact EGS Equipment</h1>
 
-                <p className="mt-4 text-lg text-gray-600">
+                <p className="mt-4 text-lg text-muted-foreground">
                     Have questions about our equipment, need a quote, or want expert guidance? Our team is here to help.
                 </p>
 
-                <div className="mt-6 text-sm text-gray-500">
+                <div className="mt-6 text-sm text-muted-foreground">
                     Sales • Product Support • Estimates • General Inquiries
                 </div>
             </div>

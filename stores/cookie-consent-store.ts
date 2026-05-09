@@ -10,6 +10,7 @@ type CookieConsentState = {
     consent: CookieConsentType;
     consentAt: number | null;
     policyVersion: number;
+    hasHydrated: boolean;
 
     open: () => void;
     close: () => void;
@@ -17,21 +18,21 @@ type CookieConsentState = {
     acceptAll: () => void;
     acceptEssential: () => void;
     rejectAll: () => void;
-
     reset: () => void;
 
-    /** Derived helpers */
     hasConsented: () => boolean;
     allowAnalytics: () => boolean;
+    setHasHydrated: (value: boolean) => void;
 };
 
-export const useCookieConsentStore = create(
-    persist<CookieConsentState>(
+export const useCookieConsentStore = create<CookieConsentState>()(
+    persist(
         (set, get) => ({
             isOpen: false,
             consent: null,
             consentAt: null,
             policyVersion: CURRENT_POLICY_VERSION,
+            hasHydrated: false,
 
             open: () => set({ isOpen: true }),
             close: () => set({ isOpen: false }),
@@ -64,18 +65,40 @@ export const useCookieConsentStore = create(
                 set({
                     consent: null,
                     consentAt: null,
+                    policyVersion: CURRENT_POLICY_VERSION,
                     isOpen: true,
                 }),
 
             hasConsented: () => get().consent !== null,
             allowAnalytics: () => get().consent === "all",
+
+            setHasHydrated: (value) => set({ hasHydrated: value }),
         }),
         {
             name: "cookie-consent",
             version: CURRENT_POLICY_VERSION,
-            migrate: (state) => ({
-                ...(state as CookieConsentState),
+
+            partialize: (state) => ({
+                isOpen: state.isOpen,
+                consent: state.consent,
+                consentAt: state.consentAt,
+                policyVersion: state.policyVersion,
+            }),
+
+            onRehydrateStorage: () => (state) => {
+                state?.setHasHydrated(true);
+
+                if (!state?.consent) {
+                    state?.open();
+                }
+            },
+
+            migrate: () => ({
+                isOpen: true,
+                consent: null,
+                consentAt: null,
                 policyVersion: CURRENT_POLICY_VERSION,
+                hasHydrated: true,
             }),
         },
     ),

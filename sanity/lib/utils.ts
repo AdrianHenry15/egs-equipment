@@ -15,17 +15,12 @@ export function urlForImage(source: SanityImageSource) {
     return builder.image(source).auto("format");
 }
 
-export function resolveOpenGraphImage(
-    image: SanityImageSource & { alt?: string },
-    width = 1200,
-    height = 627,
-) {
+export function resolveOpenGraphImage(image: SanityImageSource & { alt?: string }, width = 1200, height = 627) {
     const url = urlForImage(image)?.width(width).height(height).fit("crop").url();
     return url ? { url, alt: image.alt ?? "", width, height } : undefined;
 }
 
-type DataAttributeConfig = CreateDataAttributeProps &
-    Required<Pick<CreateDataAttributeProps, "id" | "type" | "path">>;
+type DataAttributeConfig = CreateDataAttributeProps & Required<Pick<CreateDataAttributeProps, "id" | "type" | "path">>;
 
 export function dataAttr(config: DataAttributeConfig) {
     return createDataAttribute({

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CalendarDaysIcon, MapPinIcon } from "@heroicons/react/24/outline";
+
 import { formatEventDateRange } from "@/lib/utils";
 
 export type EventDemo = {
@@ -37,55 +38,59 @@ export default function EventsGrid({ events, variant }: EventsGridProps) {
                     key={event.id}
                     className={
                         isUpcoming
-                            ? "group overflow-hidden rounded-xl border border-gray-200 bg-gray-50 transition-shadow hover:shadow-xl"
-                            : "overflow-hidden rounded-lg border border-gray-200 bg-gray-100"
+                            ? "group flex flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground transition-shadow duration-300 hover:shadow-2xl"
+                            : "flex flex-col overflow-hidden rounded-lg border border-border bg-muted"
                     }
                 >
-                    {/* Image */}
-                    <div className={isUpcoming ? "relative h-56 w-full overflow-hidden" : "h-40 w-full"}>
+                    <div
+                        className={
+                            isUpcoming ? "relative h-56 w-full overflow-hidden" : "relative h-40 w-full overflow-hidden"
+                        }
+                    >
                         <Image
                             src={event.image}
                             alt={event.title}
-                            fill={isUpcoming}
+                            fill
+                            sizes={isUpcoming ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 1024px) 100vw, 33vw"}
                             className={
                                 isUpcoming
                                     ? "object-cover transition-transform duration-500 group-hover:scale-105"
-                                    : "h-full w-full object-cover"
+                                    : "object-cover"
                             }
                         />
                     </div>
 
-                    {/* Content */}
-                    <div className={isUpcoming ? "p-6" : "p-4"}>
-                        <h4 className={`${isUpcoming ? "text-xl font-semibold" : "font-semibold"} text-black`}>
+                    <div className={isUpcoming ? "flex flex-1 flex-col p-6" : "flex flex-1 flex-col p-4"}>
+                        <h4 className={`${isUpcoming ? "text-xl font-semibold" : "font-semibold"} text-foreground`}>
                             {event.title}
                         </h4>
 
                         <div
                             className={
                                 isUpcoming
-                                    ? "mt-2 flex flex-wrap gap-4 text-sm text-gray-500"
-                                    : "mt-1 text-sm text-gray-500"
+                                    ? "mt-2 flex flex-wrap gap-4 text-sm text-muted-foreground"
+                                    : "mt-1 text-sm text-muted-foreground"
                             }
                         >
                             <span className="flex items-center gap-1">
                                 <CalendarDaysIcon className="h-4 w-4" />
                                 {formatEventDateRange(event.startDate, event.endDate)}
                             </span>
+
                             <span className="flex items-center gap-1">
                                 <MapPinIcon className="h-4 w-4" />
                                 {event.location}
                             </span>
                         </div>
 
-                        <p className={isUpcoming ? "mt-4 text-gray-600" : "mt-2 text-sm text-gray-600"}>
+                        <p className={isUpcoming ? "mt-4 text-muted-foreground" : "mt-2 text-sm text-muted-foreground"}>
                             {event.description}
                         </p>
 
-                        <div className={isUpcoming ? "mt-6" : "mt-3"}>
+                        <div className={isUpcoming ? "mt-auto pt-6" : "mt-auto pt-3"}>
                             <Link
                                 href={event.href}
-                                className="inline-flex items-center text-sm font-semibold text-green-600 hover:text-green-700"
+                                className="inline-flex text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                             >
                                 {isUpcoming ? "View Event →" : "View Recap →"}
                             </Link>

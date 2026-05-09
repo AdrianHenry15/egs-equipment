@@ -13,7 +13,7 @@ export default function GlobalOptionsWidget() {
             {open && <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />}
 
             {/* Widget */}
-            <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2">
+            <div className="fixed right-4 bottom-4 z-50 flex flex-col items-end gap-2">
                 {/* Options Panel */}
                 {open && <OptionsPanel />}
 
@@ -21,9 +21,23 @@ export default function GlobalOptionsWidget() {
                 <button
                     onClick={() => setOpen((v) => !v)}
                     aria-label="Global options"
-                    className="h-12 w-12 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:shadow-xl transition"
+                    className="
+                        flex h-12 w-12 items-center justify-center
+                        rounded-full
+                        bg-primary
+                        text-primary-foreground
+                        shadow-lg
+                        transition-all
+                        hover:shadow-xl
+                        hover:bg-primary/90
+                        focus-visible:outline-none
+                        focus-visible:ring-2
+                        focus-visible:ring-ring
+                        focus-visible:ring-offset-2
+                        focus-visible:ring-offset-background
+                    "
                 >
-                    <BiCog size={22} className={`transition ${open ? "rotate-90" : ""}`} />
+                    <BiCog size={22} className={`transition-transform duration-300 ${open ? "rotate-90" : ""}`} />
                 </button>
             </div>
         </>

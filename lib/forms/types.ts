@@ -1,13 +1,7 @@
 import { ProductMainCategory, ProductBrand, ProductUsedBy } from "@/sanity/types";
 import { LeadPriority, LeadSource, LeadStatus } from "@/sanity/types";
 export type ClientStatus = "active" | "paused" | "completed" | "inactive";
-export type EventType =
-    | "trade_show"
-    | "demo_day"
-    | "tournament"
-    | "conference"
-    | "client_visit"
-    | "other";
+export type EventType = "trade_show" | "demo_day" | "tournament" | "conference" | "client_visit" | "other";
 
 export type EventStatus = "upcoming" | "completed" | "cancelled";
 

@@ -1,11 +1,6 @@
 import { NextResponse } from "next/server";
 import { sanityReadClient } from "@/sanity/lib/client";
-import {
-    updateLead,
-    updateLeadStatus,
-    updateLeadEquipment,
-    deleteLead,
-} from "@/sanity/mutations/admin/leads";
+import { updateLead, updateLeadStatus, updateLeadEquipment, deleteLead } from "@/sanity/mutations/admin/leads";
 import { getLeadByIdQuery } from "@/sanity/queries/admin/leads";
 
 interface Params {
@@ -48,14 +43,7 @@ export async function PATCH(req: Request, { params }: Params) {
             });
         }
 
-        if (
-            body.firstName ||
-            body.lastName ||
-            body.email ||
-            body.phone ||
-            body.company ||
-            body.message
-        ) {
+        if (body.firstName || body.lastName || body.email || body.phone || body.company || body.message) {
             await updateLead(id, body);
         }
 

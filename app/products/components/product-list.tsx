@@ -14,6 +14,14 @@ export default function ProductList() {
     const tag = params.get("tag") as Tag | null;
     const client = params.get("client");
 
+    const formatFilterLabel = (value: string) => {
+        return value
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
+            .replace(/[-_]/g, " ")
+            .replace(/\b\w/g, (char) => char.toUpperCase());
+    };
+    const activeFilterLabel = formatFilterLabel(tag ?? brand ?? category ?? client ?? "All Products");
+
     console.log("RAW PARAMS", Object.fromEntries(params.entries()));
 
     const filtered = allProducts.filter((product) => {
@@ -21,52 +29,123 @@ export default function ProductList() {
         if (brand && product.brand !== brand) return false;
         if (client && product.usedBy !== client) return false;
         if (tag && !product.tags.includes(tag)) return false;
+
         return true;
     });
 
-    /* ---------------------------- */
+    /* ---------------------------------- */
     /* EMPTY STATE */
-    /* ---------------------------- */
+    /* ---------------------------------- */
 
     if (filtered.length === 0) {
         return (
-            <div className="flex w-full flex-col items-center justify-center px-6 py-16 text-center">
-                <h3 className="text-xl font-semibold text-black">No products match your filters</h3>
-
-                <p className="mt-2 max-w-md text-sm text-gray-600">
-                    This combination of category, brand, and type doesn’t return any products. Try removing a filter or
-                    selecting a different option.
-                </p>
-
-                <div className="mt-6 flex gap-3">
-                    <button
-                        onClick={() => (window.location.href = "/products")}
-                        className="rounded bg-black px-4 py-2 text-sm font-semibold text-white hover:bg-gray-800"
+            <section
+                className="
+          flex w-full flex-col items-center justify-center
+          px-page py-section
+          text-center
+        "
+            >
+                <div
+                    className="
+            flex max-w-lg flex-col items-center
+            rounded-card border border-border
+            bg-card p-8
+            shadow-card
+          "
+                >
+                    <h3
+                        className="
+              text-xl font-semibold
+              text-foreground
+            "
                     >
-                        View all products
-                    </button>
+                        No products match your filters
+                    </h3>
 
-                    {(tag || brand || category) && (
+                    <p
+                        className="
+              mt-3 text-sm leading-relaxed
+              text-muted-foreground
+            "
+                    >
+                        This combination of category, brand, and type doesn’t return any products. Try removing a filter
+                        or selecting a different option.
+                    </p>
+
+                    <div className="mt-6 flex flex-wrap justify-center gap-3">
                         <button
-                            onClick={() => {
-                                const url = new URL(window.location.href);
-                                url.searchParams.delete("tag");
-                                window.location.href = url.toString();
-                            }}
-                            className="rounded border border-black px-4 py-2 text-sm font-semibold text-black hover:bg-gray-100"
+                            onClick={() => (window.location.href = "/products")}
+                            className="
+                inline-flex items-center justify-center
+                rounded-button
+                bg-primary px-4 py-2
+                text-sm font-semibold
+                text-primary-foreground
+                transition-colors duration-200
+                hover:bg-primary/90
+                focus-visible:outline-none
+                focus-visible:ring-2
+                focus-visible:ring-ring
+                focus-visible:ring-offset-2
+                focus-visible:ring-offset-background
+              "
                         >
-                            Remove last filter
+                            View all products
                         </button>
-                    )}
+
+                        {(tag || brand || category) && (
+                            <button
+                                onClick={() => {
+                                    const url = new URL(window.location.href);
+
+                                    url.searchParams.delete("tag");
+
+                                    window.location.href = url.toString();
+                                }}
+                                className="
+                  inline-flex items-center justify-center
+                  rounded-button border border-border
+                  bg-background px-4 py-2
+                  text-sm font-semibold
+                  text-foreground
+                  transition-colors duration-200
+                  hover:bg-muted
+                  focus-visible:outline-none
+                  focus-visible:ring-2
+                  focus-visible:ring-ring
+                  focus-visible:ring-offset-2
+                  focus-visible:ring-offset-background
+                "
+                            >
+                                Remove last filter
+                            </button>
+                        )}
+                    </div>
                 </div>
-            </div>
+            </section>
         );
     }
+
     return (
-        <div className="grid w-full grid-cols-1 gap-6 p-6 sm:grid-cols-2 xl:grid-cols-3">
-            {filtered.map((product) => (
-                <ProductCard key={product.id} product={product} />
-            ))}
-        </div>
+        <section className="w-full px-page py-section p-4">
+            <header className="mb-6">
+                <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">Products</p>
+
+                <h1 className="mt-1 text-3xl font-bold text-foreground">{activeFilterLabel}</h1>
+            </header>
+
+            <div
+                className="
+        grid w-full grid-cols-1 gap-6
+        sm:grid-cols-2
+        xl:grid-cols-3
+      "
+            >
+                {filtered.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                ))}
+            </div>
+        </section>
     );
 }

@@ -1,23 +1,42 @@
+import type { Metadata } from "next";
 import PartsForm from "@/components/forms/parts-form";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Parts & Services | EGS Equipment",
-    description: "Genuine replacement parts, expert service, and dependable support to keep your equipment working.",
+    title: "Parts & Service Support | EGS Equipment",
+    description:
+        "Request genuine replacement parts, maintenance, repairs, and technical service support from EGS Equipment.",
+    alternates: {
+        canonical: "/parts-services",
+    },
+    openGraph: {
+        title: "Parts & Service Support | EGS Equipment",
+        description:
+            "Request genuine replacement parts, maintenance, repairs, and technical service support from EGS Equipment.",
+        type: "website",
+        url: "/parts-services",
+    },
+    twitter: {
+        card: "summary",
+        title: "Parts & Service Support | EGS Equipment",
+        description:
+            "Request genuine replacement parts, maintenance, repairs, and technical service support from EGS Equipment.",
+    },
 };
 
 export default function PartsServicesPage() {
     return (
-        <section className="relative w-full bg-gray-50 py-20 px-6">
-            <div className="mx-auto max-w-4xl text-left mb-12">
-                <h1 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">Parts & Service Support</h1>
+        <section className="relative w-full bg-muted px-6 py-20">
+            <div className="mx-auto mb-12 max-w-4xl text-left">
+                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+                    Parts & Service Support
+                </h1>
 
-                <p className="mt-4 text-lg text-gray-600">
+                <p className="mt-4 text-lg text-muted-foreground">
                     Keep your equipment running at peak performance with genuine parts, professional service, and
                     knowledgeable support from the EGS team.
                 </p>
 
-                <div className="mt-6 text-sm text-gray-500">
+                <div className="mt-6 text-sm text-muted-foreground">
                     Replacement Parts • Maintenance • Repairs • Technical Assistance
                 </div>
             </div>

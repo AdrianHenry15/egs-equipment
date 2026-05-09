@@ -21,24 +21,16 @@
                 "name": "next"
             }
         ],
-        "baseUrl": ".",
         "paths": {
             "@/*": ["./*"],
-            "@/components/*": ["components/*"],
-            "@/pages/*": ["pages/*"],
-            "@/app/*": ["app/*"],
-            "@/lib/*": ["lib/*"],
-            "@/styles/*": ["styles/*"],
-            "@/public/*": ["public/*"]
+            "@/components/*": ["./components/*"],
+            "@/app/*": ["./app/*"],
+            "@/lib/*": ["./lib/*"],
+            "@/styles/*": ["./styles/*"],
+            "@/public/*": ["./public/*"]
         },
         "target": "ES2017"
     },
-    "include": [
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx",
-        ".next/types/**/*.ts",
-        ".next/dev/types/**/*.ts"
-    ],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.d.ts", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
     "exclude": ["node_modules"]
 }

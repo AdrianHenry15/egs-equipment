@@ -11,9 +11,7 @@ export default function AdminPage() {
             {/* Header */}
             <div>
                 <h1 className="text-2xl font-semibold">Admin Dashboard</h1>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Overview and quick access
-                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Overview and quick access</p>
             </div>
 
             {/* Quick access grid */}

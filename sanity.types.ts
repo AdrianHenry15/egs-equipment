@@ -284,14 +284,7 @@ export type Products = {
     name?: string;
     slug?: Slug;
     description?: string;
-    mainCategory?:
-        | "Sport"
-        | "Synthetic Turf"
-        | "Natural Turf"
-        | "Line Marker"
-        | "Hand Tool"
-        | "Goal"
-        | "Debris Blower";
+    mainCategory?: "Sport" | "Synthetic Turf" | "Natural Turf" | "Line Marker" | "Hand Tool" | "Goal" | "Debris Blower";
     tags?: Array<string>;
     brand?:
         | "Howardsons"
@@ -325,14 +318,7 @@ export type Products = {
         media?: unknown;
         _type: "file";
     };
-    usedBy?:
-        | "Golf"
-        | "Soccer"
-        | "American Football"
-        | "Baseball"
-        | "Lacrosse"
-        | "Sports Turf"
-        | "Synthetic Turf";
+    usedBy?: "Golf" | "Soccer" | "American Football" | "Baseball" | "Lacrosse" | "Sports Turf" | "Synthetic Turf";
     popular?: boolean;
 };
 

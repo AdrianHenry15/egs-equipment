@@ -12,7 +12,14 @@ export function ImageScroller({ images, alt }: ImageScrollerProps) {
 
     if (!images || images.length === 0) {
         return (
-            <div className="flex h-96 w-full items-center justify-center rounded-lg border bg-gray-100 text-gray-400">
+            <div
+                className="
+          flex h-96 w-full items-center justify-center
+          rounded-lg border border-border
+          bg-muted
+          text-muted-foreground
+        "
+            >
                 No images available
             </div>
         );
@@ -24,33 +31,56 @@ export function ImageScroller({ images, alt }: ImageScrollerProps) {
     return (
         <div className="flex w-full max-w-xl flex-col items-center gap-3">
             {/* IMAGE CONTAINER */}
-            <div className="relative h-96 w-full overflow-hidden rounded-lg border bg-white shadow-lg">
-                <Image
-                    src={image ? image : ""}
-                    alt={alt}
-                    fill
-                    className="object-contain"
-                    priority={index === 0}
-                />
+            <div
+                className="
+          relative h-96 w-full overflow-hidden
+          rounded-lg border border-border
+          bg-card
+          shadow-lg
+        "
+            >
+                <Image src={image ? image : ""} alt={alt} fill className="object-contain" priority={index === 0} />
 
                 {hasMultiple && (
                     <>
                         <button
                             type="button"
                             onClick={() => setIndex((i) => (i === 0 ? images.length - 1 : i - 1))}
-                            className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow hover:bg-white"
+                            className="
+                absolute left-2 top-1/2
+                -translate-y-1/2
+                rounded-full
+                border border-border
+                bg-background/90
+                p-2
+                shadow
+                backdrop-blur-sm
+                transition-colors
+                hover:bg-background
+              "
                             aria-label="Previous image"
                         >
-                            <ChevronLeftIcon className="h-5 w-5 text-black" />
+                            <ChevronLeftIcon className="h-5 w-5 text-foreground" />
                         </button>
 
                         <button
                             type="button"
                             onClick={() => setIndex((i) => (i === images.length - 1 ? 0 : i + 1))}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow hover:bg-white"
+                            className="
+                absolute right-2 top-1/2
+                -translate-y-1/2
+                rounded-full
+                border border-border
+                bg-background/90
+                p-2
+                shadow
+                backdrop-blur-sm
+                transition-colors
+                hover:bg-background
+              "
                             aria-label="Next image"
                         >
-                            <ChevronRightIcon className="h-5 w-5 text-black" />
+                            <ChevronRightIcon className="h-5 w-5 text-foreground" />
                         </button>
                     </>
                 )}
@@ -65,7 +95,7 @@ export function ImageScroller({ images, alt }: ImageScrollerProps) {
                             onClick={() => setIndex(i)}
                             aria-label={`Go to image ${i + 1}`}
                             className={`h-2.5 w-2.5 rounded-full transition ${
-                                i === index ? "bg-black scale-110" : "bg-gray-300 hover:bg-gray-400"
+                                i === index ? "scale-110 bg-primary" : "bg-border hover:bg-muted-foreground"
                             }`}
                         />
                     ))}

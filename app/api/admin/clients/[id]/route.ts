@@ -1,11 +1,6 @@
 import { NextResponse } from "next/server";
 import { getClientByIdQuery } from "@/sanity/queries/admin/client";
-import {
-    deleteClient,
-    updateClient,
-    updateClientEquipment,
-    updateClientStatus,
-} from "@/sanity/mutations/admin/client";
+import { deleteClient, updateClient, updateClientEquipment, updateClientStatus } from "@/sanity/mutations/admin/client";
 import { sanityReadClient } from "@/sanity/lib/client";
 
 interface RouteContext {

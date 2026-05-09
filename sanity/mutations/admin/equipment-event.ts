@@ -118,11 +118,7 @@ export async function logEquipmentReplacement(input: {
 }
 
 // LOG EQUIPMENT REPAIR
-export async function logEquipmentRepair(input: {
-    clientId: string;
-    productId: string;
-    notes?: string;
-}) {
+export async function logEquipmentRepair(input: { clientId: string; productId: string; notes?: string }) {
     return createEquipmentEvent({
         clientId: input.clientId,
         eventType: "repair",

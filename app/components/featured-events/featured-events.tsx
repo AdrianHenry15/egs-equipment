@@ -23,22 +23,26 @@ export default function FeaturedEvents() {
     const hasPast = pastEvents.length > 0;
 
     return (
-        <section className="w-full bg-white py-20 px-6 text-black">
+        <section className="w-full bg-background px-6 py-20 text-foreground">
             <div className="mx-auto max-w-7xl">
                 {/* Header */}
                 <div className="mb-12 text-center">
-                    <h2 className="text-3xl font-bold">Events</h2>
-                    <p className="mt-3 text-gray-600">Demos, trade shows, and industry events</p>
+                    <h2 className="text-3xl font-bold text-foreground">Events</h2>
+
+                    <p className="mt-3 text-muted-foreground">Demos, trade shows, and industry events</p>
                 </div>
 
                 {/* Upcoming Events */}
                 <div className="mb-20">
-                    <h3 className="mb-6 text-2xl font-semibold">Upcoming Events</h3>
+                    <h3 className="mb-6 text-2xl font-semibold text-foreground">Upcoming Events</h3>
 
                     {!hasUpcoming && (
-                        <div className="rounded-xl border border-dashed border-gray-300 bg-gray-50 p-10 text-center">
-                            <p className="text-lg font-medium text-gray-700">No upcoming events scheduled</p>
-                            <p className="mt-2 text-sm text-gray-500">Check back soon or follow us for updates.</p>
+                        <div className="rounded-xl border border-dashed border-border bg-muted p-10 text-center">
+                            <p className="text-lg font-medium text-foreground">No upcoming events scheduled</p>
+
+                            <p className="mt-2 text-sm text-muted-foreground">
+                                Check back soon or follow us for updates.
+                            </p>
                         </div>
                     )}
 
@@ -48,7 +52,8 @@ export default function FeaturedEvents() {
                 {/* Past Events */}
                 {hasPast && (
                     <div>
-                        <h3 className="mb-6 text-2xl font-semibold">Past Events</h3>
+                        <h3 className="mb-6 text-2xl font-semibold text-foreground">Past Events</h3>
+
                         <EventsGrid events={pastEvents} variant="past" />
                     </div>
                 )}

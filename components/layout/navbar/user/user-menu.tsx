@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SiReasonstudios } from "react-icons/si";
 import { FaLock } from "react-icons/fa6";
-import { PaintBrushIcon } from "@heroicons/react/24/outline";
-import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export default function UserMenu() {
     const { isLoaded: userLoaded, isSignedIn } = useUser();
@@ -47,15 +45,6 @@ export default function UserMenu() {
                             />
                         )}
                     </UserButton.MenuItems>
-                    {/* <UserButton.UserProfilePage
-                        label="Theme"
-                        labelIcon={<PaintBrushIcon className="h-5 w-5" />}
-                        url="theme"
-                    >
-                        <div className="px-1 py-2">
-                            <ThemeSwitcher />
-                        </div>
-                    </UserButton.UserProfilePage> */}
                 </UserButton>
             </SignedIn>
 

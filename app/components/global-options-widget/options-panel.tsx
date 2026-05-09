@@ -14,6 +14,7 @@ import { useEffect } from "react";
 
 const OptionsPanel = () => {
     const { isLoaded } = useOrganizationList();
+
     const { memberships } = useOrganization({
         memberships: {
             infinite: true,
@@ -26,24 +27,50 @@ const OptionsPanel = () => {
     const hasOrgs = isLoaded && (memberships?.count ?? 0) > 0;
 
     useEffect(() => {
-        // For debugging purposes
         console.log("User memberships:", memberships);
     }, [memberships]);
+
     return (
-        <div className="w-64 rounded-xl border bg-white shadow-xl p-3 space-y-3">
+        <div className="w-64 space-y-3 rounded-xl border border-border bg-card p-3 text-card-foreground shadow-xl">
             {/* SIGNED OUT STATE */}
             <SignedOut>
                 <div className="space-y-2">
-                    <div className="text-xs font-semibold text-gray-500 uppercase">Account</div>
+                    <div className="text-xs font-semibold uppercase text-muted-foreground">Account</div>
 
                     <SignInButton mode="modal">
-                        <button className="w-full text-black rounded-md border px-3 py-2 text-sm hover:bg-gray-50">
+                        <button
+                            className="
+                                w-full rounded-md border border-border
+                                px-3 py-2 text-sm
+                                text-foreground
+                                transition-colors duration-150
+                                hover:bg-muted
+                                focus-visible:outline-none
+                                focus-visible:ring-2
+                                focus-visible:ring-ring
+                                focus-visible:ring-offset-2
+                                focus-visible:ring-offset-background
+                            "
+                        >
                             Sign in
                         </button>
                     </SignInButton>
 
                     <SignUpButton mode="modal">
-                        <button className="w-full text-black rounded-md border px-3 py-2 text-sm hover:bg-gray-50">
+                        <button
+                            className="
+                                w-full rounded-md border border-border
+                                px-3 py-2 text-sm
+                                text-foreground
+                                transition-colors duration-150
+                                hover:bg-muted
+                                focus-visible:outline-none
+                                focus-visible:ring-2
+                                focus-visible:ring-ring
+                                focus-visible:ring-offset-2
+                                focus-visible:ring-offset-background
+                            "
+                        >
                             Sign up
                         </button>
                     </SignUpButton>
@@ -52,10 +79,10 @@ const OptionsPanel = () => {
 
             {/* SIGNED IN STATE */}
             <SignedIn>
-                <div className="text-xs font-semibold text-gray-500 uppercase">Organizations</div>
+                <div className="text-xs font-semibold uppercase text-muted-foreground">Organizations</div>
 
                 {/* Loading guard */}
-                {!isLoaded && <div className="text-sm text-gray-400">Loading…</div>}
+                {!isLoaded && <div className="text-sm text-muted-foreground">Loading…</div>}
 
                 {/* Has organizations */}
                 {isLoaded && hasOrgs && (
@@ -65,8 +92,8 @@ const OptionsPanel = () => {
                             elements: {
                                 rootBox: "w-full",
                                 organizationSwitcherTrigger:
-                                    "w-full justify-between rounded-md border px-3 py-2 text-sm",
-                                organizationSwitcherPopoverCard: "rounded-xl shadow-2xl",
+                                    "w-full justify-between rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground",
+                                organizationSwitcherPopoverCard: "rounded-xl border border-border bg-card shadow-2xl",
                             },
                         }}
                     />
@@ -74,25 +101,30 @@ const OptionsPanel = () => {
 
                 {/* No organizations */}
                 {isLoaded && !hasOrgs && (
-                    <div className="rounded-md border px-3 py-2 text-sm text-gray-500">
+                    <div className="rounded-md border border-border px-3 py-2 text-sm text-muted-foreground">
                         No organizations yet
-                        <div className="mt-2 text-xs text-gray-400">
-                            Create one when you need team access.
-                        </div>
+                        <div className="mt-2 text-xs text-muted-foreground">Create one when you need team access.</div>
                     </div>
                 )}
             </SignedIn>
 
             {/* COOKIE SETTINGS */}
-            <div className="pt-2 border-t dark:border-gray-800">
-                <div className="text-xs font-semibold uppercase text-gray-500 mb-2">Privacy</div>
+            <div className="border-border pt-2 border-t">
+                <div className="mb-2 text-xs font-semibold uppercase text-muted-foreground">Privacy</div>
 
                 <button
                     onClick={openCookieModal}
                     className="
-                        w-full text-black rounded-md border px-3 py-2 text-sm
-                        text-left hover:bg-gray-50 ease-in-out duration-150
-                        dark:hover:bg-gray-300
+                        w-full rounded-md border border-border
+                        px-3 py-2 text-left text-sm
+                        text-foreground
+                        transition-colors duration-150 ease-in-out
+                        hover:bg-muted
+                        focus-visible:outline-none
+                        focus-visible:ring-2
+                        focus-visible:ring-ring
+                        focus-visible:ring-offset-2
+                        focus-visible:ring-offset-background
                     "
                 >
                     Cookie preferences

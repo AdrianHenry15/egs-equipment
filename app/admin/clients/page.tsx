@@ -29,9 +29,7 @@ export default async function ClientsPage() {
             {(!clients || clients.length === 0) && (
                 <div className="rounded-lg border border-dashed py-16 text-center text-gray-500">
                     <p className="text-lg font-medium">No clients yet</p>
-                    <p className="text-sm">
-                        Clients will appear here once someone submits an inquiry.
-                    </p>
+                    <p className="text-sm">Clients will appear here once someone submits an inquiry.</p>
                 </div>
             )}
 

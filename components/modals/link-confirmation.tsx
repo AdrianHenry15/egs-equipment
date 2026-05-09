@@ -54,10 +54,7 @@ export default function LinkConfirmationModal() {
                                 </p>
 
                                 <div className="mt-6 flex justify-evenly">
-                                    <Button
-                                        name={confirmLabel ?? "Go To Website"}
-                                        onClick={openLink}
-                                    />
+                                    <Button name={confirmLabel ?? "Go To Website"} onClick={openLink} />
                                     <Button name={cancelLabel ?? "Go Back"} onClick={closeModal} />
                                 </div>
                             </DialogPanel>
