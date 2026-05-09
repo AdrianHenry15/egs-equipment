@@ -43,7 +43,7 @@ export default function MobileSidebarFilter() {
             </button>
 
             <Transition show={isOpen}>
-                <Dialog onClose={() => setIsOpen(false)} className="relative z-[9000]">
+                <Dialog onClose={() => setIsOpen(false)} className="relative z-9000">
                     {/* Backdrop */}
                     <TransitionChild
                         as={Fragment}
@@ -67,7 +67,7 @@ export default function MobileSidebarFilter() {
                         leaveFrom="translate-x-0"
                         leaveTo="-translate-x-full"
                     >
-                        <DialogPanel className="fixed top-0 left-0 flex h-full w-full flex-col border-r border-border bg-card p-4 text-card-foreground shadow-2xl sm:w-[325px]">
+                        <DialogPanel className="fixed top-0 left-0 flex h-full w-full flex-col border-r border-border bg-card p-4 text-card-foreground shadow-2xl sm:w-81.25">
                             {/* Header */}
                             <div className="mb-4 flex items-center justify-between border-b border-border pb-4">
                                 <h2 className="text-xl font-semibold text-card-foreground">Filters</h2>

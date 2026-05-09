@@ -7,7 +7,7 @@ import HeroImage from "@/public/splash/splash-ocity.png";
 
 const HomeSplash = () => {
     return (
-        <section className="relative h-[420px] w-full text-primary-foreground md:h-[75vh]">
+        <section className="relative h-105 w-full text-primary-foreground md:h-[75vh]">
             {/* Background */}
             <Image
                 src={HeroImage}
@@ -56,15 +56,7 @@ const HomeSplash = () => {
 
                         <Link
                             href="/contact"
-                            className="
-        inline-flex h-11 items-center justify-center
-        rounded-lg border border-brand-gold
-        bg-brand-black/80 px-6
-        text-sm font-semibold text-brand-gold
-        shadow-md backdrop-blur-sm transition
-        hover:bg-brand-gold hover:text-brand-black
-        md:text-base
-    "
+                            className="inline-flex h-11 items-center justify-center rounded-lg border border-brand-gold bg-brand-black/80 px-6 text-sm font-semibold text-brand-gold shadow-md backdrop-blur-sm transition hover:bg-brand-gold hover:text-brand-black md:text-base"
                         >
                             Contact Us
                         </Link>
