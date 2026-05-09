@@ -6,17 +6,24 @@ import Logo from "@/public/logos/EGS1.png";
 
 const LogoCard = () => {
     return (
-        <span className="flex flex-col justify-center items-center my-4 border-zinc-900 border-b pt-10 pb-16 md:flex-1 md:border-none md:justify-start">
-            <div className="flex flex-col items-center md:rounded-2xl md:p-10">
-                <span className="mb-2 pl-10">
-                    <Image loading="eager" className="w-50" src={Logo} alt="logo" />
-                </span>
-                <span className="flex items-center text-xs text-zinc-500">
-                    <FaRegCopyright className="mx-2" />
-                    2026 EGS Equipment
-                </span>
+        <div className="my-4 flex flex-col items-center justify-center border-b border-border pt-10 pb-16 md:flex-1 md:items-start md:justify-start md:border-none">
+            <div className="flex flex-col items-center md:items-start md:rounded-2xl md:p-6">
+                <div className="mb-3">
+                    <Image
+                        loading="eager"
+                        className="w-52 object-contain"
+                        src={Logo}
+                        alt="EGS Equipment logo"
+                        priority
+                    />
+                </div>
+
+                <div className="flex items-center text-xs text-muted-foreground">
+                    <FaRegCopyright className="mr-2" />
+                    <span>2026 EGS Equipment</span>
+                </div>
             </div>
-        </span>
+        </div>
     );
 };
 

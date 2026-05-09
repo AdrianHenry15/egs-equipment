@@ -1,9 +1,6 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
-
-import { MdCopyright } from "react-icons/md";
 
 import ContactCard from "./contact-card";
 import SocialsCard from "./socials-card";
@@ -12,25 +9,33 @@ import LogoCard from "./logo-card";
 
 const Footer = () => {
     return (
-        // FULL CONTAINER
-        <footer className="w-full bg-zinc-800 text-white flex flex-col justify-center px-4">
-            {/* FOOTER MENU */}
-            <div className="flex flex-col self-center w-full md:flex-row md:py-2">
+        <footer className="flex w-full flex-col justify-center border-t border-border bg-card text-card-foreground">
+            {/* MAIN FOOTER CONTENT */}
+            <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 py-10 md:flex-row md:items-start md:justify-between">
                 <LogoCard />
-                <div className="flex flex-col md:flex-row md:w-1/2 md:self-center">
+
+                <div className="flex flex-col gap-10 md:w-1/2 md:flex-row md:justify-end">
                     <FooterMenu />
                     <ContactCard />
                 </div>
             </div>
-            {/* SOCIALS  */}
-            <SocialsCard />
-            {/* CREATED BY */}
-            <div className="flex items-center justify-center text-center self-center w-full py-2 text-xs">
-                <div className="flex justify-center w-full items-center">
-                    {/* THIRD GEN LOGO */}
-                    <Link className="flex items-center" target="_blank" href="https://www.thirdgenerationstudios.com/">
-                        {/* <MdCopyright size={8} className="mb-1 mr-1 text-white" /> */}
-                        <p className="text-zinc-500 text-[10px]">Third Generation Studios.</p>
+
+            {/* SOCIALS */}
+            <div className="border-t border-border">
+                <div className="mx-auto w-full max-w-7xl px-4 py-6">
+                    <SocialsCard />
+                </div>
+            </div>
+
+            {/* COPYRIGHT */}
+            <div className="border-t border-border">
+                <div className="mx-auto flex w-full max-w-7xl items-center justify-center px-4 py-4 text-center">
+                    <Link
+                        href="https://www.thirdgenerationstudios.com/"
+                        target="_blank"
+                        className="text-xs text-muted-foreground transition hover:text-primary"
+                    >
+                        Third Generation Studios.
                     </Link>
                 </div>
             </div>

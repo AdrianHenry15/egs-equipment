@@ -3,40 +3,52 @@ import React from "react";
 
 const ContactCard = () => {
     return (
-        <div className="flex flex-1 flex-col justify-start items-start w-full py-10 md:py-0 md:text-left">
-            <div className="flex flex-col text-xs w-full flex-1">
-                <Link href={"/contact-us"} className="font-light tracking-wider text-2xl pb-4">
+        <div className="flex w-full flex-1 flex-col items-start justify-start py-10 md:py-0 md:text-left">
+            <div className="flex w-full flex-1 flex-col text-sm">
+                <Link
+                    href="/contact-us"
+                    className="pb-4 text-2xl font-semibold tracking-wide text-card-foreground transition hover:text-primary"
+                >
                     Contact Us
                 </Link>
-                <div className="w-full">
-                    <address className="text-gray-400 pb-4">
-                        5415 Lake Howell Road #190 Winter Park, FL 32792
+
+                <div className="w-full space-y-6">
+                    <address className="not-italic text-sm leading-relaxed text-muted-foreground">
+                        5415 Lake Howell Road #190
+                        <br />
+                        Winter Park, FL 32792
                     </address>
-                    <div className="flex flex-col text-gray-400">
-                        <span className="pb-4">
-                            <label className="text-white">Office: </label>
-                            <Link className="hover:underline underline-offset-2" href="tel:">
+
+                    <div className="flex flex-col gap-4 text-sm text-muted-foreground">
+                        <div>
+                            <span className="font-medium text-card-foreground">Office:</span>{" "}
+                            <Link
+                                className="transition hover:text-primary hover:underline underline-offset-4"
+                                href="tel:+14076297968"
+                            >
                                 (407) 629-7968
                             </Link>
-                        </span>
-                        <span className="pb-4">
-                            <label className="text-white">Sales: </label>
+                        </div>
+
+                        <div>
+                            <span className="font-medium text-card-foreground">Sales:</span>{" "}
                             <Link
-                                className="hover:underline underline-offset-2"
-                                href="email:david.okamoto@eckertgolf.com"
+                                className="break-all transition hover:text-primary hover:underline underline-offset-4"
+                                href="mailto:david.okamoto@eckertgolf.com"
                             >
                                 david.okamoto@eckertgolf.com
                             </Link>
-                        </span>
-                        <span className="pb-4">
-                            <label className="text-white">Other Inquiries: </label>
+                        </div>
+
+                        <div>
+                            <span className="font-medium text-card-foreground">Other Inquiries:</span>{" "}
                             <Link
-                                className="hover:underline underline-offset-2"
-                                href="email:frank.eckert@eckertgolf.com"
+                                className="break-all transition hover:text-primary hover:underline underline-offset-4"
+                                href="mailto:frank.eckert@eckertgolf.com"
                             >
                                 frank.eckert@eckertgolf.com
                             </Link>
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>

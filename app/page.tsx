@@ -6,12 +6,22 @@ import HomeSplash from "./components/home-splash";
 
 export default function Home() {
     return (
-        <div className="flex flex-col justify-between relative w-full">
+        <main className="relative flex min-h-screen w-full flex-col bg-background text-foreground">
             {/* <FlyerSection /> */}
+
             <HomeSplash />
-            <PoweredBy />
-            <FeaturedProducts />
-            <FeaturedEvents />
-        </div>
+
+            <section className="border-t border-border">
+                <PoweredBy />
+            </section>
+
+            <section className="border-t border-border">
+                <FeaturedProducts />
+            </section>
+
+            <section className="border-t border-border">
+                <FeaturedEvents />
+            </section>
+        </main>
     );
 }
