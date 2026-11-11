@@ -8,7 +8,7 @@ const isTenantAdminRoute = createRouteMatcher([
     "/admin(.*)", // add your admin routes here
 ]);
 
-export default clerkMiddleware(async (auth, req) => {
+const authenticate = clerkMiddleware(async (auth, req) => {
     // 🔒 Restrict admin routes to org admins
     if (isTenantAdminRoute(req)) {
         await auth.protect((has) => {
@@ -21,6 +21,16 @@ export default clerkMiddleware(async (auth, req) => {
         await auth.protect();
     }
 });
+
+// Skip Clerk’s browser handshake on public pages and catalog endpoints.
+const publicRoute = /^(?:\/(?:about|contact|events|finance-options|parts-form|robots\.txt|sitemap\.xml)?|\/(?:api\/)?products(?:\/[^/]+)?)\/?$/;
+
+export default function proxy(...args: Parameters<typeof authenticate>) {
+    const [request] = args;
+    if (publicRoute.test(request.nextUrl.pathname)) return;
+
+    return authenticate(...args);
+}
 
 export const config = {
     matcher: [

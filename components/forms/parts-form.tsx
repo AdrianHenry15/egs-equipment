@@ -89,7 +89,7 @@ const PartsForm = () => {
             {loading ? <Loader /> : null}
 
             <h1 className="mb-10 animate-bounce text-3xl font-light text-foreground">
-                {pathname === "/contact-us" ? "Contact Us" : "Request A Quote!"}
+                {pathname === "/contact" ? "Contact Us" : "Request A Quote!"}
             </h1>
 
             {/* FORM CONTAINER */}

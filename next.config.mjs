@@ -9,6 +9,12 @@ const nextConfig = {
         SANITY_BACKEND_TOKEN: process.env.SANITY_BACKEND_TOKEN,
         CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
     },
+    async redirects() {
+        return [
+            { source: "/contact-us", destination: "/contact", permanent: true },
+            { source: "/parts-services", destination: "/parts-form", permanent: true },
+        ];
+    },
     images: {
         remotePatterns: [
             {

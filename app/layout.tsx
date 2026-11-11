@@ -14,6 +14,7 @@ import GlobalOptionsWidget from "@/app/components/global-options-widget";
 import { SanityLive } from "@/sanity/lib/live";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "react-hot-toast";
+import { SITE_ORIGIN } from "@/lib/site";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -28,7 +29,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://egsequipment.com"),
+    metadataBase: new URL(SITE_ORIGIN),
     title: {
         default: "EGS Equipment",
         template: "%s | EGS Equipment",

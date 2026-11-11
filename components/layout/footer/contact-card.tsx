@@ -6,7 +6,7 @@ const ContactCard = () => {
         <div className="flex w-full flex-1 flex-col items-start justify-start py-10 md:py-0 md:text-left">
             <div className="flex w-full flex-1 flex-col text-sm">
                 <Link
-                    href="/contact-us"
+                    href="/contact"
                     className="pb-4 text-2xl font-semibold tracking-wide text-card-foreground transition hover:text-primary"
                 >
                     Contact Us
