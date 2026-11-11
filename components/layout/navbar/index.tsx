@@ -12,7 +12,6 @@ import { NavMenu } from "@/lib/constants";
 import { BiChevronDown, BiSearch } from "react-icons/bi";
 import SearchBar from "@/components/search-bar";
 import ProductsNavMenu from "./products-nav-menu";
-import UserMenu from "./user/user-menu";
 import ThemeToggle from "@/components/theme-toggle";
 import { useModalStore } from "@/stores/modal-store/modal-store";
 
@@ -96,7 +95,6 @@ export default function Navbar() {
                 <div className="hidden items-center justify-end gap-4 xl:flex">
                     <SearchBar />
                     <ThemeToggle />
-                    <UserMenu />
                 </div>
             </div>
         </nav>

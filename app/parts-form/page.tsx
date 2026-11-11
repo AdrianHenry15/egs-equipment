@@ -6,14 +6,14 @@ export const metadata: Metadata = {
     description:
         "Request genuine replacement parts, maintenance, repairs, and technical service support from EGS Equipment.",
     alternates: {
-        canonical: "/parts-services",
+        canonical: "/parts-form",
     },
     openGraph: {
         title: "Parts & Service Support | EGS Equipment",
         description:
             "Request genuine replacement parts, maintenance, repairs, and technical service support from EGS Equipment.",
         type: "website",
-        url: "/parts-services",
+        url: "/parts-form",
     },
     twitter: {
         card: "summary",

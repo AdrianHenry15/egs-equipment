@@ -61,9 +61,9 @@ export default function EventsGrid({ events, variant }: EventsGridProps) {
                     </div>
 
                     <div className={isUpcoming ? "flex flex-1 flex-col p-6" : "flex flex-1 flex-col p-4"}>
-                        <h4 className={`${isUpcoming ? "text-xl font-semibold" : "font-semibold"} text-foreground`}>
+                        <h3 className={`${isUpcoming ? "text-xl font-semibold" : "font-semibold"} text-foreground`}>
                             {event.title}
-                        </h4>
+                        </h3>
 
                         <div
                             className={
@@ -92,7 +92,7 @@ export default function EventsGrid({ events, variant }: EventsGridProps) {
                                 href={event.href}
                                 className="inline-flex text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                             >
-                                {isUpcoming ? "View Event →" : "View Recap →"}
+                                {isUpcoming ? "View Event →" : "Event Website →"}
                             </Link>
                         </div>
                     </div>

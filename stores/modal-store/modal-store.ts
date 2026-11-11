@@ -4,8 +4,6 @@ import { ConfirmModalPayload, LinkConfirmationPayload, SearchModalPayload, Succe
 export type ModalPayloadMap = {
     confirmation: ConfirmModalPayload;
     success: SuccessModalPayload;
-    sign_in: undefined;
-    sign_up: undefined;
     link_confirmation: LinkConfirmationPayload;
     search: SearchModalPayload;
 };

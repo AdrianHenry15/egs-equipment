@@ -51,6 +51,7 @@ export async function generateMetadata(props: ProductPageProps): Promise<Metadat
             title,
             description,
             type: "website",
+            url: `/products/${product.id}`,
             images: image
                 ? [
                       {

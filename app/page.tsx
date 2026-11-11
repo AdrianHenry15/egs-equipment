@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import PoweredBy from "@/app/components/powered-by";
 import FeaturedProducts from "./components/featured-products/featured-products";
 import FeaturedEvents from "./components/featured-events/featured-events";
 // import FlyerSection from "@/components/flyer-section";
 import HomeSplash from "./components/home-splash";
+
+export const metadata: Metadata = {
+    alternates: { canonical: "/" },
+};
 
 export default function Home() {
     return (

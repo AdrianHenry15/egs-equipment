@@ -13,7 +13,6 @@ import { BiChevronDown } from "react-icons/bi";
 
 import Button from "@/components/button";
 import ProductsNavMenu from "./products-nav-menu";
-import UserMenu from "./user/user-menu";
 
 const ICON_BUTTON_CLASSES =
     "flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-card-foreground shadow-sm transition hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background";
@@ -96,7 +95,6 @@ export default function MobileMenu() {
                     <Bars3Icon className="h-5 w-5" />
                 </button>
 
-                <UserMenu />
             </div>
 
             <AnimatePresence>

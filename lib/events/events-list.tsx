@@ -1,6 +1,6 @@
-import { EventDemo } from "@/app/components/featured-events/events-grid";
+import type { EventDemo } from "@/app/components/featured-events/events-grid";
 
-export const UpcomingEvents: EventDemo[] = [
+const events: EventDemo[] = [
     {
         id: "sfma-2026",
         title: "2026 SFMA Conference and Exhibition",
@@ -24,3 +24,23 @@ export const UpcomingEvents: EventDemo[] = [
         href: "https://gcsaaconference.com/",
     },
 ];
+
+const eventDateFormatter = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+});
+
+export function getEventSections(now = new Date()) {
+    const today = eventDateFormatter.format(now);
+
+    return {
+        upcomingEvents: events
+            .filter((event) => event.endDate >= today)
+            .sort((first, second) => first.startDate.localeCompare(second.startDate)),
+        pastEvents: events
+            .filter((event) => event.endDate < today)
+            .sort((first, second) => second.endDate.localeCompare(first.endDate)),
+    };
+}

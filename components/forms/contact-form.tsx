@@ -77,7 +77,7 @@ const ContactForm = () => {
     return (
         <section className="relative flex w-full flex-col items-center bg-background py-20 md:px-4">
             {/* FORM CONTAINER */}
-            <div className="flex w-11/12 flex-col rounded-2xl border-2 border-border bg-card p-6 shadow-lg md:w-162.5">
+            <div className="flex w-11/12 flex-col rounded-2xl border-2 border-border bg-card p-6 text-card-foreground shadow-lg md:w-162.5">
                 {/* LOGO */}
                 <div className="my-10 flex justify-center">
                     <Image loading="eager" width={150} src={Logo} alt="logo-icon" />
@@ -132,6 +132,7 @@ const ContactForm = () => {
                         <Button
                             onClick={() => setInputClicked(true)}
                             submit
+                            themed
                             name="Submit Request"
                             className="w-full justify-center"
                         />

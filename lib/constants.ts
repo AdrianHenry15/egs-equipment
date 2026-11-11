@@ -1,7 +1,7 @@
 import { NavMenuType } from "./types/navigation";
 
 export enum AltNavMenuLinks {
-    CONTACT_US = "/contact-us",
+    CONTACT_US = "/contact",
     ESTIMATE = "/estimate",
 }
 

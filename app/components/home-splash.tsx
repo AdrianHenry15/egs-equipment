@@ -36,7 +36,7 @@ const HomeSplash = () => {
                     {/* CTAs */}
                     <div className="flex flex-wrap gap-3 pt-3">
                         <Link
-                            href="tel:15551234567"
+                            href="tel:+14076297968"
                             className="
                                 inline-flex h-11 items-center justify-center
                                 rounded-lg
