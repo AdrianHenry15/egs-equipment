@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/app/globals.css";
 
-import { ClerkProvider } from "@clerk/nextjs";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 
@@ -91,24 +90,22 @@ export default async function RootLayout({
     const isDraftMode = (await draftMode()).isEnabled;
 
     return (
-        <ClerkProvider>
-            <html lang="en" suppressHydrationWarning>
-                <body
-                    className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background text-foreground antialiased`}
-                >
-                    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-                        <Toaster />
-                        <Navbar />
-                        {children}
-                        <ModalRoot />
-                        <CookieConsentCard />
-                        <SanityLive />
-                        {isDraftMode && <VisualEditing />}
-                        <GlobalOptionsWidget />
-                        <Footer />
-                    </ThemeProvider>
-                </body>
-            </html>
-        </ClerkProvider>
+        <html lang="en" suppressHydrationWarning>
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background text-foreground antialiased`}
+            >
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+                    <Toaster />
+                    <Navbar />
+                    {children}
+                    <ModalRoot />
+                    <CookieConsentCard />
+                    <SanityLive />
+                    {isDraftMode && <VisualEditing />}
+                    <GlobalOptionsWidget />
+                    <Footer />
+                </ThemeProvider>
+            </body>
+        </html>
     );
 }

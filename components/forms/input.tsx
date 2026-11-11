@@ -22,8 +22,6 @@ const Input = ({
     placeholder,
     defaultValue,
 }: IInputProps) => {
-    const InputClass = "border-2 text-black border-gray-400 my-2 p-2 rounded-sm w-full shadow-md";
-
     return (
         <Controller
             name={inputName}
@@ -31,12 +29,17 @@ const Input = ({
             defaultValue={defaultValue}
             render={({ field }) => (
                 <div>
-                    <input {...field} className={InputClass} type="text" placeholder={placeholder} />
+                    <input
+                        {...field}
+                        className="my-2 w-full rounded-sm border-2 border-input bg-background p-2 text-foreground shadow-md placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring"
+                        type="text"
+                        placeholder={placeholder}
+                    />
                     {errors && errors[inputName] && errors[inputName]?.type === "required" && (
-                        <p className="text-sm text-red-600 ml-4">{errorRequiredText}</p>
+                        <p className="ml-4 text-sm text-red-700 [.dark_&]:text-red-300">{errorRequiredText}</p>
                     )}
                     {errors && errors[inputName] && errors[inputName]?.type === "pattern" && (
-                        <p className="text-sm text-red-600 ml-4">{errorPatternText}</p>
+                        <p className="ml-4 text-sm text-red-700 [.dark_&]:text-red-300">{errorPatternText}</p>
                     )}
                 </div>
             )}

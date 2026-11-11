@@ -34,16 +34,6 @@ export default function AdminPage() {
                         router.push("/admin/clients");
                     }}
                 />
-                {/* Users */}
-                <GridItem
-                    title="Users"
-                    subtitle="Platform Account"
-                    meta="Admins, Staff, Registered Users"
-                    onClick={() => {
-                        router.push("/admin/users");
-                    }}
-                />
-
                 {/* Products */}
                 <GridItem
                     title="Products"

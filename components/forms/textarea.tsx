@@ -18,7 +18,7 @@ const Textarea = ({ inputName, control, placeholder }: IInputProps) => {
             render={({ field }) => (
                 <div>
                     <textarea
-                        className="border-2 text-black border-gray-400 my-2 p-2 w-full h-40"
+                        className="my-2 h-40 w-full rounded-sm border-2 border-input bg-background p-2 text-foreground placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring"
                         placeholder={placeholder}
                         {...field}
                     />

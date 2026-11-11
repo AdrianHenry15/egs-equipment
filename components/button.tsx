@@ -6,6 +6,7 @@ interface IButtonProps {
     icon?: React.ReactNode;
     roundedFull?: boolean;
     altColor?: boolean;
+    themed?: boolean;
     onClick?: () => void;
     submit?: boolean;
     leftChildren?: boolean;
@@ -18,7 +19,9 @@ const Button = (props: IButtonProps) => {
         <button
             type={props.submit ? "submit" : "button"}
             className={`${props.className} ${props.roundedFull ? "rounded-full" : "rounded-lg"} ${
-                props.altColor
+                props.themed
+                    ? "bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                    : props.altColor
                     ? "text-green-700 bg-transparent transition-all duration-300 ease-in-out hover:scale-105 hover:text-black"
                     : "bg-green-700 transition-all duration-300 ease-in-out hover:text-black hover:scale-105 text-white"
             } flex items-center py-2 px-6 shadow-lg`}

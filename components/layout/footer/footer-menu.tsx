@@ -9,18 +9,20 @@ const FooterMenu = () => {
     const pathname = usePathname();
 
     return (
-        <nav className="flex-1 text-sm md:text-left">
-            <h5 className="text-2xl font-semibold tracking-wide text-card-foreground">Company</h5>
+        <nav aria-label="Footer navigation">
+            <h2 className="text-base font-semibold">Company</h2>
 
-            <ul className="mt-6 space-y-4 text-sm">
+            <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
                 {NavMenu.map((item) => {
-                    const isActive = pathname === (item.title === "Products" ? "/products" : item.link);
+                    const href = item.title === "Products" ? "/products" : item.link;
+                    const isActive = pathname === href;
 
                     return (
                         <li key={item.title}>
                             <Link
-                                href={item.title === "Products" ? "/products" : item.link}
-                                className={`transition ${
+                                href={href}
+                                aria-current={isActive ? "page" : undefined}
+                                className={`inline-flex min-h-9 items-center transition-colors ${
                                     isActive
                                         ? "font-medium text-primary underline underline-offset-4"
                                         : "text-muted-foreground hover:text-primary"
