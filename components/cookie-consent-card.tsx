@@ -12,7 +12,6 @@ export default function CookieConsentCard() {
         <div
             className="fixed inset-x-0 bottom-0 z-50 px-4 pb-4 sm:pb-6"
             role="dialog"
-            aria-modal="true"
             aria-labelledby="cookie-consent-title"
         >
             <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card shadow-xl transition-all duration-300 motion-reduce:transition-none">
@@ -23,8 +22,8 @@ export default function CookieConsentCard() {
                         </h2>
 
                         <p className="mt-1 max-w-xl text-xs leading-relaxed text-muted-foreground">
-                            We use essential cookies for core site functionality. With your permission, analytics
-                            cookies help us understand usage and improve performance.
+                            This website saves your privacy choice in your browser. You can revisit your choice in the
+                            site settings.
                         </p>
                     </div>
 

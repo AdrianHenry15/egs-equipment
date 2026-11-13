@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/app/components/home-splash";
 import FinanceOptions from "@/components/layout/finance-options";
+import CanonFinanceImage from "@/public/logos/canon-logo.png";
 
 export const metadata: Metadata = {
     title: "Financing Options | EGS Equipment",
@@ -25,7 +27,13 @@ export const metadata: Metadata = {
 
 export default function FinanceOptionsPage() {
     return (
-        <main className="relative flex w-full items-center justify-center bg-background">
+        <main className="w-full bg-background text-foreground">
+            <PageHero
+                title="Equipment"
+                accent="financing"
+                description="Explore commercial equipment financing and leasing through Canon Financial Services."
+                img={CanonFinanceImage}
+            />
             <FinanceOptions />
         </main>
     );

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/app/components/home-splash";
 
-import ProductsClient from "./components/product-client";
+import FilterSidebar from "./components/filter/filter-sidebar";
+import MobileSidebarFilter from "./components/filter/mobile-sidebar-filter";
+import ProductList, { type CatalogSearchParams } from "./components/product-list";
 
 export const metadata: Metadata = {
     title: "Professional Turf & Sports Field Equipment",
@@ -50,6 +53,19 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function ProductsPage() {
-    return <ProductsClient />;
+export default async function ProductsPage({ searchParams }: { searchParams: Promise<CatalogSearchParams> }) {
+    return (
+        <main className="w-full bg-background text-foreground">
+            <PageHero
+                title="Shop"
+                accent="equipment"
+                description="Browse professional turf, sports field, and grounds maintenance equipment."
+            />
+            <div className="mx-auto flex w-full max-w-screen-2xl">
+                <MobileSidebarFilter />
+                <FilterSidebar />
+                <ProductList searchParams={await searchParams} />
+            </div>
+        </main>
+    );
 }

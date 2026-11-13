@@ -1,8 +1,5 @@
-"use client";
-
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 import HowardsonLogo from "@/public/logos/howardson-logo.png";
 import DennisLogo from "@/public/logos/dennis.webp";
@@ -29,55 +26,33 @@ const logos: ILogos[] = [
     { src: BuffaloLogo, alt: "Buffalo Turbine", brand: EquipmentBrand.BUFFALO_TURBINE },
 ];
 
-const container = {
-    hidden: {},
-    visible: {
-        transition: { staggerChildren: 0.08 },
-    },
-};
-
-const item = {
-    hidden: { opacity: 0, y: 12 },
-    visible: { opacity: 1, y: 0 },
-};
-
 export default function PoweredBy() {
     return (
-        <section className="border-t border-border bg-background py-20 text-foreground">
+        <section className="bg-background py-10 sm:py-12 text-foreground">
             <div className="mx-auto max-w-7xl px-6">
-                <div className="mb-10 text-center">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Powered By</p>
+                <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Shop by brand</h2>
 
-                    <h3 className="mt-2 text-lg font-medium text-foreground">Trusted Equipment From Our Partners</h3>
-                </div>
-
-                <motion.ul
-                    variants={container}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="grid grid-cols-2 items-center gap-x-10 gap-y-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
-                >
+                <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 xl:grid-cols-7">
                     {logos.map((logo) => (
-                        <motion.li key={logo.alt} variants={item} className="flex justify-center">
+                        <li key={logo.alt}>
                             <Link
                                 href={`/products?brand=${logo.brand}`}
                                 aria-label={`View ${logo.alt} equipment`}
-                                className="group rounded-xl focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
+                                className="group block rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                             >
-                                <div className="relative h-12 w-36 rounded-xl bg-card p-2 opacity-100 transition duration-300 group-hover:bg-accent group-hover:opacity-80">
+                                <div className="relative h-16 w-full rounded-lg border border-border bg-white transition-colors group-hover:border-ring">
                                     <Image
                                         src={logo.src}
                                         alt={logo.alt}
                                         fill
-                                        sizes="144px"
-                                        className="object-contain p-2"
+                                        sizes="(max-width: 639px) 45vw, 155px"
+                                        className="object-contain p-3"
                                     />
                                 </div>
                             </Link>
-                        </motion.li>
+                        </li>
                     ))}
-                </motion.ul>
+                </ul>
             </div>
         </section>
     );

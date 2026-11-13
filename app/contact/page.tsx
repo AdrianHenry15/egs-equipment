@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/app/components/home-splash";
 import ContactForm from "@/components/forms/contact-form";
+import { allProducts } from "@/lib/products/list/product-list";
 
 export const metadata: Metadata = {
     title: "Contact EGS Equipment | Sales, Support & Quotes",
@@ -23,24 +25,22 @@ export const metadata: Metadata = {
     },
 };
 
-export default function ContactPage() {
+export default async function ContactPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ product?: string | string[] }>;
+}) {
+    const { product: productId } = await searchParams;
+    const quoteProduct = allProducts.find(({ id }) => id === productId)?.name;
+
     return (
-        <section className="relative w-full bg-background px-6 py-20">
-            <div className="mx-auto mb-12 max-w-3xl text-left">
-                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Contact EGS Equipment</h1>
-
-                <p className="mt-4 text-lg text-muted-foreground">
-                    Have questions about our equipment, need a quote, or want expert guidance? Our team is here to help.
-                </p>
-
-                <div className="mt-6 text-sm text-muted-foreground">
-                    Sales • Product Support • Estimates • General Inquiries
-                </div>
-            </div>
-
-            <div className="flex justify-center">
-                <ContactForm />
-            </div>
-        </section>
+        <main className="w-full bg-background text-foreground">
+            <PageHero
+                title="Contact"
+                accent="EGS Equipment"
+                description="Talk with our team about equipment quotes, product questions, and sales support."
+            />
+            <ContactForm key={quoteProduct ?? "contact"} quoteProduct={quoteProduct} />
+        </main>
     );
 }

@@ -1,18 +1,19 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { getProductBrandImage } from "@/lib/products/helpers/get-product-brand-image";
 import { ProductType } from "@/lib/types/product";
 
 interface ProductCardProps {
     product: ProductType;
+    imageSizes?: string;
 }
 
 const MAX_DESCRIPTION_LENGTH = 100;
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({
+    product,
+    imageSizes = "(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw",
+}: ProductCardProps) {
     const truncatedDescription =
         product.description.length > MAX_DESCRIPTION_LENGTH
             ? `${product.description.slice(0, MAX_DESCRIPTION_LENGTH)}…`
@@ -21,7 +22,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     const primaryImage = product.images?.[0];
 
     return (
-        <motion.article
+        <article
             className="
         flex h-full flex-col overflow-hidden
         rounded-card border border-border
@@ -30,13 +31,10 @@ export default function ProductCard({ product }: ProductCardProps) {
         transition-shadow duration-200
         hover:shadow-card-hover
       "
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
         >
             <Link
                 href={`/products/${product.id}`}
+                prefetch={false}
                 className="
           group flex grow flex-col
           focus-visible:outline-none
@@ -59,7 +57,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 transition-transform duration-300
                 group-hover:scale-[1.03]
               "
-                            priority={false}
+                            sizes={imageSizes}
                         />
                     </div>
                 )}
@@ -83,6 +81,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
             <Link
                 href="/contact"
+                prefetch={false}
                 className="
           flex items-center justify-center
           bg-primary px-4 py-2
@@ -98,6 +97,6 @@ export default function ProductCard({ product }: ProductCardProps) {
             >
                 Request a Quote
             </Link>
-        </motion.article>
+        </article>
     );
 }

@@ -1,70 +1,72 @@
-"use client";
-
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import localFont from "next/font/local";
 import Link from "next/link";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-import HeroImage from "@/public/splash/splash-ocity.png";
+import HeroImage from "@/public/splash/turf-equipment-hero.webp";
 
-const HomeSplash = () => {
+const displayFont = localFont({
+    src: "../fonts/barlow-condensed-bold.woff2",
+    weight: "700",
+    display: "swap",
+});
+
+interface PageHeroProps {
+    title: string;
+    accent: string;
+    description: string;
+    action?: { href: string; label: string };
+    img?: StaticImageData;
+}
+
+export function PageHero({ title, accent, description, action, img }: PageHeroProps) {
     return (
-        <section className="relative h-105 w-full text-primary-foreground md:h-[75vh]">
-            {/* Background */}
+        <section className="relative isolate w-full overflow-hidden bg-brand-black text-white">
             <Image
-                src={HeroImage}
-                alt="Eckert Equipment"
+                src={img ?? HeroImage}
+                alt="A groundskeeper operating turf maintenance equipment on a sports field"
                 fill
-                priority
-                className="object-cover object-bottom xl:object-center"
+                preload
+                sizes="100vw"
+                className="-z-20 object-cover object-[68%_center] md:object-center"
             />
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-brand-black/85 via-brand-black/45 to-brand-black/20" />
-            {/* Content */}
-            <div className="relative z-10 flex h-full items-end px-6 pb-10 md:pb-14">
-                <div className="max-w-xl space-y-3">
-                    {/* Headline */}
-                    <h1 className="text-3xl font-extrabold tracking-wide text-brand-gold drop-shadow-lg md:text-5xl">
-                        Eckert Equipment
-                    </h1>
-
-                    {/* Description */}
-                    <p className="text-base font-medium leading-relaxed text-white drop-shadow-md md:text-lg">
-                        Professional maintenance and sports field equipment for grounds teams, athletic facilities, and
-                        turf professionals.
-                    </p>
-
-                    {/* CTAs */}
-                    <div className="flex flex-wrap gap-3 pt-3">
-                        <Link
-                            href="tel:+14076297968"
-                            className="
-                                inline-flex h-11 items-center justify-center
-                                rounded-lg
-                                bg-primary
-                                px-6
-                                text-sm
-                                font-semibold
-                                text-primary-foreground
-                                shadow-md
-                                transition
-                                hover:bg-primary/90
-                                md:text-base
-                            "
-                        >
-                            Call Now
-                        </Link>
-
-                        <Link
-                            href="/contact"
-                            className="inline-flex h-11 items-center justify-center rounded-lg border border-brand-gold bg-brand-black/80 px-6 text-sm font-semibold text-brand-gold shadow-md backdrop-blur-sm transition hover:bg-brand-gold hover:text-brand-black md:text-base"
-                        >
-                            Contact Us
-                        </Link>
-                    </div>
-                </div>
+            <div className="absolute inset-0 -z-10 bg-brand-black/65 md:bg-transparent md:bg-linear-to-r md:from-brand-black md:via-brand-black/80 md:to-brand-black/15" />
+            <div
+                className={`mx-auto flex max-w-7xl flex-col items-start justify-center px-6 py-16 sm:px-10 lg:px-12 ${
+                    action ? "min-h-124 lg:min-h-152" : "min-h-72 lg:min-h-96"
+                }`}
+            >
+                <h1
+                    className={`${displayFont.className} leading-[0.88] font-bold uppercase ${
+                        action
+                            ? "max-w-[15ch] text-[clamp(3.5rem,8.5vw,7rem)]"
+                            : "max-w-[18ch] text-[clamp(3rem,7vw,5.5rem)]"
+                    }`}
+                >
+                    {title} <span className="text-brand-gold">{accent}</span>
+                </h1>
+                <p className="mt-6 max-w-[36ch] text-base leading-relaxed text-white/90 sm:text-lg">{description}</p>
+                {action && (
+                    <Link
+                        href={action.href}
+                        className="mt-8 inline-flex min-h-12 items-center gap-3 rounded-md bg-brand-gold px-5 py-3 font-semibold text-brand-black transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-gold"
+                    >
+                        {action.label}
+                        <ArrowRightIcon className="size-5" aria-hidden="true" />
+                    </Link>
+                )}
             </div>
         </section>
     );
-};
+}
 
-export default HomeSplash;
+export default function HomeSplash() {
+    return (
+        <PageHero
+            title="Professional"
+            accent="turf equipment"
+            description="Mowers, turf maintenance machines, and line marking equipment for golf courses and sports fields."
+            action={{ href: "/products", label: "Shop equipment" }}
+        />
+    );
+}

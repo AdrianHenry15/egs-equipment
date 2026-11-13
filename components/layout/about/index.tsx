@@ -1,10 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import backgroundImg from "@/public/grass-img.jpg";
 import PromoRow from "@/components/promo-row";
 
 const fadeIn = {
@@ -25,31 +23,6 @@ const About: React.FC = () => {
             animate="visible"
             variants={staggerContainer}
         >
-            <motion.div
-                className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg md:h-125"
-                variants={fadeIn}
-            >
-                <Image
-                    src={backgroundImg}
-                    alt="Jumbotron Background"
-                    fill
-                    sizes="100vw"
-                    priority
-                    className="object-cover object-center opacity-90"
-                />
-
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-linear-to-b from-foreground/50 to-foreground/80 px-6 text-center text-background">
-                    <motion.h1 className="text-3xl font-extrabold drop-shadow-lg md:text-5xl" variants={fadeIn}>
-                        The Story of EGS Equipment
-                    </motion.h1>
-
-                    <motion.p className="mt-3 max-w-2xl text-lg leading-relaxed md:text-xl" variants={fadeIn}>
-                        Serving turf and landscaping needs across the United States for over 25 years with quality
-                        machinery and expertise.
-                    </motion.p>
-                </div>
-            </motion.div>
-
             <motion.section className="flex flex-col items-center px-6 py-16 md:px-12" variants={staggerContainer}>
                 <motion.h2 className="text-center text-4xl font-bold text-foreground md:text-5xl" variants={fadeIn}>
                     About EGS Equipment

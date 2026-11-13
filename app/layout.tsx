@@ -10,7 +10,6 @@ import Footer from "@/components/layout/footer";
 import ModalRoot from "@/components/modals/modal-root";
 import CookieConsentCard from "@/components/cookie-consent-card";
 import GlobalOptionsWidget from "@/app/components/global-options-widget";
-import { SanityLive } from "@/sanity/lib/live";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "react-hot-toast";
 import { SITE_ORIGIN } from "@/lib/site";
@@ -96,11 +95,18 @@ export default async function RootLayout({
             >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
                     <Toaster />
+                    <a
+                        href="#page-content"
+                        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+                    >
+                        Skip to content
+                    </a>
                     <Navbar />
-                    {children}
+                    <div id="page-content" tabIndex={-1} className="scroll-mt-24">
+                        {children}
+                    </div>
                     <ModalRoot />
                     <CookieConsentCard />
-                    <SanityLive />
                     {isDraftMode && <VisualEditing />}
                     <GlobalOptionsWidget />
                     <Footer />

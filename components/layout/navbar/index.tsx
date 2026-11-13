@@ -10,7 +10,6 @@ import Logo from "@/public/logos/EGS1.png";
 import MobileMenu from "./mobile-menu";
 import { NavMenu } from "@/lib/constants";
 import { BiChevronDown, BiSearch } from "react-icons/bi";
-import SearchBar from "@/components/search-bar";
 import ProductsNavMenu from "./products-nav-menu";
 import ThemeToggle from "@/components/theme-toggle";
 import { useModalStore } from "@/stores/modal-store/modal-store";
@@ -27,41 +26,41 @@ export default function Navbar() {
 
     const renderNavMenu = () =>
         NavMenu.map((item) => {
-            const isActive = pathname === item.link;
-
-            if (item.title === "Products") {
-                return (
-                    <div key={item.title} className="relative">
-                        <button
-                            type="button"
-                            onClick={() => setProductsMenuOpen((prev) => !prev)}
-                            className={`flex items-center gap-1 rounded-md px-2 py-1 text-sm font-semibold transition hover:bg-accent hover:text-accent-foreground ${
-                                isActive
-                                    ? "text-primary underline decoration-secondary underline-offset-4"
-                                    : "text-muted-foreground"
-                            }`}
-                        >
-                            {item.title}
-                            <BiChevronDown size={18} />
-                        </button>
-
-                        {productsMenuOpen && <ProductsNavMenu setProductsMenuOpen={() => setProductsMenuOpen(false)} />}
-                    </div>
-                );
-            }
+            const isProducts = item.title === "Products";
+            const isActive = isProducts
+                ? pathname === "/products" || pathname.startsWith("/products/")
+                : pathname === item.link;
+            const itemClass = `inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md px-2.5 text-sm leading-none font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${
+                isActive || (isProducts && productsMenuOpen) ? "bg-muted text-primary" : "text-muted-foreground"
+            }`;
 
             return (
-                <Link
-                    key={item.title}
-                    href={item.link}
-                    className={`rounded-md px-2 py-1 text-sm font-semibold whitespace-nowrap transition hover:bg-accent hover:text-accent-foreground ${
-                        isActive
-                            ? "text-primary underline decoration-secondary underline-offset-4"
-                            : "text-muted-foreground"
-                    }`}
-                >
-                    {item.title}
-                </Link>
+                <li key={item.title} className={isProducts ? "relative flex" : "flex"}>
+                    {isProducts ? (
+                        <>
+                            <button
+                                type="button"
+                                onClick={() => setProductsMenuOpen((open) => !open)}
+                                aria-expanded={productsMenuOpen}
+                                className={`${itemClass} gap-1`}
+                            >
+                                <span>{item.title}</span>
+                                <BiChevronDown
+                                    aria-hidden="true"
+                                    className={`size-4 shrink-0 motion-safe:transition-transform ${productsMenuOpen ? "rotate-180" : ""}`}
+                                />
+                            </button>
+
+                            {productsMenuOpen && (
+                                <ProductsNavMenu setProductsMenuOpen={() => setProductsMenuOpen(false)} />
+                            )}
+                        </>
+                    ) : (
+                        <Link href={item.link} className={itemClass} aria-current={isActive ? "page" : undefined}>
+                            {item.title}
+                        </Link>
+                    )}
+                </li>
             );
         });
 
@@ -78,7 +77,7 @@ export default function Navbar() {
                         <BiSearch size={22} />
                     </button>
 
-                    <ul className="hidden items-center gap-3 xl:flex">{renderNavMenu()}</ul>
+                    <ul className="hidden items-center gap-1 xl:flex">{renderNavMenu()}</ul>
                 </div>
 
                 <div className="flex justify-center">
@@ -93,7 +92,14 @@ export default function Navbar() {
                 </div>
 
                 <div className="hidden items-center justify-end gap-4 xl:flex">
-                    <SearchBar />
+                    <button
+                        type="button"
+                        onClick={toggleSearchModal}
+                        className="inline-flex size-9 items-center justify-center rounded-full border border-border bg-card text-card-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                        aria-label="Search"
+                    >
+                        <BiSearch size={22} />
+                    </button>
                     <ThemeToggle />
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/app/components/home-splash";
 import { EventSections } from "../components/featured-events/featured-events";
 
 export const metadata: Metadata = {
@@ -22,13 +23,15 @@ export const metadata: Metadata = {
 
 export default function EventsPage() {
     return (
-        <main className="mx-auto max-w-7xl px-6 py-12">
-            <header className="mb-10 text-center">
-                <h1 className="text-3xl font-semibold tracking-tight text-primary">Events</h1>
-                <p className="mt-2 text-sm text-muted-foreground">Events, trade shows, and company appearances.</p>
-            </header>
-
-            <EventSections />
+        <main className="w-full bg-background text-foreground">
+            <PageHero
+                title="Equipment"
+                accent="events"
+                description="Explore EGS equipment demos, trade shows, and industry appearances."
+            />
+            <div className="mx-auto max-w-7xl px-6 py-12">
+                <EventSections />
+            </div>
         </main>
     );
 }

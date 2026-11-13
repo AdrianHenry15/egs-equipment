@@ -4,7 +4,15 @@ import { useModalStore } from "@/stores/modal-store/modal-store";
 import ConfirmationModal from "./confirmation-modal";
 import SuccessModal from "./success-modal";
 import LinkConfirmationModal from "./link-confirmation";
-import SearchModal from "./search-modal";
+import dynamic from "next/dynamic";
+
+const SearchModal = dynamic(() => import("./search-modal"), {
+    loading: () => (
+        <p role="status" className="rounded-lg bg-card p-4 text-card-foreground">
+            Loading search…
+        </p>
+    ),
+});
 
 export default function ModalRoot() {
     const { type, isOpen, closeModal } = useModalStore();

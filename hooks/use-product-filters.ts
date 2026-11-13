@@ -18,7 +18,9 @@ export function useProductFilters() {
             else next.delete(key);
         });
 
-        router.push(`/products?${next.toString()}`, { scroll: false });
+        next.delete("page");
+        const query = next.toString();
+        router.push(query ? `/products?${query}` : "/products", { scroll: false });
     };
 
     const resetUrl = () => {

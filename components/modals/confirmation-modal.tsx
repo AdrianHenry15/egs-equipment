@@ -13,13 +13,15 @@ export default function ConfirmationModal() {
     const confirm = payload as ConfirmModalPayload;
 
     async function handleConfirm() {
+        if (useModalStore.getState().loading) return;
+
         try {
             setLoading(true);
             await confirm.onConfirm();
-            closeModal();
+            if (useModalStore.getState().payload === payload) closeModal();
         } catch (err) {
             console.error("Confirmation failed", err);
-            setLoading(false);
+            if (useModalStore.getState().payload === payload) setLoading(false);
         }
     }
 
