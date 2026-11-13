@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
@@ -12,20 +12,14 @@ import Textarea from "./textarea";
 import Input from "./input";
 import { useModalStore } from "@/stores/modal-store/modal-store";
 
-const ContactForm = () => {
-    const [inputClicked, setInputClicked] = useState(false);
+const ContactForm = ({ quoteProduct }: { quoteProduct: string | undefined }) => {
     const { openModal, setLoading, closeModal } = useModalStore();
 
     const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID as string;
     const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string;
     const PUBLIC_KEY = process.env.NEXT_PUBLIC_KEY as string;
 
-    const {
-        handleSubmit,
-        getValues,
-        control,
-        formState: { errors },
-    } = useForm({
+    const { handleSubmit, getValues, control } = useForm({
         defaultValues: {
             firstName: "",
             lastName: "",
@@ -55,17 +49,16 @@ const ContactForm = () => {
                 TEMPLATE_ID,
                 {
                     ...formValues,
+                    comment: quoteProduct
+                        ? [`Quote request for: ${quoteProduct}`, formValues.comment].filter(Boolean).join("\n\n")
+                        : formValues.comment,
                 },
                 PUBLIC_KEY,
             );
 
-            toast.success("Your estimate has been submitted successfully!");
+            toast.success("Your request was submitted. Our team will be in touch.");
 
             closeModal();
-            openModal("success", {
-                title: "Request Submitted",
-                message: "Someone from our team will be in touch shortly.",
-            });
         } catch (error) {
             toast.error("There was an error submitting your estimate. Please try again.");
             throw error;
@@ -84,58 +77,69 @@ const ContactForm = () => {
                 </div>
 
                 {/* FORM */}
-                <form className="w-full self-center md:w-2/3" onSubmit={handleSubmit(onSubmit)}>
+                <form className="w-full self-center md:w-2/3" noValidate onSubmit={handleSubmit(onSubmit)}>
+                    {quoteProduct && (
+                        <p className="mb-4 rounded-md border border-border bg-muted p-3 text-sm font-semibold">
+                            Quote request for {quoteProduct}
+                        </p>
+                    )}
+
+                    <p className="mb-4 text-sm text-muted-foreground">Fields marked * are required.</p>
+
                     {/* FIRST NAME */}
                     <Input
                         inputName={"firstName"}
+                        required
+                        autoComplete="given-name"
                         inputLabel={"First Name"}
-                        placeholder={"First Name*"}
+                        placeholder={"First Name"}
                         control={control}
-                        errors={errors}
-                        errorPatternText="First Name is required."
                     />
 
                     {/* LAST NAME */}
                     <Input
                         inputName={"lastName"}
+                        required
+                        autoComplete="family-name"
                         inputLabel={"Last Name"}
-                        placeholder={"Last Name*"}
+                        placeholder={"Last Name"}
                         control={control}
-                        errorPatternText="Last Name is required."
                     />
 
                     {/* PHONE NUMBER */}
                     <Input
                         inputName={"phone"}
+                        type="tel"
+                        autoComplete="tel"
                         inputLabel={"Phone Number"}
-                        placeholder={"Phone Number*"}
+                        placeholder={"Phone Number"}
                         control={control}
-                        errors={errors}
-                        errorPatternText={"Phone Number is not valid."}
                     />
 
                     {/* EMAIL */}
                     <Input
                         inputName={"email"}
+                        required
+                        type="email"
+                        autoComplete="email"
                         inputLabel={"Email"}
-                        placeholder={"Email*"}
+                        placeholder={"Email"}
                         control={control}
-                        errors={errors}
-                        errorRequiredText={"Email is Required."}
-                        errorPatternText={"Email is not valid."}
                     />
 
                     {/* COMMENT */}
                     <Textarea inputName={"comment"} inputLabel={"Comment"} placeholder={"Comment"} control={control} />
 
-                    <div className={`${inputClicked ? "" : "animate-pulse"} my-10`}>
-                        <Button
-                            onClick={() => setInputClicked(true)}
-                            submit
-                            themed
-                            name="Submit Request"
-                            className="w-full justify-center"
-                        />
+                    <p className="mt-3 text-sm text-muted-foreground">
+                        We use your information to respond to this request. See our{" "}
+                        <Link href="/privacy" className="font-medium text-primary underline underline-offset-4">
+                            Privacy Policy
+                        </Link>
+                        .
+                    </p>
+
+                    <div className="my-10">
+                        <Button submit themed name="Submit Request" className="w-full justify-center" />
                     </div>
                 </form>
             </div>

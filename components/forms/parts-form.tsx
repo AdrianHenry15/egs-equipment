@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { usePathname } from "next/navigation";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
@@ -15,7 +15,6 @@ import { Loader } from "../loader";
 import { useModalStore } from "@/stores/modal-store/modal-store";
 
 const PartsForm = () => {
-    const pathname = usePathname();
     const { openModal, closeModal } = useModalStore();
 
     const [loading, setLoading] = useState(false);
@@ -24,12 +23,7 @@ const PartsForm = () => {
     const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string;
     const PUBLIC_KEY = process.env.NEXT_PUBLIC_KEY as string;
 
-    const {
-        handleSubmit,
-        getValues,
-        control,
-        formState: { errors },
-    } = useForm({
+    const { handleSubmit, getValues, control } = useForm({
         defaultValues: {
             firstName: "",
             lastName: "",
@@ -59,16 +53,12 @@ const PartsForm = () => {
                 PUBLIC_KEY,
             );
 
-            toast.success("Your request has been submitted successfully.");
+            toast.success("Your parts request was submitted. Our team will be in touch.");
 
             closeModal();
-            openModal("success", {
-                title: "Request Submitted",
-                message: "Thank you for reaching out. Our team will review your request and get back to you shortly.",
-            });
         } catch (error) {
-            console.error("EMAIL FAILED:", error);
             toast.error("There was an error submitting your request. Please try again.");
+            throw error;
         } finally {
             setLoading(false);
         }
@@ -88,9 +78,7 @@ const PartsForm = () => {
         <section className="relative flex w-full flex-col items-center bg-background py-20 shadow-inner md:px-4">
             {loading ? <Loader /> : null}
 
-            <h1 className="mb-10 animate-bounce text-3xl font-light text-foreground">
-                {pathname === "/contact" ? "Contact Us" : "Request A Quote!"}
-            </h1>
+            <h2 className="mb-8 text-2xl font-semibold text-foreground">Request parts or service</h2>
 
             {/* FORM CONTAINER */}
             <div className="flex w-11/12 flex-col rounded-2xl border-2 border-border bg-card p-6 shadow-lg md:w-162.5">
@@ -100,69 +88,68 @@ const PartsForm = () => {
                 </div>
 
                 {/* FORM */}
-                <form className="w-full self-center md:w-2/3" onSubmit={handleSubmit(onSubmit)}>
+                <form className="w-full self-center md:w-2/3" noValidate onSubmit={handleSubmit(onSubmit)}>
                     <h5 className="text-lg font-semibold text-foreground">Contact Info</h5>
+
+                    <p className="mb-4 text-sm text-muted-foreground">Fields marked * are required.</p>
 
                     {/* FIRST NAME */}
                     <Input
                         inputName={"firstName"}
+                        required
+                        autoComplete="given-name"
                         inputLabel={"First Name"}
-                        placeholder={"First Name*"}
+                        placeholder={"First Name"}
                         control={control}
-                        errors={errors}
-                        errorPatternText="First Name is required."
                     />
 
                     {/* LAST NAME */}
                     <Input
                         inputName={"lastName"}
+                        required
+                        autoComplete="family-name"
                         inputLabel={"Last Name"}
-                        placeholder={"Last Name*"}
+                        placeholder={"Last Name"}
                         control={control}
-                        errorPatternText="Last Name is required."
                     />
 
                     {/* PHONE NUMBER */}
                     <Input
                         inputName={"phone"}
+                        type="tel"
+                        autoComplete="tel"
                         inputLabel={"Phone Number"}
-                        placeholder={"Phone Number*"}
+                        placeholder={"Phone Number"}
                         control={control}
-                        errors={errors}
-                        errorPatternText={"Phone Number is not valid."}
                     />
 
                     {/* EMAIL */}
                     <Input
                         inputName={"email"}
+                        required
+                        type="email"
+                        autoComplete="email"
                         inputLabel={"Email"}
-                        placeholder={"Email*"}
+                        placeholder={"Email"}
                         control={control}
-                        errors={errors}
-                        errorRequiredText={"Email is Required."}
-                        errorPatternText={"Email is not valid."}
                     />
 
                     {/* COMPANY NAME */}
                     <Input
                         inputName={"companyName"}
+                        autoComplete="organization"
                         inputLabel={"Company Name"}
-                        placeholder={"Company Name*"}
+                        placeholder={"Company Name"}
                         control={control}
-                        errors={errors}
-                        errorRequiredText={"Company Name is Required."}
-                        errorPatternText={"Company Name is not valid."}
                     />
 
                     {/* Shipping Address */}
                     <Input
                         inputName={"shippingAddress"}
+                        autoComplete="shipping street-address"
                         inputLabel={"Shipping Address"}
-                        placeholder={"Shipping Address*"}
+                        placeholder={"Shipping Address"}
                         control={control}
-                        errors={errors}
-                        errorRequiredText={"Shipping Address is Required."}
-                        errorPatternText={"Shipping Address is not valid."}
                     />
 
                     <hr className="my-4 border-border" />
@@ -202,6 +189,14 @@ const PartsForm = () => {
                         placeholder={"Comments/Extra Details"}
                         control={control}
                     />
+
+                    <p className="mt-3 text-sm text-muted-foreground">
+                        We use your information to respond to this request. See our{" "}
+                        <Link href="/privacy" className="font-medium text-primary underline underline-offset-4">
+                            Privacy Policy
+                        </Link>
+                        .
+                    </p>
 
                     <div className="my-10">
                         <Button submit name="Submit Request" className="w-full justify-center" />

@@ -13,6 +13,7 @@ export type ProductType = {
     images: string[] | StaticImageData[];
     details: Details;
     manual?: string;
+    productSheet?: string;
     usedBy?: Clients;
     popular?: boolean;
 };

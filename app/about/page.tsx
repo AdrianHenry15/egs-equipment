@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/app/components/home-splash";
 import About from "@/components/layout/about";
+import AboutImage from "@/public/splash/grounds-equipment.webp";
 
 export const metadata: Metadata = {
     title: "About EGS Equipment | Our Story & Mission",
@@ -25,7 +27,13 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="relative flex w-full items-center justify-center bg-background">
+        <main className="w-full bg-background text-foreground">
+            <PageHero
+                title="About"
+                accent="EGS Equipment"
+                img={AboutImage}
+                description="Learn how Eckert Golf Sales supports golf courses, sports fields, and turf professionals."
+            />
             <About />
         </main>
     );

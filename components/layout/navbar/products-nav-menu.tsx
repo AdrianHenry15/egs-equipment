@@ -38,7 +38,7 @@ const ProductsNavMenu = ({ setProductsMenuOpen }: IProductsNavMenuProps) => {
 
     return (
         <motion.div
-            className="absolute top-full left-0 z-50 mt-2 w-56 overflow-hidden rounded-xl border border-border bg-card py-2 text-card-foreground shadow-xl"
+            className="absolute top-full left-1/2 z-50 mt-2 -translate-x-1/2 w-56 overflow-hidden rounded-xl border border-border bg-card py-2 text-card-foreground shadow-xl"
             initial="hidden"
             animate="visible"
             exit="hidden"

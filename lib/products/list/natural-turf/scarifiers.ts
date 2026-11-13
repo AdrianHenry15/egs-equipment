@@ -1,3 +1,5 @@
+import Rotorake600HDXCover from "@/public/products/natural/rotorake-600hdx/cad.webp";
+import Rotorake600HDXInUse from "@/public/products/natural/rotorake-600hdx/in-use.webp";
 import AutoRotoRakeImg from "@/public/products/natural/auto-roto-rake-mk5.webp";
 import VeemoImg from "@/public/products/natural/veemo-mk2.webp";
 import RotoRakeImg from "@/public/products/natural/roto-rake-600hd.webp";
@@ -8,6 +10,39 @@ import { ProductType } from "@/lib/types/product";
 import { EquipmentBrand } from "@/lib/types/brands";
 
 export const ScarifierProducts: ProductType[] = [
+    {
+        id: "sisis-rotorake-600hdx",
+        name: "SISIS Rotorake 600HDX",
+        description: "Heavy-duty walk-behind verticutter and linear aerator for natural turf.",
+        mainCategory: "natural_turf",
+        tags: ["scarifier", "natural_turf"],
+        images: [Rotorake600HDXCover, Rotorake600HDXInUse],
+        brand: EquipmentBrand.SISIS,
+        manual: "/products/natural/rotorake-600hdx/operator-manual.pdf",
+        productSheet: "/products/natural/rotorake-600hdx/product-sheet.pdf",
+        details: {
+            specs_description:
+                "Designed for all grass types, especially dense warm-season turf. Use it for shallow routine maintenance or deeper thatch removal. Linear aeration cuts continuous slits that help water and air reach the soil.",
+            features: [
+                "Quick-change, contra-rotating reels with tipped blades.",
+                "Six forward speeds and reverse, with independent wheel and reel drives.",
+                "Operator-presence controls.",
+                "Reel options include tungsten-tipped, saw-blade verticutter, brush, sorrel roller, and fraze-mowing reels.",
+            ],
+            specifications: {
+                type: "standard",
+                data: {
+                    model: "Rotorake 600HDX",
+                    code: "FS1279",
+                    operating_width: "600 mm (24 in.)",
+                    depth: "1½ in. with an option for a deeper setting",
+                    power_source_output: "16 hp V-twin engine",
+                    action: "Verticutting and linear aeration",
+                },
+            },
+            video: "",
+        },
+    },
     {
         id: "scar-1",
         name: "Rotorake 600HD",

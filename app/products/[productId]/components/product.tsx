@@ -74,8 +74,8 @@ const Product = ({ productId }: IProductProps) => {
     const renderSpecRow = (label: string, value?: string) =>
         value ? (
             <div className="mt-1 flex text-sm">
-                <span className="font-semibold text-black">{label}:</span>
-                <span className="ml-2 text-black">{value}</span>
+                <span className="font-semibold text-foreground">{label}:</span>
+                <span className="ml-2 text-foreground">{value}</span>
             </div>
         ) : null;
 
@@ -87,13 +87,14 @@ const Product = ({ productId }: IProductProps) => {
             {renderSpecRow("Model", data.model)}
             {renderSpecRow("Code", data.code)}
             {renderSpecRow("Action", data.action)}
+            {renderSpecRow("Working width", data.operating_width)}
             {renderSpecRow("Depth", data.depth)}
             {renderSpecRow("Power Source Output", data.power_source_output)}
             {renderSpecRow("Recommended Tractor", data.recommended_tractor)}
 
             {data.dimensions && (
                 <div className="mt-4">
-                    <h5 className="text-lg font-semibold text-black">Dimensions</h5>
+                    <h5 className="text-lg font-semibold text-foreground">Dimensions</h5>
                     {renderSpecRow("Height", data.dimensions.height)}
                     {renderSpecRow("Width", data.dimensions.width)}
                     {renderSpecRow("Length", data.dimensions.length)}
@@ -106,15 +107,15 @@ const Product = ({ productId }: IProductProps) => {
 
             {data.inclusions && (
                 <div className="mt-4">
-                    <h5 className="text-lg font-semibold text-black">Inclusions</h5>
+                    <h5 className="text-lg font-semibold text-foreground">Inclusions</h5>
                     {Array.isArray(data.inclusions) ? (
-                        <ul className="list-disc ml-5 text-sm text-black">
+                        <ul className="list-disc ml-5 text-sm text-foreground">
                             {data.inclusions.map((i, idx) => (
                                 <li key={idx}>{i}</li>
                             ))}
                         </ul>
                     ) : (
-                        <p className="text-sm text-black">{data.inclusions}</p>
+                        <p className="text-sm text-foreground">{data.inclusions}</p>
                     )}
                 </div>
             )}
@@ -140,7 +141,7 @@ const Product = ({ productId }: IProductProps) => {
 
             {data.colors && data.colors.length > 0 && (
                 <div className="flex flex-col">
-                    <span className="text-sm font-semibold text-black">Colors</span>
+                    <span className="text-sm font-semibold text-foreground">Colors</span>
                     <hr className="my-1 border-gray-300" />
                     {renderColorDots(data.colors)}
                 </div>
@@ -179,7 +180,7 @@ const Product = ({ productId }: IProductProps) => {
 
             {data.colors && data.colors.length > 0 && (
                 <div className="flex flex-col">
-                    <span className="text-sm font-semibold text-black">Colors</span>
+                    <span className="text-sm font-semibold text-foreground">Colors</span>
                     <hr className="my-1 border-gray-300" />
                     {renderColorDots(data.colors)}
                 </div>
@@ -187,10 +188,10 @@ const Product = ({ productId }: IProductProps) => {
 
             {data.package_item && data.package_item.length > 0 && (
                 <div className="flex flex-col lg:col-span-3">
-                    <span className="text-sm font-semibold text-black">Package Contents</span>
+                    <span className="text-sm font-semibold text-foreground">Package Contents</span>
                     <hr className="my-1 border-gray-300" />
 
-                    <ul className="mt-1 space-y-1 text-sm text-black">
+                    <ul className="mt-1 space-y-1 text-sm text-foreground">
                         {data.package_item.map((item, idx) => (
                             <li key={idx}>
                                 <span className="font-semibold">
@@ -233,15 +234,15 @@ const Product = ({ productId }: IProductProps) => {
             <>
                 {hasSpecs && (
                     <div className="mt-4">
-                        <h5 className="text-lg font-semibold text-black">Overview</h5>
-                        <p className="mt-2 text-sm text-black">{data.specifications!.trim()}</p>
+                        <h5 className="text-lg font-semibold text-foreground">Overview</h5>
+                        <p className="mt-2 text-sm text-foreground">{data.specifications!.trim()}</p>
                     </div>
                 )}
 
                 {hasSizes && (
                     <div className="mt-4">
-                        <h5 className="text-lg font-semibold text-black">Available Sizes</h5>
-                        <ul className="ml-5 mt-2 list-disc text-sm text-black">
+                        <h5 className="text-lg font-semibold text-foreground">Available Sizes</h5>
+                        <ul className="ml-5 mt-2 list-disc text-sm text-foreground">
                             {data.sizes!.map((size, idx) => (
                                 <li key={idx}>{size}</li>
                             ))}
@@ -251,8 +252,8 @@ const Product = ({ productId }: IProductProps) => {
 
                 {hasFeatures && (
                     <div className="mt-4">
-                        <h5 className="text-lg font-semibold text-black">Features</h5>
-                        <ul className="ml-5 mt-2 list-disc text-sm text-black">
+                        <h5 className="text-lg font-semibold text-foreground">Features</h5>
+                        <ul className="ml-5 mt-2 list-disc text-sm text-foreground">
                             {data.features!.map((feature, idx) => (
                                 <li key={idx}>{feature}</li>
                             ))}
@@ -262,8 +263,8 @@ const Product = ({ productId }: IProductProps) => {
 
                 {hasBenefits && (
                     <div className="mt-4">
-                        <h5 className="text-lg font-semibold text-black">Benefits</h5>
-                        <ul className="ml-5 mt-2 list-disc text-sm text-black">
+                        <h5 className="text-lg font-semibold text-foreground">Benefits</h5>
+                        <ul className="ml-5 mt-2 list-disc text-sm text-foreground">
                             {data.benefits!.map((benefit, idx) => (
                                 <li key={idx}>{benefit}</li>
                             ))}
@@ -273,8 +274,8 @@ const Product = ({ productId }: IProductProps) => {
 
                 {hasIncluded && (
                     <div className="mt-4">
-                        <h5 className="text-lg font-semibold text-black">What’s Included</h5>
-                        <ul className="ml-5 mt-2 list-disc text-sm text-black">
+                        <h5 className="text-lg font-semibold text-foreground">What’s Included</h5>
+                        <ul className="ml-5 mt-2 list-disc text-sm text-foreground">
                             {data.included!.map((item, idx) => (
                                 <li key={idx}>{item}</li>
                             ))}
@@ -340,15 +341,38 @@ const Product = ({ productId }: IProductProps) => {
                     ) : null}
 
                     {renderSpecifications()}
+
+                    {product.productSheet && (
+                        <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold">
+                            <a
+                                href={product.productSheet}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary underline underline-offset-4"
+                            >
+                                Product sheet (PDF)
+                            </a>
+                            {product.manual && (
+                                <a
+                                    href={product.manual}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-primary underline underline-offset-4"
+                                >
+                                    Operator manual (PDF)
+                                </a>
+                            )}
+                        </div>
+                    )}
                 </div>
             </div>
 
             <div className="flex w-full justify-center pt-10">
                 <Link
-                    href="/contact"
+                    href={{ pathname: "/contact", query: { product: product.id } }}
                     className="w-75 rounded-lg bg-primary py-2 text-center font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
                 >
-                    Request Estimate
+                    Request a Quote
                 </Link>
             </div>
         </div>

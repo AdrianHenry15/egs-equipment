@@ -15,46 +15,21 @@ const FinanceOptions: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
         >
-            <div className="relative h-96 w-full overflow-hidden rounded-lg bg-card shadow-lg md:h-125">
-                <Image
-                    src={backgroundImg}
-                    alt="Canon Financial Solutions"
-                    fill
-                    sizes="100vw"
-                    priority
-                    className="object-contain object-center opacity-90"
-                />
-
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-foreground/50 text-center text-background">
-                    <motion.h1
-                        className="text-3xl font-extrabold md:text-5xl"
-                        initial={{ y: -20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                    >
-                        Canon Financial Services
-                    </motion.h1>
-
-                    <motion.p
-                        className="mt-2 max-w-2xl text-lg md:text-xl"
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                    >
-                        Empowering businesses with flexible financial solutions to achieve their growth goals.
-                    </motion.p>
-                </div>
-            </div>
-
             <motion.div
                 className="flex w-full flex-col bg-card"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
             >
-                <h5 className="flex w-full items-center justify-center p-10 text-center text-4xl font-semibold text-foreground">
+                <Image
+                    src={backgroundImg}
+                    alt="Canon Financial Services"
+                    className="mx-auto mt-10 h-auto w-52 object-contain"
+                />
+
+                <h2 className="flex w-full items-center justify-center p-10 text-center text-4xl font-semibold text-foreground">
                     Financial Options with Canon
-                </h5>
+                </h2>
 
                 <hr className="mx-10 border-border" />
 
